@@ -113,9 +113,9 @@ const HomeDark = () => {
                       Say Hello!
                     </h3>
                     <p className="open-sans-font mb-4">
-                      I'd love to hear from you, no matter what it's about!
+                      {"I'd"} love to hear from you, no matter what {"it's"} about!
                       Whether you have a project in mind, some creative ideas to share, or just want to say hi, 
-                      please don't hesitate to reach out.
+                      please {"don't"} hesitate to reach out.
                     </p>
                     <Address />
                     {/* End Address */}
