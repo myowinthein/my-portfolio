@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { format } from 'date-fns';
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
 import Image from "next/image";
 
 const heroContent = {
-  heroImage: "/assets/img/hero/dark.jpg",
+  heroImage: "/assets/img/hero/dark.jpeg",
   heroMobileImage: heroImgMobile,
-  heroTitleName: "steve milner",
-  heroDesignation: "web designer",
-  heroDescriptions: `I'm a Tunisian based web designer & front‑end developer focused on
-  crafting clean & user‑friendly experiences, I am passionate about
-  building excellent software that improves the lives of those
-  around me.`,
+  heroTitleName: "martin",
+  heroDesignation: "full stack developer",
+  heroDescriptions: `With ${format(new Date(), 'yyyy') - 2013}+ years of experience in software development, I'm a passionate problem solver and perpetual learner. I take pride in creating software that makes people's lives easier and brings a smile to their faces. Let's work together to build something amazing!`,
   heroBtn: "more about me",
 };
 

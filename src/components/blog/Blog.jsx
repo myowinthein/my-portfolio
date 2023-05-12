@@ -28,7 +28,16 @@ const Blog = () => {
             >
               <div className="post-thumb">
                 <div className="d-block position-relative overflow-hidden">
-                  <Image src={item?.img} className="img-fluid" alt="item.title" />
+                  <Image
+                    loader={({ src }) => {
+                      return `${src}`
+                    }}
+                    src={item?.img}
+                    className="img-fluid"
+                    width={500}
+                    height={500}
+                    alt="item.title"
+                  />
                 </div>
               </div>
               {/* End .thumb */}
@@ -37,7 +46,7 @@ const Blog = () => {
                   <h3>{item?.title}</h3>
                 </div>
                 <div className="entry-content open-sans-font">
-                  <p>{item?.description1.slice(0, 100)}</p>
+                  <p dangerouslySetInnerHTML={{ __html: item?.description.slice(0, 100) }} />
                 </div>
               </div>
               {/* End .post-content */}
@@ -88,20 +97,25 @@ const Blog = () => {
 
                     <h1>{singleData?.title}</h1>
                     <Image
+                      loader={({ src }) => {
+                        return `${src}`
+                      }}
                       src={singleData?.img}
                       className="img-fluid"
+                      width={500}
+                      height={500}
                       alt="Blog"
                     />
                     <div className="blog-excerpt open-sans-font pb-5">
-                      <p>{singleData?.description1}</p>
-                      <div className="quotebox">
+                      <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
+                      {/* <div className="quotebox">
                         <div className="icon">
                           <Image src={blogQuote} alt="blog quote" />
                         </div>
                         <p>{singleData?.description2}</p>
                       </div>
                       <p>{singleData?.description3}</p>
-                      <p>{singleData?.description4}</p>
+                      <p>{singleData?.description4}</p> */}
                     </div>
                     {/* Article Content Ends */}
                   </article>
