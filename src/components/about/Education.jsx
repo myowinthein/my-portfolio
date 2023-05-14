@@ -2,25 +2,22 @@ import React from "react";
 
 const educationContent = [
   {
-    year: "2015",
-    degree: "ENGINEERING DEGREE",
-    institute: "OXFORD UNIVERSITY",
-    details: `  Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-        adipisicing elit`,
+    year: "Jul 2021",
+    degree: "Certified Laravel Developer",
+    institute: "Laravel LLC",
+    details: `https://exam.laravelcert.com/is/myo-win-thein/certified-since/2021-07-13`,
   },
   {
-    year: "2012",
-    degree: "MASTER DEGREE",
-    institute: "KIEV UNIVERSITY",
-    details: `Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol
-        elit, tempor incididunt`,
+    year: "Sep 2012 – Oct 2013",
+    degree: "Level 5 Diploma in Computing (QCF)",
+    institute: "NCC Education",
+    details: `https://www.nccedu.com/qualifications/computing/ncc-education-level-5-diploma-in-computing-l5dc/`,
   },
   {
-    year: "2009",
-    degree: "BACHELOR DEGREE ",
-    institute: "TUNIS HIGH SCHOOL",
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
+    year: "Dec 2007 – Aug 2011",
+    degree: "Bachelor of Technology (Electrical Power Engineering)",
+    institute: "Thanlyin Technological University",
+    details: `http://www.ttu.edu.mm/admission/join/electrical-power-engineering`,
   },
 ];
 
@@ -30,7 +27,7 @@ const Education = () => {
       {educationContent.map((val, i) => (
         <li key={i}>
           <div className="icon">
-            <i className="fa fa-briefcase"></i>
+            <i className="fa fa-graduation-cap"></i>
           </div>
           <span className="time open-sans-font text-uppercase">{val.year}</span>
           <h5 className="poppins-font text-uppercase">
