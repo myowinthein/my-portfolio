@@ -11,7 +11,7 @@ const SocialShare = [
   },
   {
     iconName: "fa fa-github",
-    link: "https://www.youtube.com/",
+    link: "https://github.com/myowinthein/",
   },
   { 
     iconName: "fa fa-medium",
