@@ -85,7 +85,7 @@ const ModalThree = ({modalId,setGetModal}) => {
                     </div>
                   </Slider>
                 </figure>
-                <p class="add-description">Hello, It's Descriptions</p>
+                <p class="add-description">Hello, {"It's"} Descriptions</p>
 
                 <button
                   className="close-modal"

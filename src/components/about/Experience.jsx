@@ -68,9 +68,9 @@ const Experience = () => {
             <i className="fa fa-briefcase"></i>
           </div>
           {val.positions.map((item, j) => (
-            <div className="mb-4">
+            <div key={j} className="mb-4">
               <span className="time open-sans-font text-uppercase">{item.year}</span>
-              <h5 key={j} className="poppins-font text-uppercase">
+              <h5 className="poppins-font text-uppercase">
                 {item.position}
               </h5>
             </div>

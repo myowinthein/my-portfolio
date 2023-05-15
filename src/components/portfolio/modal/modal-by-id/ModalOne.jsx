@@ -61,7 +61,7 @@ const ModalOne = ({modalId,setGetModal}) => {
                   <Image src={item.image} alt="portfolio project demo" />
                 </figure>
 
-                <p class="add-description">Hello, It's Descriptions</p>
+                <p class="add-description">Hello, {"It's"} Descriptions</p>
 
                 <button
                   className="close-modal"
