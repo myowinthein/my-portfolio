@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { format } from 'date-fns';
+import { totalExperience } from '../../config';
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
@@ -12,7 +12,7 @@ const heroContent = {
   heroTitleName: "martin",
   heroDesignation: "full stack developer",
   heroDescriptions: `
-    As a passionate problem solver and lifelong learner with ${format(new Date(), 'yyyy') - 2013}+ 
+    As a passionate problem solver and lifelong learner with ${totalExperience}+ 
     years of experience, I have a natural ability to code across various platforms, including 
     front-end, back-end, and CMS development, in a wide range of programming languages. 
     So whatever your development needs are, I can provide you with the expertise and skills you 
