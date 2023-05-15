@@ -9,8 +9,8 @@ import Image from "next/image";
 const heroContent = {
   heroImage: "/assets/img/hero/dark.jpeg",
   heroMobileImage: heroImgMobile,
-  heroTitleName: "martin",
-  heroDesignation: "full stack developer",
+  heroTitleName: "MARTIN",
+  heroDesignation: "Full Stack Developer",
   heroDescriptions: `
     As a passionate problem solver and lifelong learner with ${totalExperience}+ 
     years of experience, I have a natural ability to code across various platforms, including 
@@ -18,7 +18,7 @@ const heroContent = {
     So whatever your development needs are, I can provide you with the expertise and skills you 
     need to get the job done right. I take pride in creating software that makes people's lives 
     easier and brings a smile to their faces.`,
-  heroBtn: "more about me",
+  heroBtn: "Download CV",
 };
 
 const Hero = () => {
@@ -42,8 +42,8 @@ const Hero = () => {
               alt="hero man"
               // style={{width:'100%',height:'100%'}}
             />
-            <h1 className="text-uppercase poppins-font">
-              {"I'm"} {heroContent.heroTitleName}.
+            <h1 className="poppins-font"> <div className="text-uppercase">
+              {"I'm"} {heroContent.heroTitleName}. </div>
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <p className="open-sans-font">{heroContent.heroDescriptions}</p>
