@@ -43,20 +43,41 @@ const experienceContent = [
 
 const Experience = () => {
   return (
-    <ul>
+    // <ul>
+    //   {experienceContent.map((val, i) => (
+    //     <li key={i}>
+    //       <div className="icon">
+    //         <i className="fa fa-briefcase"></i>
+    //       </div>
+    //       <span className="time open-sans-font text-uppercase">{val.companyName}</span>
+    //       {val.positions.map((item, j) => (
+    //         <h5 key={j} className="poppins-font text-uppercase">
+    //           {item.position}
+    //           <span className="place open-sans-font">{item.year}</span>
+    //         </h5>
+    //       ))}
+    //       <p className="open-sans-font">{val.details}</p>
+    //     </li>
+    //   ))}
+    // </ul>
+
+     <ul>
       {experienceContent.map((val, i) => (
         <li key={i}>
           <div className="icon">
             <i className="fa fa-briefcase"></i>
           </div>
-          <span className="time open-sans-font text-uppercase">{val.companyName}</span>
           {val.positions.map((item, j) => (
-            <h5 key={j} className="poppins-font text-uppercase">
-              {item.position}
-              <span className="place open-sans-font">{item.year}</span>
-            </h5>
+            <div className="mb-4">
+              <span className="time open-sans-font text-uppercase">{item.year}</span>
+              <h5 key={j} className="poppins-font text-uppercase">
+                {item.position}
+              </h5>
+            </div>
           ))}
-          <p className="open-sans-font">{val.details}</p>
+
+          <span className="place open-sans-font">{val.companyName} · 2 yrs 5 mos</span>
+          <p className="open-sans-font text-gray">{val.details}</p>
         </li>
       ))}
     </ul>

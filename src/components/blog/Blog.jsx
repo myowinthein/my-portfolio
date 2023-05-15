@@ -16,6 +16,7 @@ const Blog = () => {
   },[])
   return (
     <>
+      <h4 class="info-title"> To read more articles, visit to <a href="#"> Medium </a></h4>
       <div className="row" id="modal">
         {blogsData.map((item) => (
           <div
@@ -33,7 +34,7 @@ const Blog = () => {
                       return `${src}`
                     }}
                     src={item?.img}
-                    className="img-fluid"
+                    className=""
                     width={500}
                     height={500}
                     alt="item.title"
