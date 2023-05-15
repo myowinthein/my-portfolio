@@ -69,7 +69,7 @@ const ModalFour = ({ modalId, setGetModal }) => {
                   {/* <source src="img/" type="video/mp4" /> */}
                 </video>
               </figure>
-              <p class="add-description">Hello, It's Descriptions</p>
+              <p class="add-description">Hello, {"It's"} Descriptions</p>
 
               <button
                 className="close-modal"
