@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { totalExperience } from '../../config';
+import { name, totalExperience, resumeURL } from '../../config';
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
@@ -9,7 +9,7 @@ import Image from "next/image";
 const heroContent = {
   heroImage: "/assets/img/hero/dark.jpeg",
   heroMobileImage: heroImgMobile,
-  heroTitleName: "MARTIN",
+  heroTitleName: name,
   heroDesignation: "Full Stack Developer",
   heroDescriptions: `
     As a passionate problem solver and lifelong learner with ${totalExperience}+ 
@@ -18,7 +18,7 @@ const heroContent = {
     So whatever your development needs are, I can provide you with the expertise and skills you 
     need to get the job done right. I take pride in creating software that makes people's lives 
     easier and brings a smile to their faces.`,
-  heroBtn: "Download CV",
+  heroBtn: "Download Resume",
 };
 
 const Hero = () => {
@@ -47,10 +47,12 @@ const Hero = () => {
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <p className="open-sans-font">{heroContent.heroDescriptions}</p>
-            <button className="button" onClick={toggleModalOne}>
+            {/* <button className="button" onClick={toggleModalOne}> */}
+            <a className="button" href={resumeURL} download>
               <span className="button-text">{heroContent.heroBtn}</span>
               <span className="button-icon fa fa-arrow-right"></span>
-            </button>
+            </a>
+            {/* </button> */}
           </div>
         </div>
       </div>

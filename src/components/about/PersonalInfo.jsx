@@ -1,12 +1,12 @@
 import React from "react";
+import { email, address } from '../../config';
 
 const personalInfoContent = [
   { meta: "first name", metaInfo: "Myo Win", hasColor: "" },
   { meta: "last name", metaInfo: "Thein", hasColor: "" },
   { meta: "Nationality", metaInfo: "Myanmar", hasColor: "" },
-  { meta: "Address", metaInfo: "Bangkok, Thailand", hasColor: "" },
-  // { meta: "phone", metaInfo: "+21621184010", hasColor: "" },
-  { meta: "Email", metaInfo: "mwt.creative@gmail.com", hasColor: "" },
+  { meta: "Address", metaInfo: address, hasColor: "" },
+  { meta: "Email", metaInfo: email, hasColor: "" },
   { meta: "langages", metaInfo: "English, Burmese", hasColor: "" },
 ];
 

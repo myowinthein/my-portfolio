@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import blogQuote from "../../../public/assets/img/blog/quote.svg";
+import { mediumURL } from '../../config';
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
 
@@ -16,7 +17,17 @@ const Blog = () => {
   },[])
   return (
     <>
-      <h4 class="info-title"> To read more articles, visit to <a href="#"> Medium </a></h4>
+      <h4 class="info-title">
+        Explore More Articles on&nbsp;
+        <a
+          className="preview-link"
+          target="_blank" 
+          rel="noopener noreferrer nofollow"
+          href={mediumURL}
+        >
+          Medium 
+        </a>
+      </h4>
       <div className="row" id="modal">
         {blogsData.map((item) => (
           <div
@@ -47,7 +58,7 @@ const Blog = () => {
                   <h3>{item?.title}</h3>
                 </div>
                 <div className="entry-content open-sans-font">
-                  <p dangerouslySetInnerHTML={{ __html: item?.description.slice(0, 100) }} />
+                  <p dangerouslySetInnerHTML={{ __html: item?.description.slice(0, 200) }} />
                 </div>
               </div>
               {/* End .post-content */}
