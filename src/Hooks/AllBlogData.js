@@ -5,7 +5,7 @@ const AllBlogData = () => {
   const [blogsData, setBlogsData] = useState([])
 
   useEffect(() => {
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@tykebluck/")
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@myowinthein/")
       .then(res => res.json())
       .then(
         (data) => {
@@ -19,7 +19,7 @@ const AllBlogData = () => {
               img: item.thumbnail,
               title: item.title,
               commentor: item.author,
-              date: format(parseISO(item.pubDate), 'd MMMM yyyy pp'),
+              date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
               link: item.guid,
               description: item.description // content also available
