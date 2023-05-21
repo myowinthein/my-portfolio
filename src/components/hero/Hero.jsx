@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { name, totalExperience, resumeURL } from '../../config';
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
+import { name, position, totalExperiences, resumeURL } from '../../config';
+import heroImage from "../../../public/assets/img/hero/dark.jpeg";
+import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
 import Image from "next/image";
 
 const heroContent = {
-  heroImage: "/assets/img/hero/dark.jpeg",
+  heroImage: heroImage,
   heroMobileImage: heroImgMobile,
   heroTitleName: name,
-  heroDesignation: "Full Stack Developer",
-  heroDescriptions: `
-    As a passionate problem solver and lifelong learner with ${totalExperience}+ 
-    years of experience, I have a natural ability to code across various platforms, including 
-    front-end, back-end, and CMS development, in a wide range of programming languages. 
-    So whatever your development needs are, I can provide you with the expertise and skills you 
-    need to get the job done right. I take pride in creating software that makes people's lives 
-    easier and brings a smile to their faces.`,
+  heroDesignation: position,
+  heroDescriptions: [
+    `As a passionate problem solver and lifelong learner with ${totalExperiences}+
+    years of experience, I have a natural ability to code across various platforms, including
+    front-end, back-end, and CMS development, in a wide range of programming languages.`,
+    `So whatever your development needs are, I can provide you with the expertise and skills you
+    need to get the job done right. I take pride in creating software that makes people's lives
+    easier and brings a smile to their faces.`
+  ],
   heroBtn: "Download Resume",
 };
 
@@ -32,7 +34,7 @@ const Hero = () => {
       <div className="row home-details-container align-items-center">
         <div
           className="col-lg-4 bg position-fixed d-none d-lg-block"
-          style={{ backgroundImage: `url(${heroContent.heroImage})` }}
+          style={{ backgroundImage: `url(${heroContent.heroImage.src})` }}
         ></div>
         <div className="col-12 col-lg-8 offset-lg-4 home-details  text-center text-lg-start">
           <div>
@@ -46,11 +48,13 @@ const Hero = () => {
               {"I'm"} {heroContent.heroTitleName}. </div>
               <span>{heroContent.heroDesignation}</span>
             </h1>
-            <p className="open-sans-font">{heroContent.heroDescriptions}</p>
+            {heroContent.heroDescriptions.map((description, i) => (
+              <p className="open-sans-font" key={i}>{description}</p>
+            ))}
             {/* <button className="button" onClick={toggleModalOne}> */}
             <a className="button" href={resumeURL} download>
               <span className="button-text">{heroContent.heroBtn}</span>
-              <span className="button-icon fa fa-arrow-right"></span>
+              <span className="button-icon fa fa-download"></span>
             </a>
             {/* </button> */}
           </div>

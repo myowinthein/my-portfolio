@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
-import blogQuote from "../../../public/assets/img/blog/quote.svg";
 import { mediumURL } from '../../config';
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
@@ -18,15 +17,15 @@ const Blog = () => {
   return (
     <>
       <h4 class="info-title">
-        Explore More Articles on&nbsp;
+        Explore more articles on&nbsp;
         <a
           className="preview-link"
           target="_blank" 
           rel="noopener noreferrer nofollow"
           href={mediumURL}
         >
-          Medium 
-        </a>
+          Medium
+        </a>.
       </h4>
       <div className="row" id="modal">
         {blogsData.map((item) => (
@@ -108,26 +107,8 @@ const Blog = () => {
                     {/* Article Content Starts */}
 
                     <h1>{singleData?.title}</h1>
-                    <Image
-                      loader={({ src }) => {
-                        return `${src}`
-                      }}
-                      src={singleData?.img}
-                      className="img-fluid"
-                      width={500}
-                      height={500}
-                      alt="Blog"
-                    />
                     <div className="blog-excerpt open-sans-font pb-5">
                       <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
-                      {/* <div className="quotebox">
-                        <div className="icon">
-                          <Image src={blogQuote} alt="blog quote" />
-                        </div>
-                        <p>{singleData?.description2}</p>
-                      </div>
-                      <p>{singleData?.description3}</p>
-                      <p>{singleData?.description4}</p> */}
                     </div>
                     {/* Article Content Ends */}
                   </article>

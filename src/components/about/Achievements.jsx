@@ -1,11 +1,11 @@
 import React from "react";
-import { format } from 'date-fns';
+import { totalExperiences, totalProjects, totalAPIs, totalPages } from '../../config';
 
 const achievementsContent = [
-  { title: `${format(new Date(), 'yyyy') - 2013}`, subTitle1: "years of", subTitle2: "experience" },
-  { title: "97", subTitle1: "completed", subTitle2: "projects" },
-  { title: "81", subTitle1: "Happy", subTitle2: "customers" },
-  { title: "53", subTitle1: "Recommendations", subTitle2: "received" },
+  { title: totalExperiences, subTitle1: "years of", subTitle2: "experience" },
+  { title: totalProjects, subTitle1: "completed", subTitle2: "projects" },
+  { title: totalAPIs, subTitle1: "APIs", subTitle2: "developed" },
+  { title: totalPages, subTitle1: "frontend pages", subTitle2: "created" },
 ];
 
 const Achievements = () => {
