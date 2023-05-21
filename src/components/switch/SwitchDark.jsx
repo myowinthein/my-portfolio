@@ -24,10 +24,10 @@ const SwitchDark = () => {
       />
       <div className="switch-handle">
         <span className="light-text filter_1" alt="swicher" priority>
-          <i class="fa fa-spin fa-sun" aria-hidden="true" alt="swicher" ></i>
+          <i class="fa fa-sun" aria-hidden="true" alt="swicher" ></i>
         </span>
         <span className="dark-text">
-          <i className="fa fa-flip fa-moon" aria-hidden="true"></i>
+          <i className="fa fa-moon" aria-hidden="true"></i>
         </span>
       </div>
     </label>

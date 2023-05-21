@@ -3,23 +3,23 @@ import { facebookURL, instagramURL, githubURL, mediumURL, linkedinURL } from '..
 
 const SocialShare = [
   {
-    iconName: "fa fa-facebook",
+    iconName: "fa-brands fa-facebook",
     link: facebookURL,
   },
   { 
-    iconName: "fa fa-instagram", 
+    iconName: "fa-brands fa-instagram", 
     link: instagramURL 
   },
   {
-    iconName: "fa fa-github",
+    iconName: "fa-brands fa-github",
     link: githubURL,
   },
   { 
-    iconName: "fa fa-medium",
+    iconName: "fa-brands fa-medium",
     link: mediumURL
   },
   { 
-    iconName: "fa fa-linkedin",
+    iconName: "fa-brands fa-linkedin",
     link: linkedinURL
   },
 ];

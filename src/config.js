@@ -11,7 +11,7 @@ export const languages = 'English, Burmese';
 export const position = 'Full Stack Developer';
 export const address = 'Bangkok, Thailand';
 export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
-export const totalProjects = 25;
+export const totalProjects = 23;
 export const totalAPIs = 690;
 export const totalPages = 230;
 
@@ -23,7 +23,7 @@ export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
 
-// packages
+// toast
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
 export const toastOptions = {
     position: "top-right",
