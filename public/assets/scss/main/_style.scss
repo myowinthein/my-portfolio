@@ -107,12 +107,27 @@ button {
   padding-bottom: 22px;
   font-size: 26px;
 }
-
+.pLogo {
+  text-align: center;
+  background-color: #252525;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  margin: auto;
+}
+.pLogo img{
+  width: 54px;
+  height: 54px;
+  margin-top: 2.2em
+}
+.exp-gutter+.exp-gutter {
+  margin-top: 1.5em
+}
 /*** Light Body ***/
 
 body.light {
   color: #666;
-  background-color: #fff;
+  background-color: #fafafa;
 }
 
 body.light .home .home-details h1 span,
@@ -129,7 +144,6 @@ body.light .home .home-details h6 {
 }
 
 body.home.light .bg {
-  // background-image: url(../img/light.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -157,7 +171,8 @@ body.light .about .box-stats {
 }
 
 body.light .about .c100,
-body.light .about .resume-box .time {
+body.light .about .resume-box .time,
+body.light .pLogo {
   background-color: #eee;
 }
 
@@ -572,6 +587,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 .header ul.icon-menu li.icon-box,
 .portfolio-tab-list li {
+  text-transform: uppercase;
   &:hover,
   &:focus {
     border: none;
@@ -707,7 +723,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 .home .home-details p {
   margin: 15px 0 28px;
   font-size: 16px;
-  line-height: 35px;
+  line-height: 28px;
 }
 
 /*** About ***/
@@ -2015,6 +2031,7 @@ button:focus {
     margin: 15px;
     margin-top: 0;
     font-size: 16px;
+    list-style: none;
     cursor: pointer;
     transition: 0.3s;
     &:hover,
@@ -2023,7 +2040,6 @@ button:focus {
     }
   }
 }
-
 .portfolio.professional .grid li figure div span {
   visibility: hidden;
   opacity: 0;

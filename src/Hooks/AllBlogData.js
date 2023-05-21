@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { parseISO, format } from 'date-fns';
+import { toast } from "react-toastify";
+import { rssAPIKey, toastOptions } from '../config';
 
 const AllBlogData = () => {
   const [blogsData, setBlogsData] = useState([])
 
   useEffect(() => {
-    fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@myowinthein/")
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@myowinthein/&api_key=${rssAPIKey}&count=9`)
       .then(res => res.json())
       .then(
         (data) => {
@@ -21,7 +23,7 @@ const AllBlogData = () => {
               commentor: item.author,
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
-              link: item.guid,
+              // link: item.guid,
               description: item.description // content also available
             })
           }
@@ -29,7 +31,7 @@ const AllBlogData = () => {
           setBlogsData(blogsData)
         },
         (error) => {
-          // can add some error handling here
+          toast.error("Failed to fetch blogs!", toastOptions);
         }
       )
   }, [])

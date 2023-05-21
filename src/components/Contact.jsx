@@ -1,13 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toastOptions } from '../config';
 
 const Contact = () => {
   const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true)
+
     emailjs
       .sendForm(
         "service_92m7j8n",
@@ -17,30 +20,16 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result)
-          toast.success("Message Sent Successfully!", {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.success("Message Sent Successfully!", toastOptions);
           document.getElementById("myForm").reset();
         },
         (error) => {
-          toast.error("Ops Message Not Sent!", {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error("Failed to send message!", toastOptions);
         }
-      );
+      )
+      .finally(() => {
+        setIsLoading(false)
+      });
   };
 
   return (
@@ -90,9 +79,11 @@ const Contact = () => {
           {/* End .col */}
 
           <div className="col-12">
-            <button type="submit" className="button">
-              <span className="button-text">Send Message</span>
-              <span className="button-icon fa fa-send"></span>
+            <button type="submit" className="button" disabled={isLoading}>
+              <span className="button-text">
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </span>
+              <span className="button-icon fa fa-paper-plane"></span>
             </button>
           </div>
           {/* End .col */}

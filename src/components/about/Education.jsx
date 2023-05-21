@@ -25,19 +25,19 @@ const Education = () => {
   return (
     <ul>
       {educationContent.map((val, i) => (
-        <li key={i}>
+        <li key={i} className="exp-gutter">
           <div className="icon">
             <i className="fa fa-graduation-cap"></i>
           </div>
-          <span className="time open-sans-font text-uppercase">{val.year}</span>
+          {/* <span className="time open-sans-font text-uppercase">{val.year}</span> */}
+
+          <small className="text-muted d-block text-uppercase">{val.year}</small>
           <h5 className="poppins-font text-uppercase">{val.institute} </h5>
           <span className="place open-sans-font">{val.degree} </span>
-          <p className="open-sans-font">{val.details}</p>
+          {/* <p className="open-sans-font">{val.details}</p> */}
         </li>
       ))}
     </ul>
-
-
   );
 };
 

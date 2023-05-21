@@ -2,9 +2,18 @@ import { format } from 'date-fns';
 
 // personal information
 export const name = 'Martin';
+export const firstName = 'Myo Win';
+export const lastName = 'Thein';
+export const nationality = 'Myanmar';
+export const careerSince = 2013;
 export const email = 'myowinthein@protonmail.com';
+export const languages = 'English, Burmese';
+export const position = 'Full Stack Developer';
 export const address = 'Bangkok, Thailand';
-export const totalExperience = format(new Date(), 'yyyy') - 2013;
+export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
+export const totalProjects = 25;
+export const totalAPIs = 690;
+export const totalPages = 230;
 
 // links
 export const resumeURL = 'https://drive.google.com/uc?export=download&id=1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG';
@@ -13,3 +22,15 @@ export const instagramURL = 'https://www.instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
+
+// packages
+export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
+export const toastOptions = {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    theme: "colored",
+}

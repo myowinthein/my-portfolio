@@ -5,28 +5,22 @@ const experienceContent = [
     companyName: "StudyMe (Melbourne, Australia)",
     positions: [
       {"position": "Technical Lead", "year": "Dec 2021 – Present"},
-    ],
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
+    ]
   },
   {
     companyName: "Snappymob (Kuala Lumpur, Malaysia)",
     positions: [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
   },
   {
-    companyName: "Nexlabs (Yangon, Myanmar)",
+    companyName: "Nexlabs Digital Agency (Yangon, Myanmar)",
     positions: [
       {"position": "Head of Engineering", "year": "Dec 2020 – Aug 2021"},
       {"position": "Lead Front-end and CMS Developer", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
     ],
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
   },
   {
     companyName: "Global Wave Technology (Yangon, Myanmar)",
@@ -36,31 +30,11 @@ const experienceContent = [
       {"position": "Programmer", "year": "Mar 2013 – Apr 2014"},
       {"position": "Intern", "year": "Jan 2013 – Mar 2013"},
     ],
-    details: `Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur
-        elit, sed do eiusmod tempor duntt`,
   },
 ];
 
 const Experience = () => {
   return (
-    // <ul>
-    //   {experienceContent.map((val, i) => (
-    //     <li key={i}>
-    //       <div className="icon">
-    //         <i className="fa fa-briefcase"></i>
-    //       </div>
-    //       <span className="time open-sans-font text-uppercase">{val.companyName}</span>
-    //       {val.positions.map((item, j) => (
-    //         <h5 key={j} className="poppins-font text-uppercase">
-    //           {item.position}
-    //           <span className="place open-sans-font">{item.year}</span>
-    //         </h5>
-    //       ))}
-    //       <p className="open-sans-font">{val.details}</p>
-    //     </li>
-    //   ))}
-    // </ul>
-
      <ul>
       {experienceContent.map((val, i) => (
         <li key={i}>
@@ -68,16 +42,16 @@ const Experience = () => {
             <i className="fa fa-briefcase"></i>
           </div>
           {val.positions.map((item, j) => (
-            <div key={j} className="mb-4">
-              <span className="time open-sans-font text-uppercase">{item.year}</span>
+            <div key={j} className="exp-gutter">
+              <small className="text-muted d-block text-uppercase">{item.year}</small>
               <h5 className="poppins-font text-uppercase">
                 {item.position}
               </h5>
             </div>
           ))}
 
-          <span className="place open-sans-font">{val.companyName} · 2 yrs 5 mos</span>
-          <p className="open-sans-font text-gray">{val.details}</p>
+          <p className="place open-sans-font">{val.companyName}</p>
+          {/* <p className="open-sans-font text-gray">{val.details}</p> */}
         </li>
       ))}
     </ul>

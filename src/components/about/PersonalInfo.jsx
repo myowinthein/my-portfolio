@@ -1,13 +1,14 @@
 import React from "react";
-import { email, address } from '../../config';
+import { firstName, lastName, email, address, nationality, careerSince, languages } from '../../config';
 
 const personalInfoContent = [
-  { meta: "first name", metaInfo: "Myo Win", hasColor: "" },
-  { meta: "last name", metaInfo: "Thein", hasColor: "" },
-  { meta: "Nationality", metaInfo: "Myanmar", hasColor: "" },
+  { meta: "first name", metaInfo: firstName, hasColor: "" },
+  { meta: "last name", metaInfo: lastName, hasColor: "" },
+  { meta: "Nationality", metaInfo: nationality, hasColor: "" },
   { meta: "Address", metaInfo: address, hasColor: "" },
-  { meta: "Email", metaInfo: email, hasColor: "" },
-  { meta: "langages", metaInfo: "English, Burmese", hasColor: "" },
+  { meta: "Career Since", metaInfo: careerSince, hasColor: "" },
+  { meta: "Languages", metaInfo: languages, hasColor: "" },
+
 ];
 
 const PersonalInfo = () => {

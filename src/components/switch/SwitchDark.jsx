@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import lightImage from "../../../public/assets/img/sun.png";
 import handleSwitchValue from "../../../utils/theme";
 
 const SwitchDark = () => {
@@ -24,11 +23,11 @@ const SwitchDark = () => {
         className="theme-switcher"
       />
       <div className="switch-handle">
-        <span className="light-text">
-          <Image src={lightImage} alt="swicher" className="filter_1" priority />
+        <span className="light-text filter_1" alt="swicher" priority>
+          <i class="fa fa-spin fa-sun" aria-hidden="true" alt="swicher" ></i>
         </span>
         <span className="dark-text">
-          <i className="fa fa-moon-o" aria-hidden="true"></i>
+          <i className="fa fa-flip fa-moon" aria-hidden="true"></i>
         </span>
       </div>
     </label>

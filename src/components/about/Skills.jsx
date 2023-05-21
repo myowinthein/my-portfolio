@@ -1,33 +1,44 @@
 import React from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Image from "next/image";
 
-const skillsContent = [
-  { skillClass: "p25", skillPercent: "25", skillName: "HTML" },
-  { skillClass: "p89", skillPercent: "89", skillName: "JAVASCRIPT" },
-  { skillClass: "p70", skillPercent: "70", skillName: "CSS" },
-  { skillClass: "p66", skillPercent: "66", skillName: "PHP" },
-  { skillClass: "p95", skillPercent: "95", skillName: "WORDPRESS" },
-  { skillClass: "p50", skillPercent: "50", skillName: "JQUERY" },
-  { skillClass: "p65", skillPercent: "65", skillName: "ANGULAR" },
-  { skillClass: "p45", skillPercent: "45", skillName: "REACT" },
-];
+const Skills = (props) => {
+  const skillSets = props.skillSets;
 
-const Skills = () => {
   return (
     <>
-      {skillsContent.map((val, i) => (
-        <div className="col-6 col-md-3 mb-3 mb-sm-5" key={i}>
-          <div className={`c100 ${val.skillClass}`}>
-            <span>{val.skillPercent}%</span>
-            <div className="slice">
-              <div className="bar"></div>
-              <div className="fill"></div>
+    <div className="col-12" data-aos="fade-up">
+      <Tabs>
+        <TabList className="portfolio-tab-list">
+          {skillSets.map((skillSet, i) => (
+            <Tab key={i}>{skillSet.title}</Tab>
+          ))}
+        </TabList>
+
+        <div className="container mt-4">
+            <div className="tab-container">
+              <div className=""> 
+                {skillSets.map((skillSet, i) => (
+                  <TabPanel key={i}>
+                    <div class="row justify-content-center">
+                      {skillSet.skills.map((skill, j) => (
+                          <div className="col-6 col-md-2 mb-3 mb-sm-5" key={j}>
+                            <div className="pLogo p25">
+                              <Image src={'/assets/img/programming/'+ skill.icon} alt="skill icon" width={100} height={100} />
+                            </div> 
+                            <small className="open-sans-font d-block text-muted text-center mt-2">
+                              {skill.name}
+                            </small>
+                          </div>
+                      ))}
+                    </div>
+                </TabPanel>
+              ))}
             </div>
           </div>
-          <h6 className="text-uppercase open-sans-font text-center mt-2 mt-sm-4">
-            {val.skillName}
-          </h6>
         </div>
-      ))}
+      </Tabs>
+    </div>
     </>
   );
 };
