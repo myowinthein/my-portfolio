@@ -4,114 +4,179 @@ import Education from "./Education";
 import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
-import { resumeURL } from "../../config";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import Image from "next/image";
+
+import { resumeURL } from "../../config";
+import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
+
+import htmlIcon from "../../../public/assets/img/programming/html.svg";
+import markdownIcon from "../../../public/assets/img/programming/markdown.svg";
+import cssIcon from "../../../public/assets/img/programming/css.svg";
+import bootstrapIcon from "../../../public/assets/img/programming/bootstrap.svg";
+import elementuiIcon from "../../../public/assets/img/programming/element-ui.svg";
+
+import javaScriptIcon from "../../../public/assets/img/programming/javaScript.svg";
+import jqueryIcon from "../../../public/assets/img/programming/jquery.svg";
+import vueIcon from "../../../public/assets/img/programming/vue.svg";
+import nuxtIcon from "../../../public/assets/img/programming/nuxt.svg";
+import reactIcon from "../../../public/assets/img/programming/react.svg";
+import nextIcon from "../../../public/assets/img/programming/next.svg";
+
+import phpIcon from "../../../public/assets/img/programming/php.svg";
+import laravelIcon from "../../../public/assets/img/programming/laravel.svg";
+import nodeIcon from "../../../public/assets/img/programming/node.svg";
+import expressIcon from "../../../public/assets/img/programming/express.svg";
+
+import jestIcon from "../../../public/assets/img/programming/jest.svg";
+import phpunitIcon from "../../../public/assets/img/programming/phpunit.svg";
+
+import opencartIcon from "../../../public/assets/img/programming/opencart.svg";
+import bagistoIcon from "../../../public/assets/img/programming/bagisto.svg";
+import moodleIcon from "../../../public/assets/img/programming/moodle.svg";
+
+import mysqlIcon from "../../../public/assets/img/programming/mysql.svg";
+import mariadbIcon from "../../../public/assets/img/programming/mariadb.svg";
+import postgresqlIcon from "../../../public/assets/img/programming/postgresql.svg";
+import redisIcon from "../../../public/assets/img/programming/redis.svg";
+
+import dockerIcon from "../../../public/assets/img/programming/docker.svg";
+import landoIcon from "../../../public/assets/img/programming/lando.svg";
+import githubIcon from "../../../public/assets/img/programming/github.svg";
+import gitlabIcon from "../../../public/assets/img/programming/gitlab.svg";
+import herokuIcon from "../../../public/assets/img/programming/heroku.svg";
+import vercelIcon from "../../../public/assets/img/programming/vercel.svg";
+import netlifyIcon from "../../../public/assets/img/programming/netlify.svg";
+
+import ec2Icon from "../../../public/assets/img/programming/ec2.svg";
+import ebsIcon from "../../../public/assets/img/programming/ebs.svg";
+import lightsailIcon from "../../../public/assets/img/programming/lightsail.svg";
+import rdsIcon from "../../../public/assets/img/programming/rds.svg";
+import sqsIcon from "../../../public/assets/img/programming/sqs.svg";
+import sesIcon from "../../../public/assets/img/programming/ses.svg";
+import elastictranscoderIcon from "../../../public/assets/img/programming/elastic_transcoder.svg";
+import elasticcacheIcon from "../../../public/assets/img/programming/elasticcache.svg";
+import s3Icon from "../../../public/assets/img/programming/s3.svg";
+import cloudfrontIcon from "../../../public/assets/img/programming/cloudfront.svg";
+import route53Icon from "../../../public/assets/img/programming/route53.svg";
+import iamIcon from "../../../public/assets/img/programming/iam.svg";
+import cloudwatchIcon from "../../../public/assets/img/programming/cloudwatch.svg";
+import snsIcon from "../../../public/assets/img/programming/sns.svg";
+import kmsIcon from "../../../public/assets/img/programming/kms.svg";
+
+import npmIcon from "../../../public/assets/img/programming/npm.svg";
+import yarnIcon from "../../../public/assets/img/programming/yarn.svg";
+import composerIcon from "../../../public/assets/img/programming/composer.svg";
+
+import windowsIcon from "../../../public/assets/img/programming/windows.svg";
+import macosIcon from "../../../public/assets/img/programming/macos.svg";
+import ubuntuIcon from "../../../public/assets/img/programming/ubuntu.svg";
+import fedoraIcon from "../../../public/assets/img/programming/fedora.svg";
+import centosIcon from "../../../public/assets/img/programming/centos.svg";
 
 const index = () => {
   const skillSets = [
     {
       'title': 'Web Design',
       'skills': [
-        {'icon': 'html.svg', 'name': 'HTML'},
-        {'icon': 'markdown.svg', 'name': 'Markdown'},
-        {'icon': 'css.svg', 'name': 'CSS'},
-        {'icon': 'bootstrap.svg', 'name': 'Bootstrap'},
-        {'icon': 'element-ui.svg', 'name': 'Element UI'},
+        {'icon': htmlIcon, 'name': 'HTML'},
+        {'icon': markdownIcon, 'name': 'Markdown'},
+        {'icon': cssIcon, 'name': 'CSS'},
+        {'icon': bootstrapIcon, 'name': 'Bootstrap'},
+        {'icon': elementuiIcon, 'name': 'Element UI'},
       ]
     },
     {
       'title': 'Front-End',
       'skills': [
-        {'icon': 'javaScript.svg', 'name': 'JavaScript'},
-        {'icon': 'jquery.svg', 'name': 'jQuery'},
-        {'icon': 'vue.svg', 'name': 'Vue.js'},
-        {'icon': 'nuxt.svg', 'name': 'Nuxt.js'},
-        {'icon': 'react.svg', 'name': 'React.js'},
-        {'icon': 'next.svg', 'name': 'Next.js'},
+        {'icon': javaScriptIcon, 'name': 'JavaScript'},
+        {'icon': jqueryIcon, 'name': 'jQuery'},
+        {'icon': vueIcon, 'name': 'Vue.js'},
+        {'icon': nuxtIcon, 'name': 'Nuxt.js'},
+        {'icon': reactIcon, 'name': 'React.js'},
+        {'icon': nextIcon, 'name': 'Next.js'},
       ]
     },
     {
       'title': 'Backend',
       'skills': [
-        {'icon': 'php.svg', 'name': 'PHP'},
-        {'icon': 'laravel.svg', 'name': 'Laravel'},
-        {'icon': 'node.svg', 'name': 'Node.js'},
-        {'icon': 'express.svg', 'name': 'Express.js'},
+        {'icon': phpIcon, 'name': 'PHP'},
+        {'icon': laravelIcon, 'name': 'Laravel'},
+        {'icon': nodeIcon, 'name': 'Node.js'},
+        {'icon': expressIcon, 'name': 'Express.js'},
       ]
     },
     {
       'title': 'Testing',
       'skills': [
-        {'icon': 'jest.svg', 'name': 'Jest'},
-        {'icon': 'phpunit.svg', 'name': 'PHPUnit'},
+        {'icon': jestIcon, 'name': 'Jest'},
+        {'icon': phpunitIcon, 'name': 'PHPUnit'},
       ]
     },
     {
       'title': 'CMS',
       'skills': [
-        {'icon': 'opencart.svg', 'name': 'OpenCart'},
-        {'icon': 'bagisto.svg', 'name': 'Bagisto'},
-        {'icon': 'moodle.svg', 'name': 'Moodle'},
+        {'icon': opencartIcon, 'name': 'OpenCart'},
+        {'icon': bagistoIcon, 'name': 'Bagisto'},
+        {'icon': moodleIcon, 'name': 'Moodle'},
       ]
     },
     {
       'title': 'DBMS',
       'skills': [
-        {'icon': 'mysql.svg', 'name': 'MySQL'},
-        {'icon': 'mariadb.svg', 'name': 'MariaDB'},
-        {'icon': 'postgresql.svg', 'name': 'PostgreSQL'},
-        {'icon': 'redis.svg', 'name': 'Redis'},
+        {'icon': mysqlIcon, 'name': 'MySQL'},
+        {'icon': mariadbIcon, 'name': 'MariaDB'},
+        {'icon': postgresqlIcon, 'name': 'PostgreSQL'},
+        {'icon': redisIcon, 'name': 'Redis'},
       ]
     },
     {
       'title': 'DevOps',
       'skills': [
-        {'icon': 'docker.svg', 'name': 'Docker'},
-        {'icon': 'Lando.svg', 'name': 'Lando'},
-        {'icon': 'github.svg', 'name': 'GitHub Actions'},
-        {'icon': 'gitlab.svg', 'name': 'GitLab CI/CD'},
-        {'icon': 'heroku.svg', 'name': 'Heroku'},
-        {'icon': 'vercel.svg', 'name': 'Vercel'},
-        {'icon': 'netlify.svg', 'name': 'Netlify'},
+        {'icon': dockerIcon, 'name': 'Docker'},
+        {'icon': landoIcon, 'name': 'Lando'},
+        {'icon': githubIcon, 'name': 'GitHub Actions'},
+        {'icon': gitlabIcon, 'name': 'GitLab CI/CD'},
+        {'icon': herokuIcon, 'name': 'Heroku'},
+        {'icon': vercelIcon, 'name': 'Vercel'},
+        {'icon': netlifyIcon, 'name': 'Netlify'},
       ]
     },
     {
       'title': 'AWS',
       'skills': [
-        {'icon': 'ec2.svg', 'name': 'EC2'},
-        {'icon': 'ebs.svg', 'name': 'EBS'},
-        {'icon': 'lightsail.svg', 'name': 'Lightsail'},
-        {'icon': 'rds.svg', 'name': 'RDS'},
-        {'icon': 'sqs.svg', 'name': 'SQS'},
-        {'icon': 'ses.svg', 'name': 'SES'},
-        {'icon': 'elastic_transcoder.svg', 'name': 'Elastic Transcoder'},
-        {'icon': 'elasticcache.svg', 'name': 'ElastiCache'},
-        {'icon': 's3.svg', 'name': 'S3'},
-        {'icon': 'cloudfront.svg', 'name': 'CloudFront'},
-        {'icon': 'route53.svg', 'name': 'Route53'},
-        {'icon': 'iam.svg', 'name': 'IAM'},
-        {'icon': 'cloudwatch.svg', 'name': 'CloudWatch'},
-        {'icon': 'sns.svg', 'name': 'SNS'},
-        {'icon': 'kms.svg', 'name': 'KMS'},
+        {'icon': ec2Icon, 'name': 'EC2'},
+        {'icon': ebsIcon, 'name': 'EBS'},
+        {'icon': lightsailIcon, 'name': 'Lightsail'},
+        {'icon': rdsIcon, 'name': 'RDS'},
+        {'icon': sqsIcon, 'name': 'SQS'},
+        {'icon': sesIcon, 'name': 'SES'},
+        {'icon': elastictranscoderIcon, 'name': 'Elastic Transcoder'},
+        {'icon': elasticcacheIcon, 'name': 'ElastiCache'},
+        {'icon': s3Icon, 'name': 'S3'},
+        {'icon': cloudfrontIcon, 'name': 'CloudFront'},
+        {'icon': route53Icon, 'name': 'Route53'},
+        {'icon': iamIcon, 'name': 'IAM'},
+        {'icon': cloudwatchIcon, 'name': 'CloudWatch'},
+        {'icon': snsIcon, 'name': 'SNS'},
+        {'icon': kmsIcon, 'name': 'KMS'},
       ]
     },
     {
       'title': 'Package Manager',
       'skills': [
-        {'icon': 'npm.svg', 'name': 'NPM'},
-        {'icon': 'yarn.svg', 'name': 'Yarn'},
-        {'icon': 'composer.svg', 'name': 'Composer'},
+        {'icon': npmIcon, 'name': 'NPM'},
+        {'icon': yarnIcon, 'name': 'Yarn'},
+        {'icon': composerIcon, 'name': 'Composer'},
       ]
     },
     {
       'title': 'OS',
       'skills': [
-        {'icon': 'windows.svg', 'name': 'Windows'},
-        {'icon': 'macos.svg', 'name': 'macOS'},
-        {'icon': 'ubuntu.svg', 'name': 'Ubuntu'},
-        {'icon': 'fedora.svg', 'name': 'Fedora'},
-        {'icon': 'centos.svg', 'name': 'CentOS'},
+        {'icon': windowsIcon, 'name': 'Windows'},
+        {'icon': macosIcon, 'name': 'macOS'},
+        {'icon': ubuntuIcon, 'name': 'Ubuntu'},
+        {'icon': fedoraIcon, 'name': 'Fedora'},
+        {'icon': centosIcon, 'name': 'CentOS'},
       ]
     },
   ]
