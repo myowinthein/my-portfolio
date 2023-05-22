@@ -14,7 +14,7 @@ const PortfolioData = [
     'projects': [
       {
         'name': 'StudyMe', // s
-        'description': '', // s
+        'description': 'StudyMe works by facilitating matches and meaningful conversations between prospective students and universities. The platform is student-centred, built so that students can be discovered by the best universities in the world.', // s
         'role': '', // m
         'challenges': '', // m
         'technologies': '', // s (use config?)
@@ -26,5 +26,7 @@ const PortfolioData = [
     ]
   }
 ]
+
+
 
 export default PortfolioData;
