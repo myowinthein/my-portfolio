@@ -1,5 +1,5 @@
 import React from "react";
-import { totalExperiences, totalProjects, totalAPIs, totalPages } from '../../config';
+import { totalExperiences, totalProjects, totalAPIs, totalPages } from "../../config";
 
 const achievementsContent = [
   { title: totalExperiences, subTitle1: "years of", subTitle2: "experience" },

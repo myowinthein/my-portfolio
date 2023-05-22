@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 // personal information
 export const name = 'Martin';
@@ -22,6 +22,12 @@ export const instagramURL = 'https://www.instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
+export const siteURL = process.env.SITE_URL
+
+// meta
+export const metaTitle = `"${name} - ${position} from ${nationality}"`
+export const metaDescription = `Over ${totalExperiences} Years of Expertise in Software Engineering | Skilled in PHP, JavaScript, and Cloud Platforms.`
+export const metaImage = 'https://drive.google.com/uc?export=view&id=1eAriXH-Qr9u6RMV0FNEnEhaXjXa8m0mY'
 
 // toast
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'

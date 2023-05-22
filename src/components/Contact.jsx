@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { toastOptions } from '../config';
+import { toastOptions } from "../config";
 
 const Contact = () => {
   const form = useRef();
@@ -81,7 +81,7 @@ const Contact = () => {
           <div className="col-12">
             <button type="submit" className="button" disabled={isLoading}>
               <span className="button-text">
-                {isLoading ? 'Sending...' : 'Send Message'}
+                {isLoading ? "Sending..." : "Send Message"}
               </span>
               <span className="button-icon fa fa-paper-plane"></span>
             </button>
