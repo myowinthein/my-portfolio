@@ -12,8 +12,8 @@ export const position = 'Full Stack Developer';
 export const address = 'Bangkok, Thailand';
 export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
 export const totalProjects = 23;
-export const totalAPIs = 690;
-export const totalPages = 230;
+export const totalAPIs = 600;
+export const totalPages = 200;
 
 // links
 export const resumeURL = 'https://drive.google.com/uc?export=download&id=1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG';
