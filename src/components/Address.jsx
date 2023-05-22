@@ -1,5 +1,5 @@
 import React from "react";
-import { email, address } from '../config';
+import { email, address } from "../config";
 
 const Address = () => {
   return (

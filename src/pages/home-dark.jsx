@@ -10,7 +10,7 @@ import Social from "../components/Social";
 import Contact from "../components/Contact";
 import Blog from "../components/blog/Blog";
 import SwitchDark from "../components/switch/SwitchDark";
-import { name } from '../config';
+import { name } from "../config";
 
 const menuItem = [
   { icon: "fa-home", menuName: "Home" },

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { parseISO, format } from 'date-fns';
+import { parseISO, format } from "date-fns";
 import { toast } from "react-toastify";
-import { rssAPIKey, toastOptions } from '../config';
+import { rssAPIKey, toastOptions } from "../config";
 
 const AllBlogData = () => {
   const [blogsData, setBlogsData] = useState([])

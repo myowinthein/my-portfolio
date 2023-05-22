@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
-import { mediumURL } from '../../config';
+import { mediumURL } from "../../config";
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
 

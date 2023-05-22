@@ -1,5 +1,5 @@
 import React from "react";
-import { firstName, lastName, address, nationality, careerSince, languages } from '../../config';
+import { firstName, lastName, address, nationality, careerSince, languages } from "../../config";
 
 const personalInfoContent = [
   { meta: "first name", metaInfo: firstName, hasColor: "" },

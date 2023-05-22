@@ -4,7 +4,7 @@ import Education from "./Education";
 import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
-import { resumeURL } from '../../config';
+import { resumeURL } from "../../config";
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import Image from "next/image";
 

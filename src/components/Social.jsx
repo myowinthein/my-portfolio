@@ -1,5 +1,5 @@
 import React from "react";
-import { facebookURL, instagramURL, githubURL, mediumURL, linkedinURL } from '../config';
+import { facebookURL, instagramURL, githubURL, mediumURL, linkedinURL } from "../config";
 
 const SocialShare = [
   {
