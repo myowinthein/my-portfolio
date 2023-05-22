@@ -44,7 +44,6 @@ const Blog = () => {
                       return `${src}`
                     }}
                     src={item?.img}
-                    className=""
                     width={500}
                     height={500}
                     alt="item.title"

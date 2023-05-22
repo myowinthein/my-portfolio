@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import PortfolioData from "./portfolioData";
 import Image from "next/image";
-import ModalMain from "./modal/ModalMain";
+import PortfolioModal from "./PortfolioModal";
 
 const Portfolio = () => {
   const [getModal, setGetModal] = useState(false);
-  const [modalId, setModalId] = useState(1);
+  const [modalCategory, setModalCategory] = useState(1);
+  const [modalProject, setModalProject] = useState(1);
 
-  const handleModal = (id) => {
+  const handleModal = (category, project) => {
     setGetModal(true);
-    setModalId(id);
+    setModalCategory(category);
+    setModalProject(project);
   };
 
   return (
@@ -18,20 +20,20 @@ const Portfolio = () => {
       <div className="portfolio-main">
         <Tabs>
           <TabList className="portfolio-tab-list" data-aos="fade-up">
-            {PortfolioData.map((portfoli, i) => (
-              <Tab key={i}>{portfoli.title}</Tab>
+            {PortfolioData.map((portfolio, i) => (
+              <Tab key={i}>{portfolio.title}</Tab>
             ))}
           </TabList>
 
           <div className="container">
-            {PortfolioData.map((portfoli, i) => (
+            {PortfolioData.map((portfolio, i) => (
               <TabPanel key={i}>
                 <div className="tab-container">
-                  {portfoli.projects.map((project, j) => (
+                  {portfolio.projects.map((project, j) => (
                     <div key={j} data-aos="fade-right">
-                      <div className="tab-content" onClick={() => handleModal(j)}>
-                        <Image src={project.thumbnail} alt="portfolio project demo" />
-                        <h3><span className="conent-title">{project.title}</span></h3>
+                      <div className="tab-content" onClick={() => handleModal(portfolio.title, project)}>
+                        <Image src={project.thumbnail} alt="portfolio project" />
+                        <h3><span className="conent-title">{project.name}</span></h3>
                       </div>
                     </div>
                   ))}
@@ -41,7 +43,7 @@ const Portfolio = () => {
           </div>
         </Tabs>
       </div>
-      {/* {getModal && <ModalMain modalId={modalId} setGetModal={setGetModal} />}{" "} */}
+      {getModal && <PortfolioModal modalCategory={modalCategory} modalProject={modalProject} setGetModal={setGetModal} />}{" "}
     </>
   );
 };

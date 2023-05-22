@@ -1,32 +1,37 @@
-import Image1 from "../../../public/assets/img/portfolio/project-1.jpg";
-import Image2 from "../../../public/assets/img/portfolio/project-2.jpg";
-import Image3 from "../../../public/assets/img/portfolio/project-3.jpg";
-import Image4 from "../../../public/assets/img/portfolio/project-4.jpg";
-import Image5 from "../../../public/assets/img/portfolio/project-5.jpg";
-import Image6 from "../../../public/assets/img/portfolio/project-6.jpg";
-import Image7 from "../../../public/assets/img/portfolio/project-7.jpg";
-import Image8 from "../../../public/assets/img/portfolio/project-8.jpg";
-import Image9 from "../../../public/assets/img/portfolio/project-9.jpg";
+import studymeImg1 from "../../../public/assets/portfolio/studyme/1.png";
+import studymeImg2 from "../../../public/assets/portfolio/studyme/2.png";
+import studymeImg3 from "../../../public/assets/portfolio/studyme/3.png";
+import studymeImg4 from "../../../public/assets/portfolio/studyme/4.png";
 
 const PortfolioData = [
   {
     'title': 'Education',
     'projects': [
       {
-        'name': 'StudyMe', // s
-        'description': 'StudyMe works by facilitating matches and meaningful conversations between prospective students and universities. The platform is student-centred, built so that students can be discovered by the best universities in the world.', // s
-        'role': '', // m
-        'challenges': '', // m
-        'technologies': '', // s (use config?)
-        'thumbnail': '', // s
-        'screenshots': '', // gallery
-        'link': '', // array (platform, url)
-        'award': '', // s
+        'name': 'StudyMe',
+        'description': `
+          StudyMe works by facilitating matches and meaningful conversations between prospective students and
+          universities. The platform is student-centred, built so that students can be discovered by the best
+          universities in the world. Over 60,000 students from 204 countries are using StudyMe at the moment.
+        `,
+        'languages': 'Laravel, PostgreSQL, React, Docker, AWS',
+        'thumbnail': studymeImg1,
+        'media': [
+          {'type': 'video', 'url': '/assets/portfolio/studyme/Be Discovered on StudyMe.mp4'},
+          {'type': 'image', 'url': studymeImg1},
+          {'type': 'image', 'url': studymeImg2},
+          {'type': 'image', 'url': studymeImg3},
+          {'type': 'image', 'url': studymeImg4},
+        ],
+        'platforms': {
+          'web': 'https://www.studyme.com',
+          'android': 'https://play.google.com/store/apps/details?id=com.studyme',
+          'ios': 'https://apps.apple.com/us/app/studyme/id1556187658'
+        },
+        'award': ''
       }
     ]
   }
 ]
-
-
 
 export default PortfolioData;
