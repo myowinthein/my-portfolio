@@ -15,7 +15,7 @@ import cssIcon from "../../../public/assets/img/programming/css.svg";
 import bootstrapIcon from "../../../public/assets/img/programming/bootstrap.svg";
 import elementuiIcon from "../../../public/assets/img/programming/element-ui.svg";
 
-import javaScriptIcon from "../../../public/assets/img/programming/javaScript.svg";
+import javaScriptIcon from "../../../public/assets/img/programming/javascript.svg";
 import jqueryIcon from "../../../public/assets/img/programming/jquery.svg";
 import vueIcon from "../../../public/assets/img/programming/vue.svg";
 import nuxtIcon from "../../../public/assets/img/programming/nuxt.svg";
