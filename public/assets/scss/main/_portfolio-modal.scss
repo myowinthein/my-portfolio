@@ -48,7 +48,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #252525;
-        padding: 2rem;
+        padding: 1rem 2rem;
         border-radius: 1rem;
         z-index: 5;
         @media (max-width: 576px) {
@@ -69,7 +69,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         }
     }
     .modal__details {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         .text {
             color: #fff;
         }

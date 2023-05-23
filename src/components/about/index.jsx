@@ -86,7 +86,7 @@ const index = () => {
       ]
     },
     {
-      'title': 'Front-End',
+      'title': 'Frontend',
       'skills': [
         {'icon': javaScriptIcon, 'name': 'JavaScript'},
         {'icon': jqueryIcon, 'name': 'jQuery'},

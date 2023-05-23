@@ -15,7 +15,7 @@ const heroContent = {
   heroDescriptions: [
     `As a passionate problem solver and lifelong learner with ${totalExperiences}+
     years of experience, I have a natural ability to code across various platforms, including
-    front-end, back-end, and CMS development, in a wide range of programming languages.`,
+    frontend, back-end, and CMS development, in a wide range of programming languages.`,
     `So whatever your development needs are, I can provide you with the expertise and skills you
     need to get the job done right. I take pride in creating software that makes people's lives
     easier and brings a smile to their faces.`

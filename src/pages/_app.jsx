@@ -1,7 +1,6 @@
 import Aos from 'aos';
 import { useEffect } from 'react';
 import '../styles/index.scss';
-import "react-toastify/dist/ReactToastify.css";
 import dynamic from 'next/dynamic'
 import ContextProvider from '../Context/ContextProvider';
 import { Analytics } from '@vercel/analytics/react';

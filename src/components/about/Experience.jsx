@@ -17,7 +17,7 @@ const experienceContent = [
     companyName: "Nexlabs Digital Agency (Yangon, Myanmar)",
     positions: [
       {"position": "Head of Engineering", "year": "Dec 2020 – Aug 2021"},
-      {"position": "Lead Front-end and CMS Developer", "year": "Feb 2019 – Dec 2020"},
+      {"position": "Lead Frontend and CMS Developer", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
     ],
