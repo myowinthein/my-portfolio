@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import React from 'react';
 import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/custom-animations/fall-animation.css';
 
 // internal
 import CloseImg from "../../../public/assets/img/cancel.svg";
