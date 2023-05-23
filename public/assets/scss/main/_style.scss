@@ -74,7 +74,7 @@ body {
 img {
   max-width: 100%;
 }
-.add-description {
+.modal__description {
     font-weight: normal;
     font-size: 16px;
     margin: 1em auto;
@@ -2132,6 +2132,9 @@ button:focus {
 }
 .green {
   color: #5be85b;
+}
+.red {
+  color: #FF0000;
 }
 
 .light .green {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
-import cancelImg from "../../../public/assets/img/cancel.svg";
+// import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
@@ -72,12 +72,12 @@ const Blog = () => {
               closeTimeoutMS={500}
             >
               <div>
-                <button
+                {/* <button
                   className="close-modal"
                   onClick={() => setIsOpen(false)}
                 >
                   <Image src={cancelImg} alt="close icon" />
-                </button>
+                </button> */}
                 {/* End close icon */}
 
                 <div className="box_inner blog-post">
