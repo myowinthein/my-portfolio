@@ -7,7 +7,7 @@ import Skills from "./Skills";
 import Image from "next/image";
 
 import { resumeURL } from "../../config";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
+import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 
 import htmlIcon from "../../../public/assets/img/programming/html.svg";
 import markdownIcon from "../../../public/assets/img/programming/markdown.svg";

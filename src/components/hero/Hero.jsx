@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { name, position, totalExperiences, resumeURL } from "../../config";
-import heroImage from "../../../public/assets/img/hero/dark.jpg";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpg";
+import heroImage from "../../../public/assets/img/hero/dark.jpeg";
+import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import AboutMain from "../about";
 import Image from "next/image";
