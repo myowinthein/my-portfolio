@@ -430,7 +430,7 @@ const PortfolioData = [
     ]
   },
   {
-    'title': 'Business App',
+    'title': 'Business Apps',
     'projects': [
       {
         'name': 'First National Insurance',
