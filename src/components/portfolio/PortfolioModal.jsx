@@ -6,11 +6,11 @@ import AwesomeSlider from 'react-awesome-slider';
 // internal
 import CloseImg from "../../../public/assets/img/cancel.svg";
 
+const settings = {
+  animation: "fallAnimation",
+}
+
 const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
-  let settings = {
-    dots: true,
-    fade: true,
-  };
   return (
     <div className="modal_portfolio">
       <div
@@ -69,7 +69,7 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
             </div>
 
             <figure className="modal__img">
-              <AwesomeSlider animation="fallAnimation">
+              <AwesomeSlider {...settings}>
                 {modalProject.media.map((media, i) => (
                   <div key={i}>
                     {media.type == 'image' ? (
