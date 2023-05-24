@@ -52,7 +52,7 @@ const Hero = () => {
               <p className="open-sans-font" key={i}>{description}</p>
             ))}
             {/* <button className="button" onClick={toggleModalOne}> */}
-            <a className="button" href={resumeURL} download>
+            <a className="button" href={resumeURL} target="_blank" download>
               <span className="button-text">{heroContent.heroBtn}</span>
               <span className="button-icon fa fa-download"></span>
             </a>

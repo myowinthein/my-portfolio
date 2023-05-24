@@ -40,7 +40,7 @@
             left: -14px;
             top: -14px;
         }
-        i.fa-moon-o {
+        i.fa-moon {
             left: -12px;
         }
     }
@@ -55,7 +55,7 @@
         color: #666;
     }
     &.active {
-        background-color: #eee;
+        background-color: #eee; 
         .light-text {
             visibility: hidden;
             opacity: 0;
