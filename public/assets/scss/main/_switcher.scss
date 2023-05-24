@@ -64,6 +64,9 @@
             visibility: visible;
             opacity: 1;
         }
+        &:hover {
+            background-color: #dbdbdb;
+        }
     }
     .dark-text {
         visibility: hidden;

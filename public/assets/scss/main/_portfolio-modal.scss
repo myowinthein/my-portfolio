@@ -13,6 +13,10 @@
     height: 2rem;
     width: 2rem;
 }
+.preview-link {
+    color: var(--main-primary-color);
+    text-decoration: underline;
+}
 $laptop-land: 75em; //1200px / 16px = 75em
 $laptop-port: 64em; //1024px / 16px = 64em
 $tab-land: 62em; //992px / 16px = 62em
@@ -61,7 +65,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
             padding: 10px 0 20px;
             font-weight: 700;
             text-align: center;
-            font-size: 33px;
+            font-size: 31px;
             margin: 0;
             @media (max-width: 576px) {
                 font-size: 22px;

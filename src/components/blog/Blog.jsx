@@ -24,8 +24,8 @@ const Blog = () => {
           rel="noopener noreferrer nofollow"
           href={mediumURL}
         >
-          Medium
-        </a>.
+          Medium.
+        </a>
       </h4>
       <div className="row" id="modal">
         {blogsData.map((item) => (
