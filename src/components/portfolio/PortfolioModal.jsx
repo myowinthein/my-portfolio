@@ -22,14 +22,14 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
             <h2 className="heading mb-2">{modalProject.name}</h2>
             <div className="modal__details">
               <div className="row open-sans-font">
-                <div className="col-4 mb-2">
+                <div className="col-12 col-sm-6 mb-2">
                   <i class="fa-solid fa-building pr-2"></i>
                   Industry:{" "}
                   <span className="ft-wt-600 uppercase">
                     {modalCategory}
                   </span>
                 </div>
-                <div className="col-5 mb-2">
+                <div className="col-12 col-sm-6 mb-2">
                   <i className="fa fa-external-link pr-2"></i>
                   Preview :{" "}
                   {modalProject.preview.length ? (
@@ -49,23 +49,23 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
                     ))) : 'N/A'
                   }
                 </div>
-                <div className="col-3 mb-2">
-                  {modalProject.status == 1 ?
-                    <i class="fa-solid fa-circle-check pr-2"></i> :
-                    <i class="fa-solid fa-circle-xmark pr-2"></i>
-                  }
-                  Status:{" "}
-                  <span className="ft-wt-600 uppercase">
-                    {modalProject.status == 1 ? (
-                      <span class="green">Live</span>
-                    ) : (modalProject.status == 2 ? (
-                      <span class="red">Retired</span>
-                    ) :
-                      <span class="red">Cancelled</span>
-                    )}
-                  </span>
-                </div>
               </div>
+              {/* <div className="col-12 col-sm-6 mb-2">
+                {modalProject.status == 1 ?
+                  <i class="fa-solid fa-circle-check pr-2"></i> :
+                  <i class="fa-solid fa-circle-xmark pr-2"></i>
+                }
+                Status:{" "}
+                <span className="ft-wt-600 uppercase">
+                  {modalProject.status == 1 ? (
+                    <span class="green">Live</span>
+                  ) : (modalProject.status == 2 ? (
+                    <span class="red">Retired</span>
+                  ) :
+                    <span class="red">Cancelled</span>
+                  )}
+                </span>
+              </div> */}
             </div>
 
             <figure className="modal__img">
