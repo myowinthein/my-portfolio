@@ -5,7 +5,7 @@ const achievementsContent = [
   { title: totalExperiences, subTitle1: "years of", subTitle2: "experience" },
   { title: totalProjects, subTitle1: "completed", subTitle2: "projects" },
   { title: totalAPIs, subTitle1: "APIs", subTitle2: "developed" },
-  { title: totalPages, subTitle1: "frontend pages", subTitle2: "created" },
+  { title: totalPages, subTitle1: "pages", subTitle2: "created" },
 ];
 
 const Achievements = () => {
