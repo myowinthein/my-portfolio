@@ -83,9 +83,8 @@ import voteForChangeImg5 from "../../../public/assets/portfolio/vote_for_change/
 import voteForChangeImg6 from "../../../public/assets/portfolio/vote_for_change/6.png";
 
 import data4ChangeBan from "../../../public/assets/portfolio/data4change/banner.jpeg";
-import data4ChangeImg1 from "../../../public/assets/portfolio/data4change/1.jpg";
-import data4ChangeImg2 from "../../../public/assets/portfolio/data4change/2.jpg";
-import data4ChangeImg3 from "../../../public/assets/portfolio/data4change/3.jpg";
+import data4ChangeImg1 from "../../../public/assets/portfolio/data4change/1.png";
+import data4ChangeImg2 from "../../../public/assets/portfolio/data4change/2.png";
 
 import telenorLoveGuruBan from "../../../public/assets/portfolio/telenor_love_guru/banner.jpg";
 import telenorLoveGuruImg1 from "../../../public/assets/portfolio/telenor_love_guru/1.png";
@@ -405,7 +404,6 @@ const PortfolioData = [
         'media': [
           {'type': 'image', 'url': data4ChangeImg1},
           {'type': 'image', 'url': data4ChangeImg2},
-          {'type': 'image', 'url': data4ChangeImg3},
         ],
         'preview': [],
       },
