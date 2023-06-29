@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { metaTitle, metaDescription, siteURL } from "../config";
-import metaImage from "../../public/assets/img/hero/meta.jpeg";
+import { metaTitle, metaDescription, metaImage, siteURL } from "../config";
 
 const SEO = ({ pageTitle }) => (
   <>
