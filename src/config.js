@@ -27,7 +27,6 @@ export const siteURL = process.env.SITE_URL
 // meta
 export const metaTitle = `"${name} - ${position} from ${nationality}"`
 export const metaDescription = `Over ${totalExperiences} Years of Expertise in Software Engineering | Skilled in PHP, JavaScript, and Cloud Platforms.`
-export const metaImage = ''
 
 // toast
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
