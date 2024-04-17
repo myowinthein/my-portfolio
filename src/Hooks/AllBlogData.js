@@ -15,10 +15,10 @@ const AllBlogData = () => {
           let item = ''
           for (let key in data.items) {
             item = data.items[key]
-
+            
             blogsData.push({
               id: parseInt(key),
-              img: item.thumbnail,
+              img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
               title: item.title,
               commentor: item.author,
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
