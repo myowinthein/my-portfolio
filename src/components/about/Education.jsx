@@ -2,6 +2,12 @@ import React from "react";
 
 const educationContent = [
   {
+    year: "Jul 2023 – Jul 2024",
+    degree: "Computing (Information Systems), BSc Hons",
+    institute: "Univesity of Greenwich",
+    details: `https://www.gre.ac.uk/undergraduate-courses/engsci/computing-information-systems-bsc-hons`,
+  },
+  {
     year: "Jul 2021",
     degree: "Certified Laravel Developer",
     institute: "Laravel LLC",
