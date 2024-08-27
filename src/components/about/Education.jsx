@@ -3,9 +3,9 @@ import React from "react";
 const educationContent = [
   {
     year: "Jul 2023 – Jul 2024",
-    degree: "Computing (Information Systems), BSc Hons",
+    degree: "Computing, Bachelor of Science (Honours)",
     institute: "University of Greenwich",
-    details: `https://www.gre.ac.uk/undergraduate-courses/engsci/computing-information-systems-bsc-hons`,
+    details: `https://www.gre.ac.uk/undergraduate-courses/engsci/computing-bsc-hons`,
   },
   {
     year: "Jul 2021",
