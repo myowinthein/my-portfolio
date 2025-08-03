@@ -26,6 +26,7 @@ import phpIcon from "../../../public/assets/img/programming/php.svg";
 import laravelIcon from "../../../public/assets/img/programming/laravel.svg";
 import nodeIcon from "../../../public/assets/img/programming/node.svg";
 import expressIcon from "../../../public/assets/img/programming/express.svg";
+import dotnetIcon from "../../../public/assets/img/programming/dotnet.svg";
 
 import jestIcon from "../../../public/assets/img/programming/jest.svg";
 import phpunitIcon from "../../../public/assets/img/programming/phpunit.svg";
@@ -37,6 +38,7 @@ import moodleIcon from "../../../public/assets/img/programming/moodle.svg";
 import mysqlIcon from "../../../public/assets/img/programming/mysql.svg";
 import mariadbIcon from "../../../public/assets/img/programming/mariadb.svg";
 import postgresqlIcon from "../../../public/assets/img/programming/postgresql.svg";
+import microsoftSQLServerIcon from "../../../public/assets/img/programming/microsoft-sql-server.svg";
 import redisIcon from "../../../public/assets/img/programming/redis.svg";
 
 import dockerIcon from "../../../public/assets/img/programming/docker.svg";
@@ -103,6 +105,7 @@ const index = () => {
         {'icon': laravelIcon, 'name': 'Laravel'},
         {'icon': nodeIcon, 'name': 'Node.js'},
         {'icon': expressIcon, 'name': 'Express.js'},
+        {'icon': dotnetIcon, 'name': '.NET Framework'},
       ]
     },
     {
@@ -126,6 +129,7 @@ const index = () => {
         {'icon': mysqlIcon, 'name': 'MySQL'},
         {'icon': mariadbIcon, 'name': 'MariaDB'},
         {'icon': postgresqlIcon, 'name': 'PostgreSQL'},
+        {'icon': microsoftSQLServerIcon, 'name': 'Microsoft SQL Server'},
         {'icon': redisIcon, 'name': 'Redis'},
       ]
     },

@@ -4,7 +4,7 @@ const experienceContent = [
   {
     companyName: "StudyMe (Melbourne, Australia)",
     positions: [
-      {"position": "Technical Lead", "year": "Dec 2021 – Present"},
+      {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ]
   },
   {
@@ -43,7 +43,7 @@ const Experience = () => {
           </div>
           {val.positions.map((item, j) => (
             <div key={j} className="exp-gutter">
-              <small className="text-muted d-block text-uppercase">{item.year}</small>
+              <small className="d-block text-uppercase">{item.year}</small>
               <h5 className="poppins-font text-uppercase">
                 {item.position}
               </h5>
