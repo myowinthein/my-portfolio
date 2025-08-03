@@ -24,7 +24,7 @@ const Skills = ({skillSets}) => {
                             <div className="pLogo p25">
                               <Image src={skill.icon} alt="skill icon" />
                             </div> 
-                            <small className="open-sans-font d-block text-muted text-center mt-2">
+                            <small className="open-sans-font d-block text-center mt-2">
                               {skill.name}
                             </small>
                           </div>
