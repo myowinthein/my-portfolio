@@ -10,14 +10,14 @@ import Social from "../components/Social";
 import Contact from "../components/Contact";
 import Blog from "../components/blog/Blog";
 import SwitchDark from "../components/switch/SwitchDark";
-import { name } from "../config";
+import { name, menuLabels } from "../config";
 
 const menuItem = [
-  { icon: "fa-home", menuName: "Home" },
-  { icon: "fa-user", menuName: "About" },
-  { icon: "fa-briefcase", menuName: "Portfolio" },
-  { icon: "fa-envelope-open", menuName: "Contact" },
-  { icon: "fa-comments", menuName: "Blog" },
+  { icon: "fa-home", menuName: menuLabels.home },
+  { icon: "fa-user", menuName: menuLabels.profile },
+  { icon: "fa-briefcase", menuName: menuLabels.work },
+  { icon: "fa-envelope-open", menuName: menuLabels.contact },
+  { icon: "fa-pen-nib", menuName: menuLabels.writing },
 ];
 
 const HomeDark = () => {
@@ -63,9 +63,9 @@ const HomeDark = () => {
               <div data-aos="fade-up" data-aos-duration="1200">
                 <div className="title-section text-start text-sm-center">
                   <h1>
-                    ABOUT <span>ME</span>
+                    About <span>Me</span>
                   </h1>
-                  <span className="title-bg">Resume</span>
+                  <span className="title-bg">{menuLabels.profile}</span>
                 </div>
                 {/* End title */}
                 <AboutMain />
@@ -111,12 +111,10 @@ const HomeDark = () => {
                   {/*  Left Side Starts */}
                   <div className="col-12 col-lg-4">
                     <h3 className="text-uppercase custom-title mb-0 ft-wt-600 pb-3">
-                      Say Hello!
+                      {"LET'S"} CONNECT
                     </h3>
                     <p className="open-sans-font mb-4">
-                      {"I'd"} love to hear from you, no matter what {"it's"} about!
-                      Whether you have a project in mind, some creative ideas to share, or just want to say hi, 
-                      please {"don't"} hesitate to reach out.
+                      If {"you'd"} like to discuss an opportunity, a project, or have a question, feel free to reach out. I’m always open to thoughtful conversations and new ideas.
                     </p>
                     <Address />
                     {/* End Address */}
@@ -145,9 +143,9 @@ const HomeDark = () => {
                 data-aos-duration="1200"
               >
                 <h1>
-                  my <span>blog</span>
+                  my <span>posts</span>
                 </h1>
-                <span className="title-bg">posts</span>
+                <span className="title-bg">{menuLabels.writing}</span>
               </div>
               <div
                 className="container"

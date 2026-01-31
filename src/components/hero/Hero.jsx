@@ -13,12 +13,11 @@ const heroContent = {
   heroTitleName: name,
   heroDesignation: position,
   heroDescriptions: [
-    `As a passionate problem solver and lifelong learner with ${totalExperiences}+
-    years of experience, I have a natural ability to code across various platforms, including
-    frontend, back-end, and CMS development, in a wide range of programming languages.`,
-    `So whatever your development needs are, I can provide you with the expertise and skills you
-    need to get the job done right. I take pride in creating software that makes people's lives
-    easier and brings a smile to their faces.`
+    `I’m a backend-first software engineer and technical lead with ${totalExperiences}+ years of experience building, 
+    scaling, and operating web platforms. I work primarily with PHP/Laravel, relational databases, 
+    and AWS infrastructure, focusing on system reliability, performance, and long-term maintainability.`,
+    `I enjoy working in product-focused teams where clear thinking, pragmatic engineering, and 
+    sustainable delivery matter more than hype.`
   ],
   heroBtn: "Download Resume",
 };

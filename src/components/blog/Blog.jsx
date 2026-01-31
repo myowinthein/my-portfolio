@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 // import cancelImg from "../../../public/assets/img/cancel.svg";
-import { mediumURL } from "../../config";
+import { mediumURL, menuLabels } from "../../config";
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ const Blog = () => {
   return (
     <>
       <h4 class="info-title">
-        Explore more articles on&nbsp;
+        Explore more posts on&nbsp;
         <a
           className="preview-link"
           target="_blank" 
@@ -88,20 +88,22 @@ const Blog = () => {
                       <h1>
                         Post <span>Details</span>
                       </h1>
-                      <span className="title-bg">posts</span>
+                      <span className="title-bg">{menuLabels.writing}</span>
                     </div>
                     {/* Meta Starts */}
 
                     <div className="meta open-sans-font">
-                      <span>
+                      <div>
                         <i className="fa fa-user"></i> {singleData.commentor}
-                      </span>
-                      <span className="date">
+                      </div>
+
+                      <div className="date">
                         <i className="fa fa-calendar"></i> {singleData.date}
-                      </span>
-                      <span>
+                      </div>
+
+                      <div>
                         <i className="fa fa-tags"></i> {singleData.tag}
-                      </span>
+                      </div>
                     </div>
                     {/* Meta Ends */}
                     {/* Article Content Starts */}

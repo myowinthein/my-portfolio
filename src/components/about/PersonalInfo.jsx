@@ -1,14 +1,16 @@
 import React from "react";
-import { firstName, lastName, address, nationality, careerSince, languages } from "../../config";
+import { name, firstName, lastName, address, nationality, totalExperiences, careerSince, workPreference, languages } from "../../config";
 
 const personalInfoContent = [
-  { meta: "first name", metaInfo: firstName, hasColor: "" },
-  { meta: "last name", metaInfo: lastName, hasColor: "" },
+  { meta: "Name", metaInfo: `${firstName} ${lastName} (${name})`, hasColor: "" },
+  // { meta: "first name", metaInfo: firstName, hasColor: "" },
+  // { meta: "last name", metaInfo: lastName, hasColor: "" },
   { meta: "Nationality", metaInfo: nationality, hasColor: "" },
-  { meta: "Address", metaInfo: address, hasColor: "" },
-  { meta: "Career Since", metaInfo: careerSince, hasColor: "" },
+  { meta: "Location", metaInfo: address, hasColor: "" },
+  // { meta: "Career Since", metaInfo: careerSince, hasColor: "" },
+  { meta: "Experience", metaInfo: `${totalExperiences}+ years`, hasColor: "" },
   { meta: "Languages", metaInfo: languages, hasColor: "" },
-
+  { meta: "Work Preference", metaInfo: workPreference, hasColor: "" },
 ];
 
 const PersonalInfo = () => {
