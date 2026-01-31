@@ -18,20 +18,36 @@ const Skills = ({skillSets}) => {
               <div className=""> 
                 {skillSets.map((skillSet, i) => (
                   <TabPanel key={i}>
-                    <div class="row justify-content-center">
+                    <div className="row justify-content-center">
                       {skillSet.skills.map((skill, j) => (
-                          <div className="col-6 col-md-2 mb-3 mb-sm-5" key={j}>
-                            <div className="pLogo p25">
-                              <Image src={skill.icon} alt="skill icon" />
-                            </div> 
-                            <small className="open-sans-font d-block text-center mt-2">
-                              {skill.name}
-                            </small>
+                        <div className="col-6 col-md-2 mb-3 mb-sm-5" key={j}>
+                          <div className="pLogo p25 position-relative">
+                            
+                            {/* Crown for core skills */}
+                            {skill.core && (
+                              <i
+                                className="fa-solid fa-crown position-absolute"
+                                style={{
+                                  top: '-4px',
+                                  right: '-2px',
+                                  fontSize: '10px',
+                                  color: '#f5c451',
+                                  opacity: 0.65,
+                                  pointerEvents: 'none',
+                                }}
+                              />
+                            )}
+                            <Image src={skill.icon} alt="skill icon" />
                           </div>
+                          
+                          <small className="open-sans-font d-block text-center mt-2">
+                            {skill.name}
+                          </small>
+                        </div>
                       ))}
                     </div>
-                </TabPanel>
-              ))}
+                  </TabPanel>
+                ))}
             </div>
           </div>
         </div>

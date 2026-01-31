@@ -6,7 +6,7 @@ import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 import Image from "next/image";
 
-import { resumeURL } from "../../config";
+import { resumeURL, menuLabels } from "../../config";
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 
 import htmlIcon from "../../../public/assets/img/programming/html.svg";
@@ -78,13 +78,60 @@ import centosIcon from "../../../public/assets/img/programming/centos.svg";
 const index = () => {
   const skillSets = [
     {
-      'title': 'Web Design',
-      'skills': [
-        {'icon': htmlIcon, 'name': 'HTML'},
-        {'icon': markdownIcon, 'name': 'Markdown'},
-        {'icon': cssIcon, 'name': 'CSS'},
-        {'icon': bootstrapIcon, 'name': 'Bootstrap'},
-        {'icon': elementuiIcon, 'name': 'Element UI'},
+      title: 'Backend',
+      skills: [
+        { icon: phpIcon, name: 'PHP', core: true },
+        { icon: laravelIcon, name: 'Laravel', core: true },
+        { icon: nodeIcon, name: 'Node.js' },
+        { icon: expressIcon, name: 'Express.js' },
+        // { icon: dotnetIcon, name: '.NET Framework' },
+      ]
+    },
+    {
+      title: 'DBMS',
+      skills: [
+        { icon: mysqlIcon, name: 'MySQL', core: true },
+        { icon: redisIcon, name: 'Redis' },
+        { icon: postgresqlIcon, name: 'PostgreSQL' },
+        { icon: mariadbIcon, name: 'MariaDB' },
+        { icon: microsoftSQLServerIcon, name: 'Microsoft SQL Server' },
+      ]
+    },
+    {
+      title: 'AWS',
+      skills: [
+        // Core infrastructure
+        { icon: ec2Icon, name: 'EC2', core: true },
+        { icon: rdsIcon, name: 'RDS', core: true },
+        { icon: s3Icon, name: 'S3', core: true },
+        { icon: cloudfrontIcon, name: 'CloudFront', core: true },
+        { icon: route53Icon, name: 'Route53', core: true },
+        { icon: iamIcon, name: 'IAM', core: true },
+
+        // Frequently used services
+        { icon: elasticcacheIcon, name: 'ElastiCache' },
+        { icon: sqsIcon, name: 'SQS' },
+        { icon: sesIcon, name: 'SES' },
+        { icon: cloudwatchIcon, name: 'CloudWatch' },
+
+        // Supporting / situational
+        { icon: ebsIcon, name: 'EBS' },
+        { icon: snsIcon, name: 'SNS' },
+        { icon: kmsIcon, name: 'KMS' },
+        { icon: lightsailIcon, name: 'Lightsail' },
+        // { icon: elastictranscoderIcon, name: 'Elastic Transcoder' },
+      ]
+    },
+    {
+      title: 'DevOps',
+      skills: [
+        { icon: dockerIcon, name: 'Docker' },
+        { icon: githubIcon, name: 'GitHub Actions' },
+        { icon: gitlabIcon, name: 'GitLab CI/CD' },
+        { icon: landoIcon, name: 'Lando' },
+        { icon: herokuIcon, name: 'Heroku' },
+        { icon: vercelIcon, name: 'Vercel' },
+        { icon: netlifyIcon, name: 'Netlify' },
       ]
     },
     {
@@ -99,13 +146,13 @@ const index = () => {
       ]
     },
     {
-      'title': 'Backend',
+      'title': 'Markup & UI',
       'skills': [
-        {'icon': phpIcon, 'name': 'PHP'},
-        {'icon': laravelIcon, 'name': 'Laravel'},
-        {'icon': nodeIcon, 'name': 'Node.js'},
-        {'icon': expressIcon, 'name': 'Express.js'},
-        {'icon': dotnetIcon, 'name': '.NET Framework'},
+        {'icon': htmlIcon, 'name': 'HTML'},
+        {'icon': markdownIcon, 'name': 'Markdown'},
+        {'icon': cssIcon, 'name': 'CSS'},
+        {'icon': bootstrapIcon, 'name': 'Bootstrap'},
+        {'icon': elementuiIcon, 'name': 'Element UI'},
       ]
     },
     {
@@ -121,48 +168,6 @@ const index = () => {
         {'icon': opencartIcon, 'name': 'OpenCart'},
         {'icon': bagistoIcon, 'name': 'Bagisto'},
         {'icon': moodleIcon, 'name': 'Moodle'},
-      ]
-    },
-    {
-      'title': 'DBMS',
-      'skills': [
-        {'icon': mysqlIcon, 'name': 'MySQL'},
-        {'icon': mariadbIcon, 'name': 'MariaDB'},
-        {'icon': postgresqlIcon, 'name': 'PostgreSQL'},
-        {'icon': microsoftSQLServerIcon, 'name': 'Microsoft SQL Server'},
-        {'icon': redisIcon, 'name': 'Redis'},
-      ]
-    },
-    {
-      'title': 'DevOps',
-      'skills': [
-        {'icon': dockerIcon, 'name': 'Docker'},
-        {'icon': landoIcon, 'name': 'Lando'},
-        {'icon': githubIcon, 'name': 'GitHub Actions'},
-        {'icon': gitlabIcon, 'name': 'GitLab CI/CD'},
-        {'icon': herokuIcon, 'name': 'Heroku'},
-        {'icon': vercelIcon, 'name': 'Vercel'},
-        {'icon': netlifyIcon, 'name': 'Netlify'},
-      ]
-    },
-    {
-      'title': 'AWS',
-      'skills': [
-        {'icon': ec2Icon, 'name': 'EC2'},
-        {'icon': ebsIcon, 'name': 'EBS'},
-        {'icon': lightsailIcon, 'name': 'Lightsail'},
-        {'icon': rdsIcon, 'name': 'RDS'},
-        {'icon': sqsIcon, 'name': 'SQS'},
-        {'icon': sesIcon, 'name': 'SES'},
-        {'icon': elastictranscoderIcon, 'name': 'Elastic Transcoder'},
-        {'icon': elasticcacheIcon, 'name': 'ElastiCache'},
-        {'icon': s3Icon, 'name': 'S3'},
-        {'icon': cloudfrontIcon, 'name': 'CloudFront'},
-        {'icon': route53Icon, 'name': 'Route53'},
-        {'icon': iamIcon, 'name': 'IAM'},
-        {'icon': cloudwatchIcon, 'name': 'CloudWatch'},
-        {'icon': snsIcon, 'name': 'SNS'},
-        {'icon': kmsIcon, 'name': 'KMS'},
       ]
     },
     {
@@ -194,7 +199,7 @@ const index = () => {
             <div className="row">
               <div className="col-12">
                 <h3 className="text-uppercase custom-title mb-0 ft-wt-600">
-                  personal infos
+                  personal info
                 </h3>
               </div>
               {/* End .col */}
@@ -238,7 +243,7 @@ const index = () => {
         <div className="row">
           <div className="col-12">
             <h3 className="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-start text-sm-center custom-title ft-wt-600">
-              My Skills
+              Technical Skills
             </h3>
           </div>
           <Skills skillSets={skillSets}/>

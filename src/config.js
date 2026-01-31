@@ -6,9 +6,10 @@ export const firstName = 'Myo Win';
 export const lastName = 'Thein';
 export const nationality = 'Myanmar';
 export const careerSince = 2013;
+export const workPreference = 'Remote / Hybrid';
 export const email = 'martin@myowin.dev';
 export const languages = 'English, Burmese';
-export const position = 'Full Stack Developer';
+export const position = 'Senior Full Stack Developer';
 export const address = 'Bangkok, Thailand';
 export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
 export const totalProjects = 23;
@@ -23,6 +24,15 @@ export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
 export const siteURL = process.env.SITE_URL
+
+// navigation
+export const menuLabels = {
+  home: "Home",
+  profile: "Profile",
+  work: "Work",
+  contact: "Contact",
+  writing: "Writing",
+};
 
 // meta
 export const metaTitle = `"${name} - ${position} from ${nationality}"`
