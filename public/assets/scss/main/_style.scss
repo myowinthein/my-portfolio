@@ -768,7 +768,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .about .box-stats h3:after {
-  content: "+";
+  // content: "+";
   position: absolute;
   right: -24px;
   font-size: 33px;
@@ -1229,6 +1229,47 @@ body.light .contact .custom-span-contact a {
   font-family: FontAwesome;
   content: "\f071";
   padding-right: 10px;
+}
+
+/* Reposition reCAPTCHA badge under the submit button */
+.contact .contactform .grecaptcha-badge {
+  position: static !important;   /* remove fixed positioning */
+  display: block !important;
+  margin-top: 16px;
+  margin-left: 0;
+  opacity: 0.6;
+}
+
+/* Improve appearance */
+.contact .contactform .grecaptcha-badge iframe {
+  transform: scale(0.9);
+  transform-origin: left top;
+}
+
+/* Hover clarity */
+.contact .contactform .grecaptcha-badge:hover {
+  opacity: 1;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 576px) {
+  .contact .contactform .grecaptcha-badge {
+    margin-top: 12px;
+  }
+}
+
+/* Remove reCAPTCHA injected background / shadow */
+.contact .contactform .grecaptcha-badge {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Neutralize iframe wrapper styling */
+.contact .contactform .grecaptcha-badge iframe {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 /*** Blog ***/

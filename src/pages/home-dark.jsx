@@ -10,14 +10,14 @@ import Social from "../components/Social";
 import Contact from "../components/Contact";
 import Blog from "../components/blog/Blog";
 import SwitchDark from "../components/switch/SwitchDark";
-import { name, menuLabels } from "../config";
+import { name, firstName, lastName, menuLabels } from "../config";
 
 const menuItem = [
   { icon: "fa-home", menuName: menuLabels.home },
-  { icon: "fa-user", menuName: menuLabels.profile },
   { icon: "fa-briefcase", menuName: menuLabels.work },
-  { icon: "fa-envelope-open", menuName: menuLabels.contact },
+  { icon: "fa-user", menuName: menuLabels.profile },
   { icon: "fa-pen-nib", menuName: menuLabels.writing },
+  { icon: "fa-envelope-open", menuName: menuLabels.contact },
 ];
 
 const HomeDark = () => {
@@ -26,7 +26,7 @@ const HomeDark = () => {
   }, []);
   return (
     <Wrapper>
-      <SEO pageTitle={name} />
+      <SEO pageTitle={`${firstName} ${lastName}`} />
 
       <div className="yellow">
         <SwitchDark />
@@ -58,6 +58,23 @@ const HomeDark = () => {
             </TabPanel>
             {/* Hero Content Ends */}
 
+            {/* Portfolio Content Starts */}
+            <TabPanel className="portfolio professional">
+              <div
+                className="title-section text-start text-sm-center"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                <h1>
+                  selected <span>projects</span>
+                </h1>
+                <span className="title-bg">{menuLabels.work}</span>
+              </div>
+              {/* End title */}
+              <Portfolio />
+            </TabPanel>
+            {/* Portfolio Content Ends */}
+
             {/* About Content Starts */}
             <TabPanel className="about">
               <div data-aos="fade-up" data-aos-duration="1200">
@@ -73,22 +90,31 @@ const HomeDark = () => {
             </TabPanel>
             {/* About Content Ends */}
 
-            {/* Portfolio Content Starts */}
-            <TabPanel className="portfolio professional">
+            {/* Blog Content Starts */}
+            <TabPanel className="blog">
               <div
-                className="title-section text-start text-sm-center"
+                className="title-section text-start text-sm-center "
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
                 <h1>
-                  my <span>portfolio</span>
+                  my <span>posts</span>
                 </h1>
-                <span className="title-bg">works</span>
+                <span className="title-bg">{menuLabels.writing}</span>
               </div>
-              {/* End title */}
-              <Portfolio />
+              <div
+                className="container"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+              >
+                {/*  Articles Starts  */}
+                <div className="row pb-50">
+                  <Blog />
+                </div>
+                {/* Articles Ends */}
+              </div>
             </TabPanel>
-            {/* Portfolio Content Ends */}
+            {/* Blog Content Ends */}
 
             {/* Contact Content Starts */}
             <TabPanel className="contact">
@@ -134,32 +160,6 @@ const HomeDark = () => {
               {/* End .container */}
             </TabPanel>
             {/* Contact Content Ends */}
-
-            {/* Blog Content Starts */}
-            <TabPanel className="blog">
-              <div
-                className="title-section text-start text-sm-center "
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                <h1>
-                  my <span>posts</span>
-                </h1>
-                <span className="title-bg">{menuLabels.writing}</span>
-              </div>
-              <div
-                className="container"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                {/*  Articles Starts  */}
-                <div className="row pb-50">
-                  <Blog />
-                </div>
-                {/* Articles Ends */}
-              </div>
-            </TabPanel>
-            {/* Blog Content Ends */}
           </div>
         </Tabs>
       </div>

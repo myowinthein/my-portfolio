@@ -22,16 +22,38 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
             <h2 className="heading mb-2">{modalProject.name}</h2>
             <div className="modal__details">
               <div className="row open-sans-font">
+
+                {/* Company */}
                 <div className="col-12 col-sm-6 mb-2">
-                  <i class="fa-solid fa-building pr-2"></i>
-                  Industry:{" "}
+                  <i className="fa-solid fa-building pr-2"></i>
+                  Company:{" "}
+                  <span className="ft-wt-600 uppercase">
+                    {modalProject.company}
+                  </span>
+                </div>
+
+                {/* Role */}
+                <div className="col-12 col-sm-6 mb-2">
+                  <i className="fa-solid fa-id-badge pr-2"></i>
+                  Role:{" "}
+                  <span className="ft-wt-600 uppercase">
+                    {modalProject.role}
+                  </span>
+                </div>
+
+                {/* Industry */}
+                <div className="col-12 col-sm-6 mb-2">
+                  <i className="fa-solid fa-layer-group pr-2"></i>
+                  Platform:{" "}
                   <span className="ft-wt-600 uppercase">
                     {modalCategory}
                   </span>
                 </div>
+
+                {/* Preview */}
                 <div className="col-12 col-sm-6 mb-2">
-                  <i className="fa fa-external-link pr-2"></i>
-                  Preview :{" "}
+                  <i className="fa fa-arrow-up-right-from-square pr-2"></i>
+                  Preview:{" "}
                   {modalProject.preview.length ? (
                     modalProject.preview.map((preview, i, origin) => (
                       <>
@@ -44,12 +66,14 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
                         >
                           <span>{preview.platform}</span>
                         </a>
-                        {i === origin.length - 1 ? '' : ', '}
+                        {i === origin.length - 1 ? '' : ' | '}
                       </>
                     ))) : 'N/A'
                   }
                 </div>
               </div>
+
+              {/* Status */}
               {/* <div className="col-12 col-sm-6 mb-2">
                 {modalProject.status == 1 ?
                   <i class="fa-solid fa-circle-check pr-2"></i> :
@@ -68,6 +92,7 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
               </div> */}
             </div>
 
+            {/* Screenshots */}
             <figure className="modal__img">
               <AwesomeSlider {...settings}>
                 {modalProject.media.map((media, i) => (
@@ -78,7 +103,12 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
                       </div>
                     ) : (
                       <div>
-                        <video controls>
+                        <video
+                          autoPlay
+                          loop
+                          playsInline
+                          controls={false}
+                        >
                           <source src={media.url} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
@@ -89,7 +119,12 @@ const PortfolioModal = ({modalCategory, modalProject, setGetModal}) => {
               </AwesomeSlider>
             </figure>
 
-            <p class="modal__description">{modalProject.description}</p>
+            {/* Description */}
+            <div className="modal__description">
+              {modalProject.description.map((text, i) => (
+                <p key={i}>{text}</p>
+              ))}
+            </div>
 
             {/* <button
               className="close-modal"

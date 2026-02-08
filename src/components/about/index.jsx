@@ -71,9 +71,7 @@ import composerIcon from "../../../public/assets/img/programming/composer.svg";
 
 import windowsIcon from "../../../public/assets/img/programming/windows.svg";
 import macosIcon from "../../../public/assets/img/programming/macos.svg";
-import ubuntuIcon from "../../../public/assets/img/programming/ubuntu.svg";
-import fedoraIcon from "../../../public/assets/img/programming/fedora.svg";
-import centosIcon from "../../../public/assets/img/programming/centos.svg";
+import linuxIcon from "../../../public/assets/img/programming/linux.svg";
 
 const index = () => {
   const skillSets = [
@@ -126,9 +124,9 @@ const index = () => {
       title: 'DevOps',
       skills: [
         { icon: dockerIcon, name: 'Docker' },
+        { icon: landoIcon, name: 'Lando' },
         { icon: githubIcon, name: 'GitHub Actions' },
         { icon: gitlabIcon, name: 'GitLab CI/CD' },
-        { icon: landoIcon, name: 'Lando' },
         { icon: herokuIcon, name: 'Heroku' },
         { icon: vercelIcon, name: 'Vercel' },
         { icon: netlifyIcon, name: 'Netlify' },
@@ -158,8 +156,8 @@ const index = () => {
     {
       'title': 'Testing',
       'skills': [
-        {'icon': jestIcon, 'name': 'Jest'},
         {'icon': phpunitIcon, 'name': 'PHPUnit'},
+        {'icon': jestIcon, 'name': 'Jest'},
       ]
     },
     {
@@ -173,19 +171,17 @@ const index = () => {
     {
       'title': 'Package Manager',
       'skills': [
-        {'icon': npmIcon, 'name': 'NPM'},
-        {'icon': yarnIcon, 'name': 'Yarn'},
         {'icon': composerIcon, 'name': 'Composer'},
+        {'icon': npmIcon, 'name': 'npm'},
+        {'icon': yarnIcon, 'name': 'Yarn'},
       ]
     },
     {
       'title': 'OS',
       'skills': [
-        {'icon': windowsIcon, 'name': 'Windows'},
+        {'icon': linuxIcon, 'name': 'Linux'},
         {'icon': macosIcon, 'name': 'macOS'},
-        {'icon': ubuntuIcon, 'name': 'Ubuntu'},
-        {'icon': fedoraIcon, 'name': 'Fedora'},
-        {'icon': centosIcon, 'name': 'CentOS'},
+        {'icon': windowsIcon, 'name': 'Windows'},
       ]
     },
   ]

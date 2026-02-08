@@ -6,47 +6,33 @@ const experienceContent = [
     positions: [
       {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ],
-    details: `
-      StudyMe is a student-centred education platform connecting prospective students with 
-      universities through meaningful discovery and conversations. As Technical Lead, I owned a legacy 
-      Laravel backend and AWS infrastructure, improving code quality, performance, and security while 
-      continuing to ship new features. I led backend, infrastructure, and integration decisions, 
-      stabilized CI/CD and cloud operations, and supported platform continuity during acquisition, 
-      later rebuilding the Wellspring web portal with a modern, maintainable architecture.
-    `,
+    details: [
+      `StudyMe connects students with universities through guided discovery and conversations, and was later acquired by Wellspring International Education, which provides global enrollment services. I worked across both platforms on student-facing and internal recruitment systems.`,
+      `I owned and evolved a legacy Laravel backend, improving performance, security, and reliability while delivering new features. My work included query optimisation, caching, reporting, AWS and CI/CD hardening, leading backend and integration decisions, and rebuilding the Wellspring portal while maintaining production continuity.`
+    ],
   },
   {
     companyName: "Snappymob (Kuala Lumpur, Malaysia - Remote)",
     positions: [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
-    details: `
-      Snappymob is a boutique digital consultancy delivering complex, business-critical systems. 
-      As a Full Stack Developer, I contributed to the backend development of Tavis, an online tuition 
-      platform built on Moodle, focusing on CMS customization, backend integrations, and system stability.
-      I took primary responsibility for payment and authentication integrations 
-      (including iPay88 and third-party login providers) and worked closely with the CTO on backend 
-      architecture and database design decisions.
-    `
+    details: [
+      `Snappymob is a boutique digital consultancy delivering scalable digital solutions across multiple industries.`,
+      `I contributed to the backend development of Tavis, a Moodle-based online tuition platform, focusing on CMS customisation and integrations. I led payment and authentication integrations (iPay88, Google, Apple, Facebook), collaborated with the CTO on architecture decisions, and participated in backend reviews to ensure stability, scalability, and maintainability during rapid development.`
+    ]
   },
   {
     companyName: "Nexlabs (Yangon, Myanmar)",
     positions: [
-      {"position": "Head of Engineering", "year": "Dec 2020 – Aug 2021"},
+      {"position": "Head of Engineering", "year": "Dec 2020 – Feb 2021"},
       {"position": "Lead Frontend and CMS Developer", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
     ],
-    details: `
-      Nexlabs is a digital agency delivering custom products across e-commerce, education, insurance, 
-      and healthcare. I joined as a Senior PHP Developer and progressed through senior and lead roles to 
-      Head of Engineering, remaining hands-on throughout. I worked across backend, frontend, and CMS-based
-      systems, translating business requirements into practical technical solutions and making day-to-day
-      architecture and integration decisions in collaboration with the CTO. Alongside development work, 
-      I supported and guided other engineers through code reviews, internal training, and technical 
-      direction, and took full ownership of Fastforward, an early-stage e-commerce vendor platform built 
-      on Bagisto.
-    `
+    details: [
+      `Nexlabs is a digital consultancy helping businesses deliver practical, measurable digital products through strong engineering and product craftsmanship.`,
+      `I delivered multiple client platforms across e-commerce, education, insurance, and healthcare, working hands-on across backend, frontend, and CMS systems. I acted as a project-level technical lead, guiding architecture, estimates, and integrations, mentoring developers, and fully owning Fastforward, an early-stage multi-vendor e-commerce platform built and deployed independently.`
+    ]
   },
   {
     companyName: "Global Wave Technology (Yangon, Myanmar)",
@@ -56,9 +42,10 @@ const experienceContent = [
       {"position": "Programmer", "year": "Mar 2013 – Apr 2014"},
       {"position": "Intern", "year": "Jan 2013 – Mar 2013"},
     ],
-    details: `
-    Global Wave Technology is a Myanmar-based software company delivering end-to-end solutions across web, desktop, and integrated systems for public and enterprise clients. I worked on large-scale eGovernment systems for Yangon City Development Committee (YCDC), building and maintaining both public-facing citizen portals and internal administrative platforms. My work spanned PHP, JavaScript, and MySQL, delivering end-to-end features from implementation to long-term maintenance. I also developed desktop and mobile applications integrated with smart cards and RFID/barcode-based document tracking systems, and worked directly with government stakeholders through on-site support and consultations while supporting junior developers as responsibilities grew.
-    `
+    details: [
+      `Global Wave Technology delivers end-to-end software solutions across web, enterprise systems, and custom applications for public and private sector clients.`,
+      `I worked on large-scale eGovernment systems for YCDC, building and maintaining citizen-facing portals and internal administrative platforms. My work extended across web, desktop, and mobile systems, including smart card and RFID/barcode integrations. I also acted as a senior technical contact with government stakeholders and supported junior developers on complex, long-running projects.`
+    ]
   },
 ];
 
@@ -80,7 +67,14 @@ const Experience = () => {
           ))}
 
           <p className="place open-sans-font">{val.companyName}</p>
-          <p className="open-sans-font text-gray">{val.details}</p>
+          {val.details.map((text, index) => (
+            <p
+              key={index}
+              className="open-sans-font text-gray mb-3"
+            >
+              {text}
+            </p>
+          ))}
         </li>
       ))}
     </ul>

@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { metaTitle, metaDescription, metaImage, siteURL } from "../config";
+import { position, metaTitle, metaDescription, metaImage, siteURL } from "../config";
 
 const SEO = ({ pageTitle }) => (
   <>
     <Head>
       <title>
-        {pageTitle && `${pageTitle} - My Journey`}
+        {pageTitle && `${pageTitle} | ${position}`}
       </title>
 
       {/* Primary Meta Tags */}

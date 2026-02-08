@@ -23,7 +23,7 @@ const AllBlogData = () => {
               commentor: item.author,
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
-              // link: item.guid,
+              link: item.guid,
               description: item.description // content also available
             })
           }
