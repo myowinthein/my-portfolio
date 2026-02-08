@@ -28,15 +28,31 @@ const Portfolio = () => {
           <div className="container">
             {PortfolioData.map((portfolio, i) => (
               <TabPanel key={i}>
-                <div className="tab-container">
-                  {portfolio.projects.map((project, j) => (
-                    <div key={j} data-aos="fade-right">
-                      <div className="tab-content" onClick={() => handleModal(portfolio.title, project)}>
-                        <Image src={project.banner} alt="portfolio project" />
-                        <h3><span className="conent-title">{project.name}</span></h3>
+                <div className="tab-container-wrapper">
+
+                  {/* Category one-liner */}
+                  {portfolio.description && (
+                    <p className="portfolio-category-desc" data-aos="fade-up">
+                      {portfolio.description}
+                    </p>
+                  )}
+
+                  <div className="tab-container">
+                    {portfolio.projects.map((project, j) => (
+                      <div key={j} className="project-item" data-aos="fade-right">
+                        <div
+                          className="tab-content"
+                          onClick={() => handleModal(portfolio.title, project)}
+                        >
+                          <Image src={project.banner} alt="portfolio project" />
+                          <h3>
+                            <span className="conent-title">{project.name}</span>
+                          </h3>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
                 </div>
               </TabPanel>
             ))}

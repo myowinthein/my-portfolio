@@ -13,11 +13,8 @@ const heroContent = {
   heroTitleName: name,
   heroDesignation: position,
   heroDescriptions: [
-    `I’m a backend-first software engineer and technical lead with ${totalExperiences}+ years of experience building, 
-    scaling, and operating web platforms. I work primarily with PHP/Laravel, relational databases, 
-    and AWS infrastructure, focusing on system reliability, performance, and long-term maintainability.`,
-    `I enjoy working in product-focused teams where clear thinking, pragmatic engineering, and 
-    sustainable delivery matter more than hype.`
+    `I’m a backend-first software engineer with over ${totalExperiences} years of experience building and operating production web platforms. I work hands-on across backend systems, deployments, and infrastructure while also taking responsibility for technical decisions and long-term system evolution.`,
+    `I enjoy turning real business problems into practical, maintainable solutions. Most of my work lives in PHP/Laravel, relational databases, and AWS, where I focus on reliability, clarity, and systems that hold up under real-world use.`
   ],
   heroBtn: "Download Resume",
 };

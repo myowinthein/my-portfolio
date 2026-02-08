@@ -7,7 +7,7 @@ const SERVICE_ID = "service_ymrfc1k";
 const TEMPLATE_ID = "template_vnchh1m";
 const PUBLIC_KEY = "qf-Hdel_0um8Wj7YK";
 
-// Put your reCAPTCHA v2 *site key* here
+// reCAPTCHA v2 *site key*
 const RECAPTCHA_SITE_KEY = "6LcUUFwsAAAAAKgz_JIK4HkIh-Z9SLy52-rd7gUw";
 
 const Contact = () => {
@@ -33,8 +33,6 @@ const Contact = () => {
           setRecaptchaReady(true);
           clearInterval(interval);
         } catch (err) {
-          // If render fails for some reason, keep retrying a bit
-          // but don't crash the page.
           console.error("reCAPTCHA render error:", err);
         }
       }
@@ -44,17 +42,40 @@ const Contact = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const ensureRecaptchaHiddenField = () => {
-    if (!form.current) return;
+  /**
+   * reCAPTCHA usually injects its own field named `g-recaptcha-response` (often a textarea).
+   * Your previous code created a second field with the same name, which can break verification.
+   * This function:
+   *  - removes duplicates
+   *  - reuses the existing field if present
+   *  - only creates one if none exists (rare)
+   */
+  const ensureSingleRecaptchaField = () => {
+    if (!form.current) return null;
 
-    let input = form.current.querySelector('input[name="g-recaptcha-response"]');
-    if (!input) {
-      input = document.createElement("input");
-      input.type = "hidden";
-      input.name = "g-recaptcha-response";
-      form.current.appendChild(input);
+    const fields = form.current.querySelectorAll(
+      'textarea[name="g-recaptcha-response"], input[name="g-recaptcha-response"]'
+    );
+
+    // Remove duplicates (keep the first)
+    fields.forEach((el, idx) => {
+      if (idx > 0) el.remove();
+    });
+
+    // Re-check after removal
+    let field =
+      form.current.querySelector('textarea[name="g-recaptcha-response"]') ||
+      form.current.querySelector('input[name="g-recaptcha-response"]');
+
+    // If reCAPTCHA didn't inject (rare), create one
+    if (!field) {
+      field = document.createElement("textarea");
+      field.name = "g-recaptcha-response";
+      field.style.display = "none";
+      form.current.appendChild(field);
     }
-    return input;
+
+    return field;
   };
 
   const resetForm = () => {
@@ -88,8 +109,8 @@ const Contact = () => {
   // Called by reCAPTCHA when token is generated
   const onRecaptchaSuccess = (token) => {
     try {
-      const hidden = ensureRecaptchaHiddenField();
-      if (hidden) hidden.value = token;
+      const field = ensureSingleRecaptchaField();
+      if (field) field.value = token;
 
       emailjs
         .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
@@ -123,11 +144,21 @@ const Contact = () => {
   const onRecaptchaError = () => {
     setIsLoading(false);
     toast.error("reCAPTCHA failed. Please try again.", toastOptions);
+    try {
+      if (window.grecaptcha && widgetIdRef.current !== null) {
+        window.grecaptcha.reset(widgetIdRef.current);
+      }
+    } catch (_) {}
   };
 
   const onRecaptchaExpired = () => {
     setIsLoading(false);
     toast.error("reCAPTCHA expired. Please try again.", toastOptions);
+    try {
+      if (window.grecaptcha && widgetIdRef.current !== null) {
+        window.grecaptcha.reset(widgetIdRef.current);
+      }
+    } catch (_) {}
   };
 
   return (
@@ -168,7 +199,7 @@ const Contact = () => {
           </div>
 
           {/* Invisible reCAPTCHA mount point */}
-          <div id="recaptcha-container" />
+          <div id="recaptcha-container" class="grecaptcha-badge"/>
         </div>
       </form>
     </>

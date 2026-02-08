@@ -1,9 +1,12 @@
+// StudyMe
 import studymeBan from "../../../public/assets/portfolio/studyme/banner.png";
 import studymeImg1 from "../../../public/assets/portfolio/studyme/1.png";
 import studymeImg2 from "../../../public/assets/portfolio/studyme/2.png";
 import studymeImg3 from "../../../public/assets/portfolio/studyme/3.png";
 import studymeImg4 from "../../../public/assets/portfolio/studyme/4.png";
+import studymeImg5 from "../../../public/assets/portfolio/studyme/5.png";
 
+// Wellspring International Education
 import wellspringBan from "../../../public/assets/portfolio/wellspring/banner.jpg";
 import wellspringImg1 from "../../../public/assets/portfolio/wellspring/1.png";
 import wellspringImg2 from "../../../public/assets/portfolio/wellspring/2.png";
@@ -11,101 +14,104 @@ import wellspringImg3 from "../../../public/assets/portfolio/wellspring/3.png";
 import wellspringImg4 from "../../../public/assets/portfolio/wellspring/4.png";
 import wellspringImg5 from "../../../public/assets/portfolio/wellspring/5.png";
 
+// Tavis
 import tavisBan from "../../../public/assets/portfolio/tavis/banner.jpeg";
-import tavisImg1 from "../../../public/assets/portfolio/tavis/1.jpg";
+import tavisImg1 from "../../../public/assets/portfolio/tavis/1.png";
 import tavisImg2 from "../../../public/assets/portfolio/tavis/2.png";
 import tavisImg3 from "../../../public/assets/portfolio/tavis/3.png";
+import tavisImg4 from "../../../public/assets/portfolio/tavis/4.png";
 
+// Chance Myanmar
 import chancemyanmarBan from "../../../public/assets/portfolio/chance_myanmar/banner.jpg";
 import chancemyanmarImg1 from "../../../public/assets/portfolio/chance_myanmar/1.png";
 import chancemyanmarImg2 from "../../../public/assets/portfolio/chance_myanmar/2.png";
 import chancemyanmarImg3 from "../../../public/assets/portfolio/chance_myanmar/3.png";
 import chancemyanmarImg4 from "../../../public/assets/portfolio/chance_myanmar/4.png";
+import chancemyanmarImg5 from "../../../public/assets/portfolio/chance_myanmar/5.jpg";
 
+// fastforward
 import fastforwardBan from "../../../public/assets/portfolio/fastforward/banner.jpeg";
 import fastforwardImg1 from "../../../public/assets/portfolio/fastforward/1.png";
 import fastforwardImg2 from "../../../public/assets/portfolio/fastforward/2.png";
 import fastforwardImg3 from "../../../public/assets/portfolio/fastforward/3.png";
 import fastforwardImg4 from "../../../public/assets/portfolio/fastforward/4.png";
 
-import anymartBan from "../../../public/assets/portfolio/anymart/banner.jpeg";
-import anymartImg1 from "../../../public/assets/portfolio/anymart/1.png";
+// AnyMart
+import anymartBan from "../../../public/assets/portfolio/anymart/banner.jpg";
+import anymartImg1 from "../../../public/assets/portfolio/anymart/1.jpg";
+import anymartImg2 from "../../../public/assets/portfolio/anymart/2.jpg";
+import anymartImg3 from "../../../public/assets/portfolio/anymart/3.png";
 
-import lukkyBan from "../../../public/assets/portfolio/lukky/banner.jpeg";
+// Lukky
+import lukkyBan from "../../../public/assets/portfolio/lukky/banner.jpg";
+import lukkyImg1 from "../../../public/assets/portfolio/lukky/1.jpg";
+import lukkyImg2 from "../../../public/assets/portfolio/lukky/2.jpg";
 
-import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.jpeg";
+// Business License
+import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.png";
 import businessLicenseImg1 from "../../../public/assets/portfolio/business_license/1.png";
 import businessLicenseImg2 from "../../../public/assets/portfolio/business_license/2.png";
 import businessLicenseImg3 from "../../../public/assets/portfolio/business_license/3.png";
-import businessLicenseImg4 from "../../../public/assets/portfolio/business_license/4.png";
 
-import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.jpg";
+// Building Permit
+import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.png";
 import buildingPermitImg1 from "../../../public/assets/portfolio/building_permit/1.png";
 import buildingPermitImg2 from "../../../public/assets/portfolio/building_permit/2.png";
 import buildingPermitImg3 from "../../../public/assets/portfolio/building_permit/3.png";
-import buildingPermitImg4 from "../../../public/assets/portfolio/building_permit/4.png";
 
-import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.jpg";
+// Revenue Station
+import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.png";
 import revenueStationImg1 from "../../../public/assets/portfolio/revenue_station/1.png";
 import revenueStationImg2 from "../../../public/assets/portfolio/revenue_station/2.png";
 import revenueStationImg3 from "../../../public/assets/portfolio/revenue_station/3.png";
-import revenueStationImg4 from "../../../public/assets/portfolio/revenue_station/4.png";
 
-import smartCardSystemBan from "../../../public/assets/portfolio/smart_card_system/banner.jpg";
+// Smart Card System
+import smartCardSystemBan from "../../../public/assets/portfolio/smart_card_system/banner.png";
 import smartCardSystemImg1 from "../../../public/assets/portfolio/smart_card_system/1.png";
 import smartCardSystemImg2 from "../../../public/assets/portfolio/smart_card_system/2.png";
 import smartCardSystemImg3 from "../../../public/assets/portfolio/smart_card_system/3.png";
+import smartCardSystemImg4 from "../../../public/assets/portfolio/smart_card_system/4.png";
 
-import rfidBarcodeSystemBan from "../../../public/assets/portfolio/rfid_barcode_system/banner.jpg";
-import rfidBarcodeSystemImg1 from "../../../public/assets/portfolio/rfid_barcode_system/1.jpg";
-import rfidBarcodeSystemImg2 from "../../../public/assets/portfolio/rfid_barcode_system/2.jpg";
-import rfidBarcodeSystemImg3 from "../../../public/assets/portfolio/rfid_barcode_system/3.jpg";
+// Land Document Tracking System
+import landDocumentTrackingSystemBan from "../../../public/assets/portfolio/land_document_tracking_system/banner.png";
+import landDocumentTrackingSystemImg1 from "../../../public/assets/portfolio/land_document_tracking_system/1.png";
+import landDocumentTrackingSystemImg2 from "../../../public/assets/portfolio/land_document_tracking_system/2.png";
+import landDocumentTrackingSystemImg3 from "../../../public/assets/portfolio/land_document_tracking_system/3.png";
+import landDocumentTrackingSystemImg4 from "../../../public/assets/portfolio/land_document_tracking_system/4.jpg";
+import landDocumentTrackingSystemImg5 from "../../../public/assets/portfolio/land_document_tracking_system/5.jpg";
 
-import healBan from "../../../public/assets/portfolio/heal/banner.png";
-import healImg1 from "../../../public/assets/portfolio/heal/1.png";
-import healImg2 from "../../../public/assets/portfolio/heal/2.png";
-import healImg3 from "../../../public/assets/portfolio/heal/3.jpg";
-
+// First National Insurance
 import fniBan from "../../../public/assets/portfolio/fni/banner.jpg";
-import fniImg1 from "../../../public/assets/portfolio/fni/1.png";
+import fniImg1 from "../../../public/assets/portfolio/fni/1.jpg";
+import fniImg2 from "../../../public/assets/portfolio/fni/2.jpg";
+import fniImg3 from "../../../public/assets/portfolio/fni/3.jpg";
+import fniImg4 from "../../../public/assets/portfolio/fni/4.jpg";
+import fniImg5 from "../../../public/assets/portfolio/fni/5.jpg";
 
+// Recycle Myanmar
 import recycleMyanmarBan from "../../../public/assets/portfolio/recycle_myanmar/banner.png";
-import recycleMyanmarImg1 from "../../../public/assets/portfolio/recycle_myanmar/1.jpg";
-import recycleMyanmarImg2 from "../../../public/assets/portfolio/recycle_myanmar/2.png";
-import recycleMyanmarImg3 from "../../../public/assets/portfolio/recycle_myanmar/3.jpg";
-
-import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/banner.png";
-import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.jpg";
-import voteForChangeImg2 from "../../../public/assets/portfolio/vote_for_change/2.jpg";
-import voteForChangeImg3 from "../../../public/assets/portfolio/vote_for_change/3.jpg";
-import voteForChangeImg4 from "../../../public/assets/portfolio/vote_for_change/4.jpg";
-import voteForChangeImg5 from "../../../public/assets/portfolio/vote_for_change/5.png";
-import voteForChangeImg6 from "../../../public/assets/portfolio/vote_for_change/6.png";
-
-import data4ChangeBan from "../../../public/assets/portfolio/data4change/banner.jpeg";
-import data4ChangeImg1 from "../../../public/assets/portfolio/data4change/1.png";
-import data4ChangeImg2 from "../../../public/assets/portfolio/data4change/2.png";
-
-import telenorLoveGuruBan from "../../../public/assets/portfolio/telenor_love_guru/banner.jpg";
-import telenorLoveGuruImg1 from "../../../public/assets/portfolio/telenor_love_guru/1.png";
-import telenorLoveGuruImg2 from "../../../public/assets/portfolio/telenor_love_guru/2.png";
-import telenorLoveGuruImg3 from "../../../public/assets/portfolio/telenor_love_guru/3.png";
-import telenorLoveGuruImg4 from "../../../public/assets/portfolio/telenor_love_guru/4.png";
-import telenorLoveGuruImg5 from "../../../public/assets/portfolio/telenor_love_guru/5.png";
-
-import easyProjectPlannerBan from "../../../public/assets/portfolio/easy_project_planner/banner.jpeg";
+import recycleMyanmarImg1 from "../../../public/assets/portfolio/recycle_myanmar/1.webp";
+import recycleMyanmarImg2 from "../../../public/assets/portfolio/recycle_myanmar/2.jpeg";
+import recycleMyanmarImg3 from "../../../public/assets/portfolio/recycle_myanmar/3.webp";
+import recycleMyanmarImg4 from "../../../public/assets/portfolio/recycle_myanmar/4.jpg";
+import recycleMyanmarImg5 from "../../../public/assets/portfolio/recycle_myanmar/5.png";
 
 const PortfolioData = [
   {
-    'title': 'Education',
+    // Education Platforms
+    'title': 'Education Platforms',
+    'description': 'Education platforms covering student applications, university dashboards, and internal operational systems, designed for scale and long-term use.',
     'projects': [
+
+      // StudyMe
       {
-        'name': 'StudyMe',
-        'description': `StudyMe works by facilitating matches and meaningful conversations between
-          prospective students and universities. The platform is student-centred, built so that students
-          can be discovered by the best universities in the world. Over 60,000 students from 204 countries
-          are using StudyMe now. This Melbourne, Australia-based platform, was acquired by Wellspring 
-          International Education in 2022.`,
+        'name': 'StudyMe Portal',
+        'company': 'StudyMe',
+        'role': 'Technical Lead',
+        'description': [
+          `StudyMe is a student-centred education platform connecting prospective students with universities worldwide, supporting discovery, eligibility matching, and structured conversations across the application journey.`,
+          `I owned and evolved a legacy Laravel platform already in active production, delivering new features while improving reliability, security, and maintainability. I worked across backend architecture, integrations, and internal tooling, and supported platform continuity through acquisition by Wellspring International Education as the system scaled globally.`
+        ],
         // 'status': 1,
         'banner': studymeBan,
         'media': [
@@ -114,6 +120,7 @@ const PortfolioData = [
           {'type': 'image', 'url': studymeImg2},
           {'type': 'image', 'url': studymeImg3},
           {'type': 'image', 'url': studymeImg4},
+          {'type': 'image', 'url': studymeImg5},
         ],
         'preview': [
           {'platform': 'Web', 'url': 'https://www.studyme.com'},
@@ -121,9 +128,16 @@ const PortfolioData = [
           {"platform": "iOS", "url": "https://apps.apple.com/us/app/studyme/id1556187658"}
         ],
       },
+
+      // Wellspring Portal
       {
-        'name': 'Wellspring International Education',
-        'description': `Wellspring International focuses on helping colleges and universities develop an international presence and promote their brands at home and abroad. They offer enrollment services and international college fairs to help bring the world to a university campus. Serving students from 106 countries with offices in Brazil, Egypt, UAE, India, Vietnam, Taiwan, and China.`,
+        'name': 'Wellspring Portal',
+        'company': 'Wellspring International Education',
+        'role': 'Technical Lead',
+        'description': [
+          `Wellspring Portal is a business-critical internal platform used by Wellspring International Education and partner agencies to manage international enrollment workflows, partner coordination, and multi-region operations through role-based access and structured application processes.`,
+          `I maintained and operated a complex legacy system with many roles and permissions, focusing on production stability, issue resolution, and daily operational support. I handled critical AWS tasks such as security hardening and certificate renewals, prioritising reliability and continuity while contributing insight that later informed planning for a modernised v2 platform.`
+        ],
         // 'status': 1,
         'banner': wellspringBan,
         'media': [
@@ -137,17 +151,25 @@ const PortfolioData = [
           {"platform": "Web", "url": "https://www.wellspringinternational.com/"}
         ],
       },
+
+      // Tavis
       {
         'name': 'Tavis',
-        'description': `Tavis aims to transform education in Malaysia by providing accessible and high-quality learning through their integrated e-learning platform. They use Education Technology (EdTech) to develop students' 21st Century Skills and offer a range of study materials, including livestream classes, question banks, and personalized progress analysis.`,
+        'company': 'Snappymob',
+        'role': 'Full Stack Developer',
+        'description': [
+          `Tavis is a nationwide live online tuition platform in Malaysia, delivering multi-platform learning across web, Windows, Android, and iOS, combining live classes, learning materials, and student progress tracking at scale.`,
+          `I worked as a backend-focused Full Stack Developer on a heavily customised Moodle LMS, contributing to daily feature development, iPay88 payment integration, third-party authentication, and core LMS customisation. My work focused on reliability and stability within an actively evolving production system serving students nationwide.`
+        ],
         // 'status': 1,
         'banner': tavisBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/tavis/v1.mp4'},
-          {'type': 'video', 'url': '/assets/portfolio/tavis/v2.mp4'},
+          // {'type': 'video', 'url': '/assets/portfolio/tavis/v2.mp4'},
           {'type': 'image', 'url': tavisImg1},
           {'type': 'image', 'url': tavisImg2},
           {'type': 'image', 'url': tavisImg3},
+          {'type': 'image', 'url': tavisImg4},
         ],
         'preview': [
           {"platform": "Web", "url": "https://www.tavis.live/"},
@@ -155,34 +177,50 @@ const PortfolioData = [
           {"platform": "iOS", "url": "https://apps.apple.com/th/app/tavis/id1580342756"}
         ],
       },
+
+      // Chance Myanmar
       {
         'name': 'Chance Myanmar',
-        'description': `Chance Myanmar is Myanmar's biggest online soft skill training platform. They are redesigning the education experience for students in Myanmar. They think education should be done differently: outdoors, online, social, and practical. Chance Myanmar focuses on skills not typically taught in the classroom - from entrepreneurship, cultural competence to self-betterment.`,
+        'company': 'Nexlabs',
+        'role': 'Senior Full Stack Developer',
+        'description': [
+          `Chance Myanmar is Myanmar’s largest online soft-skills education platform, built to modernise training beyond traditional classrooms by delivering practical, career-focused courses through web and mobile applications.`,
+          `I owned and built the backend from the ground up, implementing authentication, course and lesson management, enrolment and progress tracking, homework submission, and activity-based notifications. The platform replaced manual Facebook workflows with a scalable AWS-backed system serving thousands of students nationwide.`
+        ],
         // 'status': 1,
         'banner': chancemyanmarBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/chance_myanmar/v1.mp4'},
           {'type': 'image', 'url': chancemyanmarImg1},
-          {'type': 'image', 'url': chancemyanmarImg2},
           {'type': 'image', 'url': chancemyanmarImg3},
           {'type': 'image', 'url': chancemyanmarImg4},
+          {'type': 'image', 'url': chancemyanmarImg2},
+          {'type': 'image', 'url': chancemyanmarImg5},
         ],
         'preview': [
           {"platform": "Web", "url": "https://chancemyanmar.app/"},
-          {"platform": "Android", "url": "https://play.google.com/store/apps/details?id=com.chance.myanmar&hl=en&gl=US"}
+          {"platform": "Android", "url": "https://play.google.com/store/apps/details?id=com.chance.myanmar&hl=en&gl=US"},
+          {"platform": "Facebook", "url": " https://www.facebook.com/ChanceSchool"},
         ],
       }
     ]
   },
+
+  // E-commerce
   {
     'title': 'E-commerce',
+    'description': 'Ecommerce platforms including multi-vendor systems, marketplaces, and consumer apps, built for practical business workflows and growth.',
     'projects': [
+
+      // fastforward
       {
         'name': 'fastforward',
-        'description': `fastforward is an all-in-one eCommerce platform with everything you need to run \
-          a successful online store. They are an end-to-end eCommerce enabler powered by nexlabs for
-          retailers and SME businesses to launch and grow their eCommerce platform Worry less about
-          technology, expertise, cost and time and more on providing your customers with excellent service.`,
+        'company': 'Nexlabs',
+        'role': 'Head of Engineering',
+        'description': [
+          `Fastforward was an early-stage multi-vendor eCommerce platform enabling businesses to launch online stores under a managed SaaS model, with fully configured stores deployed under their own domains and minimal setup.`,
+          `I owned the technical implementation during the initial build, using Bagisto with a focus on stability and upgradeability. I evaluated and integrated official modules, configured the CMS to fit the business model, and handled system design, feature validation, and deployment readiness to support reliable multi-store operations and future scaling.`
+        ],
         // 'status': 2,
         'banner': fastforwardBan,
         'media': [
@@ -197,30 +235,187 @@ const PortfolioData = [
           {'platform': 'Facebook', 'url': 'https://www.facebook.com/fastforwardmyanmar'},
         ],
       },
+
+      // AnyMart
       {
         'name': 'AnyMart',
-        'description': `AnyMart.com.mm is an online shopping platform that aims to let you buy Anything
-          from Anywhere. Anymart aims to bring this wide range of products to every
-          corner of Myanmar at the most affordable prices possible. They have partnered with nexlabs to
-          build a seamless and friendly eCommerce platform to cater to their 55 million potential customers.`,
+        'company': 'Nexlabs',
+        'role': 'Senior Full Stack Developer',
+        'description': [
+          `AnyMart is a nationwide online shopping platform built as a custom eCommerce marketplace, offering a wide range of products through a single, accessible system supporting end-to-end online purchasing via web and mobile-friendly experiences.`,
+          `I owned backend and JavaScript-based frontend work on a heavily customised OpenCart CMS, extending it beyond standard use. I implemented payment integrations (Wave Money, KBZ cards), social login, checkout and shipping logic, discount handling, and custom modules, delivering a stable marketplace praised for reliability.`
+        ],
         // 'status': 2,
         'banner': anymartBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/anymart/v1.mp4'},
           {'type': 'image', 'url': anymartImg1},
+          {'type': 'image', 'url': anymartImg2},
+          {'type': 'image', 'url': anymartImg3},
         ],
         'preview': [
           {'platform': 'Web', 'url': 'http://anymart.com.mm/'},
           {'platform': 'Facebook', 'url': 'https://www.facebook.com/anymart.com.mm'},
         ],
       },
+
+      // Lukky
+      {
+        'name': 'Lukky',
+        'company': 'Nexlabs',
+        'role': 'Senior PHP Developer',
+        'description': [
+          `Lukky is a consumer-focused e-commerce platform from Thailand designed to make shopping more engaging through gamified experiences. The platform combined traditional product browsing and cash-on-delivery purchases with interactive features such as point rewards, quizzes, giveaways, and playful UI elements to encourage repeat usage and user engagement.`,
+          `I handled the backend development independently, building and maintaining the core APIs and admin panel that powered product management, user activity, rewards, and transactional flows. I worked closely with Android and iOS developers to support mobile app features, ensure API stability, and align backend functionality with evolving frontend and business requirements.`
+        ],
+        // 'status': 2,
+        'banner': lukkyBan,
+        'media': [
+          {'type': 'image', 'url': lukkyBan},
+          {'type': 'image', 'url': lukkyImg1},
+          {'type': 'image', 'url': lukkyImg2},
+        ],
+        'preview': [
+          {'platform': 'Web', 'url': 'http://lukkyme.com/'},
+          {'platform': 'Android', 'url': 'https://play.google.com/store/apps/details?id=com.lukkyme.lukky'},
+          {'platform': 'iOS', 'url': 'https://apps.apple.com/th/app/lukky/id1507624371'},
+          {'platform': 'Facebook', 'url': 'https://www.facebook.com/lukkylsn/'},
+        ],
+      }
+    ]
+  },
+
+  // eGovernment
+  {
+    'title': 'eGovernment',
+    'description': 'eGovernment systems for the Yangon City Development Committee, digitising licensing, permits, revenue, and administrative services under the smart city initiative.',
+    'projects': [
+
+      // Business License
+      {
+        'name': 'Business License',
+        'company': 'Global Wave Technology',
+        'role': 'Programmer',
+        'description': [
+          `YCDC Business License is an official eGovernment platform for the Yangon City Development Committee that digitises business licensing and approval workflows. It enables online applications, document submission, inspections, notifications, renewals, and status tracking, replacing manual processes as part of Yangon’s smart city initiative.`,
+          `I worked as part of the development team to build and maintain this production system, contributing across backend and web development. My work included implementing licensing workflows, administrative tools, integrations, and maintenance, while collaborating with government stakeholders to ensure reliable operation for public users and internal departments.`
+        ],
+        // 'status': 1,
+        'banner': businessLicenseBan,
+        'media': [
+          {'type': 'image', 'url': businessLicenseImg1},
+          {'type': 'image', 'url': businessLicenseImg2},
+          {'type': 'image', 'url': businessLicenseImg3},
+        ],
+        'preview': [
+          {'platform': 'Web', 'url': 'https://obls.ycdc.gov.mm/'},
+        ],
+      },
+
+      // Building Permit
+      {
+        'name': 'Building Permit',
+        'company': 'Global Wave Technology',
+        'role': 'Developer',
+        'description': [
+          `YCDC Building Permit System is an official eGovernment platform that digitises building services for the Yangon City Development Committee, including permit applications, inspections, and technical approvals. It enables online submission, document uploads, status tracking, and permit management, replacing manual processes under the smart city initiative.`,
+          `I worked as part of the development team to build and maintain this production system, contributing across backend and web development. My work included implementing permit and inspection workflows, administrative tools, and maintenance, while collaborating with government stakeholders to ensure stable daily operation for public users and internal departments.`
+        ],
+        // 'status': 1,
+        'banner': buildingPermitBan,
+        'media': [
+          {'type': 'image', 'url': buildingPermitImg1},
+          {'type': 'image', 'url': buildingPermitImg2},
+          {'type': 'image', 'url': buildingPermitImg3},
+        ],
+        'preview': [
+          {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/building_permit/index.php'},
+        ],
+      },
+
+      // Revenue Station
+      {
+        'name': 'Revenue Station',
+        'company': 'Global Wave Technology',
+        'role': 'Developer',
+        'description': [
+          `YCDC Revenue Station is an official eGovernment platform for the Yangon City Development Committee that digitises municipal revenue and services. It supports online workflows for license fees, permits, inspections, land payments, and operational approvals, replacing manual processes with centralized applications, tracking, and notifications under the smart city initiative.`,
+          `I worked as part of the development team on this production system, contributing across backend and web development. My work included building service workflows, administrative tools, integrations, and maintenance, while collaborating with government stakeholders to ensure reliable daily operation for public users and internal departments.`
+        ],
+        // 'status': 1,
+        'banner': revenueStationBan,
+        'media': [
+          {'type': 'image', 'url': revenueStationImg1},
+          {'type': 'image', 'url': revenueStationImg2},
+          {'type': 'image', 'url': revenueStationImg3},
+        ],
+        'preview': [
+          {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/revenue_station/index.php'},
+        ],
+      },
+
+      // Smart Card System
+      {
+        'name': 'Smart Card System',
+        'company': 'Global Wave Technology',
+        'role': 'Senior Developer',
+        'description': [
+          `YCDC Smart Card System is a Windows-based verification tool developed as part of Yangon’s Smart City project, issuing and validating MIFARE smart cards for approved professionals such as architects, engineers, contractors, and surveyors.`,
+          `I built the C#/.NET application end-to-end, integrating with the YCDC Building Permit system to fetch approved records, encode them onto MIFARE cards via the ACR1252U reader, and support on-site verification by scanning cards to display license holder details, improving accuracy and reducing manual checks.`
+        ],
+        // 'status': 1,
+        'banner': smartCardSystemBan,
+        'media': [
+          {'type': 'image', 'url': smartCardSystemImg1},
+          {'type': 'image', 'url': smartCardSystemImg2},
+          {'type': 'image', 'url': smartCardSystemImg3},
+          {'type': 'image', 'url': smartCardSystemImg4},
+        ],
+        'preview': [
+          {'platform': 'Device Info', 'url': 'https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/'},
+        ],
+      },
+
+      // Land Document Tracking System
+      {
+        'name': 'Land Document Tracking System',
+        'company': 'Global Wave Technology',
+        'role': 'Senior Developer',
+        'description': [
+          `YCDC Land Document Tracking System is part of the Yangon Smart City initiative, built for the Land Administration Department to digitise document storage and retrieval. Each land record was assigned a unique ID, linked to RFID tags attached to physical files, and searchable through barcode-based workflows.`,
+          `I built the system end-to-end as a solo developer, creating a Windows Mobile 6.5 application in C# integrated with the Motorola MC3190-Z RFID and barcode scanner SDK. It linked land records to RFID-tagged documents and guided staff through proximity-based audio and light signals, replacing slow manual searches with faster, technology-assisted retrieval.`
+        ],
+        // 'status': 1,
+        'banner': landDocumentTrackingSystemBan,
+        'media': [
+          {'type': 'image', 'url': landDocumentTrackingSystemImg1},
+          {'type': 'image', 'url': landDocumentTrackingSystemImg2},
+          {'type': 'image', 'url': landDocumentTrackingSystemImg3},
+          {'type': 'image', 'url': landDocumentTrackingSystemImg4},
+          {'type': 'image', 'url': landDocumentTrackingSystemImg5},
+        ],
+        'preview': [
+          {'platform': 'Device Info', 'url': 'https://www.zebra.com/us/en/support-downloads/rfid/rfid-handhelds/mc3190-z.html'},
+        ],
+      },
+    ]
+  },
+
+  // Civid Applications
+  {
+    'title': 'Civic Applications',
+    'description': 'Digital applications for public and community use, designed to support real-world services with a focus on practical impact, reliable operation, and scalable system architecture.',
+    'projects': [
+
+      // Recycle Myanmar
       {
         'name': 'Recycle Myanmar',
-        'description': `Recycle Myanmar has been instrumental in driving environmental sustainability.
-          They develop a two-sided marketplace connecting households and "trash-pickers." This innovative 
-          solution enables convenient scheduling of recyclable pickups, resulting in over 80 tonnes of 
-          waste being collected and recycled daily since its launch in mid-2019. Recycle Myanmar continues 
-          to spearhead the recycling revolution, making a substantial contribution to a greener future.`,
+        'company': 'Nexlabs',
+        'role': 'Lead Frontend and CMS Developer',
+        'description': [
+          `Recycle Myanmar is a two-sided digital platform promoting environmental sustainability by connecting households with waste collectors through an on-demand pickup model, enabling efficient recycling via real-time matching and logistics.`,
+          `The system supports administrators, sellers, and collectors, with live notifications, location tracking, and distance-based matching. Built with mobile apps, a central backend, and AWS infrastructure, it supported real operations and gained regional recognition, including a Merit Award at the 2020 Asia Smart App Awards and selection as a national winner in the Generation Impact Fellowship Program.`
+        ],
         // 'status': 2,
         'banner': recycleMyanmarBan,
         'media': [
@@ -229,235 +424,47 @@ const PortfolioData = [
           {'type': 'image', 'url': recycleMyanmarImg1},
           {'type': 'image', 'url': recycleMyanmarImg2},
           {'type': 'image', 'url': recycleMyanmarImg3},
+          {'type': 'image', 'url': recycleMyanmarImg4},
+          {'type': 'image', 'url': recycleMyanmarImg5},
         ],
         'preview': [
-          {'platform': 'Seller', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.user'},
-          {'platform': 'Picker', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.picker'},
-          {'platform': 'Business', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.business'}
-        ],
-      },
-      {
-        'name': 'Lukky',
-        'description': `Lukky is a shopping and e-commerce platform from Thailand that provides engaging features,
-          including interactive elements like spinning a 3D globe, selecting items and earning points,
-          browsing item listings, making cash on delivery purchases, and participating in fun quizzes to
-          win giveaway items.`,
-        // 'status': 2,
-        'banner': lukkyBan,
-        'media': [
-          {'type': 'image', 'url': lukkyBan},
-        ],
-        'preview': [],
-      }
-    ]
-  },
-  {
-    'title': 'eGovernment',
-    'projects': [
-      {
-        'name': 'Business License',
-        'description': `As part of Yangon's smart city project, a revolutionary online system has been
-          introduced for Myanmar citizens to apply for various business licenses. This digital solution
-          streamlines the entire process, providing real-time notifications, online tracking, and even
-          license renewal options. Manual government procedures have been replaced, making license
-          generation and management more efficient.`,
-        // 'status': 1,
-        'banner': businessLicenseBan,
-        'media': [
-          {'type': 'image', 'url': businessLicenseImg1},
-          {'type': 'image', 'url': businessLicenseImg2},
-          {'type': 'image', 'url': businessLicenseImg3},
-          {'type': 'image', 'url': businessLicenseImg4},
-        ],
-        'preview': [
-          {'platform': 'Web', 'url': 'https://obls.ycdc.gov.mm/'},
-        ],
-      },
-      {
-        'name': 'Building Permit',
-        'description': `As part of the Yangon smart city project, a cutting-edge online system has been
-          implemented, allowing Myanmar citizens to seamlessly apply for building permits, access
-          government services related to construction, and expedite license applications. This digital
-          transformation has replaced manual processes, making it easier and more efficient to handle
-          building-related tasks.`,
-        // 'status': 1,
-        'banner': buildingPermitBan,
-        'media': [
-          {'type': 'image', 'url': buildingPermitImg1},
-          {'type': 'image', 'url': buildingPermitImg2},
-          {'type': 'image', 'url': buildingPermitImg3},
-          {'type': 'image', 'url': buildingPermitImg4},
-        ],
-        'preview': [
-          {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/building_permit/index.php'},
-        ],
-      },
-      {
-        'name': 'Revenue Station',
-        'description': `As part of the Yangon smart city project, an advanced software system has been
-          implemented to digitize and streamline the licensing process for retail markets. This innovative
-          solution replaces manual government procedures with efficient online processes, allowing store
-          owners to easily apply for licenses and generate them electronically. This digital transformation
-          enhances the overall efficiency and convenience of managing licenses for retail establishments in Yangon.`,
-        // 'status': 1,
-        'banner': revenueStationBan,
-        'media': [
-          {'type': 'image', 'url': revenueStationImg1},
-          {'type': 'image', 'url': revenueStationImg2},
-          {'type': 'image', 'url': revenueStationImg3},
-          {'type': 'image', 'url': revenueStationImg4},
-        ],
-        'preview': [
-          {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/revenue_station/index.php'},
-        ],
-      },
-      {
-        'name': 'Smart Card System',
-        'description': `As an integral component of the Yangon smart city project, a sophisticated system
-          has been implemented to enhance contract licensing procedures. Upon approval, contractors are
-          issued a smart card that securely stores their relevant information. This system, operating
-          seamlessly with the ACR1252U device, facilitates contactless reading and writing of
-          data from MIFARE cards. This integration of a Windows-based system with ensures efficient and secure 
-          data management, contributing to the the smart city initiative.`,
-        // 'status': 1,
-        'banner': smartCardSystemBan,
-        'media': [
-          {'type': 'image', 'url': smartCardSystemImg1},
-          {'type': 'image', 'url': smartCardSystemImg2},
-          {'type': 'image', 'url': smartCardSystemImg3},
-        ],
-        'preview': [
-          {'platform': 'Device Information', 'url': 'https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/'},
-        ],
-      },
-      {
-        'name': 'RFID and Barcode System',
-        'description': `
-          As part of the Yangon smart city project, the YCDC has implemented an advanced system for document
-          management. Landowner documents are stored in a dedicated warehouse, with each document assigned
-          a unique ID stored on RFID chips. Using a Motorola MC319Z device, the barcode is scanned, and the
-          device emits a louder beep as it gets closer to the desired document in the warehouse.
-          This ensures quick and accurate document retrieval, enhancing the smart city initiative in Yangon.`,
-        // 'status': 1,
-        'banner': rfidBarcodeSystemBan,
-        'media': [
-          {'type': 'image', 'url': rfidBarcodeSystemImg1},
-          {'type': 'image', 'url': rfidBarcodeSystemImg2},
-          {'type': 'image', 'url': rfidBarcodeSystemImg3},
-        ],
-        'preview': [
-          {'platform': 'Device Information', 'url': 'https://www.zebra.com/us/en/support-downloads/rfid/rfid-handhelds/mc3190-z.html'},
+          {'platform': 'Web', 'url': 'https://www.recyclemm.com/'},
+          {'platform': 'Android (User)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.user'},
+          {'platform': 'Android (Collector)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.picker'},
+          {'platform': 'Android (Business)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.business'},
+          {'platform': 'Facebook', 'url': 'https://www.facebook.com/p/Recycle-Myanmar-100057362593821/'},
         ],
       },
     ]
   },
+
+  // Business Applications
   {
-    'title': 'Civic Apps',
+    'title': 'Business Applications',
+    'description': 'Internal business systems for operations, reporting, and workflow automation, including enterprise tools used by active teams across daily business processes.',
     'projects': [
-      {
-        'name': 'Heal by Pun Hlaing',
-        'description': `This innovative app allows patients to make appointments, consult with doctors via
-          chat/video, access medical records, order prescriptions, and receive notifications - all from the
-          comfort of their homes. It also features sub-systems for doctors, corporate management, and
-          administration. The app is managed by Yoma-OUE Healthcare and aims to improve healthcare experiences
-          in Myanmar by providing quality healthcare solutions.`,
-        // 'status': 1,
-        'banner': healBan,
-        'media': [
-          {'type': 'image', 'url': healImg1},
-          {'type': 'image', 'url': healImg2},
-          {'type': 'image', 'url': healImg3},
-        ],
-        'preview': [
-          {'platform': 'Android', 'url': 'https://play.google.com/store/apps/details?id=com.punhlaing.healapp&hl=en&gl=US'},
-          {'platform': 'iOS', 'url': 'https://apps.apple.com/us/app/heal-by-pun-hlaing/id1550083398'},
-        ],
-      },
-      {
-        'name': 'Vote for Change (Hackathon)',
-        'description': `When Myanmar preparing for its first inclusive election in 2015, where all 6,074 
-          candidates from 91 political parties will participate. The Asia Foundation and local partners are 
-          collaborating with the tech community to launch the MaePaySoh Hack Challenge. This initiative aims 
-          to use information technology for voter education and raise awareness among the population.`,
-        // 'status': 2,
-        'banner': voteForChangeBan,
-        'media': [
-          {'type': 'image', 'url': voteForChangeImg1},
-          {'type': 'image', 'url': voteForChangeImg2},
-          {'type': 'image', 'url': voteForChangeImg3},
-          {'type': 'image', 'url': voteForChangeImg4},
-          {'type': 'image', 'url': voteForChangeImg5},
-          {'type': 'image', 'url': voteForChangeImg6},
-        ],
-        'preview': [
-          {'platform': 'Facebook', 'url': 'https://www.facebook.com/MaePaySoh/'},
-        ],
-      },
-      {
-        'name': 'Data4Change (Hackathon)',
-        'description': `The Data4Change Hackathon was organized by The Asia Foundation and Tech4Change in 
-          Yangon. It aims to create a user-friendly digital platform for evidence-based
-          decision-making using Myanmar's Township Development Indicators (TDI) database. The hackathon 
-          encourages transparency, collaboration, and the effective use of open data to drive progress and change.`,
-        // 'status': 2,
-        'banner': data4ChangeBan,
-        'media': [
-          {'type': 'image', 'url': data4ChangeImg1},
-          {'type': 'image', 'url': data4ChangeImg2},
-        ],
-        'preview': [],
-      },
-      {
-        'name': "Telenor's Love Guru",
-        'description': `"Love Quiz" by telecom giant Telenor is a captivating Facebook quiz game designed exclusively 
-          for their Valentine's Day campaign in Myanmar. This engaging game allows Facebook users to delve into 
-          various categories and answer questions related to their love life and share your hilarious and 
-          heartwarming results with friends, spreading the love with friends and family.`,
-        // 'status': 2,
-        'banner': telenorLoveGuruBan,
-        'media': [
-          {'type': 'image', 'url': telenorLoveGuruImg1},
-          {'type': 'image', 'url': telenorLoveGuruImg2},
-          {'type': 'image', 'url': telenorLoveGuruImg3},
-          {'type': 'image', 'url': telenorLoveGuruImg4},
-          {'type': 'image', 'url': telenorLoveGuruImg5},
-        ],
-        'preview': [],
-      },
-    ]
-  },
-  {
-    'title': 'Business Apps',
-    'projects': [
+
+      // First National Insurance
       {
         'name': 'First National Insurance',
-        'description': `First National Insurance, Myanmar's largest insurance company make
-          digital transformation by creating an application that enables online 
-          tasks such as calculating premium rates, managing appointments, generating proposals, 
-          and sharing knowledge materials. It aims to reduce paper usage and streamline 
-          operations across FNI's multiple headquarters, contributing to efficiency and 
-          adaptability during the COVID-19 pandemic.`,
+        'company': 'Nexlabs',
+        'role': 'Lead Frontend and CMS Developer',
+        'description': [
+          `First National Insurance (FNI), established in 2012, is one of Myanmar’s major insurance providers, serving both life and non-life segments with nationwide operations and large agent networks.`,
+          `I worked on an internal operations platform used by staff and field agents to manage products, leads, appointments, proposals, premiums, commissions, and performance KPIs. The system included a role-based admin panel and mobile APIs supporting daily sales workflows, meetings, notifications, and learning materials. My work focused on backend development, core business logic, and operational features used in production by internal teams.`
+        ],
         // 'status': 2,
         'banner': fniBan,
         'media': [
           {'type': 'image', 'url': fniImg1},
+          {'type': 'image', 'url': fniImg2},
+          {'type': 'image', 'url': fniImg3},
+          {'type': 'image', 'url': fniImg4},
+          {'type': 'image', 'url': fniImg5},
         ],
-        'preview': [],
-      },
-      {
-        'name': 'Easy Project Planner',
-        'description': `This hotel management application simplifies daily task management for hotels. 
-          It offers project planning, progress monitoring, and task assignment features, functioning like 
-          a project management tool. Hotels can be grouped into chains, allowing seamless task assignment 
-          and reporting. User accounts with different roles and hierarchies are supported. The software 
-          includes essential features such as reservation management, inventory tracking, and guest 
-          services, making it an efficient solution for hotel management needs.`,
-        // 'status': 3,
-        'banner': easyProjectPlannerBan,
-        'media': [
-          {'type': 'image', 'url': easyProjectPlannerBan},
+        'preview': [
+          {"platform": "Web", "url": "https://www.fnigeneral.com/"}
         ],
-        'preview': [],
       },
     ]
   },

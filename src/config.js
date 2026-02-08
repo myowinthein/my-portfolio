@@ -7,14 +7,15 @@ export const lastName = 'Thein';
 export const nationality = 'Myanmar';
 export const careerSince = 2013;
 export const workPreference = 'Remote / Hybrid';
+export const focus = 'Backend, DevOps & System Architecture';
 export const email = 'martin@myowin.dev';
 export const languages = 'English, Burmese';
 export const position = 'Senior Full Stack Developer';
 export const address = 'Bangkok, Thailand';
+export const timezone = 'UTC+7';
 export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
-export const totalProjects = 23;
-export const totalAPIs = 350;
-export const totalPages = 150;
+export const totalPlatformTypes = 5;
+export const totalDeliveredProjects = 14;
 
 // links
 export const resumeURL = 'https://drive.google.com/uc?export=download&id=1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG';
@@ -28,15 +29,15 @@ export const siteURL = process.env.SITE_URL
 // navigation
 export const menuLabels = {
   home: "Home",
-  profile: "Profile",
   work: "Work",
-  contact: "Contact",
+  profile: "Profile",
   writing: "Writing",
+  contact: "Contact",
 };
 
 // meta
-export const metaTitle = `"${name} - ${position} from ${nationality}"`
-export const metaDescription = `Over ${totalExperiences} Years of Expertise in Software Engineering | Skilled in PHP, JavaScript, and Cloud Platforms.`
+export const metaTitle = `${firstName} ${lastName} — ${position}`
+export const metaDescription = `${position} with over ${totalExperiences} years of experience building and operating production web platforms. Strong in PHP/Laravel, backend systems, and AWS infrastructure.`;
 export const metaImage = siteURL + 'assets/img/hero/meta.jpeg'
 
 // toast

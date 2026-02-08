@@ -1,15 +1,12 @@
 import React from "react";
-import { name, firstName, lastName, address, nationality, totalExperiences, careerSince, workPreference, languages } from "../../config";
+import { name, firstName, lastName, address, timezone, nationality, totalExperiences, focus, workPreference, languages } from "../../config";
 
 const personalInfoContent = [
   { meta: "Name", metaInfo: `${firstName} ${lastName} (${name})`, hasColor: "" },
-  // { meta: "first name", metaInfo: firstName, hasColor: "" },
-  // { meta: "last name", metaInfo: lastName, hasColor: "" },
   { meta: "Nationality", metaInfo: nationality, hasColor: "" },
-  { meta: "Location", metaInfo: address, hasColor: "" },
-  // { meta: "Career Since", metaInfo: careerSince, hasColor: "" },
-  { meta: "Experience", metaInfo: `${totalExperiences}+ years`, hasColor: "" },
+  { meta: "Location", metaInfo: `${address} (${timezone})`, hasColor: "" },
   { meta: "Languages", metaInfo: languages, hasColor: "" },
+  { meta: "Focus", metaInfo: focus, hasColor: "" },
   { meta: "Work Preference", metaInfo: workPreference, hasColor: "" },
 ];
 
@@ -20,7 +17,8 @@ const PersonalInfo = () => {
         <li key={i}>
           <span className="title">{val.meta}: </span>
           <span
-            className={`value d-block d-sm-inline-block d-lg-block d-xl-inline-block ${val.hasColor}`}
+            // className={`value d-block d-sm-inline-block d-lg-block d-xl-inline-block ${val.hasColor}`}
+            className={`value d-block ${val.hasColor}`}
           >
             {val.metaInfo}
           </span>
