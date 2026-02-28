@@ -4,7 +4,7 @@ const educationContent = [
   {
     year: "Jul 2023 – Jul 2024",
     degree: "Bachelor of Science (Honours) in Computing",
-    institute: "University of Greenwich",
+    institute: "University of Greenwich (UK)",
     details: "Graduated with First Class Honours",
     link: `https://www.gre.ac.uk/undergraduate-courses/engsci/computing-bsc-hons`,
   },

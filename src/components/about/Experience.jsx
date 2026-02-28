@@ -7,9 +7,11 @@ const experienceContent = [
       {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ],
     details: [
-      `StudyMe connects students with universities through guided discovery and conversations, and was later acquired by Wellspring International Education, which provides global enrollment services. I worked across both platforms on student-facing and internal recruitment systems.`,
-      `I owned and evolved a legacy Laravel backend, improving performance, security, and reliability while delivering new features. My work included query optimisation, caching, reporting, AWS and CI/CD hardening, leading backend and integration decisions, and rebuilding the Wellspring portal while maintaining production continuity.`
-    ],
+      `Owned a 70k-user production Laravel monolith, refactoring architecture to improve maintainability and enforce structured service layers and domain separation.`,
+      `Designed and maintained APIs for web and mobile clients, implementing authentication flows while ensuring backward compatibility.`,
+      `Improved performance through query optimization, caching, and asynchronous queue processing, and strengthened stability via incident handling and AWS-based infrastructure improvements.`,
+      `Led backend execution during sprint cycles, translating business requirements into architecture plans and maintaining platform continuity through system modernization and acquisition.`
+    ]
   },
   {
     companyName: "Snappymob (Kuala Lumpur, Malaysia - Remote)",
@@ -17,21 +19,25 @@ const experienceContent = [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
     details: [
-      `Snappymob is a boutique digital consultancy delivering scalable digital solutions across multiple industries.`,
-      `I contributed to the backend development of Tavis, a Moodle-based online tuition platform, focusing on CMS customisation and integrations. I led payment and authentication integrations (iPay88, Google, Apple, Facebook), collaborated with the CTO on architecture decisions, and participated in backend reviews to ensure stability, scalability, and maintainability during rapid development.`
+      `Contributed to the backend development of a nationwide online tuition platform built on a heavily customised Moodle LMS during its initial product build phase.`,
+      `Implemented payment integration (iPay88) and third-party authentication, handling backend callbacks and transaction result processing within the CMS framework.`,
+      `Extended Moodle through plugin development and API integration to support learning workflows across web and mobile platforms.`,
+      `Participated in architectural discussions and backend code reviews within a multi-developer team, maintaining quality during rapid product iteration.`
     ]
   },
   {
     companyName: "Nexlabs (Yangon, Myanmar)",
     positions: [
       {"position": "Head of Engineering", "year": "Dec 2020 – Feb 2021"},
-      {"position": "Lead Frontend and CMS Developer", "year": "Feb 2019 – Dec 2020"},
+      {"position": "Frontend & CMS Team Lead", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
     ],
     details: [
-      `Nexlabs is a digital consultancy helping businesses deliver practical, measurable digital products through strong engineering and product craftsmanship.`,
-      `I delivered multiple client platforms across e-commerce, education, insurance, and healthcare, working hands-on across backend, frontend, and CMS systems. I acted as a project-level technical lead, guiding architecture, estimates, and integrations, mentoring developers, and fully owning Fastforward, an early-stage multi-vendor e-commerce platform built and deployed independently.`
+      `Delivered client platforms across e-commerce, education, insurance, and healthcare, working hands-on across backend systems, database design, OpenCart customisation, and frontend integrations.`,
+      `Designed backend architectures and database schemas, implementing caching, queues, and scheduled jobs to ensure production stability and performance.`,
+      `Led a team of 5–7 developers, managing goals and mentoring through architectural and implementation challenges.`,
+      `Led the technical build of an internal multi-vendor eCommerce product based on Bagisto, defining system structure and feature strategy during its initial development phase.`
     ]
   },
   {
@@ -43,8 +49,10 @@ const experienceContent = [
       {"position": "Intern", "year": "Jan 2013 – Mar 2013"},
     ],
     details: [
-      `Global Wave Technology delivers end-to-end software solutions across web, enterprise systems, and custom applications for public and private sector clients.`,
-      `I worked on large-scale eGovernment systems for YCDC, building and maintaining citizen-facing portals and internal administrative platforms. My work extended across web, desktop, and mobile systems, including smart card and RFID/barcode integrations. I also acted as a senior technical contact with government stakeholders and supported junior developers on complex, long-running projects.`
+      `Worked on eGovernment systems under the Yangon Smart City initiative, digitizing public-facing and internal administrative workflows for the Yangon City Development Committee (YCDC).`,
+      `Delivered end-to-end web features using PHP, JavaScript, and MySQL across implementation, testing, production support, and long-term maintenance.`,
+      `Independently built desktop and mobile applications integrated with MIFARE smart cards and RFID/barcode devices, implementing SDK-based hardware communication for real-time identification workflows.`,
+      `Served as the senior technical contact, handling production issues, coordinating with government officers, and mentoring junior developers through code reviews and technical guidance.`
     ]
   },
 ];
