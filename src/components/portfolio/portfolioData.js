@@ -411,7 +411,7 @@ const PortfolioData = [
       {
         'name': 'Recycle Myanmar',
         'company': 'Nexlabs',
-        'role': 'Lead Frontend and CMS Developer',
+        'role': 'Frontend & CMS Team Lead',
         'description': [
           `Recycle Myanmar is a two-sided digital platform promoting environmental sustainability by connecting households with waste collectors through an on-demand pickup model, enabling efficient recycling via real-time matching and logistics.`,
           `The system supports administrators, sellers, and collectors, with live notifications, location tracking, and distance-based matching. Built with mobile apps, a central backend, and AWS infrastructure, it supported real operations and gained regional recognition, including a Merit Award at the 2020 Asia Smart App Awards and selection as a national winner in the Generation Impact Fellowship Program.`
@@ -448,7 +448,7 @@ const PortfolioData = [
       {
         'name': 'First National Insurance',
         'company': 'Nexlabs',
-        'role': 'Lead Frontend and CMS Developer',
+        'role': 'Frontend & CMS Team Lead',
         'description': [
           `First National Insurance (FNI), established in 2012, is one of Myanmar’s major insurance providers, serving both life and non-life segments with nationwide operations and large agent networks.`,
           `I worked on an internal operations platform used by staff and field agents to manage products, leads, appointments, proposals, premiums, commissions, and performance KPIs. The system included a role-based admin panel and mobile APIs supporting daily sales workflows, meetings, notifications, and learning materials. My work focused on backend development, core business logic, and operational features used in production by internal teams.`

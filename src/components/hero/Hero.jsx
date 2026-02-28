@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { name, position, totalExperiences, resumeURL } from "../../config";
+import { name, firstName, lastName, position, totalExperiences, resumeURL } from "../../config";
 import heroImage from "../../../public/assets/img/hero/dark.jpeg";
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
@@ -10,11 +10,11 @@ import Image from "next/image";
 const heroContent = {
   heroImage: heroImage,
   heroMobileImage: heroImgMobile,
-  heroTitleName: name,
+  heroTitleName: `${firstName} ${lastName}`,
   heroDesignation: position,
   heroDescriptions: [
-    `I’m a backend-first software engineer with over ${totalExperiences} years of experience building and operating production web platforms. I work hands-on across backend systems, deployments, and infrastructure while also taking responsibility for technical decisions and long-term system evolution.`,
-    `I enjoy turning real business problems into practical, maintainable solutions. Most of my work lives in PHP/Laravel, relational databases, and AWS, where I focus on reliability, clarity, and systems that hold up under real-world use.`
+    `I’m a backend engineer with ${totalExperiences}+ years of experience building and maintaining production web systems. I specialize in Laravel-based backend architecture, API design, and relational database modeling, with hands-on ownership of AWS infrastructure and deployment workflows.`,
+    `I’ve led backend development across education, e-commerce, and enterprise platforms, taking responsibility for system stability, performance optimization, and long-term maintainability. I build reliable systems that scale cleanly and operate predictably.`
   ],
   heroBtn: "Download Resume",
 };
