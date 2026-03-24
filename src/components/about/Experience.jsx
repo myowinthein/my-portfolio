@@ -28,7 +28,7 @@ const experienceContent = [
   {
     companyName: "Nexlabs (Yangon, Myanmar)",
     positions: [
-      {"position": "Head of Engineering", "year": "Dec 2020 – Feb 2021"},
+      {"position": "Head of Engineering (FastForward )", "year": "Dec 2020 – Feb 2021"},
       {"position": "Frontend & CMS Team Lead", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
