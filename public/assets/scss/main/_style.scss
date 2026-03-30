@@ -48,7 +48,7 @@ html {
   height: 100%;
 }
 :root {
-  --main-primary-color: #ffb400;
+  --main-primary-color: #68c7ec ;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -61,7 +61,7 @@ body {
   background-position: center;
   height: 100%;
   width: 100%;
-  background-color: #111;
+  background-color: #000f0f;
 }
 
 .poppins-font {
@@ -672,10 +672,10 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   background-position: top;
   height: calc(100vh - 80px);
   z-index: 11;
-  border-radius: 30px;
+  border-radius: 16px;
   left: 40px;
   top: 40px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
+  // box-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
 }
 
 .home .container-home {
