@@ -6,28 +6,28 @@ const educationContent = [
     degree: "Bachelor of Science (Honours) in Computing",
     institute: "University of Greenwich (UK)",
     details: "Graduated with First Class Honours",
-    link: `https://www.gre.ac.uk/undergraduate-courses/engsci/computing-bsc-hons`,
+    link: ``,
   },
   {
     year: "Jul 2021",
     degree: "Certified Laravel Developer",
     institute: "Laravel LLC",
     details: "",
-    link: `https://exam.laravelcert.com/is/myo-win-thein/certified-since/2021-07-13`,
+    link: `https://verifier.certificationforlaravel.org/bbc220bc-7159-4ff9-baf7-6289f3dcf4d3`,
   },
   {
     year: "Sep 2012 – Oct 2013",
-    degree: "Level 5 Diploma in Computing (QCF)",
+    degree: "Level 5 Diploma in Computing",
     institute: "NCC Education (UK)",
     details: "",
-    link: `https://www.nccedu.com/qualifications/computing/ncc-education-level-5-diploma-in-computing-l5dc/`,
+    link: ``,
   },
   {
     year: "Dec 2007 – Aug 2011",
     degree: "Bachelor of Technology in Electrical Power Engineering",
     institute: "Thanlyin Technological University",
     details: "",
-    link: `http://www.ttu.edu.mm/admission/join/electrical-power-engineering`,
+    link: ``,
   },
 ];
 
@@ -43,7 +43,18 @@ const Education = () => {
 
           <small className="d-block text-uppercase">{val.year}</small>
           <h5 className="poppins-font text-uppercase">{val.institute} </h5>
-          <span className="place open-sans-font">{val.degree} </span>
+          {/* <span className="place open-sans-font">{val.degree} </span> */}
+          <span className="place open-sans-font">
+            {val.degree}
+            {val.link && (
+              <>
+                {" "}
+                <a href={val.link} target="_blank" rel="noopener noreferrer">
+                  ↗ Verify
+                </a>
+              </>
+            )}
+          </span>
           <p className="open-sans-font">{val.details}</p>
         </li>
       ))}
