@@ -18,7 +18,7 @@ export const totalPlatformTypes = 5;
 export const totalDeliveredProjects = 14;
 
 // links
-export const resumeURL = 'https://drive.google.com/uc?export=download&id=1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG';
+export const resumeURL = 'https://drive.google.com/file/d/1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG/view?usp=sharing';
 export const facebookURL = 'https://www.facebook.com/myowinthein91/';
 export const instagramURL = 'https://www.instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';

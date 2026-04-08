@@ -48,7 +48,7 @@ html {
   height: 100%;
 }
 :root {
-  --main-primary-color: #68c7ec ;
+  --main-primary-color: #2CB1BC;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -61,7 +61,7 @@ body {
   background-position: center;
   height: 100%;
   width: 100%;
-  background-color: #000f0f;
+  background: linear-gradient(180deg, #021B1D 0%, #012426 100%);
 }
 
 .poppins-font {
@@ -127,7 +127,7 @@ button {
 
 body.light {
   color: #666;
-  background-color: #FFFFFF;
+  background-color: #F5F5F4;
 }
 
 body.light .home .home-details h1 span,
