@@ -267,10 +267,6 @@ const index = () => {
           </div>
         </div> */}
 
-
-
-
-
         <div className="row">
           <h3 className="text-uppercase pb-5 mb-0 text-center custom-title ft-wt-600">
             Experience & Education
@@ -287,7 +283,6 @@ const index = () => {
             </div>
           </div>
         </div>
-
 
         {/*  Experience & Education Ends */}
       </div>

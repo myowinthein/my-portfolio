@@ -10,6 +10,10 @@ const SocialShare = [
   //   iconName: "fa-brands fa-instagram", 
   //   link: instagramURL 
   // },
+  { 
+    iconName: "fa-brands fa-linkedin",
+    link: linkedinURL
+  },
   {
     iconName: "fa-brands fa-github",
     link: githubURL,
@@ -17,10 +21,6 @@ const SocialShare = [
   { 
     iconName: "fa-brands fa-medium",
     link: mediumURL
-  },
-  { 
-    iconName: "fa-brands fa-linkedin",
-    link: linkedinURL
   },
 ];
 
