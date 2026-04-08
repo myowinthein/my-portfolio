@@ -1286,16 +1286,25 @@ h4.info-title {
 
 /* Latest Posts */
 
+.blog .row {
+  > [class*="col-"] {
+    display: flex;
+  }
+}
+
 .blog .post-container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
 }
 
 .blog .post-content {
+  flex: 1;
   background-color: #252525;
-  padding: 20px 25px 25px 25px;
+  padding: 30px 25px 35px 25px;
   border-radius: 0 0 5px 5px;
 }
 
@@ -1346,6 +1355,11 @@ h4.info-title {
 .blog .post-content .entry-content p {
   margin: 15px 0 5px;
   color: rgba(255, 255, 255, 0.8);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 .blog .post-content .entry-header h3 {
