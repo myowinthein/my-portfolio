@@ -13,10 +13,11 @@ const heroContent = {
   heroTitleName: `${firstName} ${lastName}`,
   heroDesignation: position,
   heroDescriptions: [
-    `I’m a backend engineer with ${totalExperiences}+ years of experience building and maintaining production web systems. I specialize in Laravel-based backend architecture, API design, and relational database modeling, with hands-on ownership of AWS infrastructure and deployment workflows.`,
-    `I’ve led backend development across education, e-commerce, and enterprise platforms, taking responsibility for system stability, performance optimization, and long-term maintainability. I build reliable systems that scale cleanly and operate predictably.`
+    `Backend-focused engineer with ${totalExperiences}+ years of experience owning the design, delivery, and operation of production web systems at scale.`,
+    `Specialized in API architecture, relational data modeling, and AWS-based infrastructure, with hands-on ownership of CI/CD pipelines and deployment workflows.`,
+    `Experienced in building scalable backend systems using asynchronous processing and performance optimization, with a strong focus on maintainability, system stability, and long-term reliability.`
   ],
-  heroBtn: "Download Resume",
+  heroBtn: "View Resume",
 };
 
 const Hero = () => {
@@ -41,14 +42,14 @@ const Hero = () => {
               // style={{width:'100%',height:'100%'}}
             />
             <h1 className="poppins-font"> <div className="text-uppercase">
-              {"I'm"} {heroContent.heroTitleName}. </div>
+              {heroContent.heroTitleName}</div>
               <span>{heroContent.heroDesignation}</span>
             </h1>
             {heroContent.heroDescriptions.map((description, i) => (
               <p className="open-sans-font" key={i}>{description}</p>
             ))}
             {/* <button className="button" onClick={toggleModalOne}> */}
-            <a className="button" href={resumeURL} target="_blank" rel="noreferrer" download>
+            <a className="button" href={resumeURL} target="_blank" rel="noreferrer">
               <span className="button-text">{heroContent.heroBtn}</span>
               <span className="button-icon fa fa-download"></span>
             </a>

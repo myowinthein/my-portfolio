@@ -215,8 +215,8 @@ const index = () => {
               {/* End personal info */}
 
               <div className="col-12 mt-1">
-                <a className="button" href={resumeURL} target="_blank" rel="noreferrer" download>
-                  <span className="button-text">Download Resume</span>
+                <a className="button" href={resumeURL} target="_blank" rel="noreferrer">
+                  <span className="button-text">View Resume</span>
                   <span className="button-icon fa fa-download"></span>
                 </a>
               </div>
