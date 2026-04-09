@@ -48,22 +48,25 @@ import lukkyImg1 from "../../../public/assets/portfolio/lukky/1.jpg";
 import lukkyImg2 from "../../../public/assets/portfolio/lukky/2.jpg";
 
 // Business License
-import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.png";
+import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.jpg";
 import businessLicenseImg1 from "../../../public/assets/portfolio/business_license/1.png";
 import businessLicenseImg2 from "../../../public/assets/portfolio/business_license/2.png";
 import businessLicenseImg3 from "../../../public/assets/portfolio/business_license/3.png";
+import businessLicenseImg4 from "../../../public/assets/portfolio/business_license/4.png";
 
 // Building Permit
-import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.png";
+import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.jpg";
 import buildingPermitImg1 from "../../../public/assets/portfolio/building_permit/1.png";
 import buildingPermitImg2 from "../../../public/assets/portfolio/building_permit/2.png";
 import buildingPermitImg3 from "../../../public/assets/portfolio/building_permit/3.png";
+import buildingPermitImg4 from "../../../public/assets/portfolio/building_permit/4.png";
 
 // Revenue Station
-import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.png";
+import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.jpg";
 import revenueStationImg1 from "../../../public/assets/portfolio/revenue_station/1.png";
 import revenueStationImg2 from "../../../public/assets/portfolio/revenue_station/2.png";
 import revenueStationImg3 from "../../../public/assets/portfolio/revenue_station/3.png";
+import revenueStationImg4 from "../../../public/assets/portfolio/revenue_station/4.png";
 
 // Smart Card System
 import smartCardSystemBan from "../../../public/assets/portfolio/smart_card_system/banner.png";
@@ -73,12 +76,11 @@ import smartCardSystemImg3 from "../../../public/assets/portfolio/smart_card_sys
 import smartCardSystemImg4 from "../../../public/assets/portfolio/smart_card_system/4.png";
 
 // Land Document Tracking System
-import landDocumentTrackingSystemBan from "../../../public/assets/portfolio/land_document_tracking_system/banner.png";
-import landDocumentTrackingSystemImg1 from "../../../public/assets/portfolio/land_document_tracking_system/1.png";
-import landDocumentTrackingSystemImg2 from "../../../public/assets/portfolio/land_document_tracking_system/2.png";
-import landDocumentTrackingSystemImg3 from "../../../public/assets/portfolio/land_document_tracking_system/3.png";
-import landDocumentTrackingSystemImg4 from "../../../public/assets/portfolio/land_document_tracking_system/4.jpg";
-import landDocumentTrackingSystemImg5 from "../../../public/assets/portfolio/land_document_tracking_system/5.jpg";
+import documentLocaterSystemBan from "../../../public/assets/portfolio/document_locater_system/banner.jpg";
+import documentLocaterSystemImg1 from "../../../public/assets/portfolio/document_locater_system/1.png";
+import documentLocaterSystemImg2 from "../../../public/assets/portfolio/document_locater_system/2.png";
+import documentLocaterSystemImg3 from "../../../public/assets/portfolio/document_locater_system/3.png";
+import documentLocaterSystemImg4 from "../../../public/assets/portfolio/document_locater_system/4.jpg";
 
 // First National Insurance
 import fniBan from "../../../public/assets/portfolio/fni/banner.jpg";
@@ -98,19 +100,21 @@ import recycleMyanmarImg5 from "../../../public/assets/portfolio/recycle_myanmar
 
 const PortfolioData = [
   {
-    // Education Platforms
-    'title': 'Education Platforms',
-    'description': 'Education platforms covering student applications, university dashboards, and internal operational systems, designed for scale and long-term use.',
+    // Education
+    'title': 'Education',
+    'description': 'Education platforms supporting learning, student recruitment, and internal operations.',
     'projects': [
 
       // StudyMe
       {
-        'name': 'StudyMe Portal',
         'company': 'StudyMe',
+        'industry': 'International Education',
+        'product': 'StudyMe Portal',
+        'productType': 'B2B2C SaaS Platform',
         'role': 'Technical Lead',
         'description': [
-          `StudyMe is a student-centred education platform connecting prospective students with universities worldwide, supporting discovery, eligibility matching, and structured conversations across the application journey.`,
-          `I owned and evolved a legacy Laravel platform already in active production, delivering new features while improving reliability, security, and maintainability. I worked across backend architecture, integrations, and internal tooling, and supported platform continuity through acquisition by Wellspring International Education as the system scaled globally.`
+          `StudyMe is a multi-sided platform connecting students, concierge advisors, and universities across the international application journey. It enables discovery, eligibility matching, structured communication, and coordinated workflows, supporting real-world student recruitment and enrollment processes at scale.`,
+          `I owned the backend system end-to-end, building a scalable Laravel-based API architecture serving web and mobile clients. I implemented multi-role permissions, JWT/SSO authentication, Redis-backed async workflows, and AWS infrastructure, ensuring system reliability, performance, and maintainability in a production environment.`
         ],
         // 'status': 1,
         'banner': studymeBan,
@@ -131,12 +135,14 @@ const PortfolioData = [
 
       // Wellspring Portal
       {
-        'name': 'Wellspring Portal',
         'company': 'Wellspring International Education',
+        'industry': 'International Education',
+        'product': 'Wellspring Portal',
+        'productType': 'Enterprise Workflow Platform',
         'role': 'Technical Lead',
         'description': [
-          `Wellspring Portal is a business-critical internal platform used by Wellspring International Education and partner agencies to manage international enrollment workflows, partner coordination, and multi-region operations through role-based access and structured application processes.`,
-          `I maintained and operated a complex legacy system with many roles and permissions, focusing on production stability, issue resolution, and daily operational support. I handled critical AWS tasks such as security hardening and certificate renewals, prioritising reliability and continuity while contributing insight that later informed planning for a modernised v2 platform.`
+          `Wellspring Portal is an internal platform used by staff and partner agencies to manage international student recruitment and application workflows. It supports structured processes across student data, applications, university matching, and multi-level agency coordination with role-based access and reporting.`,
+          `I owned the backend and infrastructure end-to-end, first stabilising a legacy Laravel system, then leading a full rebuild with modern API architecture. I designed AWS environments, CI/CD pipelines, and permission-driven workflows, ensuring reliable operation and scalability for a complex multi-role production system.`
         ],
         // 'status': 1,
         'banner': wellspringBan,
@@ -154,18 +160,20 @@ const PortfolioData = [
 
       // Tavis
       {
-        'name': 'Tavis',
         'company': 'Snappymob',
+        'industry': 'EdTech',
+        'product': 'Tavis',
+        'productType': 'Learning Platform',
         'role': 'Full Stack Developer',
         'description': [
-          `Tavis is a nationwide live online tuition platform in Malaysia, delivering multi-platform learning across web, Windows, Android, and iOS, combining live classes, learning materials, and student progress tracking at scale.`,
-          `I worked as a backend-focused Full Stack Developer on a heavily customised Moodle LMS, contributing to daily feature development, iPay88 payment integration, third-party authentication, and core LMS customisation. My work focused on reliability and stability within an actively evolving production system serving students nationwide.`
+          `Tavis is an online tuition platform in Malaysia focused on secondary school students, combining live classes, learning materials, and progress tracking into a single system. It integrates real-time classroom features with a learning management system to support structured online education at scale.`,
+          `I contributed as part of a backend team during the initial build phase, working on a customised Moodle-based system. My work included integrating iPay88 payments and implementing third-party authentication flows, while supporting core backend development to ensure stable service behaviour across multiple client platforms.`
         ],
         // 'status': 1,
         'banner': tavisBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/tavis/v1.mp4'},
-          // {'type': 'video', 'url': '/assets/portfolio/tavis/v2.mp4'},
+          {'type': 'video', 'url': '/assets/portfolio/tavis/v2.mp4'},
           {'type': 'image', 'url': tavisImg1},
           {'type': 'image', 'url': tavisImg2},
           {'type': 'image', 'url': tavisImg3},
@@ -180,12 +188,14 @@ const PortfolioData = [
 
       // Chance Myanmar
       {
-        'name': 'Chance Myanmar',
         'company': 'Nexlabs',
+        'industry': 'EdTech',
+        'product': 'Chance Myanmar',
+        'productType': 'Learning Platform',
         'role': 'Senior Full Stack Developer',
         'description': [
-          `Chance Myanmar is Myanmar’s largest online soft-skills education platform, built to modernise training beyond traditional classrooms by delivering practical, career-focused courses through web and mobile applications.`,
-          `I owned and built the backend from the ground up, implementing authentication, course and lesson management, enrolment and progress tracking, homework submission, and activity-based notifications. The platform replaced manual Facebook workflows with a scalable AWS-backed system serving thousands of students nationwide.`
+          `Chance Myanmar is a content-driven learning platform focused on soft skills, career development, and personal growth, replacing a Facebook group previously used as its learning system. It enables structured course delivery, video-based lessons, progress tracking, and instructor interaction for a growing base of learners.`,
+          `I built the backend system end-to-end as the sole backend engineer, designing a Laravel-based API architecture serving web and Android clients. I implemented core domain models for courses, lessons, and progress tracking, ensuring reliable data flow and scalability while transforming an informal community into a structured production platform.`
         ],
         // 'status': 1,
         'banner': chancemyanmarBan,
@@ -198,28 +208,30 @@ const PortfolioData = [
           {'type': 'image', 'url': chancemyanmarImg5},
         ],
         'preview': [
-          {"platform": "Web", "url": "https://chancemyanmar.app/"},
-          {"platform": "Android", "url": "https://play.google.com/store/apps/details?id=com.chance.myanmar&hl=en&gl=US"},
-          {"platform": "Facebook", "url": " https://www.facebook.com/ChanceSchool"},
+          // {"platform": "Web", "url": "https://chancemyanmar.app/"},
+          // {"platform": "Android", "url": "https://play.google.com/store/apps/details?id=com.chance.myanmar&hl=en&gl=US"},
+          {"platform": "Official Page", "url": " https://www.facebook.com/ChanceSchool"},
         ],
       }
     ]
   },
 
-  // E-commerce
+  // Commerce
   {
-    'title': 'E-commerce',
-    'description': 'Ecommerce platforms including multi-vendor systems, marketplaces, and consumer apps, built for practical business workflows and growth.',
+    'title': 'Commerce Platforms',
+    'description': 'Commerce platforms spanning SaaS store builders, marketplaces, and gamified shopping.',
     'projects': [
 
       // fastforward
       {
-        'name': 'fastforward',
         'company': 'Nexlabs',
+        'industry': 'E-commerce',
+        'product': 'FastForward',
+        'productType': 'Multi-tenant SaaS Platform',
         'role': 'Head of Engineering',
         'description': [
-          `Fastforward was an early-stage multi-vendor eCommerce platform enabling businesses to launch online stores under a managed SaaS model, with fully configured stores deployed under their own domains and minimal setup.`,
-          `I owned the technical implementation during the initial build, using Bagisto with a focus on stability and upgradeability. I evaluated and integrated official modules, configured the CMS to fit the business model, and handled system design, feature validation, and deployment readiness to support reliable multi-store operations and future scaling.`
+          `FastForward is an eCommerce platform built during COVID to help SMEs in Myanmar launch online stores quickly through configuration rather than custom development. It was designed as a Shopify-style solution with multi-tenant architecture, enabling independent storefronts under shared infrastructure to support rapid digital adoption.`,
+          `I owned the system end-to-end as the sole engineer, defining architecture, implementing multi-tenant capabilities, and establishing technical guidelines for future team scaling. I extended Bagisto to support scalable store deployment and localised payment flows. The project did not reach production due to the 2021 Myanmar political situation.`
         ],
         // 'status': 2,
         'banner': fastforwardBan,
@@ -231,19 +243,21 @@ const PortfolioData = [
           {'type': 'image', 'url': fastforwardImg4},
         ],
         'preview': [
-          {'platform': 'Web', 'url': 'https://fastforwardmyanmar.com/'},
-          {'platform': 'Facebook', 'url': 'https://www.facebook.com/fastforwardmyanmar'},
+          // {'platform': 'Web', 'url': 'https://fastforwardmyanmar.com/'},
+          {'platform': 'Official Page', 'url': 'https://www.facebook.com/fastforwardmyanmar'},
         ],
       },
 
       // AnyMart
       {
-        'name': 'AnyMart',
         'company': 'Nexlabs',
+        'industry': 'E-commerce',
+        'product': 'AnyMart',
+        'productType': 'Marketplace Platform',
         'role': 'Senior Full Stack Developer',
         'description': [
-          `AnyMart is a nationwide online shopping platform built as a custom eCommerce marketplace, offering a wide range of products through a single, accessible system supporting end-to-end online purchasing via web and mobile-friendly experiences.`,
-          `I owned backend and JavaScript-based frontend work on a heavily customised OpenCart CMS, extending it beyond standard use. I implemented payment integrations (Wave Money, KBZ cards), social login, checkout and shipping logic, discount handling, and custom modules, delivering a stable marketplace praised for reliability.`
+          `AnyMart is a B2C online marketplace in Myanmar enabling users to buy and sell products across categories including fashion, electronics, and groceries, with localised payment and delivery workflows. It provides a unified platform for product discovery, order management, and transaction handling tailored to local consumer behaviour.`,
+          `I focused on deep functional customisation of OpenCart at the source code level, extending core modules beyond standard CMS capabilities. I implemented local payment integrations, social authentication, and custom shipping and catalog modules, shaping business-specific workflows and ensuring reliable operation within a heavily customised codebase.`
         ],
         // 'status': 2,
         'banner': anymartBan,
@@ -254,19 +268,21 @@ const PortfolioData = [
           {'type': 'image', 'url': anymartImg3},
         ],
         'preview': [
-          {'platform': 'Web', 'url': 'http://anymart.com.mm/'},
-          {'platform': 'Facebook', 'url': 'https://www.facebook.com/anymart.com.mm'},
+          // {'platform': 'Web', 'url': 'http://anymart.com.mm/'},
+          {'platform': 'Official Page', 'url': 'https://www.facebook.com/anymart.com.mm'},
         ],
       },
 
       // Lukky
       {
-        'name': 'Lukky',
         'company': 'Nexlabs',
+        'industry': 'E-commerce',
+        'product': 'LUKKY',
+        'productType': 'Gamified Commerce Platform',
         'role': 'Senior PHP Developer',
         'description': [
-          `Lukky is a consumer-focused e-commerce platform from Thailand designed to make shopping more engaging through gamified experiences. The platform combined traditional product browsing and cash-on-delivery purchases with interactive features such as point rewards, quizzes, giveaways, and playful UI elements to encourage repeat usage and user engagement.`,
-          `I handled the backend development independently, building and maintaining the core APIs and admin panel that powered product management, user activity, rewards, and transactional flows. I worked closely with Android and iOS developers to support mobile app features, ensure API stability, and align backend functionality with evolving frontend and business requirements.`
+          `LUKKY is a gamified shopping platform combining commerce, gameplay, and rewards into a single mobile experience for Thai consumers. Users engage through mini-games, wishlist-driven challenges, and reward systems to unlock products, blending entertainment with transactional flows across a marketplace of real goods and services.`,
+          `I built and owned the backend API and core logic as the sole backend engineer, implementing game-driven reward systems, point-based mechanics, and wishlist-linked progression flows. I designed APIs supporting real-time interactions and complex state transitions, ensuring consistent behaviour across gameplay, rewards, and commerce within a unified system.`
         ],
         // 'status': 2,
         'banner': lukkyBan,
@@ -276,29 +292,31 @@ const PortfolioData = [
           {'type': 'image', 'url': lukkyImg2},
         ],
         'preview': [
-          {'platform': 'Web', 'url': 'http://lukkyme.com/'},
-          {'platform': 'Android', 'url': 'https://play.google.com/store/apps/details?id=com.lukkyme.lukky'},
-          {'platform': 'iOS', 'url': 'https://apps.apple.com/th/app/lukky/id1507624371'},
-          {'platform': 'Facebook', 'url': 'https://www.facebook.com/lukkylsn/'},
+          // {'platform': 'Web', 'url': 'http://lukkyme.com/'},
+          // {'platform': 'Android', 'url': 'https://play.google.com/store/apps/details?id=com.lukkyme.lukky'},
+          // {'platform': 'iOS', 'url': 'https://apps.apple.com/th/app/lukky/id1507624371'},
+          {'platform': 'Official Page', 'url': 'https://www.facebook.com/lukkylsn/'},
         ],
       }
     ]
   },
 
-  // eGovernment
+  // eGovernment Systems
   {
-    'title': 'eGovernment',
-    'description': 'eGovernment systems for the Yangon City Development Committee, digitising licensing, permits, revenue, and administrative services under the smart city initiative.',
+    'title': 'eGovernment Systems',
+    'description': 'Digital government systems improving public services, workflows, and regulatory operations.',
     'projects': [
 
-      // Business License
+      // YCDC Business License System
       {
-        'name': 'Business License',
         'company': 'Global Wave Technology',
+        'industry': 'eGovernment',
+        'product': 'YCDC Business License System',
+        'productType': 'Workflow Management System',
         'role': 'Programmer',
         'description': [
-          `YCDC Business License is an official eGovernment platform for the Yangon City Development Committee that digitises business licensing and approval workflows. It enables online applications, document submission, inspections, notifications, renewals, and status tracking, replacing manual processes as part of Yangon’s smart city initiative.`,
-          `I worked as part of the development team to build and maintain this production system, contributing across backend and web development. My work included implementing licensing workflows, administrative tools, integrations, and maintenance, while collaborating with government stakeholders to ensure reliable operation for public users and internal departments.`
+          `YCDC Business License System is an eGovernment platform that digitises business licensing processes for Yangon, replacing manual workflows with structured online applications, document submission, and lifecycle management. It supports citizens and businesses in applying, tracking, and managing licenses across multiple business categories.`,
+          `I contributed to backend development and feature implementation within a team, working on a workflow-driven system handling multi-stage approvals across departments such as fire, health, and township authorities. I supported production operations while implementing complex state transitions, validation logic, and audit tracking within a compliance-driven environment.`
         ],
         // 'status': 1,
         'banner': businessLicenseBan,
@@ -306,41 +324,48 @@ const PortfolioData = [
           {'type': 'image', 'url': businessLicenseImg1},
           {'type': 'image', 'url': businessLicenseImg2},
           {'type': 'image', 'url': businessLicenseImg3},
+          {'type': 'image', 'url': businessLicenseImg4},
         ],
         'preview': [
           {'platform': 'Web', 'url': 'https://obls.ycdc.gov.mm/'},
         ],
       },
 
-      // Building Permit
+      // YCDC Building Permit System
       {
-        'name': 'Building Permit',
         'company': 'Global Wave Technology',
+        'industry': 'eGovernment',
+        'product': 'YCDC Building Permit System',
+        'productType': 'Workflow Management System',
         'role': 'Developer',
         'description': [
-          `YCDC Building Permit System is an official eGovernment platform that digitises building services for the Yangon City Development Committee, including permit applications, inspections, and technical approvals. It enables online submission, document uploads, status tracking, and permit management, replacing manual processes under the smart city initiative.`,
-          `I worked as part of the development team to build and maintain this production system, contributing across backend and web development. My work included implementing permit and inspection workflows, administrative tools, and maintenance, while collaborating with government stakeholders to ensure stable daily operation for public users and internal departments.`
+          `YCDC Building Permit System is an eGovernment platform that digitises construction permit workflows in Yangon, replacing manual processes with structured online applications, document submission, and technical validation. It supports applicants, engineers, and authorities across risk-classified projects and multiple permit types.`,
+          `I contributed to backend development and production support within a team, working on a workflow-driven system with non-linear approval stages, correction loops, and multi-actor coordination. I implemented validation logic and state transitions for complex domain data, ensuring consistent behaviour across risk-based workflows and regulatory requirements.`
         ],
         // 'status': 1,
         'banner': buildingPermitBan,
         'media': [
+          {'type': 'video', 'url': '/assets/portfolio/building_permit/v1.mp4'},
           {'type': 'image', 'url': buildingPermitImg1},
           {'type': 'image', 'url': buildingPermitImg2},
           {'type': 'image', 'url': buildingPermitImg3},
+          {'type': 'image', 'url': buildingPermitImg4},
         ],
         'preview': [
-          {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/building_permit/index.php'},
+          {'platform': 'Web', 'url': 'https://ybps.ycdc.gov.mm/'},
         ],
       },
 
-      // Revenue Station
+      // YCDC Revenue Station
       {
-        'name': 'Revenue Station',
         'company': 'Global Wave Technology',
+        'industry': 'eGovernment',
+        'product': 'YCDC Revenue Station System',
+        'productType': 'Workflow Management System',
         'role': 'Developer',
         'description': [
-          `YCDC Revenue Station is an official eGovernment platform for the Yangon City Development Committee that digitises municipal revenue and services. It supports online workflows for license fees, permits, inspections, land payments, and operational approvals, replacing manual processes with centralized applications, tracking, and notifications under the smart city initiative.`,
-          `I worked as part of the development team on this production system, contributing across backend and web development. My work included building service workflows, administrative tools, integrations, and maintenance, while collaborating with government stakeholders to ensure reliable daily operation for public users and internal departments.`
+          `YCDC Revenue Station System is an eGovernment platform digitising municipal market operations and revenue collection for Yangon City Development Committee. It supports stall leasing, vendor management, service applications, and compliance workflows, replacing manual processes with a structured system used by public vendors and internal administrative teams.`,
+          `I contributed as a developer within a team, supporting development and production operations. The system’s complexity lies in its rule-driven billing engine, handling rent calculations based on size, location, and market level, alongside premium multipliers, penalties, and recurring fee categories, requiring precise logic and consistent data integrity across workflows.`
         ],
         // 'status': 1,
         'banner': revenueStationBan,
@@ -348,20 +373,23 @@ const PortfolioData = [
           {'type': 'image', 'url': revenueStationImg1},
           {'type': 'image', 'url': revenueStationImg2},
           {'type': 'image', 'url': revenueStationImg3},
+          {'type': 'image', 'url': revenueStationImg4},
         ],
         'preview': [
           {'platform': 'Web', 'url': 'https://app.ycdc.gov.mm/revenue_station/index.php'},
         ],
       },
 
-      // Smart Card System
+      // YCDC Smart Card System
       {
-        'name': 'Smart Card System',
         'company': 'Global Wave Technology',
+        'industry': 'eGovernment',
+        'product': 'YCDC Smart Card System',
+        'productType': 'Smart Card Verification System',
         'role': 'Senior Developer',
         'description': [
-          `YCDC Smart Card System is a Windows-based verification tool developed as part of Yangon’s Smart City project, issuing and validating MIFARE smart cards for approved professionals such as architects, engineers, contractors, and surveyors.`,
-          `I built the C#/.NET application end-to-end, integrating with the YCDC Building Permit system to fetch approved records, encode them onto MIFARE cards via the ACR1252U reader, and support on-site verification by scanning cards to display license holder details, improving accuracy and reducing manual checks.`
+          `YCDC Smart Card System is a desktop application used to issue and verify digital licenses for construction professionals approved through the building permit system. It encodes identity and license data onto MIFARE smart cards, enabling on-site verification by field officers and replacing paper-based certification processes.`,
+          `I developed this C# application as part of the Smart City initiative, integrating directly with ACR1252U hardware to read and write smart card data. The core complexity involved low-level SDK integration, ensuring reliable encoding and real-time validation, bridging government systems with physical identity verification beyond typical web-based development.`
         ],
         // 'status': 1,
         'banner': smartCardSystemBan,
@@ -372,49 +400,54 @@ const PortfolioData = [
           {'type': 'image', 'url': smartCardSystemImg4},
         ],
         'preview': [
-          {'platform': 'Device Info', 'url': 'https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/'},
+          // {'platform': 'Device Info', 'url': 'https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/'},
         ],
       },
 
-      // Land Document Tracking System
+      // YCDC Document Locator System
       {
-        'name': 'Land Document Tracking System',
         'company': 'Global Wave Technology',
+        'industry': 'eGovernment',
+        'product': 'YCDC Document Locator System',
+        'productType': 'RFID-enabled Tracking System',
         'role': 'Senior Developer',
         'description': [
-          `YCDC Land Document Tracking System is part of the Yangon Smart City initiative, built for the Land Administration Department to digitise document storage and retrieval. Each land record was assigned a unique ID, linked to RFID tags attached to physical files, and searchable through barcode-based workflows.`,
-          `I built the system end-to-end as a solo developer, creating a Windows Mobile 6.5 application in C# integrated with the Motorola MC3190-Z RFID and barcode scanner SDK. It linked land records to RFID-tagged documents and guided staff through proximity-based audio and light signals, replacing slow manual searches with faster, technology-assisted retrieval.`
+          `This system supports locating physical land documents stored in YCDC warehouses by linking eGovernment barcode identities with RFID-tagged files. Field staff retrieve a document’s barcode from the central system, scan it on a handheld device, and use real-time RFID proximity signals to navigate storage areas and locate the exact physical file efficiently.`,
+          `I developed the Windows Mobile 6.5 C# application integrated with the Motorola MC3190-Z RFID and barcode SDK. I implemented barcode scanning, RFID encoding, and continuous proximity detection with audio and visual feedback, enabling accurate real-time document location. My work focused specifically on hardware-level mobile SDK integration for field operations.`
         ],
         // 'status': 1,
-        'banner': landDocumentTrackingSystemBan,
+        'banner': documentLocaterSystemBan,
         'media': [
-          {'type': 'image', 'url': landDocumentTrackingSystemImg1},
-          {'type': 'image', 'url': landDocumentTrackingSystemImg2},
-          {'type': 'image', 'url': landDocumentTrackingSystemImg3},
-          {'type': 'image', 'url': landDocumentTrackingSystemImg4},
-          {'type': 'image', 'url': landDocumentTrackingSystemImg5},
+          {'type': 'image', 'url': documentLocaterSystemImg1},
+          {'type': 'image', 'url': documentLocaterSystemImg2},
+          {'type': 'image', 'url': documentLocaterSystemImg3},
+          {'type': 'image', 'url': documentLocaterSystemImg4},
         ],
         'preview': [
-          {'platform': 'Device Info', 'url': 'https://www.zebra.com/us/en/support-downloads/rfid/rfid-handhelds/mc3190-z.html'},
+          // {'platform': 'Device Info', 'url': 'https://www.zebra.com/us/en/support-downloads/rfid/rfid-handhelds/mc3190-z.html'},
         ],
       },
     ]
   },
 
-  // Civid Applications
+  // Civic Platforms
   {
-    'title': 'Civic Applications',
-    'description': 'Digital applications for public and community use, designed to support real-world services with a focus on practical impact, reliable operation, and scalable system architecture.',
+    'title': 'Civic Platforms',
+    'description': 'Platforms addressing community needs through scalable, real-world operational systems.',
     'projects': [
 
       // Recycle Myanmar
       {
-        'name': 'Recycle Myanmar',
         'company': 'Nexlabs',
+        'industry': 'Recycling & Waste Management',
         'role': 'Frontend & CMS Team Lead',
+        'product': 'Recycle Myanmar',
+        'productType': 'Two-sided Marketplace Platform',
         'description': [
-          `Recycle Myanmar is a two-sided digital platform promoting environmental sustainability by connecting households with waste collectors through an on-demand pickup model, enabling efficient recycling via real-time matching and logistics.`,
-          `The system supports administrators, sellers, and collectors, with live notifications, location tracking, and distance-based matching. Built with mobile apps, a central backend, and AWS infrastructure, it supported real operations and gained regional recognition, including a Merit Award at the 2020 Asia Smart App Awards and selection as a national winner in the Generation Impact Fellowship Program.`
+          `Recycle Myanmar is a two-sided platform connecting households with waste collectors for on-demand recyclable pickup, operating as a ride-hailing style system for collection. It digitises informal recycling networks into a structured marketplace, enabling scheduling, job matching, and real-time coordination, supporting large-scale collection reaching ~80 tonnes per day.`,
+          `I built the backend system end-to-end as the sole backend engineer, designing the Laravel API that powered web and mobile clients. I implemented core domain logic for job dispatch, two-sided matching, and collector coordination, handling real-time assignment flows, routing logic, and operational state management across users and collectors.`
+          // `Recycle Myanmar is a two-sided digital platform promoting environmental sustainability by connecting households with waste collectors through an on-demand pickup model, enabling efficient recycling via real-time matching and logistics.`,
+          // `The system supports administrators, sellers, and collectors, with live notifications, location tracking, and distance-based matching. Built with mobile apps, a central backend, and AWS infrastructure, it supported real operations and gained regional recognition, including a Merit Award at the 2020 Asia Smart App Awards and selection as a national winner in the Generation Impact Fellowship Program.`
         ],
         // 'status': 2,
         'banner': recycleMyanmarBan,
@@ -428,11 +461,11 @@ const PortfolioData = [
           {'type': 'image', 'url': recycleMyanmarImg5},
         ],
         'preview': [
-          {'platform': 'Web', 'url': 'https://www.recyclemm.com/'},
-          {'platform': 'Android (User)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.user'},
-          {'platform': 'Android (Collector)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.picker'},
-          {'platform': 'Android (Business)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.business'},
-          {'platform': 'Facebook', 'url': 'https://www.facebook.com/p/Recycle-Myanmar-100057362593821/'},
+          // {'platform': 'Web', 'url': 'https://www.recyclemm.com/'},
+          // {'platform': 'Android (User)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.user'},
+          // {'platform': 'Android (Picker)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.picker'},
+          // {'platform': 'Android (Business)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.business'},
+          {'platform': 'Official Page', 'url': 'https://www.facebook.com/p/Recycle-Myanmar-100057362593821/'},
         ],
       },
     ]
@@ -441,17 +474,19 @@ const PortfolioData = [
   // Business Applications
   {
     'title': 'Business Applications',
-    'description': 'Internal business systems for operations, reporting, and workflow automation, including enterprise tools used by active teams across daily business processes.',
+    'description': 'Internal systems supporting operations, sales, and enterprise business workflows.',
     'projects': [
 
       // First National Insurance
       {
-        'name': 'First National Insurance',
         'company': 'Nexlabs',
+        'industry': 'Insurance Technology',
         'role': 'Frontend & CMS Team Lead',
+        'product': 'FNI Internal Portal',
+        'productType': 'Enterprise Operations Platform',
         'description': [
-          `First National Insurance (FNI), established in 2012, is one of Myanmar’s major insurance providers, serving both life and non-life segments with nationwide operations and large agent networks.`,
-          `I worked on an internal operations platform used by staff and field agents to manage products, leads, appointments, proposals, premiums, commissions, and performance KPIs. The system included a role-based admin panel and mobile APIs supporting daily sales workflows, meetings, notifications, and learning materials. My work focused on backend development, core business logic, and operational features used in production by internal teams.`
+          `FNI Internal Portal is an enterprise platform used by staff and agents to digitise insurance operations, sales workflows, and internal coordination across multiple branches. It supports policy management, proposals, claims workflows, KPI tracking, and agent activities, handling over 18 insurance product types within a unified operational system.`,
+          `I contributed to backend development, implementing core business logic for sales workflows, proposal handling, and operational features. A key area was the premium calculation engine, supporting multi-currency (MMK/USD), tax rules, and real-time Central Bank exchange rates, requiring precise financial logic and consistent behaviour across web and mobile APIs.`
         ],
         // 'status': 2,
         'banner': fniBan,

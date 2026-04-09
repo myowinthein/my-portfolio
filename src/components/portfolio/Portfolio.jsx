@@ -46,7 +46,7 @@ const Portfolio = () => {
                         >
                           <Image src={project.banner} alt="portfolio project" />
                           <h3>
-                            <span className="conent-title">{project.name}</span>
+                            <span className="conent-title">{project.product}</span>
                           </h3>
                         </div>
                       </div>
