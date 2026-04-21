@@ -18,21 +18,21 @@ const experienceContent = [
   // Snappymob
   {
     companyName: "Snappymob · Kuala Lumpur, Malaysia (Remote)",
-    companyInfo: `Digital consultancy delivering scalable software solutions across finance, media, agriculture, and logistics.`,
+    companyInfo: `Consultancy building scalable digital platforms across finance, media, agriculture, and logistics.`,
     positions: [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
     details: [
       `Contributed to backend development of a large scale online tuition platform built on a heavily customized Moodle CMS, supporting web and mobile clients`,
-      `Implemented iPay88 payment integration and multi provider social authentication, handling backend callbacks and transaction workflows across the platform`,
-      `Proposed a custom backend architecture to replace CMS limitations, presenting trade offs to PM and CTO and influencing architectural decision making`
+      `Implemented iPay88 payment integration and multi-provider social authentication, handling backend callbacks and transaction workflows across the platform`,
+      `Proposed a custom backend architecture to replace CMS limitations, presenting trade-offs to PM and CTO and influencing architectural decision-making`
     ]
   },
 
   // Nexlabs
   {
     companyName: "Nexlabs · Yangon, Myanmar",
-    companyInfo: `Digital consultancy delivering scalable web platforms and digital solutions across multiple industries.`,
+    companyInfo: `Digital consultancy delivering measurable web solutions through strategy, engineering and UX.`,
     positions: [
       {"position": "Head of Engineering", "year": "Dec 2020 – Feb 2021"},
       {"position": "Frontend & CMS Team Lead", "year": "Feb 2019 – Dec 2020"},
@@ -49,7 +49,7 @@ const experienceContent = [
   // Global Wave Technology
   {
     companyName: "Global Wave Technology · Yangon, Myanmar",
-    companyInfo: `Software company delivering enterprise systems, retail and HR solutions, and large scale IT integrations.`,
+    companyInfo: `Software company delivering retail and HR systems with web and multi-platform integration.`,
     positions: [
       {"position": "Senior Developer", "year": "Mar 2015 – Oct 2015"},
       {"position": "Developer", "year": "Apr 2014 – Mar 2015"},
@@ -59,7 +59,7 @@ const experienceContent = [
     details: [
       `Progressed from intern to Senior Developer within 2 years, contributing across the full software development lifecycle on government systems`,
       `Built eGovernment web applications for business licensing, building permits, and revenue services, enabling citizens to complete workflows online`,
-      `Designed backend workflows with role based access control, approval stages, and notification systems to support real government processes`
+      `Designed backend workflows with role-based access control, approval stages, and notification systems to support real government processes`
     ]
   },
 ];

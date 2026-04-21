@@ -13,7 +13,7 @@ const heroContent = {
   heroTitleName: `${firstName} ${lastName}`,
   heroDesignation: position,
   heroDescriptions: [
-    `Backend-focused engineer with ${totalExperiences}+ years of experience owning the design, delivery, and operation of production web systems at scale.`,
+    `Backend-focused engineer with ${totalExperiences}+ years of experience owning the design, delivery, and operation of large-scale production web systems.`,
     `Specialized in API architecture, relational data modeling, and AWS-based infrastructure, with hands-on ownership of CI/CD pipelines and deployment workflows.`,
     `Experienced in building scalable backend systems using asynchronous processing and performance optimization, with a strong focus on maintainability, system stability, and long-term reliability.`
   ],
