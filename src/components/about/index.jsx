@@ -6,7 +6,7 @@ import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 import Image from "next/image";
 
-import { resumeURL, menuLabels } from "../../config";
+import { resumeURL, menuLabels, firstName, lastName } from "../../config";
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 
 import htmlIcon from "../../../public/assets/img/programming/html.svg";
@@ -204,7 +204,7 @@ const index = () => {
                 <Image
                   src={heroImgMobile}
                   className="img-fluid main-img-mobile"
-                  alt="about avatar"
+                  alt={`${firstName} ${lastName}`}
                 />
               </div>
               {/* image for mobile menu */}

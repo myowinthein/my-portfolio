@@ -38,7 +38,7 @@ const Hero = () => {
             <Image
               src={heroContent.heroMobileImage}
               className="img-fluid main-img-mobile d-sm-block d-lg-none"
-              alt="hero man"
+              alt={heroContent.heroTitleName}
               // style={{width:'100%',height:'100%'}}
             />
             <h1 className="poppins-font"> <div className="text-uppercase">

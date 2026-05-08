@@ -121,12 +121,13 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
               {modalProject.media.map((media, i) => (
                 <div key={i}>
                   {media.type === "image" ? (
-                    <Image src={media.url} alt="portfolio project" />
+                    <Image src={media.url} alt={modalProject.product} />
                   ) : (
                     <video
                       ref={(el) => (videoRefs.current[i] = el)}
                       playsInline
                       loop
+                      preload="none"
                     >
                       <source src={media.url} type="video/mp4" />
                     </video>

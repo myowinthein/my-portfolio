@@ -12,7 +12,7 @@ const Blog = () => {
     handleBlogsData(id);
   };
   useEffect(() => {
-    Modal.setAppElement("#modal");
+    Modal.setAppElement("#__next");
   },[])
   return (
     <>
@@ -47,7 +47,7 @@ const Blog = () => {
                     src={item?.img}
                     width={500}
                     height={500}
-                    alt="item.title"
+                    alt={item?.title}
                   />
                 </div>
               </div>

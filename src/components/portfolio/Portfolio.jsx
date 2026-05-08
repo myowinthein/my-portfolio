@@ -6,8 +6,8 @@ import PortfolioModal from "./PortfolioModal";
 
 const Portfolio = () => {
   const [getModal, setGetModal] = useState(false);
-  const [modalCategory, setModalCategory] = useState(1);
-  const [modalProject, setModalProject] = useState(1);
+  const [modalCategory, setModalCategory] = useState(null);
+  const [modalProject, setModalProject] = useState(null);
 
   const handleModal = (category, project) => {
     setGetModal(true);
@@ -44,7 +44,7 @@ const Portfolio = () => {
                           className="tab-content"
                           onClick={() => handleModal(portfolio.title, project)}
                         >
-                          <Image src={project.banner} alt="portfolio project" />
+                          <Image src={project.banner} alt={project.product} />
                           <h3>
                             <span className="conent-title">{project.product}</span>
                           </h3>
