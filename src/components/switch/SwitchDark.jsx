@@ -1,9 +1,15 @@
-import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import handleSwitchValue from "../../../utils/theme";
 
 const SwitchDark = () => {
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("theme-color") === "light") {
+      handleSwitchValue(false);
+      setIsDark(true);
+    }
+  }, []);
 
   const handleLabelClick = () => {
     if (isDark) {
