@@ -26,7 +26,6 @@
     "react-modal": "^3.16.1",
     "react-tabs": "^5.1.0",
     "react-toastify": "^9.1.1",
-    "sass": "^1.56.0",
-    "slick-carousel": "^1.8.1"
+    "sass": "^1.56.0"
   }
 }
