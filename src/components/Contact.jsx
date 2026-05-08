@@ -199,7 +199,7 @@ const Contact = () => {
           </div>
 
           {/* Invisible reCAPTCHA mount point */}
-          <div id="recaptcha-container" class="grecaptcha-badge"/>
+          <div id="recaptcha-container" className="grecaptcha-badge"/>
         </div>
       </form>
     </>

@@ -16,7 +16,7 @@ const Blog = () => {
   },[])
   return (
     <>
-      <h4 class="info-title">
+      <h4 className="info-title">
         Explore more posts on&nbsp;
         <a
           className="preview-link"
@@ -114,7 +114,7 @@ const Blog = () => {
                     </div>
 
                     <div>
-                      <h4 class="info-title">
+                      <h4 className="info-title">
                         Read the full article on&nbsp;
                         <a
                           className="preview-link"
