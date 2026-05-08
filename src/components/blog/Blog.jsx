@@ -20,7 +20,7 @@ const Blog = () => {
         Explore more posts on&nbsp;
         <a
           className="preview-link"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer nofollow"
           href={mediumURL}
         >
@@ -28,7 +28,8 @@ const Blog = () => {
         </a>
         .
       </h4>
-      <div className="row" id="modal">
+
+      <div className="row">
         {blogsData.map((item) => (
           <div
             key={item.id}
@@ -62,81 +63,79 @@ const Blog = () => {
               </div>
               {/* End .post-content */}
             </article>
-
-            {/* Start ModalOneBlogContent */}
-            <Modal
-              isOpen={isOpen}
-              onRequestClose={() => setIsOpen(false)}
-              contentLabel="My dialog"
-              className="custom-modal dark"
-              overlayClassName="custom-overlay dark"
-              closeTimeoutMS={500}
-            >
-              <div>
-                <button
-                  className="close-modal"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Image src={cancelImg} alt="close icon" />
-                </button>
-                {/* End close icon */}
-
-                <div className="box_inner blog-post">
-                  {/* Article Starts */}
-                  <article>
-                    <div className="title-section text-start text-sm-center">
-                      <h1>
-                        Post <span>Details</span>
-                      </h1>
-                      <span className="title-bg">{menuLabels.writing}</span>
-                    </div>
-                    {/* Meta Starts */}
-
-                    <div className="meta open-sans-font">
-                      <div>
-                        <i className="fa fa-user"></i> {singleData.commentor}
-                      </div>
-
-                      <div className="date">
-                        <i className="fa fa-calendar"></i> {singleData.date}
-                      </div>
-
-                      <div>
-                        <i className="fa fa-tags"></i> {singleData.tag}
-                      </div>
-                    </div>
-                    {/* Meta Ends */}
-                    {/* Article Content Starts */}
-
-                    <h1>{singleData?.title}</h1>
-                    <div className="blog-excerpt open-sans-font pb-5">
-                      <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
-                    </div>
-
-                    <div>
-                      <h4 className="info-title">
-                        Read the full article on&nbsp;
-                        <a
-                          className="preview-link"
-                          target="_blank" 
-                          rel="noopener noreferrer nofollow"
-                          href={singleData.link}
-                        >
-                          Medium
-                        </a>
-                        .
-                      </h4>
-                    </div>
-                    {/* Article Content Ends */}
-                  </article>
-                  {/* Article Ends */}
-                </div>
-              </div>
-            </Modal>
-            {/* End  ModalOneBlogContent */}
           </div>
         ))}
       </div>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        contentLabel="My dialog"
+        className="custom-modal dark"
+        overlayClassName="custom-overlay dark"
+        closeTimeoutMS={500}
+      >
+        <div>
+          <button
+            className="close-modal"
+            onClick={() => setIsOpen(false)}
+          >
+            <Image src={cancelImg} alt="close icon" />
+          </button>
+          {/* End close icon */}
+
+          <div className="box_inner blog-post">
+            {/* Article Starts */}
+            <article>
+              <div className="title-section text-start text-sm-center">
+                <h1>
+                  Post <span>Details</span>
+                </h1>
+                <span className="title-bg">{menuLabels.writing}</span>
+              </div>
+              {/* Meta Starts */}
+
+              <div className="meta open-sans-font">
+                <div>
+                  <i className="fa fa-user"></i> {singleData.commentor}
+                </div>
+
+                <div className="date">
+                  <i className="fa fa-calendar"></i> {singleData.date}
+                </div>
+
+                <div>
+                  <i className="fa fa-tags"></i> {singleData.tag}
+                </div>
+              </div>
+              {/* Meta Ends */}
+              {/* Article Content Starts */}
+
+              <h1>{singleData?.title}</h1>
+              <div className="blog-excerpt open-sans-font pb-5">
+                <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
+              </div>
+
+              <div>
+                <h4 className="info-title">
+                  Read the full article on&nbsp;
+                  <a
+                    className="preview-link"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    href={singleData.link}
+                  >
+                    Medium
+                  </a>
+                  .
+                </h4>
+              </div>
+              {/* Article Content Ends */}
+            </article>
+            {/* Article Ends */}
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };
