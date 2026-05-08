@@ -133,7 +133,7 @@ Navigation labels come from `config.js` → `menuLabels`.
 **Skill icon:**
 ```jsx
 <div className="pLogo p25 position-relative">
-  <Image src={icon} alt="skill icon" />
+  <Image src={icon} alt={name} />
 </div>
 <small className="open-sans-font d-block text-center mt-2">{name}</small>
 ```
@@ -218,9 +218,9 @@ Video files are served from `public/assets/portfolio/<slug>/`. Videos auto-play 
 ## Deployment
 
 - Hosted on Vercel. Site URL: `https://myowin.dev`.
-- `SITE_URL` env var set in `.env.production` and Vercel project settings.
+- `SITE_URL` env var must be set in Vercel project settings. A local `.env.production` file exists on disk for local builds but is intentionally not tracked in git — do not commit it.
 - Sitemap auto-generated post-build via `next-sitemap` → `next-sitemap.config.js`.
-- `meta name="robots"` is currently `noindex, follow` in `Seo.jsx` — intentional during active development.
+- `meta name="robots"` is `index, follow` in `Seo.jsx`.
 
 ---
 
