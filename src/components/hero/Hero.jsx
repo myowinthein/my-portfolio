@@ -13,9 +13,9 @@ const heroContent = {
   heroTitleName: `${firstName} ${lastName}`,
   heroDesignation: position,
   heroDescriptions: [
-    `Backend-focused engineer with ${totalExperiences}+ years of experience owning the design, delivery, and operation of large-scale production web systems.`,
-    `Specialized in API architecture, relational data modeling, and AWS-based infrastructure, with hands-on ownership of CI/CD pipelines and deployment workflows.`,
-    `Experienced in building scalable backend systems using asynchronous processing and performance optimization, with a strong focus on maintainability, system stability, and long-term reliability.`
+    `Backend-focused engineer with ${totalExperiences}+ years of experience designing, modernizing, and operating scalable API and cloud-backed web platforms.`,
+    `Specialized in backend architecture, AWS infrastructure, CI/CD, production reliability, observability, security hardening, and maintainable system design across SaaS and enterprise systems.`,
+    `Experienced in technical leadership, legacy modernization, remote engineering collaboration, and AI-assisted workflows for technical research, debugging, and delivery acceleration.`
   ],
   heroBtn: "View Resume",
 };

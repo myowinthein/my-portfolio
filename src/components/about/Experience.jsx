@@ -9,9 +9,9 @@ const experienceContent = [
       {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ],
     details: [
-      `Took full ownership of a legacy Laravel monolith, refactoring architecture to enforce service layers, validation structure, API resources, and domain separation`,
-      `Designed and maintained RESTful APIs for web and mobile clients, introducing API versioning, JWT authentication, SSO, and Stripe payment integration`,
-      `Rebuilt and secured AWS infrastructure by auditing legacy resources, enforcing encryption, upgrading services, and implementing secure database access via VPN`
+      `Took full ownership of a legacy Laravel monolith, refactoring the architecture to enforce service layers, validation structure, API resources, and domain separation`,
+      `Rebuilt and secured AWS infrastructure by auditing legacy resources, enforcing encryption, upgrading services, and implementing secure database access via VPN`,
+      `Modernized CI/CD and security practices by implementing OIDC, removing hardcoded credentials, and introducing role-based access in deployment workflows`
     ]
   },
 
@@ -23,9 +23,9 @@ const experienceContent = [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
     details: [
-      `Contributed to backend development of a large scale online tuition platform built on a heavily customized Moodle CMS, supporting web and mobile clients`,
+      `Contributed to backend development of a large-scale online tuition platform built on a heavily customized Moodle CMS, supporting web and mobile clients`,
       `Implemented iPay88 payment integration and multi-provider social authentication, handling backend callbacks and transaction workflows across the platform`,
-      `Proposed a custom backend architecture to replace CMS limitations, presenting trade-offs to PM and CTO and influencing architectural decision-making`
+      `Proposed a custom backend structure to address CMS limitations, presenting technical trade-offs to the PM and CTO while contributing to implementation decisions`
     ]
   },
 
@@ -41,8 +41,8 @@ const experienceContent = [
     ],
     details: [
       `Progressed from Senior PHP Developer to Head of Engineering, earning trust through consistent ownership and technical leadership across multiple client systems`,
-      `Designed backend architectures and API contracts across e-commerce, education, insurance, and civic platforms, ensuring scalable and maintainable systems`,
-      `Led a team of 5 to 7 engineers across concurrent projects, providing technical direction, unblocking delivery, and driving code quality through structured reviews`
+      `Designed backend systems and API contracts across e-commerce, education, insurance, and civic platforms, ensuring scalable and maintainable systems`,
+      `Led the backend design and early development of FastForward, an internal e-commerce platform, defining system structure and guiding its initial build phase`
     ]
   },
 
@@ -57,9 +57,9 @@ const experienceContent = [
       {"position": "Intern", "year": "Jan 2013 – Mar 2013"},
     ],
     details: [
-      `Progressed from intern to Senior Developer within 2 years, contributing across the full software development lifecycle on government systems`,
-      `Built eGovernment web applications for business licensing, building permits, and revenue services, enabling citizens to complete workflows online`,
-      `Designed backend workflows with role-based access control, approval stages, and notification systems to support real government processes`
+      `Progressed from intern to Senior Developer within 2 years, contributing across the software development lifecycle on government systems`,
+      `Designed backend workflows with role-based access control, approval stages, and notification systems to support government operational workflows`,
+      `Developed hardware-integrated systems using C# and RFID technologies, including smart card issuance and mobile applications for physical asset tracking`
     ]
   },
 ];

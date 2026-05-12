@@ -4,14 +4,14 @@ const educationContent = [
   {
     year: "Jul 2023 – Jul 2024",
     degree: "Bachelor of Science (Honours) in Computing",
-    institute: "University of Greenwich (UK)",
+    institute: "University of Greenwich",
     details: "Graduated with First Class Honours",
     link: ``,
   },
   {
     year: "Jul 2021",
     degree: "Certified Laravel Developer",
-    institute: "Laravel LLC",
+    institute: "Laravel",
     details: "",
     link: `https://verifier.certificationforlaravel.org/bbc220bc-7159-4ff9-baf7-6289f3dcf4d3`,
   },
