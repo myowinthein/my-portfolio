@@ -33,33 +33,34 @@ const educationContent = [
 
 const Education = () => {
   return (
-    <ul>
+    <>
       {educationContent.map((val, i) => (
-        <li key={i} className="exp-gutter">
-          <div className="icon">
-            <i className="fa fa-graduation-cap"></i>
+        <div key={i} className="col-sm-6 mb-4" data-aos="fade-right">
+          <div className="edu-card">
+            <div className="edu-card__icon">
+              <i className="fa fa-graduation-cap"></i>
+            </div>
+            <small className="d-block text-uppercase edu-card__year">{val.year}</small>
+            <h5 className="poppins-font text-uppercase edu-card__degree">{val.degree}</h5>
+            <p className="open-sans-font edu-card__institute">{val.institute}</p>
+            {val.details && (
+              <p className="open-sans-font edu-card__details">{val.details}</p>
+            )}
+            {val.link && (
+              <a
+                className="cert-verify-link open-sans-font"
+                href={val.link}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <i className="fa fa-arrow-up-right-from-square"></i>
+                Verify Certificate
+              </a>
+            )}
           </div>
-          {/* <span className="time open-sans-font text-uppercase">{val.year}</span> */}
-
-          <small className="d-block text-uppercase">{val.year}</small>
-          <h5 className="poppins-font text-uppercase">{val.institute} </h5>
-          {/* <span className="place open-sans-font">{val.degree} </span> */}
-          <span className="place open-sans-font">{val.degree}</span>
-          {val.link && (
-            <a
-              className="cert-verify-link open-sans-font"
-              href={val.link}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <i className="fa fa-arrow-up-right-from-square"></i>
-              Verify Certificate
-            </a>
-          )}
-          <p className="open-sans-font">{val.details}</p>
-        </li>
+        </div>
       ))}
-    </ul>
+    </>
   );
 };
 
