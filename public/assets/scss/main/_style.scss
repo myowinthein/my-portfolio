@@ -907,70 +907,81 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   margin: 0 auto;
 }
 
-.edu-card {
-  background-color: #252525;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 24px;
-  height: 100%;
+.edu-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  .edu-card__icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(44, 177, 188, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--main-primary-color);
-    font-size: 14px;
-    margin-bottom: 14px;
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .edu-card__year {
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    color: var(--main-primary-color);
-    margin-bottom: 8px;
-    opacity: 0.9;
+  .edu-row__left {
+    flex: 1;
+    min-width: 0;
   }
 
-  .edu-card__degree {
-    font-size: 14px;
+  .edu-row__degree {
+    font-size: 15px;
     font-weight: 600;
     color: #eee;
-    margin: 0 0 6px;
+    margin: 0 0 5px;
     line-height: 1.4;
   }
 
-  .edu-card__institute {
+  .edu-row__meta {
     font-size: 13px;
     color: #aaa;
-    font-weight: 600;
     margin: 0;
+    line-height: 1.5;
   }
 
-  .edu-card__details {
-    font-size: 12px;
+  .edu-row__detail {
+    color: var(--main-primary-color);
+    opacity: 0.85;
+  }
+
+  .edu-row__year {
+    font-size: 11px;
     color: #888;
-    margin: 4px 0 0;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    padding-top: 3px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+    gap: 4px;
+
+    .edu-row__year {
+      order: -1;
+    }
   }
 }
 
-body.light .edu-card {
-  background-color: #fff;
-  border-color: #e8e8e8;
+body.light .edu-row {
+  border-color: rgba(0, 0, 0, 0.1);
 
-  .edu-card__degree {
-    color: #333;
+  .edu-row__degree {
+    color: #222;
   }
 
-  .edu-card__institute {
-    color: #555;
+  .edu-row__meta {
+    color: #666;
   }
 
-  .edu-card__details {
-    color: #777;
+  .edu-row__year {
+    color: #999;
   }
 }
 

@@ -5,7 +5,7 @@ const educationContent = [
     year: "Jul 2023 – Jul 2024",
     degree: "Bachelor of Science (Honours) in Computing",
     institute: "University of Greenwich",
-    details: "Graduated with First Class Honours",
+    details: "First Class Honours",
     link: ``,
   },
   {
@@ -35,17 +35,15 @@ const Education = () => {
   return (
     <>
       {educationContent.map((val, i) => (
-        <div key={i} className="col-sm-6 mb-4" data-aos="fade-right">
-          <div className="edu-card">
-            <div className="edu-card__icon">
-              <i className="fa fa-graduation-cap"></i>
-            </div>
-            <small className="d-block text-uppercase edu-card__year">{val.year}</small>
-            <h5 className="poppins-font text-uppercase edu-card__degree">{val.degree}</h5>
-            <p className="open-sans-font edu-card__institute">{val.institute}</p>
-            {val.details && (
-              <p className="open-sans-font edu-card__details">{val.details}</p>
-            )}
+        <div key={i} className="edu-row" data-aos="fade-up">
+          <div className="edu-row__left">
+            <h5 className="poppins-font edu-row__degree">{val.degree}</h5>
+            <p className="open-sans-font edu-row__meta">
+              {val.institute}
+              {val.details && (
+                <span className="edu-row__detail"> · {val.details}</span>
+              )}
+            </p>
             {val.link && (
               <a
                 className="cert-verify-link open-sans-font"
@@ -58,6 +56,7 @@ const Education = () => {
               </a>
             )}
           </div>
+          <small className="text-uppercase edu-row__year">{val.year}</small>
         </div>
       ))}
     </>

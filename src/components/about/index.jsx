@@ -272,7 +272,11 @@ const index = () => {
               Education
             </h3>
           </div>
-          <Education />
+          <div className="col-12">
+            <div className="edu-list">
+              <Education />
+            </div>
+          </div>
         </div>
         {/* Education Ends */}
       </div>
