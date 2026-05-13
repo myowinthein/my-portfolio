@@ -873,6 +873,35 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   opacity: 0.8;
 }
 
+.about .resume-box .cert-verify-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--main-primary-color);
+  border: 1px solid var(--main-primary-color);
+  border-radius: 3px;
+  padding: 2px 8px;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  i {
+    font-size: 9px;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(44, 177, 188, 0.08);
+    color: var(--main-primary-color);
+    text-decoration: none;
+  }
+}
+
 /* Skills */
 
 .about .c100 {

@@ -44,17 +44,18 @@ const Education = () => {
           <small className="d-block text-uppercase">{val.year}</small>
           <h5 className="poppins-font text-uppercase">{val.institute} </h5>
           {/* <span className="place open-sans-font">{val.degree} </span> */}
-          <span className="place open-sans-font">
-            {val.degree}
-            {val.link && (
-              <>
-                {" "}
-                <a href={val.link} target="_blank" rel="noopener noreferrer">
-                  ↗ Verify
-                </a>
-              </>
-            )}
-          </span>
+          <span className="place open-sans-font">{val.degree}</span>
+          {val.link && (
+            <a
+              className="cert-verify-link open-sans-font"
+              href={val.link}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <i className="fa fa-arrow-up-right-from-square"></i>
+              Verify Certificate
+            </a>
+          )}
           <p className="open-sans-font">{val.details}</p>
         </li>
       ))}
