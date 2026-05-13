@@ -196,10 +196,16 @@ const Contact = () => {
               </span>
               <span className="button-icon fa fa-paper-plane"></span>
             </button>
+            <p className="recaptcha-disclaimer open-sans-font">
+              This site is protected by reCAPTCHA and the Google{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer nofollow">Privacy Policy</a>
+              {" "}and{" "}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer nofollow">Terms of Service</a>
+              {" "}apply.
+            </p>
           </div>
 
-          {/* Invisible reCAPTCHA mount point */}
-          <div id="recaptcha-container" className="grecaptcha-badge"/>
+          <div id="recaptcha-container" />
         </div>
       </form>
     </>
