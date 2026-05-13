@@ -163,7 +163,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
     .close-modal {
         position: absolute;
         top: -52px;
-        right: -86px;
+        right: 0;
         background-color: transparent;
         height: 50px;
         width: 50px;
@@ -175,8 +175,8 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         @media screen and (max-width: 575px) {
             width: 30px;
             height: 30px;
-            right: -16px;
-            top: -51px;
+            right: 0;
+            top: -40px;
         }
 
         img {
