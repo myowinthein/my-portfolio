@@ -51,7 +51,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #252525;
+        background-color: #1E2D2F;
         padding: 1rem 2rem;
         border-radius: 1rem;
         z-index: 5;
@@ -90,7 +90,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         max-height: 370px;
         border-radius: 10px;
         overflow: hidden;
-        background: #252525;
+        background: #1E2D2F;
         margin: 0;
 
         img,
@@ -163,7 +163,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
     .close-modal {
         position: absolute;
         top: -52px;
-        right: 0;
+        right: -35px;
         background-color: transparent;
         height: 50px;
         width: 50px;
