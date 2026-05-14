@@ -41,7 +41,7 @@ const Portfolio = () => {
                     {portfolio.projects.map((project, j) => (
                       <div key={j} className="project-item" data-aos="fade-right" onClick={() => handleModal(portfolio.title, project)}>
                         <div className="tab-content">
-                          <Image src={project.banner} alt={project.product} />
+                          <Image src={project.banner} alt={project.product} sizes="(max-width: 575px) 100vw, (max-width: 992px) 50vw, 33vw" />
                           <h3>
                             <span className="content-title">{project.product}</span>
                           </h3>
