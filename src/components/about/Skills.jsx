@@ -10,7 +10,7 @@ const Skills = ({skillSets}) => {
             <p className="skill-group__label open-sans-font">{skillSet.title}</p>
             <div className="row justify-content-start">
               {skillSet.skills.map((skill, j) => (
-                <div className="col-6 col-md-2 mb-3 mb-sm-4" key={j}>
+                <div className="col-6 col-md-2 mb-2 mb-sm-3" key={j}>
                   <div className="pLogo p25 position-relative">
                     {skill.core && (
                       <i
