@@ -39,15 +39,17 @@ const Portfolio = () => {
 
                   <div className="tab-container">
                     {portfolio.projects.map((project, j) => (
-                      <div key={j} className="project-item" data-aos="fade-right">
-                        <div
-                          className="tab-content"
-                          onClick={() => handleModal(portfolio.title, project)}
-                        >
+                      <div key={j} className="project-item" data-aos="fade-right" onClick={() => handleModal(portfolio.title, project)}>
+                        <div className="tab-content">
                           <Image src={project.banner} alt={project.product} />
                           <h3>
-                            <span className="conent-title">{project.product}</span>
+                            <span className="content-title">{project.product}</span>
                           </h3>
+                        </div>
+                        <div className="project-meta">
+                          <p className="project-meta__company poppins-font">{project.company}</p>
+                          <p className="project-meta__role open-sans-font">{project.role}</p>
+                          <p className="project-meta__type open-sans-font">{project.productType}</p>
                         </div>
                       </div>
                     ))}

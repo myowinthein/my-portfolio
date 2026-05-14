@@ -35,16 +35,16 @@ const Education = () => {
   return (
     <>
       {educationContent.map((val, i) => (
-        <div key={i} className="edu-row" data-aos="fade-up">
+        <div key={i} className="edu-row">
           <div className="edu-row__left">
             <h5 className="poppins-font edu-row__degree">{val.degree}</h5>
             <p className="open-sans-font edu-row__meta">
               {val.institute}
-              {val.details && (
+              {val.details ? (
                 <span className="edu-row__detail"> · {val.details}</span>
-              )}
+              ) : null}
             </p>
-            {val.link && (
+            {val.link ? (
               <a
                 className="cert-verify-link open-sans-font"
                 href={val.link}
@@ -54,7 +54,7 @@ const Education = () => {
                 <i className="fa fa-arrow-up-right-from-square"></i>
                 Verify Certificate
               </a>
-            )}
+            ) : null}
           </div>
           <small className="text-uppercase edu-row__year">{val.year}</small>
         </div>
