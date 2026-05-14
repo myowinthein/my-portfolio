@@ -37,7 +37,7 @@ export const menuLabels = {
 
 // meta
 export const metaTitle = `${firstName} ${lastName} — ${position}`
-export const metaDescription = `${position} with ${totalExperiences}+ years of experience designing and scaling production systems. Specialized in PHP/Laravel, backend architecture, and AWS infrastructure.`;
+export const metaDescription = `${position} with ${totalExperiences}+ years of experience building scalable APIs, AWS-backed platforms, CI/CD pipelines, and reliable SaaS systems.`;
 export const metaImage = `${siteURL}/assets/img/hero/meta.jpeg`
 
 // toast
