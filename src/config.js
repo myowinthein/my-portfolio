@@ -38,7 +38,7 @@ export const menuLabels = {
 // meta
 export const metaTitle = `${firstName} ${lastName} — ${position}`
 export const metaDescription = `${position} with ${totalExperiences}+ years of experience designing and scaling production systems. Specialized in PHP/Laravel, backend architecture, and AWS infrastructure.`;
-export const metaImage = siteURL + 'assets/img/hero/meta.jpeg'
+export const metaImage = `${siteURL}/assets/img/hero/meta.jpeg`
 
 // toast
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
