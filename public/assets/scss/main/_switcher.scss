@@ -55,7 +55,7 @@
         color: #666;
     }
     &.active {
-        background-color: #eee; 
+        background-color: #c0c0c0;
         .light-text {
             visibility: hidden;
             opacity: 0;
@@ -65,7 +65,7 @@
             opacity: 1;
         }
         &:hover {
-            background-color: #dbdbdb;
+            background-color: #b0b0b0;
         }
     }
     .dark-text {

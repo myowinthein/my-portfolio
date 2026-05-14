@@ -80,7 +80,7 @@ img {
     margin: 1em auto;
 }
 hr.separator {
-  border-top: 1px solid #252525;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin: 70px auto 55px;
   max-width: 40%;
 }
@@ -109,7 +109,7 @@ button {
 }
 .pLogo {
   text-align: center;
-  background-color: #252525;
+  background-color: #1E2D2F;
   width: 8em;
   height: 8em;
   border-radius: 50%;
@@ -126,13 +126,13 @@ button {
 /*** Light Body ***/
 
 body.light {
-  color: #666;
+  color: #444;
   background-color: #F5F5F4;
 }
 
 body.light .home .home-details h1 span,
 body.light .button .button-text {
-  color: #666;
+  color: #333;
 }
 
 body.light .button:hover .button-text {
@@ -140,7 +140,7 @@ body.light .button:hover .button-text {
 }
 
 body.light .home .home-details h6 {
-  color: #777;
+  color: #555;
 }
 
 body.home.light .bg {
@@ -159,7 +159,7 @@ body.light .preloader {
 }
 
 body.light .title-section h1 {
-  color: #666;
+  color: #333;
 }
 
 body.light .title-bg {
@@ -167,18 +167,18 @@ body.light .title-bg {
 }
 
 body.light .about .box-stats {
-  border: 1px solid #ddd;
+  border: 1px solid #c0c0c0;
 }
 
 body.light .about .c100,
 body.light .about .resume-box .time,
 body.light .pLogo {
-  background-color: #eee;
+  background-color: #e0e0e0;
 }
 
 body.light .about .resume-box .time,
 body.light .about .resume-box p {
-  color: #666;
+  color: #444;
 }
 
 body.light .about .resume-box .place:before {
@@ -186,7 +186,7 @@ body.light .about .resume-box .place:before {
 }
 
 body.light .about .resume-box li:after {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #bfbfbf;
 }
 
 body.light .about .c100 > span {
@@ -209,20 +209,20 @@ body.light .contact .contactform input[type="text"],
 body.light .contact .contactform input[type="email"],
 body.light .contact .contactform textarea {
   background-color: #fff;
-  border: 1px solid #ddd;
-  color: #666;
+  border: 1px solid #c8c8c8;
+  color: #333;
 }
 body.light .contact .contactform input[type="text"]:focus,
 body.light .contact .contactform input[type="email"]:focus,
 body.light .contact .contactform textarea:focus {
   background-color: #fff;
   border: 1px solid var(--main-primary-color);
-  color: #666;
+  color: #333;
 }
 
 body.light .contact ul.social li a {
-  color: #666;
-  background: #eee;
+  color: #444;
+  background: #e0e0e0;
 }
 
 body.light .contact ul.social li a:hover {
@@ -231,7 +231,7 @@ body.light .contact ul.social li a:hover {
 }
 
 body.light .blog .post-content {
-  background-color: #f5f8fc;
+  background-color: #f4f4f4;
 }
 body.light .quotebox .icon img {
   filter: invert(0);
@@ -239,7 +239,7 @@ body.light .quotebox .icon img {
 
 body.light .blog .post-content .entry-header h3,
 body.light .blog .entry-content p {
-  color: #454545;
+  color: #333;
 }
 body.light .blog .post-content .entry-header h3 {
   transition: 0.3s;
@@ -250,9 +250,9 @@ body.light .blog .post-container:hover {
   }
 }
 body.light .blog .page-link {
-  color: #666;
-  background-color: #eee;
-  border: 1px solid #eee;
+  color: #444;
+  background-color: #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
 
 body.light .blog-post .meta {
@@ -264,11 +264,11 @@ body.light .blog .page-item.active .page-link {
 }
 
 body.light hr.separator {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #c8c8c8;
 }
 
 body.light .header ul.icon-menu li.icon-box {
-  background-color: #eee;
+  background-color: #e0e0e0;
   &:hover {
     background: var(--main-primary-color);
   }
@@ -278,7 +278,7 @@ body.light .header ul.icon-menu li.icon-box {
 }
 
 body.light .header ul.icon-menu li.icon-box i {
-  color: #666;
+  color: #444;
 }
 
 body.light .header ul.icon-menu li.icon-box.react-tabs__tab--selected,
@@ -290,7 +290,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 
 @media (max-width: 991px) {
   body.light .main-img-mobile {
-    border: 4px solid #eee;
+    border: 4px solid #d0d0d0;
   }
 
   body.light #menuToggle {
@@ -304,11 +304,11 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 
   body.light #menuToggle > span,
   body.light #menuToggle input:checked ~ span {
-    background: #666;
+    background: #333;
   }
 
   body.light #menu li a {
-    color: #666;
+    color: #333;
   }
 
   body.light #menu li:after {
@@ -752,7 +752,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 .about .box-stats {
   padding: 20px 30px 25px 40px;
   border-radius: 5px;
-  border: 1px solid #252525;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .about .box-stats.with-margin {
@@ -810,7 +810,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   top: 0;
   left: 20px;
   bottom: 0;
-  border-left: 1px solid #333;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .about .resume-box .icon {
@@ -824,7 +824,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   z-index: 1;
   border-radius: 50%;
   color: #fff;
-  background-color: #252525;
+  background-color: #1E2D2F;
 }
 
 .about .resume-box .time {
@@ -835,7 +835,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   margin-bottom: 12px;
   border-radius: 20px;
   font-weight: 600;
-  background-color: #252525;
+  background-color: #1E2D2F;
   opacity: 0.8;
 }
 
@@ -918,10 +918,10 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   align-items: flex-start;
   gap: 24px;
   padding: 22px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 
   &:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
   }
 
   .edu-row__left {
@@ -970,7 +970,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 body.light .edu-row {
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
 
   .edu-row__degree {
     color: #222;
@@ -1244,7 +1244,7 @@ body.light .edu-row {
   cursor: pointer !important;
 }
 body.light .contact .custom-span-contact a {
-  color: #666;
+  color: #444;
 }
 .contact ul.social {
   margin-left: -5px;
@@ -1271,9 +1271,9 @@ body.light .contact .custom-span-contact a {
 /* Form */
 .contact .contactform input[type="text"],
 .contact .contactform input[type="email"] {
-  border: 1px solid #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   width: 100%;
-  background: #252525;
+  background: #1E2D2F;
   color: #fff;
   padding: 11px 26px;
   border-radius: 30px;
@@ -1293,8 +1293,8 @@ body.light .contact .custom-span-contact a {
     }
   }
   .contactform textarea {
-    border: 1px solid #111;
-    background: #252525;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #1E2D2F;
     color: #fff;
     width: 100%;
     padding: 12px 26px;
@@ -1396,7 +1396,7 @@ h4.info-title {
 
 .blog .post-content {
   flex: 1;
-  background-color: #252525;
+  background-color: #1E2D2F;
   padding: 30px 25px 35px 25px;
   border-radius: 0 0 5px 5px;
 }
@@ -1477,8 +1477,8 @@ h4.info-title {
 
 .blog .page-link {
   color: #fff;
-  background-color: #252525;
-  border: 1px solid #252525;
+  background-color: #1E2D2F;
+  border: 1px solid #1E2D2F;
   padding: 0;
   margin: 0 10px;
   border-radius: 50% !important;
@@ -2187,7 +2187,7 @@ button:focus {
     }
     &:hover {
       &::before {
-        opacity: 1;
+        opacity: 0.88;
         visibility: visible;
       }
     }
