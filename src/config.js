@@ -24,7 +24,7 @@ export const instagramURL = 'https://www.instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
-export const siteURL = process.env.SITE_URL
+export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://myowin.dev'
 
 // navigation
 export const menuLabels = {
