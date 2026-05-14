@@ -726,6 +726,29 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   line-height: 28px;
 }
 
+.hero-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.credential-item {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--main-primary-color);
+  border: 1px solid rgba(44, 177, 188, 0.4);
+  border-radius: 20px;
+  padding: 3px 12px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+body.light .credential-item {
+  color: var(--main-primary-color);
+  border-color: rgba(44, 177, 188, 0.5);
+}
+
 /*** About ***/
 
 .about .main-content {
@@ -986,6 +1009,72 @@ body.light .edu-row {
 }
 
 /* Skills */
+
+.skills-flat {
+  padding-top: 8px;
+}
+
+.skill-group {
+  margin-bottom: 36px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-group__label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--main-primary-color);
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(44, 177, 188, 0.2);
+}
+
+body.light .skill-group__label {
+  color: var(--main-primary-color);
+  border-bottom-color: rgba(44, 177, 188, 0.3);
+}
+
+/* Experience toggle */
+
+.exp-toggle-area {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.exp-toggle-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #aaa;
+  font-size: 13px;
+  padding: 6px 20px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  i {
+    margin-right: 6px;
+    font-size: 11px;
+  }
+
+  &:hover {
+    border-color: var(--main-primary-color);
+    color: var(--main-primary-color);
+  }
+}
+
+body.light .exp-toggle-btn {
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #777;
+
+  &:hover {
+    border-color: var(--main-primary-color);
+    color: var(--main-primary-color);
+  }
+}
 
 .about .c100 {
   float: none !important;

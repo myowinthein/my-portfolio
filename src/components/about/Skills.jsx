@@ -1,59 +1,40 @@
 import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Image from "next/image";
 
 const Skills = ({skillSets}) => {
   return (
-    <>
     <div className="col-12" data-aos="fade-up">
-      <Tabs>
-        <TabList className="portfolio-tab-list">
-          {skillSets.map((skillSet, i) => (
-            <Tab key={i}>{skillSet.title}</Tab>
-          ))}
-        </TabList>
-
-        <div className="container mt-4">
-            <div className="tab-container">
-              <div className=""> 
-                {skillSets.map((skillSet, i) => (
-                  <TabPanel key={i}>
-                    <div className="row justify-content-center">
-                      {skillSet.skills.map((skill, j) => (
-                        <div className="col-6 col-md-2 mb-3 mb-sm-5" key={j}>
-                          <div className="pLogo p25 position-relative">
-                            
-                            {/* Crown for core skills */}
-                            {skill.core && (
-                              <i
-                                className="fa-solid fa-crown position-absolute"
-                                style={{
-                                  top: '-4px',
-                                  right: '-2px',
-                                  fontSize: '10px',
-                                  color: '#f5c451',
-                                  opacity: 0.65,
-                                  pointerEvents: 'none',
-                                }}
-                              />
-                            )}
-                            <Image src={skill.icon} alt={skill.name} />
-                          </div>
-                          
-                          <small className="open-sans-font d-block text-center mt-2">
-                            {skill.name}
-                          </small>
-                        </div>
-                      ))}
-                    </div>
-                  </TabPanel>
-                ))}
+      <div className="skills-flat">
+        {skillSets.map((skillSet, i) => (
+          <div className="skill-group" key={i}>
+            <p className="skill-group__label open-sans-font">{skillSet.title}</p>
+            <div className="row justify-content-start">
+              {skillSet.skills.map((skill, j) => (
+                <div className="col-6 col-md-2 mb-3 mb-sm-4" key={j}>
+                  <div className="pLogo p25 position-relative">
+                    {skill.core && (
+                      <i
+                        className="fa-solid fa-crown position-absolute"
+                        style={{
+                          top: '-4px',
+                          right: '-2px',
+                          fontSize: '10px',
+                          color: '#f5c451',
+                          opacity: 0.65,
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    )}
+                    <Image src={skill.icon} alt={skill.name} />
+                  </div>
+                  <small className="open-sans-font d-block text-center mt-2">{skill.name}</small>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </Tabs>
+        ))}
+      </div>
     </div>
-    </>
   );
 };
 

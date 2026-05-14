@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const experienceContent = [
   // StudyMe
@@ -65,9 +65,13 @@ const experienceContent = [
 ];
 
 const Experience = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleContent = showAll ? experienceContent : experienceContent.slice(0, 3);
+
   return (
+    <>
     <ul>
-      {experienceContent.map((val, i) => (
+      {visibleContent.map((val, i) => (
         <li key={i}>
           {/* Timeline icon */}
           <div className="icon">
@@ -110,6 +114,16 @@ const Experience = () => {
         </li>
       ))}
     </ul>
+    <div className="exp-toggle-area">
+      <button className="exp-toggle-btn open-sans-font" onClick={() => setShowAll(!showAll)}>
+        {showAll ? (
+          <><i className="fa fa-chevron-up"></i> Show less</>
+        ) : (
+          <><i className="fa fa-chevron-down"></i> Show earlier experience</>
+        )}
+      </button>
+    </div>
+    </>
   );
 };
 
