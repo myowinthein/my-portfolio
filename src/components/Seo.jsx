@@ -14,7 +14,7 @@ const SEO = ({ pageTitle }) => (
   <>
     <Head>
       <title>
-        {pageTitle && `${pageTitle} | ${position}`}
+        {pageTitle ? `${pageTitle} | ${position}` : metaTitle}
       </title>
 
       {/* Primary Meta Tags */}
