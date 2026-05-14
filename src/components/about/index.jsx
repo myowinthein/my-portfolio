@@ -154,34 +154,19 @@ const index = () => {
       ]
     },
     {
-      'title': 'Testing',
-      'skills': [
-        {'icon': phpunitIcon, 'name': 'PHPUnit'},
-        {'icon': jestIcon, 'name': 'Jest'},
-      ]
-    },
-    {
-      'title': 'CMS',
-      'skills': [
-        {'icon': opencartIcon, 'name': 'OpenCart'},
-        {'icon': bagistoIcon, 'name': 'Bagisto'},
-        {'icon': moodleIcon, 'name': 'Moodle'},
-      ]
-    },
-    {
-      'title': 'Package Manager',
-      'skills': [
-        {'icon': composerIcon, 'name': 'Composer'},
-        {'icon': npmIcon, 'name': 'npm'},
-        {'icon': yarnIcon, 'name': 'Yarn'},
-      ]
-    },
-    {
-      'title': 'OS',
-      'skills': [
-        {'icon': linuxIcon, 'name': 'Linux'},
-        {'icon': macosIcon, 'name': 'macOS'},
-        {'icon': windowsIcon, 'name': 'Windows'},
+      title: 'Tooling & Ecosystem',
+      skills: [
+        { icon: phpunitIcon, name: 'PHPUnit' },
+        { icon: jestIcon, name: 'Jest' },
+        { icon: opencartIcon, name: 'OpenCart' },
+        { icon: bagistoIcon, name: 'Bagisto' },
+        { icon: moodleIcon, name: 'Moodle' },
+        { icon: composerIcon, name: 'Composer' },
+        { icon: npmIcon, name: 'npm' },
+        { icon: yarnIcon, name: 'Yarn' },
+        { icon: linuxIcon, name: 'Linux' },
+        { icon: macosIcon, name: 'macOS' },
+        { icon: windowsIcon, name: 'Windows' },
       ]
     },
   ]
