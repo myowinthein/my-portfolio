@@ -1,102 +1,102 @@
 // StudyMe
-import studymeBan from "../../../public/assets/portfolio/studyme/banner.png";
-import studymeImg1 from "../../../public/assets/portfolio/studyme/1.png";
-import studymeImg2 from "../../../public/assets/portfolio/studyme/2.png";
-import studymeImg3 from "../../../public/assets/portfolio/studyme/3.png";
-import studymeImg4 from "../../../public/assets/portfolio/studyme/4.png";
-import studymeImg5 from "../../../public/assets/portfolio/studyme/5.png";
+import studymeBan from "../../../public/assets/portfolio/studyme/banner.webp";
+import studymeImg1 from "../../../public/assets/portfolio/studyme/1.webp";
+import studymeImg2 from "../../../public/assets/portfolio/studyme/2.webp";
+import studymeImg3 from "../../../public/assets/portfolio/studyme/3.webp";
+import studymeImg4 from "../../../public/assets/portfolio/studyme/4.webp";
+import studymeImg5 from "../../../public/assets/portfolio/studyme/5.webp";
 
 // Wellspring International Education
-import wellspringBan from "../../../public/assets/portfolio/wellspring/banner.jpg";
-import wellspringImg1 from "../../../public/assets/portfolio/wellspring/1.png";
-import wellspringImg2 from "../../../public/assets/portfolio/wellspring/2.png";
-import wellspringImg3 from "../../../public/assets/portfolio/wellspring/3.png";
-import wellspringImg4 from "../../../public/assets/portfolio/wellspring/4.png";
-import wellspringImg5 from "../../../public/assets/portfolio/wellspring/5.png";
+import wellspringBan from "../../../public/assets/portfolio/wellspring/banner.webp";
+import wellspringImg1 from "../../../public/assets/portfolio/wellspring/1.webp";
+import wellspringImg2 from "../../../public/assets/portfolio/wellspring/2.webp";
+import wellspringImg3 from "../../../public/assets/portfolio/wellspring/3.webp";
+import wellspringImg4 from "../../../public/assets/portfolio/wellspring/4.webp";
+import wellspringImg5 from "../../../public/assets/portfolio/wellspring/5.webp";
 
 // Tavis
-import tavisBan from "../../../public/assets/portfolio/tavis/banner.jpeg";
-import tavisImg1 from "../../../public/assets/portfolio/tavis/1.png";
-import tavisImg2 from "../../../public/assets/portfolio/tavis/2.png";
-import tavisImg3 from "../../../public/assets/portfolio/tavis/3.png";
-import tavisImg4 from "../../../public/assets/portfolio/tavis/4.png";
+import tavisBan from "../../../public/assets/portfolio/tavis/banner.webp";
+import tavisImg1 from "../../../public/assets/portfolio/tavis/1.webp";
+import tavisImg2 from "../../../public/assets/portfolio/tavis/2.webp";
+import tavisImg3 from "../../../public/assets/portfolio/tavis/3.webp";
+import tavisImg4 from "../../../public/assets/portfolio/tavis/4.webp";
 
 // Chance Myanmar
-import chancemyanmarBan from "../../../public/assets/portfolio/chance_myanmar/banner.jpg";
-import chancemyanmarImg1 from "../../../public/assets/portfolio/chance_myanmar/1.png";
-import chancemyanmarImg2 from "../../../public/assets/portfolio/chance_myanmar/2.png";
-import chancemyanmarImg3 from "../../../public/assets/portfolio/chance_myanmar/3.png";
-import chancemyanmarImg4 from "../../../public/assets/portfolio/chance_myanmar/4.png";
-import chancemyanmarImg5 from "../../../public/assets/portfolio/chance_myanmar/5.jpg";
+import chancemyanmarBan from "../../../public/assets/portfolio/chance_myanmar/banner.webp";
+import chancemyanmarImg1 from "../../../public/assets/portfolio/chance_myanmar/1.webp";
+import chancemyanmarImg2 from "../../../public/assets/portfolio/chance_myanmar/2.webp";
+import chancemyanmarImg3 from "../../../public/assets/portfolio/chance_myanmar/3.webp";
+import chancemyanmarImg4 from "../../../public/assets/portfolio/chance_myanmar/4.webp";
+import chancemyanmarImg5 from "../../../public/assets/portfolio/chance_myanmar/5.webp";
 
 // fastforward
-import fastforwardBan from "../../../public/assets/portfolio/fastforward/banner.jpeg";
-import fastforwardImg1 from "../../../public/assets/portfolio/fastforward/1.png";
-import fastforwardImg2 from "../../../public/assets/portfolio/fastforward/2.png";
-import fastforwardImg3 from "../../../public/assets/portfolio/fastforward/3.png";
+import fastforwardBan from "../../../public/assets/portfolio/fastforward/banner.webp";
+import fastforwardImg1 from "../../../public/assets/portfolio/fastforward/1.webp";
+import fastforwardImg2 from "../../../public/assets/portfolio/fastforward/2.webp";
+import fastforwardImg3 from "../../../public/assets/portfolio/fastforward/3.webp";
 import fastforwardImg4 from "../../../public/assets/portfolio/fastforward/4.png";
 
 // AnyMart
-import anymartBan from "../../../public/assets/portfolio/anymart/banner.jpg";
-import anymartImg1 from "../../../public/assets/portfolio/anymart/1.jpg";
-import anymartImg2 from "../../../public/assets/portfolio/anymart/2.jpg";
-import anymartImg3 from "../../../public/assets/portfolio/anymart/3.png";
+import anymartBan from "../../../public/assets/portfolio/anymart/banner.webp";
+import anymartImg1 from "../../../public/assets/portfolio/anymart/1.webp";
+import anymartImg2 from "../../../public/assets/portfolio/anymart/2.webp";
+import anymartImg3 from "../../../public/assets/portfolio/anymart/3.webp";
 
 // Lukky
-import lukkyBan from "../../../public/assets/portfolio/lukky/banner.jpg";
-import lukkyImg1 from "../../../public/assets/portfolio/lukky/1.jpg";
-import lukkyImg2 from "../../../public/assets/portfolio/lukky/2.jpg";
+import lukkyBan from "../../../public/assets/portfolio/lukky/banner.webp";
+import lukkyImg1 from "../../../public/assets/portfolio/lukky/1.webp";
+import lukkyImg2 from "../../../public/assets/portfolio/lukky/2.webp";
 
 // Business License
-import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.jpg";
-import businessLicenseImg1 from "../../../public/assets/portfolio/business_license/1.png";
-import businessLicenseImg2 from "../../../public/assets/portfolio/business_license/2.png";
-import businessLicenseImg3 from "../../../public/assets/portfolio/business_license/3.png";
-import businessLicenseImg4 from "../../../public/assets/portfolio/business_license/4.png";
+import businessLicenseBan from "../../../public/assets/portfolio/business_license/banner.webp";
+import businessLicenseImg1 from "../../../public/assets/portfolio/business_license/1.webp";
+import businessLicenseImg2 from "../../../public/assets/portfolio/business_license/2.webp";
+import businessLicenseImg3 from "../../../public/assets/portfolio/business_license/3.webp";
+import businessLicenseImg4 from "../../../public/assets/portfolio/business_license/4.webp";
 
 // Building Permit
-import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.jpg";
-import buildingPermitImg1 from "../../../public/assets/portfolio/building_permit/1.png";
-import buildingPermitImg2 from "../../../public/assets/portfolio/building_permit/2.png";
-import buildingPermitImg3 from "../../../public/assets/portfolio/building_permit/3.png";
-import buildingPermitImg4 from "../../../public/assets/portfolio/building_permit/4.png";
+import buildingPermitBan from "../../../public/assets/portfolio/building_permit/banner.webp";
+import buildingPermitImg1 from "../../../public/assets/portfolio/building_permit/1.webp";
+import buildingPermitImg2 from "../../../public/assets/portfolio/building_permit/2.webp";
+import buildingPermitImg3 from "../../../public/assets/portfolio/building_permit/3.webp";
+import buildingPermitImg4 from "../../../public/assets/portfolio/building_permit/4.webp";
 
 // Revenue Station
-import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.jpg";
-import revenueStationImg1 from "../../../public/assets/portfolio/revenue_station/1.png";
-import revenueStationImg2 from "../../../public/assets/portfolio/revenue_station/2.png";
-import revenueStationImg3 from "../../../public/assets/portfolio/revenue_station/3.png";
-import revenueStationImg4 from "../../../public/assets/portfolio/revenue_station/4.png";
+import revenueStationBan from "../../../public/assets/portfolio/revenue_station/banner.webp";
+import revenueStationImg1 from "../../../public/assets/portfolio/revenue_station/1.webp";
+import revenueStationImg2 from "../../../public/assets/portfolio/revenue_station/2.webp";
+import revenueStationImg3 from "../../../public/assets/portfolio/revenue_station/3.webp";
+import revenueStationImg4 from "../../../public/assets/portfolio/revenue_station/4.webp";
 
 // Smart Card System
-import smartCardSystemBan from "../../../public/assets/portfolio/smart_card_system/banner.png";
-import smartCardSystemImg1 from "../../../public/assets/portfolio/smart_card_system/1.png";
-import smartCardSystemImg2 from "../../../public/assets/portfolio/smart_card_system/2.png";
-import smartCardSystemImg3 from "../../../public/assets/portfolio/smart_card_system/3.png";
-import smartCardSystemImg4 from "../../../public/assets/portfolio/smart_card_system/4.png";
+import smartCardSystemBan from "../../../public/assets/portfolio/smart_card_system/banner.webp";
+import smartCardSystemImg1 from "../../../public/assets/portfolio/smart_card_system/1.webp";
+import smartCardSystemImg2 from "../../../public/assets/portfolio/smart_card_system/2.webp";
+import smartCardSystemImg3 from "../../../public/assets/portfolio/smart_card_system/3.webp";
+import smartCardSystemImg4 from "../../../public/assets/portfolio/smart_card_system/4.webp";
 
 // Land Document Tracking System
-import documentLocaterSystemBan from "../../../public/assets/portfolio/document_locater_system/banner.jpg";
-import documentLocaterSystemImg1 from "../../../public/assets/portfolio/document_locater_system/1.png";
-import documentLocaterSystemImg2 from "../../../public/assets/portfolio/document_locater_system/2.png";
-import documentLocaterSystemImg3 from "../../../public/assets/portfolio/document_locater_system/3.png";
-import documentLocaterSystemImg4 from "../../../public/assets/portfolio/document_locater_system/4.jpg";
+import documentLocaterSystemBan from "../../../public/assets/portfolio/document_locater_system/banner.webp";
+import documentLocaterSystemImg1 from "../../../public/assets/portfolio/document_locater_system/1.webp";
+import documentLocaterSystemImg2 from "../../../public/assets/portfolio/document_locater_system/2.webp";
+import documentLocaterSystemImg3 from "../../../public/assets/portfolio/document_locater_system/3.webp";
+import documentLocaterSystemImg4 from "../../../public/assets/portfolio/document_locater_system/4.webp";
 
 // First National Insurance
-import fniBan from "../../../public/assets/portfolio/fni/banner.jpg";
-import fniImg1 from "../../../public/assets/portfolio/fni/1.jpg";
-import fniImg2 from "../../../public/assets/portfolio/fni/2.jpg";
-import fniImg3 from "../../../public/assets/portfolio/fni/3.jpg";
-import fniImg4 from "../../../public/assets/portfolio/fni/4.jpg";
-import fniImg5 from "../../../public/assets/portfolio/fni/5.jpg";
+import fniBan from "../../../public/assets/portfolio/fni/banner.webp";
+import fniImg1 from "../../../public/assets/portfolio/fni/1.webp";
+import fniImg2 from "../../../public/assets/portfolio/fni/2.webp";
+import fniImg3 from "../../../public/assets/portfolio/fni/3.webp";
+import fniImg4 from "../../../public/assets/portfolio/fni/4.webp";
+import fniImg5 from "../../../public/assets/portfolio/fni/5.webp";
 
 // Recycle Myanmar
-import recycleMyanmarBan from "../../../public/assets/portfolio/recycle_myanmar/banner.png";
+import recycleMyanmarBan from "../../../public/assets/portfolio/recycle_myanmar/banner.webp";
 import recycleMyanmarImg1 from "../../../public/assets/portfolio/recycle_myanmar/1.webp";
-import recycleMyanmarImg2 from "../../../public/assets/portfolio/recycle_myanmar/2.jpeg";
+import recycleMyanmarImg2 from "../../../public/assets/portfolio/recycle_myanmar/2.webp";
 import recycleMyanmarImg3 from "../../../public/assets/portfolio/recycle_myanmar/3.webp";
-import recycleMyanmarImg4 from "../../../public/assets/portfolio/recycle_myanmar/4.jpg";
-import recycleMyanmarImg5 from "../../../public/assets/portfolio/recycle_myanmar/5.png";
+import recycleMyanmarImg4 from "../../../public/assets/portfolio/recycle_myanmar/4.webp";
+import recycleMyanmarImg5 from "../../../public/assets/portfolio/recycle_myanmar/5.webp";
 
 const PortfolioData = [
   {
@@ -287,7 +287,6 @@ const PortfolioData = [
         // 'status': 2,
         'banner': lukkyBan,
         'media': [
-          {'type': 'image', 'url': lukkyBan},
           {'type': 'image', 'url': lukkyImg1},
           {'type': 'image', 'url': lukkyImg2},
         ],
