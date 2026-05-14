@@ -46,10 +46,7 @@ const Hero = () => {
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <div className="hero-credentials open-sans-font">
-              <span className="credential-item">{totalExperiences}+ yrs experience</span>
-              <span className="credential-item">PHP · Laravel · AWS</span>
-              <span className="credential-item">Remote-first</span>
-              <span className="credential-item">Technical Leadership</span>
+              <span className="credential-item">Scalable APIs &amp; AWS Infrastructure</span>
             </div>
             {heroContent.heroDescriptions.map((description, i) => (
               <p className="open-sans-font" key={i}>{description}</p>

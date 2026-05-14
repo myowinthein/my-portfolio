@@ -1011,11 +1011,15 @@ body.light .edu-row {
 /* Skills */
 
 .skills-flat {
-  padding-top: 8px;
+  padding-top: 4px;
 }
 
 .skill-group {
-  margin-bottom: 36px;
+  margin-bottom: 18px;
+  background: rgba(44, 177, 188, 0.04);
+  border: 1px solid rgba(44, 177, 188, 0.09);
+  border-radius: 10px;
+  padding: 18px 20px 12px;
 
   &:last-child {
     margin-bottom: 0;
@@ -1029,13 +1033,13 @@ body.light .edu-row {
   letter-spacing: 0.1em;
   color: var(--main-primary-color);
   margin-bottom: 16px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(44, 177, 188, 0.2);
+  padding-left: 10px;
+  border-left: 3px solid var(--main-primary-color);
 }
 
-body.light .skill-group__label {
-  color: var(--main-primary-color);
-  border-bottom-color: rgba(44, 177, 188, 0.3);
+body.light .skill-group {
+  background: rgba(44, 177, 188, 0.04);
+  border-color: rgba(44, 177, 188, 0.18);
 }
 
 /* Experience toggle */
