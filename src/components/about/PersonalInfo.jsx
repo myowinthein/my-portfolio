@@ -1,9 +1,7 @@
 import React from "react";
-import { name, firstName, lastName, address, timezone, nationality, totalExperiences, focus, workPreference, languages } from "../../config";
+import { address, timezone, focus, workPreference, languages } from "../../config";
 
 const personalInfoContent = [
-  { meta: "Name", metaInfo: `${firstName} ${lastName} (${name})`, hasColor: "" },
-  { meta: "Nationality", metaInfo: nationality, hasColor: "" },
   { meta: "Location", metaInfo: `${address} (${timezone})`, hasColor: "" },
   { meta: "Languages", metaInfo: languages, hasColor: "" },
   { meta: "Focus", metaInfo: focus, hasColor: "" },
