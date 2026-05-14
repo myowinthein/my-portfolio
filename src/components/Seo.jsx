@@ -1,5 +1,14 @@
 import Head from "next/head";
-import { position, metaTitle, metaDescription, metaImage, siteURL } from "../config";
+import { position, metaTitle, metaDescription, metaImage, siteURL, firstName, lastName, linkedinURL, githubURL, mediumURL } from "../config";
+
+const personSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": `${firstName} ${lastName}`,
+  "jobTitle": position,
+  "url": siteURL,
+  "sameAs": [linkedinURL, githubURL, mediumURL],
+});
 
 const SEO = ({ pageTitle }) => (
   <>
@@ -28,6 +37,9 @@ const SEO = ({ pageTitle }) => (
       <meta property="twitter:description" content={metaDescription} />
       <meta property="twitter:image" content={metaImage} />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: personSchema }} />
 
       {/* Favicon */}
       <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />

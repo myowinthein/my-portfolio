@@ -37,7 +37,7 @@ const HomeDark = () => {
               {menuItem.map((item, i) => (
                 <Tab className="icon-box" key={i}>
                   <i className={`fa ${item.icon}`}></i>
-                  <h2>{item.menuName}</h2>
+                  <span>{item.menuName}</span>
                 </Tab>
               ))}
             </TabList>
