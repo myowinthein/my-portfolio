@@ -100,6 +100,19 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
             @include img-size;
             border-radius: 0.5rem;
         }
+
+        .awssld__content > div {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .awssld__content img {
+            position: absolute;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+        }
     }
     .slick-slider {
         .slick-arrow {
