@@ -41,8 +41,8 @@ const Hero = () => {
               alt={heroContent.heroTitleName}
               // style={{width:'100%',height:'100%'}}
             />
-            <h1 className="poppins-font"> <div className="text-uppercase">
-              {heroContent.heroTitleName}</div>
+            <h1 className="poppins-font">
+              <span className="d-block text-uppercase">{heroContent.heroTitleName}</span>
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <div className="hero-credentials open-sans-font">

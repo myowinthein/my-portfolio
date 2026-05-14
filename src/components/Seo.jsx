@@ -9,10 +9,10 @@ const SEO = ({ pageTitle }) => (
       </title>
 
       {/* Primary Meta Tags */}
-      <meta name="title" content={metaTitle} />
       <meta name="description" content={metaDescription} />
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <link rel="canonical" href={siteURL} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
