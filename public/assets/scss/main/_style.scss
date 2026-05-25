@@ -257,6 +257,7 @@ body.light .blog .page-link {
 
 body.light .blog-post .meta {
   color: #888;
+  border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 body.light .blog .page-item.active .page-link {
@@ -1620,10 +1621,22 @@ h4.info-title {
 }
 
 .blog-post {
+  .blog-excerpt {
+    margin-bottom: 2rem;
+  }
   .meta {
     color: #eee;
     font-size: 13px;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  h4.info-title {
+    margin-bottom: 1.5rem;
   }
   .img-fluid {
     @media (min-width: 1350px) {
@@ -1634,10 +1647,6 @@ h4.info-title {
       min-height: 173px;
     }
   }
-}
-
-.blog-post .meta span {
-  padding-right: 15px;
 }
 
 .blog-post .meta i {

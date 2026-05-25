@@ -109,7 +109,7 @@ const Blog = () => {
             {/* Article Starts */}
             <article>
               <h1>{singleData?.title}</h1>
-              <div className="blog-excerpt open-sans-font pb-5" ref={excerptRef}>
+              <div className="blog-excerpt open-sans-font" ref={excerptRef}>
                 <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
               </div>
 
@@ -117,30 +117,26 @@ const Blog = () => {
                 <div>
                   <i className="fa fa-user"></i> {singleData.commentor}
                 </div>
-
-                <div className="date">
+                <div>
                   <i className="fa fa-calendar"></i> {singleData.date}
                 </div>
-
                 <div>
                   <i className="fa fa-tags"></i> {singleData.tag}
                 </div>
               </div>
 
-              <div>
-                <h4 className="info-title">
-                  Continue reading on&nbsp;
-                  <a
-                    className="preview-link"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    href={singleData.link}
-                  >
-                    Medium
-                  </a>
-                  .
-                </h4>
-              </div>
+              <h4 className="info-title">
+                Continue reading on&nbsp;
+                <a
+                  className="preview-link"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href={singleData.link}
+                >
+                  Medium
+                </a>
+                .
+              </h4>
             </article>
             {/* Article Ends */}
           </div>
