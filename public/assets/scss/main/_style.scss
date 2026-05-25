@@ -1095,22 +1095,6 @@ body.light .exp-toggle-btn {
   }
 }
 
-.about .resume-box li.is-collapsed,
-.about .resume-box li.is-expanded {
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.4s ease, margin-bottom 0.5s ease;
-}
-
-.about .resume-box li.is-collapsed {
-  max-height: 0;
-  opacity: 0;
-  margin-bottom: 0 !important;
-}
-
-.about .resume-box li.is-expanded {
-  max-height: 1500px;
-  opacity: 1;
-}
 
 .about .c100 {
   float: none !important;

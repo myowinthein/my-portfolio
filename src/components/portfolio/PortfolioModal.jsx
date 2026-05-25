@@ -54,7 +54,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
           <Image src={CloseImg} alt="close icon" />
         </button>
         <div className="modal__body">
-        <div data-aos="fade">
+        <div>
           <h2 className="heading mb-2">{modalProject.product}</h2>
 
           <div className="modal__details">

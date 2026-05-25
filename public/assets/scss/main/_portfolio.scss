@@ -139,7 +139,7 @@
                 background-color: var(--main-primary-color);
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.5s;
+                transition: all 0.3s;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -151,7 +151,7 @@
                 .content-title {
                     position: relative;
                     transform: translateY(-20px);
-                    transition: 0.5s;
+                    transition: 0.3s;
                 }
             }
 
