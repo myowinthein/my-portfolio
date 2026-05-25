@@ -12,6 +12,11 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const videoRefs = useRef([]);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
   // 🎯 Control video playback
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
@@ -37,6 +42,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
         <button className="close-modal" onClick={() => setGetModal(false)}>
           <Image src={CloseImg} alt="close icon" />
         </button>
+        <div className="modal__body">
         <div data-aos="fade">
           <h2 className="heading mb-2">{modalProject.product}</h2>
 
@@ -147,6 +153,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
             ))}
           </div>
         </div>
+        </div>{/* end modal__body */}
       </div>
     </div>
   );
