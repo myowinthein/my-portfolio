@@ -109,8 +109,8 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         @media (min-width: 768px) {
             overflow-y: auto;
             max-height: calc(100vh - 120px - 2rem);
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         @media (max-width: 767px) {
@@ -231,11 +231,11 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
 
     .close-modal {
         position: absolute;
-        top: -45px;
-        right: -45px;
+        top: -40px;
+        right: -40px;
         background-color: transparent;
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
