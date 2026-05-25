@@ -69,14 +69,24 @@
     left: 0;
     right: 0;
     bottom: 0;
+    height: 100%;
     transform: none;
     border-radius: 0;
+
+    // react-modal wraps content in an anonymous div with no height — must
+    // constrain it or box_inner's height:100% resolves to auto (content height)
+    // which makes overflow-y:auto a no-op and leaves body as the scroll target
+    > div {
+      height: 100%;
+    }
 
     .box_inner {
       width: 100% !important;
       height: 100%;
       box-sizing: border-box;
+      overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .close-modal {
