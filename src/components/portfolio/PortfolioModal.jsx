@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import AwesomeSlider from 'react-awesome-slider';
 
 import CloseImg from "../../../public/assets/img/cancel.svg";
@@ -42,7 +43,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
     }
   }, [activeIndex]);
 
-  return (
+  return createPortal(
     <div className="modal_portfolio">
       <div
         className="modal__outside"
@@ -167,7 +168,8 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
         </div>
         </div>{/* end modal__body */}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
