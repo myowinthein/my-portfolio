@@ -14,6 +14,12 @@ const Blog = () => {
   useEffect(() => {
     Modal.setAppElement("#__next");
   },[])
+
+  useEffect(() => {
+    if (!isOpen) return;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
   return (
     <>
       <h4 className="info-title">
