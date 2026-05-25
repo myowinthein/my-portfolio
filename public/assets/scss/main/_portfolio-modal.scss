@@ -60,8 +60,12 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         // button (top: -52px above the box) always remains reachable.
         // 120px headroom → modal top sits ~60px from the viewport edge,
         // keeping the close button at ~8px from the top.
+        // Horizontal padding is moved to modal__body so the scrollbar sits
+        // flush with the modal's right inner edge instead of 2rem inset.
         @media (min-width: 768px) {
             max-height: calc(100vh - 120px);
+            padding-left: 0;
+            padding-right: 0;
         }
 
         @media (max-width: 767px) {
@@ -99,11 +103,14 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
             border-radius: 0 !important;
         }
 
-        // 2rem = modal__content's 1rem top + 1rem bottom padding, so this
-        // exactly fills the content area without overflowing the capped parent.
+        // 2rem in max-height = modal__content's 1rem top + 1rem bottom padding.
+        // Horizontal padding lives here (not on modal__content) so the scrollbar
+        // reaches the modal's right inner edge rather than being inset by 2rem.
         @media (min-width: 768px) {
             overflow-y: auto;
             max-height: calc(100vh - 120px - 2rem);
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         @media (max-width: 767px) {
@@ -224,8 +231,8 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
 
     .close-modal {
         position: absolute;
-        top: -52px;
-        right: -35px;
+        top: -45px;
+        right: -45px;
         background-color: transparent;
         height: 50px;
         width: 50px;
