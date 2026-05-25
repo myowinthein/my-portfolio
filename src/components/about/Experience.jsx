@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 const experienceContent = [
   // StudyMe
@@ -66,16 +66,6 @@ const experienceContent = [
 
 const Experience = () => {
   const [showAll, setShowAll] = useState(false);
-  const toggleRef = useRef(null);
-
-  const handleCollapse = () => {
-    setShowAll(false);
-    // Wait for the CSS transition to finish before scrolling the toggle into view.
-    // Prevents the viewport from jumping to Skills when the content height shrinks.
-    setTimeout(() => {
-      toggleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 550);
-  };
 
   return (
     <>
@@ -118,10 +108,10 @@ const Experience = () => {
           </li>
         ))}
       </ul>
-      <div className="exp-toggle-area" ref={toggleRef}>
+      <div className="exp-toggle-area">
         <button
           className="exp-toggle-btn open-sans-font"
-          onClick={showAll ? handleCollapse : () => setShowAll(true)}
+          onClick={() => setShowAll(!showAll)}
         >
           {showAll ? (
             <><i className="fa fa-chevron-up"></i> Show less</>
