@@ -1977,8 +1977,7 @@ h4.info-title {
     height: 230px;
   }
   .title-section {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 40px 15px 30px;
   }
   .home .home-details h1 {
     font-size: 29px;
@@ -2219,7 +2218,7 @@ button:focus {
   flex-wrap: wrap;
   margin-bottom: 10px !important;
   @media (max-width: 767px) {
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 0;
   }
   li {
@@ -2229,6 +2228,9 @@ button:focus {
     list-style: none;
     cursor: pointer;
     transition: 0.3s;
+    @media (max-width: 767px) {
+      margin: 6px 10px;
+    }
     &:hover,
     &.react-tabs__tab--selected {
       color: var(--main-primary-color);
