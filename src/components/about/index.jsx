@@ -4,10 +4,7 @@ import Education from "./Education";
 import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
-import Image from "next/image";
-
-import { resumeURL, menuLabels, firstName, lastName } from "../../config";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
+import { resumeURL, menuLabels } from "../../config";
 
 import htmlIcon from "../../../public/assets/img/programming/html.svg";
 import markdownIcon from "../../../public/assets/img/programming/markdown.svg";
@@ -184,15 +181,6 @@ const index = () => {
                 </h3>
               </div>
               {/* End .col */}
-
-              <div className="col-12 d-block d-sm-none">
-                <Image
-                  src={heroImgMobile}
-                  className="img-fluid main-img-mobile"
-                  alt={`${firstName} ${lastName}`}
-                />
-              </div>
-              {/* image for mobile menu */}
 
               <div className="col-12">
                 <PersonalInfo />
