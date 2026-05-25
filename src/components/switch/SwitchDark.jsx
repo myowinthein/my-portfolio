@@ -29,11 +29,11 @@ const SwitchDark = () => {
         className="theme-switcher"
       />
       <div className="switch-handle">
-        <span className="light-text filter_1" alt="swicher" priority>
+        <span className="light-text filter_1">
           <i className="fa-solid fa-sun"></i>
         </span>
-        <span className="dark-text" alt="swicher">
-          <i className="fa fa-moon" aria-hidden="true" alt="swicher"></i>
+        <span className="dark-text">
+          <i className="fa fa-moon" aria-hidden="true"></i>
         </span>
       </div>
     </label>
