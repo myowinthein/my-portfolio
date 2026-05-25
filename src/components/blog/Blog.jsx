@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
@@ -8,6 +8,7 @@ import Image from "next/image";
 
 const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
+  const excerptRef = useRef(null);
   const handleModle = (id) => {
     handleBlogsData(id);
   };
@@ -20,6 +21,16 @@ const Blog = () => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen || !excerptRef.current) return;
+    excerptRef.current.querySelectorAll('img').forEach(img => {
+      const remove = () => (img.closest('figure') || img).remove();
+      if (img.src.includes('medium.com/_/stat')) { remove(); return; }
+      if (img.complete && img.naturalWidth === 0) { remove(); return; }
+      img.addEventListener('error', remove, { once: true });
+    });
+  }, [isOpen, singleData]);
   return (
     <>
       <h4 className="info-title">
@@ -98,7 +109,7 @@ const Blog = () => {
             {/* Article Starts */}
             <article>
               <h1>{singleData?.title}</h1>
-              <div className="blog-excerpt open-sans-font pb-5">
+              <div className="blog-excerpt open-sans-font pb-5" ref={excerptRef}>
                 <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
               </div>
 
