@@ -50,9 +50,11 @@
     }
     &.blog-post {
       padding: 0 50px;
-      padding-top: 40px;
+      padding-top: 2rem;
       @media (max-width: 767px) {
-        padding: 0 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: calc(env(safe-area-inset-top, 0px) + 56px);
       }
       @media (min-width: 768px) {
         height: auto;
