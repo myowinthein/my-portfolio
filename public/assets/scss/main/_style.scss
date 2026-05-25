@@ -731,6 +731,11 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   flex-wrap: wrap;
   gap: 8px;
   margin: 12px 0 20px;
+  justify-content: center;
+
+  @media (min-width: 992px) {
+    justify-content: flex-start;
+  }
 }
 
 .credential-item {
