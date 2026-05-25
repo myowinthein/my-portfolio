@@ -11,24 +11,35 @@ const settings = {
 const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const videoRefs = useRef([]);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
 
-  // 🎯 Control video playback
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
-
-      if (i === activeIndex) {
-        video.play().catch(() => {});
-      } else {
+      if (i !== activeIndex) {
         video.pause();
-        video.currentTime = 0; // optional (restart)
+        video.currentTime = 0;
       }
     });
+
+    const video = videoRefs.current[activeIndex];
+    if (!video) return;
+
+    video.play().catch(() => {});
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      // On initial open, AwesomeSlider's fallAnimation entrance is still running
+      // when this effect fires. iOS Safari won't play a video whose container is
+      // mid-animation; retry after the animation settles (~600ms).
+      const timer = setTimeout(() => video.play().catch(() => {}), 600);
+      return () => clearTimeout(timer);
+    }
   }, [activeIndex]);
 
   return (
@@ -137,7 +148,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
                       playsInline
                       muted
                       loop
-                      preload="none"
+                      preload="metadata"
                     >
                       <source src={media.url} type="video/mp4" />
                     </video>
