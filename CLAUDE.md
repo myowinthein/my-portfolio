@@ -116,7 +116,7 @@ Navigation labels come from `config.js` → `menuLabels`.
 
 **Section title block:**
 ```jsx
-<div className="title-section text-start text-sm-center">
+<div className="title-section text-center">
   <h1>word <span>highlighted</span></h1>
   <span className="title-bg">BACKGROUND LABEL</span>
 </div>

@@ -79,7 +79,7 @@ const Hero = () => {
 
           <div className="box_inner about">
             <div data-aos="fade-up" data-aos-duration="1200">
-              <div className="title-section text-start text-sm-center">
+              <div className="title-section text-center">
                 <h1>
                   ABOUT <span>ME</span>
                 </h1>
