@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const experienceContent = [
   // StudyMe
@@ -66,63 +66,70 @@ const experienceContent = [
 
 const Experience = () => {
   const [showAll, setShowAll] = useState(false);
-  const visibleContent = showAll ? experienceContent : experienceContent.slice(0, 3);
+  const toggleRef = useRef(null);
+
+  const handleCollapse = () => {
+    setShowAll(false);
+    // Wait for the CSS transition to finish before scrolling the toggle into view.
+    // Prevents the viewport from jumping to Skills when the content height shrinks.
+    setTimeout(() => {
+      toggleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 550);
+  };
 
   return (
     <>
-    <ul>
-      {visibleContent.map((val, i) => (
-        <li key={i}>
-          {/* Timeline icon */}
-          <div className="icon">
-            <i className="fa fa-briefcase"></i>
-          </div>
-
-          {/* Position + Year */}
-          {val.positions.map((item, j) => (
-            <div key={j} className="exp-gutter">
-              <small className="d-block text-uppercase">
-                {item.year}
-              </small>
-              <h5 className="poppins-font text-uppercase">
-                {item.position}
-              </h5>
+      <ul>
+        {experienceContent.map((val, i) => (
+          <li key={i} className={i >= 3 ? (showAll ? 'is-expanded' : 'is-collapsed') : ''}>
+            <div className="icon">
+              <i className="fa fa-briefcase"></i>
             </div>
-          ))}
 
-          {/* Company */}
-          <p className="place open-sans-font">
-            {val.companyName}
-          </p>
+            {val.positions.map((item, j) => (
+              <div key={j} className="exp-gutter">
+                <small className="d-block text-uppercase">
+                  {item.year}
+                </small>
+                <h5 className="poppins-font text-uppercase">
+                  {item.position}
+                </h5>
+              </div>
+            ))}
 
-          {/* Company Info (context line) */}
-          {val.companyInfo && (
-            <p className="open-sans-font text-gray mb-3" style={{ opacity: 0.75 }}>
-              {val.companyInfo}
+            <p className="place open-sans-font">
+              {val.companyName}
             </p>
+
+            {val.companyInfo && (
+              <p className="open-sans-font text-gray mb-3" style={{ opacity: 0.75 }}>
+                {val.companyInfo}
+              </p>
+            )}
+
+            {val.details.map((text, index) => (
+              <p
+                key={index}
+                className="open-sans-font text-gray mb-3"
+              >
+                •&nbsp;&nbsp;{text}
+              </p>
+            ))}
+          </li>
+        ))}
+      </ul>
+      <div className="exp-toggle-area" ref={toggleRef}>
+        <button
+          className="exp-toggle-btn open-sans-font"
+          onClick={showAll ? handleCollapse : () => setShowAll(true)}
+        >
+          {showAll ? (
+            <><i className="fa fa-chevron-up"></i> Show less</>
+          ) : (
+            <><i className="fa fa-chevron-down"></i> Show earlier experience</>
           )}
-
-          {/* Details (manual bullets) */}
-          {val.details.map((text, index) => (
-            <p
-              key={index}
-              className="open-sans-font text-gray mb-3"
-            >
-              •&nbsp;&nbsp;{text}
-            </p>
-          ))}
-        </li>
-      ))}
-    </ul>
-    <div className="exp-toggle-area">
-      <button className="exp-toggle-btn open-sans-font" onClick={() => setShowAll(!showAll)}>
-        {showAll ? (
-          <><i className="fa fa-chevron-up"></i> Show less</>
-        ) : (
-          <><i className="fa fa-chevron-down"></i> Show earlier experience</>
-        )}
-      </button>
-    </div>
+        </button>
+      </div>
     </>
   );
 };
