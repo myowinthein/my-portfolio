@@ -79,7 +79,7 @@ const Blog = () => {
         contentLabel="My dialog"
         className="custom-modal dark"
         overlayClassName="custom-overlay dark"
-        closeTimeoutMS={500}
+        closeTimeoutMS={300}
       >
         <div>
           <button

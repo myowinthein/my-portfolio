@@ -56,6 +56,14 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         border-radius: 1rem;
         z-index: 5;
 
+        // Cap height so the modal never overflows the viewport and the close
+        // button (top: -52px above the box) always remains reachable.
+        // 120px headroom → modal top sits ~60px from the viewport edge,
+        // keeping the close button at ~8px from the top.
+        @media (min-width: 768px) {
+            max-height: calc(100vh - 120px);
+        }
+
         @media (max-width: 767px) {
             top: 0;
             left: 0;
@@ -89,6 +97,13 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
         > div {
             height: auto !important;
             border-radius: 0 !important;
+        }
+
+        // 2rem = modal__content's 1rem top + 1rem bottom padding, so this
+        // exactly fills the content area without overflowing the capped parent.
+        @media (min-width: 768px) {
+            overflow-y: auto;
+            max-height: calc(100vh - 120px - 2rem);
         }
 
         @media (max-width: 767px) {

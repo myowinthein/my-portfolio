@@ -66,12 +66,13 @@ const experienceContent = [
 
 const Experience = () => {
   const [showAll, setShowAll] = useState(false);
+  const visibleContent = showAll ? experienceContent : experienceContent.slice(0, 3);
 
   return (
     <>
       <ul>
-        {experienceContent.map((val, i) => (
-          <li key={i} className={i >= 3 ? (showAll ? 'is-expanded' : 'is-collapsed') : ''}>
+        {visibleContent.map((val, i) => (
+          <li key={i}>
             <div className="icon">
               <i className="fa fa-briefcase"></i>
             </div>
