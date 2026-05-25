@@ -87,7 +87,7 @@ const Blog = () => {
           <div className="box_inner blog-post">
             {/* Article Starts */}
             <article>
-              <div className="title-section text-start text-sm-center">
+              <div className="title-section text-center">
                 <h1>
                   Post <span>Details</span>
                 </h1>

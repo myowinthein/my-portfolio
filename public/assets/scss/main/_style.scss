@@ -473,6 +473,8 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   width: 100%;
   position: relative;
   padding: 80px 0;
+  overflow: hidden;
+  text-align: center;
 }
 
 .title-section h1 {
@@ -491,13 +493,21 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   position: absolute;
   right: 0;
   top: 50%;
+  text-align: center;
   text-transform: uppercase;
   font-weight: 800;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.07);
+  // Restore ~2:1 bg/fg ratio across breakpoints; fix translateY centering (was -20%)
   @media (max-width: 767px) {
-    font-size: 45px;
-    transform: translateY(-20%);
+    font-size: 80px;
+    letter-spacing: 6px;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 576px) {
+    font-size: 65px;
+    letter-spacing: 4px;
+    transform: translateY(-50%);
   }
 }
 

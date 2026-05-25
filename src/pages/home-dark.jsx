@@ -61,7 +61,7 @@ const HomeDark = () => {
             {/* Portfolio Content Starts */}
             <TabPanel className="portfolio professional">
               <div
-                className="title-section text-start text-sm-center"
+                className="title-section text-center"
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
@@ -78,7 +78,7 @@ const HomeDark = () => {
             {/* About Content Starts */}
             <TabPanel className="about">
               <div data-aos="fade-up" data-aos-duration="1200">
-                <div className="title-section text-start text-sm-center">
+                <div className="title-section text-center">
                   <h1>
                     About <span>Me</span>
                   </h1>
@@ -93,7 +93,7 @@ const HomeDark = () => {
             {/* Blog Content Starts */}
             <TabPanel className="blog">
               <div
-                className="title-section text-start text-sm-center "
+                className="title-section text-center "
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
@@ -119,7 +119,7 @@ const HomeDark = () => {
             {/* Contact Content Starts */}
             <TabPanel className="contact">
               <div
-                className="title-section text-start text-sm-center"
+                className="title-section text-center"
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
