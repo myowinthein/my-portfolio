@@ -1623,6 +1623,7 @@ h4.info-title {
   .meta {
     color: #eee;
     font-size: 13px;
+    margin-bottom: 2rem;
   }
   .img-fluid {
     @media (min-width: 1350px) {
@@ -1647,6 +1648,25 @@ h4.info-title {
 //   display: block;
 //   margin-top: 4px;
 // }
+
+.blog-loading {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.blog-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(44, 177, 188, 0.2);
+  border-top-color: var(--main-primary-color);
+  border-radius: 50%;
+  animation: blog-spin 0.75s linear infinite;
+}
+
+@keyframes blog-spin {
+  to { transform: rotate(360deg); }
+}
 
 /* [ RESPONSIVE DESIGN STYLES ] */
 

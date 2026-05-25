@@ -5,6 +5,7 @@ import { rssAPIKey, toastOptions } from "../config";
 
 const AllBlogData = () => {
   const [blogsData, setBlogsData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@myowinthein/&api_key=${rssAPIKey}&count=9`)
@@ -15,7 +16,7 @@ const AllBlogData = () => {
           let item = ''
           for (let key in data.items) {
             item = data.items[key]
-            
+            const plainText = item.description.replace(/<[^>]*>/g, '')
             blogsData.push({
               id: parseInt(key),
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
@@ -24,14 +25,17 @@ const AllBlogData = () => {
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
               link: item.guid,
-              description: item.description // content also available
+              description: item.description,
+              preview: plainText.slice(0, 200)
             })
           }
 
           setBlogsData(blogsData)
+          setIsLoading(false)
         },
         (error) => {
           toast.error("Failed to fetch blogs!", toastOptions);
+          setIsLoading(false)
         }
       )
   }, [])
@@ -49,6 +53,7 @@ const AllBlogData = () => {
     isOpen,
     setIsOpen,
     blogsData,
+    isLoading,
     handleBlogsData,
   };
 };

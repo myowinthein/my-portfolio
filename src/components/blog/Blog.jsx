@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
-import { mediumURL, menuLabels } from "../../config";
+import { mediumURL } from "../../config";
 import UseData from "../../Hooks/UseData";
 import Image from "next/image";
 
 
 const Blog = () => {
-  const { singleData, isOpen, setIsOpen, blogsData, handleBlogsData } = UseData();
+  const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
   const handleModle = (id) => {
     handleBlogsData(id);
   };
@@ -35,43 +35,47 @@ const Blog = () => {
         .
       </h4>
 
-      <div className="row">
-        {blogsData.map((item) => (
-          <div
-            key={item.id}
-            className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
-          >
-            <article
-              className="post-container"
-              onClick={() => handleModle(item?.id)}
+      {isLoading ? (
+        <div className="blog-loading">
+          <span className="blog-spinner"></span>
+        </div>
+      ) : (
+        <div className="row">
+          {blogsData.map((item) => (
+            <div
+              key={item.id}
+              className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
             >
-              <div className="post-thumb">
-                <div className="d-block position-relative overflow-hidden">
-                  <Image
-                    loader={({ src }) => {
-                      return `${src}`
-                    }}
-                    src={item?.img}
-                    width={500}
-                    height={500}
-                    alt={item?.title}
-                  />
+              <article
+                className="post-container"
+                onClick={() => handleModle(item?.id)}
+              >
+                <div className="post-thumb">
+                  <div className="d-block position-relative overflow-hidden">
+                    <Image
+                      loader={({ src }) => {
+                        return `${src}`
+                      }}
+                      src={item?.img}
+                      width={500}
+                      height={500}
+                      alt={item?.title}
+                    />
+                  </div>
                 </div>
-              </div>
-              {/* End .thumb */}
-              <div className="post-content">
-                <div className="entry-header">
-                  <h3>{item?.title}</h3>
+                <div className="post-content">
+                  <div className="entry-header">
+                    <h3>{item?.title}</h3>
+                  </div>
+                  <div className="entry-content open-sans-font">
+                    <p>{item?.preview}</p>
+                  </div>
                 </div>
-                <div className="entry-content open-sans-font">
-                  <p dangerouslySetInnerHTML={{ __html: item?.description.slice(0, 200) }} />
-                </div>
-              </div>
-              {/* End .post-content */}
-            </article>
-          </div>
-        ))}
-      </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      )}
 
       <Modal
         isOpen={isOpen}
@@ -93,13 +97,10 @@ const Blog = () => {
           <div className="box_inner blog-post">
             {/* Article Starts */}
             <article>
-              <div className="title-section text-center">
-                <h1>
-                  Post <span>Details</span>
-                </h1>
-                <span className="title-bg">{menuLabels.writing}</span>
+              <h1>{singleData?.title}</h1>
+              <div className="blog-excerpt open-sans-font pb-5">
+                <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
               </div>
-              {/* Meta Starts */}
 
               <div className="meta open-sans-font">
                 <div>
@@ -114,17 +115,10 @@ const Blog = () => {
                   <i className="fa fa-tags"></i> {singleData.tag}
                 </div>
               </div>
-              {/* Meta Ends */}
-              {/* Article Content Starts */}
-
-              <h1>{singleData?.title}</h1>
-              <div className="blog-excerpt open-sans-font pb-5">
-                <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
-              </div>
 
               <div>
                 <h4 className="info-title">
-                  Read the full article on&nbsp;
+                  Continue reading on&nbsp;
                   <a
                     className="preview-link"
                     target="_blank"
@@ -136,7 +130,6 @@ const Blog = () => {
                   .
                 </h4>
               </div>
-              {/* Article Content Ends */}
             </article>
             {/* Article Ends */}
           </div>
