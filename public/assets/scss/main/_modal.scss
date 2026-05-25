@@ -23,7 +23,7 @@
   border: none;
   background: #1E2D2F;
   overflow: initial;
-  border-radius: 10px;
+  border-radius: 1rem;
   outline: none;
   .box_inner {
     height: 75vh;
@@ -50,14 +50,13 @@
     }
     &.blog-post {
       padding: 0 50px;
+      padding-top: 40px;
       @media (max-width: 767px) {
         padding: 0 15px;
       }
-      .title-section {
-        padding: 50px 0;
-        @media (max-width: 767px) {
-          padding: 50px 0 20px;
-        }
+      @media (min-width: 768px) {
+        height: auto;
+        max-height: calc(100vh - 120px);
       }
     }
   }
@@ -121,17 +120,14 @@
 .close-modal {
   background: transparent;
   border: none;
+  border-radius: 50%;
   display: flex;
   width: 45px;
   height: 45px;
   position: absolute;
   z-index: 4;
-  right: -31px;
-  top: -47px;
-  @media screen and (max-width: 1199px) {
-    right: -31  px;
-    top: -47px;
-  }
+  right: -33px;
+  top: -42px;
   @media screen and (max-width: 575px) {
     right: -36px;
     top: -37px;
@@ -141,7 +137,7 @@
     height: 45px;
     cursor: pointer;
     position: absolute;
-    filter: invert(1);
+    filter: invert(0.8);
     transition: 0.3s;
     @media screen and (max-width: 575px) {
       width: 30px;
@@ -150,33 +146,12 @@
   }
   &:hover {
     img {
-      filter: invert(0.8);
+      filter: invert(1);
     }
   }
 }
 
-.custom-modal.dark .box_inner::-webkit-scrollbar {
-  width: 8px; /* width of the entire scrollbar */
-}
 
-.custom-modal.dark .box_inner::-webkit-scrollbar-track {
-  background: #333; /* color of the tracking area */
-}
-
-.custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
-  background-color: #555; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 1px solid #333; /* creates padding around scroll thumb */
-}
-body.light .custom-modal.dark .box_inner::-webkit-scrollbar-track {
-  background: #fff; /* color of the tracking area */
-}
-
-body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
-  background-color: #bbb; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 1px solid #fff; /* creates padding around scroll thumb */
-}
 .custom-modal.dark.light .box_inner.about {
   border: 2px solid #fff;
 }
