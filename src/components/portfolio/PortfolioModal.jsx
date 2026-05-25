@@ -135,6 +135,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
                     <video
                       ref={(el) => (videoRefs.current[i] = el)}
                       playsInline
+                      muted
                       loop
                       preload="none"
                     >
