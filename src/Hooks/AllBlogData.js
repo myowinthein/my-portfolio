@@ -16,7 +16,11 @@ const AllBlogData = () => {
           let item = ''
           for (let key in data.items) {
             item = data.items[key]
-            const plainText = item.description.replace(/<[^>]*>/g, '')
+            const desc = item.description.replace(
+              /<img[^>]*\bsrc="[^"]*medium\.com\/_\/stat[^"]*"[^>]*>/gi,
+              ''
+            )
+            const plainText = desc.replace(/<[^>]*>/g, '')
             blogsData.push({
               id: parseInt(key),
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
@@ -25,7 +29,7 @@ const AllBlogData = () => {
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
               link: item.guid,
-              description: item.description,
+              description: desc,
               preview: plainText.slice(0, 200)
             })
           }
