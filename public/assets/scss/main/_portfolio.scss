@@ -87,12 +87,15 @@
             padding: 10px 4px 4px;
             border-radius: 0;
 
-            &__company {
+            &__product {
                 font-size: 13px;
                 font-weight: 600;
                 color: #eee;
                 margin: 0 0 2px;
                 line-height: 1.4;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             &__role {
@@ -101,12 +104,10 @@
                 margin: 0 0 1px;
             }
 
-            &__type {
+            &__company {
                 font-size: 11px;
                 color: #777;
                 margin: 0;
-                text-transform: uppercase;
-                letter-spacing: 0.04em;
             }
         }
 
@@ -175,9 +176,9 @@ body.light {
             color: var(--main-primary-color);
         }
         .project-meta {
-            &__company { color: #222; }
+            &__product { color: #222; }
             &__role { color: #555; }
-            &__type { color: #999; }
+            &__company { color: #999; }
         }
     }
     .modal_portfolio .modal__content {

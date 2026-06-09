@@ -38,9 +38,10 @@ import fastforwardImg4 from "../../../public/assets/portfolio/fastforward/4.png"
 
 // AnyMart
 import anymartBan from "../../../public/assets/portfolio/anymart/banner.webp";
-import anymartImg1 from "../../../public/assets/portfolio/anymart/1.webp";
+import anymartImg1 from "../../../public/assets/portfolio/anymart/1.png";
 import anymartImg2 from "../../../public/assets/portfolio/anymart/2.webp";
 import anymartImg3 from "../../../public/assets/portfolio/anymart/3.webp";
+import anymartImg4 from "../../../public/assets/portfolio/anymart/4.webp";
 
 // Lukky
 import lukkyBan from "../../../public/assets/portfolio/lukky/banner.webp";
@@ -266,6 +267,7 @@ const PortfolioData = [
           {'type': 'image', 'url': anymartImg1},
           {'type': 'image', 'url': anymartImg2},
           {'type': 'image', 'url': anymartImg3},
+          {'type': 'image', 'url': anymartImg4},
         ],
         'preview': [
           // {'platform': 'Web', 'url': 'http://anymart.com.mm/'},

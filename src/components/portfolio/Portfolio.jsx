@@ -43,13 +43,13 @@ const Portfolio = () => {
                         <div className="tab-content">
                           <Image src={project.banner} alt={project.product} sizes="(max-width: 575px) 100vw, (max-width: 992px) 50vw, 33vw" />
                           <h3>
-                            <span className="content-title">{project.product}</span>
+                            <span className="content-title">View Case Study</span>
                           </h3>
                         </div>
                         <div className="project-meta">
-                          <p className="project-meta__company poppins-font">{project.company}</p>
+                          <p className="project-meta__product poppins-font">{project.product}</p>
                           <p className="project-meta__role open-sans-font">{project.role}</p>
-                          <p className="project-meta__type open-sans-font">{project.productType}</p>
+                          <p className="project-meta__company open-sans-font">{project.company}</p>
                         </div>
                       </div>
                     ))}
