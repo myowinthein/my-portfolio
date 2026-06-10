@@ -492,10 +492,10 @@ const PortfolioData = [
         'industry': 'Insurance Technology',
         'role': 'Frontend & CMS Team Lead',
         'product': 'FNI Internal Portal',
-        'productType': 'Enterprise Operations Platform',
+        'productType': 'Insurance Agency Management Platform',
         'description': [
-          `FNI Internal Portal is an enterprise platform used by staff and agents to digitise insurance operations, sales workflows, and internal coordination across multiple branches. It supports policy management, proposals, claims workflows, KPI tracking, and agent activities, handling over 18 insurance product types within a unified operational system.`,
-          `I contributed to backend development, implementing core business logic for sales workflows, proposal handling, and operational features. A key area was the premium calculation engine, supporting multi-currency (MMK/USD), tax rules, and real-time Central Bank exchange rates, requiring precise financial logic and consistent behaviour across web and mobile APIs.`
+          `FNI Internal Portal is an insurance agency management platform used by office staff and field agents to manage a three-tier sales force distributing 14 life insurance products across Myanmar. It covers the full agent lifecycle — lead and proposal management, ACE Core policy synchronisation, commission distribution across the agent hierarchy, KPI tracking, and field meeting coordination — through a web panel for managers and a mobile API for field agents.`,
+          `I contributed to backend development, implementing core business logic for the sales pipeline, proposal handling, ACE Core data synchronisation, and commission calculation across the agent hierarchy. A key area was the premium calculation engine, supporting multi-currency (MMK/USD), tax rules, and real-time Central Bank exchange rates, requiring precise financial logic and consistent behaviour across web and mobile APIs.`
         ],
         // 'status': 2,
         'banner': fniBan,
