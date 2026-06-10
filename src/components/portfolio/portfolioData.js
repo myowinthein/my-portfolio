@@ -239,8 +239,8 @@ const PortfolioData = [
         'productType': 'Multi-tenant SaaS Platform',
         'role': 'Head of Engineering',
         'description': [
-          `FastForward is an eCommerce platform built during COVID to help SMEs in Myanmar launch online stores quickly through configuration rather than custom development. It was designed as a Shopify-style solution with multi-tenant architecture, enabling independent storefronts under shared infrastructure to support rapid digital adoption.`,
-          `I owned the system end-to-end as the sole engineer, defining architecture, implementing multi-tenant capabilities, and establishing technical guidelines for future team scaling. I extended Bagisto to support scalable store deployment and tenant onboarding workflows. The platform reached production at fastforwardmyanmar.com before being discontinued following the 2021 Myanmar political situation.`
+          `FastForward is a multi tenant SaaS eCommerce platform built by Nexlabs for small businesses in Myanmar. Merchants register a subdomain or connect a custom domain and manage their store through a dedicated admin panel covering products, orders, inventory, pricing rules, and reports. A central Super Admin panel manages all tenants across the platform, and end customers shop through a storefront with cart, checkout, order tracking, and social login via five OAuth providers.`,
+          `As Head of Engineering, I led the implementation on top of Bagisto, a modular Laravel eCommerce framework where business logic is split across dozens of standalone packages wired via Konekt Concord. The core engineering challenge was multi tenancy: all tenant data shares a single database, isolated by a company_id column injected across models through the SAASCustomizer layer, with per request tenant resolution handled by domain scoped middleware reading the Host header. The platform reached production at fastforwardmyanmar.com before being discontinued following the 2021 Myanmar political situation.`
         ],
         // 'status': 2,
         'banner': fastforwardBan,
