@@ -1,5 +1,5 @@
 // Vote for Change
-import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/1.png";
+import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/banner.jpg";
 import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.png";
 import voteForChangeImg2 from "../../../public/assets/portfolio/vote_for_change/2.png";
 import voteForChangeImg3 from "../../../public/assets/portfolio/vote_for_change/3.png";
@@ -524,10 +524,10 @@ const PortfolioData = [
         'industry': 'Civic Technology',
         'product': 'Vote for Change',
         'productType': 'Election Information Portal',
-        'role': 'Full Stack Developer',
+        'role': 'Senior Developer',
         'description': [
-          `Vote for Change is a Myanmar-language civic technology portal built for the 2015 general election — the country's first openly contested election in 25 years. The platform served as a public information and engagement hub, combining real election results visualised across party, state/region, and legislature, with a candidate browser, voter registry lookup, simulated voting, and educational guides on Myanmar's parliamentary structure and voting process.`,
-          `Built as a hackathon project under Team Isora, I developed the full system as the sole engineer — implementing a flat-file PHP backend, a MySQL data layer pre-loaded with official 2015 election results, and Google Charts-driven visualisations tied to live AJAX endpoints. I integrated the MaePaySoh civic API for candidate and party data and the Union Election Commission voter registry, and delivered the entire interface in Myanmar script using the Myanmar3 web font.`
+          `Vote for Change is a Myanmar language civic technology portal built for the 2015 general election, the country's first openly contested election in 25 years. The platform provided election information and public engagement tools, including election result visualisations by party, state and region, and legislature, a candidate browser, voter registry lookup, simulated voting, and educational content about the voting process and parliamentary system.`,
+          `Built as a hackathon project under Team Isora, I developed the entire application as the sole engineer. The system used a PHP backend, a MySQL database containing official 2015 election results, and Google Charts for data visualisation through AJAX driven endpoints. I integrated the MaePaySoh API for candidate and party information and the Union Election Commission voter registry service. The interface was fully presented in Myanmar language using the Myanmar3 web font.`
         ],
         'banner': voteForChangeBan,
         'media': [
@@ -537,7 +537,9 @@ const PortfolioData = [
           {'type': 'image', 'url': voteForChangeImg4},
           {'type': 'image', 'url': voteForChangeImg5},
         ],
-        'preview': [],
+        'preview': [
+          {"platform": "Official Page", "url": "https://www.facebook.com/MaePaySoh/"},
+        ],
       }
     ]
   },
