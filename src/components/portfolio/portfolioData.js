@@ -265,8 +265,8 @@ const PortfolioData = [
         'productType': 'Marketplace Platform',
         'role': 'Senior Full Stack Developer',
         'description': [
-          `AnyMart is a B2C online marketplace in Myanmar enabling users to buy and sell products across categories including fashion, electronics, and groceries, with localised payment and delivery workflows. It provides a unified platform for product discovery, order management, and transaction handling tailored to local consumer behaviour.`,
-          `I focused on deep functional customisation of OpenCart at the source code level, extending core modules beyond standard CMS capabilities. I implemented local payment integrations, social authentication, and custom shipping and catalog modules, shaping business-specific workflows and ensuring reliable operation within a heavily customised codebase.`
+          `AnyMart was a B2C online shopping platform for the Myanmar market, built on OpenCart 2.3. It supported a product catalog with categories, search, and filtering, a multi step checkout, customer accounts with wishlists and order history, and a blog. Payment options included Wave Money mobile payment and KBZ Bank card processing for Visa, Mastercard, and MPU. The storefront ran in both English and Myanmar with Zawgyi encoding support.`,
+          `I worked as the sole developer, customising OpenCart through its ocmod XML overlay system and extending it with custom payment controllers. The core integrations were Wave Money via the PaysbuyPayAPI service and KBZ Bank via the 2C2P gateway, each requiring a dedicated PHP controller and configuration module in both the storefront and admin panel. I also added social login for Facebook, Google, Twitter, and LinkedIn, implemented the Myanmar language locale with Zawgyi encoding, and built a standalone abandoned cart cron script for email reminders.`
         ],
         // 'status': 2,
         'banner': anymartBan,
