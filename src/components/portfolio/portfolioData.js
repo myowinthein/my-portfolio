@@ -240,7 +240,7 @@ const PortfolioData = [
         'role': 'Head of Engineering',
         'description': [
           `FastForward is an eCommerce platform built during COVID to help SMEs in Myanmar launch online stores quickly through configuration rather than custom development. It was designed as a Shopify-style solution with multi-tenant architecture, enabling independent storefronts under shared infrastructure to support rapid digital adoption.`,
-          `I owned the system end-to-end as the sole engineer, defining architecture, implementing multi-tenant capabilities, and establishing technical guidelines for future team scaling. I extended Bagisto to support scalable store deployment and localised payment flows. The project did not reach production due to the 2021 Myanmar political situation.`
+          `I owned the system end-to-end as the sole engineer, defining architecture, implementing multi-tenant capabilities, and establishing technical guidelines for future team scaling. I extended Bagisto to support scalable store deployment and tenant onboarding workflows. The platform reached production at fastforwardmyanmar.com before being discontinued following the 2021 Myanmar political situation.`
         ],
         // 'status': 2,
         'banner': fastforwardBan,
@@ -492,10 +492,10 @@ const PortfolioData = [
         'industry': 'Insurance Technology',
         'role': 'Frontend & CMS Team Lead',
         'product': 'FNI Internal Portal',
-        'productType': 'Insurance Agency Management Platform',
+        'productType': 'Agency Management Platform',
         'description': [
-          `FNI Internal Portal is an insurance agency management platform used by office staff and field agents to manage a three-tier sales force distributing 14 life insurance products across Myanmar. It covers the full agent lifecycle — lead and proposal management, ACE Core policy synchronisation, commission distribution across the agent hierarchy, KPI tracking, and field meeting coordination — through a web panel for managers and a mobile API for field agents.`,
-          `I contributed to backend development, implementing core business logic for the sales pipeline, proposal handling, ACE Core data synchronisation, and commission calculation across the agent hierarchy. A key area was the premium calculation engine, supporting multi-currency (MMK/USD), tax rules, and real-time Central Bank exchange rates, requiring precise financial logic and consistent behaviour across web and mobile APIs.`
+          `FNI Internal Portal is an insurance agency management platform used by office staff and field agents to manage a three tier sales force distributing 14 life insurance products across Myanmar. It covers the full agent lifecycle, including lead and proposal management, ACE Core policy synchronisation, commission distribution across the agent hierarchy, KPI tracking, and field meeting coordination, through a web panel for managers and a mobile API for field agents.`,
+          `I contributed to backend development, implementing core business logic for the sales pipeline, proposal handling, ACE Core data synchronisation, and commission calculation across the agent hierarchy. A key area was the premium calculation engine, supporting multiple currencies (MMK and USD), tax rules, and real time Central Bank exchange rates, requiring precise financial logic and consistent behaviour across web and mobile APIs.`
         ],
         // 'status': 2,
         'banner': fniBan,
