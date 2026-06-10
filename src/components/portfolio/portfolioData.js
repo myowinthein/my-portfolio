@@ -1,3 +1,11 @@
+// Vote for Change
+import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/1.png";
+import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.png";
+import voteForChangeImg2 from "../../../public/assets/portfolio/vote_for_change/2.png";
+import voteForChangeImg3 from "../../../public/assets/portfolio/vote_for_change/3.png";
+import voteForChangeImg4 from "../../../public/assets/portfolio/vote_for_change/4.png";
+import voteForChangeImg5 from "../../../public/assets/portfolio/vote_for_change/5.png";
+
 // StudyMe
 import studymeBan from "../../../public/assets/portfolio/studyme/banner.webp";
 import studymeImg1 from "../../../public/assets/portfolio/studyme/1.webp";
@@ -502,6 +510,35 @@ const PortfolioData = [
           {"platform": "Web", "url": "https://www.fnigeneral.com/"}
         ],
       },
+    ]
+  },
+  // Experiments & Hackathons
+  {
+    'title': 'Experiments & Hackathons',
+    'description': 'Side projects, prototypes, and hackathon builds exploring new ideas.',
+    'projects': [
+
+      // Vote for Change
+      {
+        'company': 'Team Isora',
+        'industry': 'Civic Technology',
+        'product': 'Vote for Change',
+        'productType': 'Election Information Portal',
+        'role': 'Full Stack Developer',
+        'description': [
+          `Vote for Change is a Myanmar-language civic technology portal built for the 2015 general election — the country's first openly contested election in 25 years. The platform served as a public information and engagement hub, combining real election results visualised across party, state/region, and legislature, with a candidate browser, voter registry lookup, simulated voting, and educational guides on Myanmar's parliamentary structure and voting process.`,
+          `Built as a hackathon project under Team Isora, I developed the full system as the sole engineer — implementing a flat-file PHP backend, a MySQL data layer pre-loaded with official 2015 election results, and Google Charts-driven visualisations tied to live AJAX endpoints. I integrated the MaePaySoh civic API for candidate and party data and the Union Election Commission voter registry, and delivered the entire interface in Myanmar script using the Myanmar3 web font.`
+        ],
+        'banner': voteForChangeBan,
+        'media': [
+          {'type': 'image', 'url': voteForChangeImg1},
+          {'type': 'image', 'url': voteForChangeImg2},
+          {'type': 'image', 'url': voteForChangeImg3},
+          {'type': 'image', 'url': voteForChangeImg4},
+          {'type': 'image', 'url': voteForChangeImg5},
+        ],
+        'preview': [],
+      }
     ]
   },
 ]
