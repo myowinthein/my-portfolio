@@ -203,8 +203,8 @@ const PortfolioData = [
         'productType': 'Learning Platform',
         'role': 'Senior Full Stack Developer',
         'description': [
-          `Chance Myanmar is a content-driven learning platform focused on soft skills, career development, and personal growth, replacing a Facebook group previously used as its learning system. It enables structured course delivery, video-based lessons, progress tracking, and instructor interaction for a growing base of learners.`,
-          `I built the backend system end-to-end as the sole backend engineer, designing a Laravel-based API architecture serving web and Android clients. I implemented core domain models for courses, lessons, and progress tracking, ensuring reliable data flow and scalability while transforming an informal community into a structured production platform.`
+          `Chance Myanmar is a bilingual English and Myanmar online learning platform serving students through a companion Android app and instructors through a web admin panel. Students enroll in scheduled course batches, complete video lessons, submit homework, and earn rewards, while admins manage the full course catalog, batch scheduling, and student records. All user-facing content is stored as bilingual JSON with separate English and Myanmar values, resolved per student by their language preference.`,
+          `I built the backend end to end as the sole backend engineer, designing a JWT authenticated REST API for the Android app alongside a server rendered admin panel. The core technical challenge was the bilingual data layer: all content fields store a JSON object with separate English and Myanmar values, with Rabbit Zawgyi to Unicode conversion handling Myanmar font encoding. Video uploads triggered queue jobs that submitted to AWS Elastic Transcoder, produced 720p MP4 outputs and thumbnails, and deleted the raw source files on completion.`
         ],
         // 'status': 1,
         'banner': chancemyanmarBan,
@@ -240,7 +240,7 @@ const PortfolioData = [
         'role': 'Head of Engineering',
         'description': [
           `FastForward is a multi tenant SaaS eCommerce platform built by Nexlabs for small businesses in Myanmar. Merchants register a subdomain or connect a custom domain and manage their store through a dedicated admin panel covering products, orders, inventory, pricing rules, and reports. A central Super Admin panel manages all tenants across the platform, and end customers shop through a storefront with cart, checkout, order tracking, and social login via five OAuth providers.`,
-          `As Head of Engineering, I led the implementation on top of Bagisto, a modular Laravel eCommerce framework where business logic is split across dozens of standalone packages wired via Konekt Concord. The core engineering challenge was multi tenancy: all tenant data shares a single database, isolated by a company_id column injected across models through the SAASCustomizer layer, with per request tenant resolution handled by domain scoped middleware reading the Host header. The platform reached production at fastforwardmyanmar.com before being discontinued following the 2021 Myanmar political situation.`
+          `As Head of Engineering, I led the implementation on top of Bagisto, a modular Laravel eCommerce framework where business logic is split across dozens of standalone packages wired via Konekt Concord. The core engineering challenge was multi tenancy: all tenant data shares a single database, isolated by a company_id column injected across models through the SAASCustomizer layer, with per request tenant resolution handled by domain scoped middleware reading the Host header. The platform reached production at fastforwardmyanmar.com and was later discontinued in 2021.`
         ],
         // 'status': 2,
         'banner': fastforwardBan,
