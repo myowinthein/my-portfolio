@@ -532,7 +532,7 @@ const PortfolioData = [
         'industry': 'Civic Technology',
         'product': 'Vote for Change',
         'productType': 'Election Information Portal',
-        'role': 'Senior Developer',
+        'role': 'Lead Developer',
         'description': [
           `Vote for Change is a civic technology portal built for Myanmar's 2015 general election, the country's first openly contested election in 25 years. It visualises official results for all 92 registered parties across three legislatures, broken down nationally and by state and region. Beyond results, the platform includes voter registry lookup, simulated voting with duplicate detection, and civic education tools including an interactive ballot stamp game that validates correct vote placement using click coordinate detection.`,
           `I built the application as the sole engineer on Team Isora, using flat file PHP, MySQL, and Google Charts rendered via AJAX endpoints returning DataTable format JSON. I integrated the MaePaySoh civic API for candidate and party data and the Union Election Commission voter registry. A notable aspect of the data layer was the use of Myanmar Unicode script as actual column names in the result tables for each legislature and state, alongside digit conversion functions that translate between Myanmar numerals and Arabic digits throughout the application.`
@@ -556,7 +556,7 @@ const PortfolioData = [
         'industry': 'Civic Technology',
         'product': 'Data 4 Change',
         'productType': 'Open Data Platform',
-        'role': 'Full Stack Developer',
+        'role': 'Lead Developer',
         'description': [
           `Data 4 Change is an open data platform built at a civic technology hackathon in May 2019 to make official Myanmar government statistics accessible to journalists, researchers, and the public. It aggregates data across six categories: health facilities, demographics, agriculture, natural hazard risk, living standards, and heritage sites, covering 18 regions, 356 cities, and 14,429 townships. The interface supports histogram and scatter plot visualisations with live filtering by category, year, and location, a chart to table toggle, and JPEG export.`,
           `I built the backend as part of Team Novit: a Laravel 5.8 REST API with public JSON endpoints accepting language, city, year, and variable parameters alongside an admin panel for loading government CSV datasets via Maatwebsite/Excel. The data model covers a three level administrative hierarchy with 29 measurable variables across six domain tables, all with bilingual English and Myanmar field names using the Rabbit Zawgyi to Unicode conversion library. The Nuxt SPA frontend renders ECharts histograms and scatter plots, fetching fresh data on each filter change.`
