@@ -1,3 +1,11 @@
+// Data 4 Change
+import data4ChangeBan from "../../../public/assets/portfolio/data_4_change/banner.JPG";
+import data4ChangeImg1 from "../../../public/assets/portfolio/data_4_change/1.png";
+import data4ChangeImg2 from "../../../public/assets/portfolio/data_4_change/2.png";
+import data4ChangeImg3 from "../../../public/assets/portfolio/data_4_change/3.png";
+import data4ChangeImg4 from "../../../public/assets/portfolio/data_4_change/4.png";
+import data4ChangeImg5 from "../../../public/assets/portfolio/data_4_change/5.png";
+
 // Vote for Change
 import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/banner.jpg";
 import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.png";
@@ -540,6 +548,28 @@ const PortfolioData = [
         'preview': [
           {"platform": "Official Page", "url": "https://www.facebook.com/MaePaySoh/"},
         ],
+      },
+
+      // Data 4 Change
+      {
+        'company': 'Team Novit',
+        'industry': 'Civic Technology',
+        'product': 'Data 4 Change',
+        'productType': 'Open Data Platform',
+        'role': 'Full Stack Developer',
+        'description': [
+          `Data 4 Change is an open data platform built at a civic technology hackathon in May 2019 to make official Myanmar government statistics accessible to journalists, researchers, and the public. It aggregates data across six categories: health facilities, demographics, agriculture, natural hazard risk, living standards, and heritage sites, covering 18 regions, 356 cities, and 14,429 townships. The interface supports histogram and scatter plot visualisations with live filtering by category, year, and location, a chart to table toggle, and JPEG export.`,
+          `I built the backend as part of Team Novit: a Laravel 5.8 REST API with public JSON endpoints accepting language, city, year, and variable parameters alongside an admin panel for loading government CSV datasets via Maatwebsite/Excel. The data model covers a three level administrative hierarchy with 29 measurable variables across six domain tables, all with bilingual English and Myanmar field names using the Rabbit Zawgyi to Unicode conversion library. The Nuxt SPA frontend renders ECharts histograms and scatter plots, fetching fresh data on each filter change.`
+        ],
+        'banner': data4ChangeBan,
+        'media': [
+          {'type': 'image', 'url': data4ChangeImg1},
+          {'type': 'image', 'url': data4ChangeImg2},
+          {'type': 'image', 'url': data4ChangeImg3},
+          {'type': 'image', 'url': data4ChangeImg4},
+          {'type': 'image', 'url': data4ChangeImg5},
+        ],
+        'preview': [],
       }
     ]
   },
