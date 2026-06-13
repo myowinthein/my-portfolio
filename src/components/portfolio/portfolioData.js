@@ -125,13 +125,13 @@ const PortfolioData = [
       // StudyMe
       {
         'company': 'StudyMe',
-        'industry': 'International Education',
+        'industry': 'International Recruitment',
         'product': 'StudyMe Portal',
-        'productType': 'B2B2C SaaS Platform',
+        'productType': 'Multi-sided Marketplace',
         'role': 'Technical Lead',
         'description': [
-          `StudyMe is a multi-sided platform connecting students, concierge advisors, and universities across the international application journey. It enables discovery, eligibility matching, structured communication, and coordinated workflows, supporting real-world student recruitment and enrollment processes at scale.`,
-          `I owned the backend system end-to-end, building a scalable Laravel-based API architecture serving web and mobile clients. I implemented multi-role permissions, JWT/SSO authentication, Redis-backed async workflows, and AWS infrastructure, ensuring system reliability, performance, and maintainability in a production environment.`
+          `StudyMe is an international student recruitment and enrollment platform connecting students, education agencies, and partner institutions. Students create academic profiles, discover eligible programs, and progress through a structured application pipeline. Universities search and engage prospective students, while agencies manage applications on behalf of clients. The platform also includes a school management module powered by the Wellspring International institution database, with companion iOS and Android apps. Institutional access is subscription-based via Stripe and Square.,`,
+          `As Technical Lead, I owned the backend API and platform architecture. The system is a headless Laravel 7 REST API with JWT authentication and seven role-based access levels. It uses PostgreSQL as the primary database and MySQL as a read-only source for the Wellspring catalogue. Integrations include HubSpot CRM, AWS S3, AWS SQS, Stripe, ELSA, and VTest. The platform was deployed on AWS Elastic Beanstalk with GitHub Actions powering staging and production releases.`
         ],
         // 'status': 1,
         'banner': studymeBan,
