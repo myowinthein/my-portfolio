@@ -127,6 +127,15 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
             color: #fff;
         }
 
+        .detail-label {
+            display: block;
+            font-size: 11px;
+            opacity: 0.5;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .preview-link {
             color: var(--main-primary-color);
             text-decoration: underline;

@@ -62,71 +62,79 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
             <div className="row open-sans-font">
 
               {/* Company */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa-solid fa-building pr-2"></i>
-                Company:{" "}
-                <span className="ft-wt-600 uppercase">
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa-solid fa-building pr-1"></i>{" "}Company
+                </span>
+                <span className="ft-wt-600 d-block">
                   {modalProject.company}
                 </span>
               </div>
 
-              {/* Role */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa-solid fa-id-badge pr-2"></i>
-                Role:{" "}
-                <span className="ft-wt-600 uppercase">
-                  {modalProject.role}
-                </span>
-              </div>
-
               {/* Industry */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa-solid fa-briefcase pr-2"></i>
-                Industry:{" "}
-                <span className="ft-wt-600 uppercase">
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa-solid fa-briefcase pr-1"></i>{" "}Industry
+                </span>
+                <span className="ft-wt-600 d-block">
                   {modalProject.industry || "N/A"}
                 </span>
               </div>
 
+              {/* Role */}
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa-solid fa-id-badge pr-1"></i>{" "}Role
+                </span>
+                <span className="ft-wt-600 d-block">
+                  {modalProject.role}
+                </span>
+              </div>
+
               {/* Product Type */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa-solid fa-layer-group pr-2"></i>
-                Type:{" "}
-                <span className="ft-wt-600 uppercase">
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa-solid fa-layer-group pr-1"></i>{" "}Type
+                </span>
+                <span className="ft-wt-600 d-block">
                   {modalProject.productType || "N/A"}
                 </span>
               </div>
 
               {/* Category */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa-solid fa-sitemap pr-2"></i>
-                Category:{" "}
-                <span className="ft-wt-600 uppercase">
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa-solid fa-sitemap pr-1"></i>{" "}Category
+                </span>
+                <span className="ft-wt-600 d-block">
                   {modalCategory}
                 </span>
               </div>
 
               {/* Preview */}
-              <div className="col-12 col-sm-6 mb-2">
-                <i className="fa fa-arrow-up-right-from-square pr-2"></i>
-                Preview:{" "}
-                {modalProject.preview?.length ? (
-                  modalProject.preview.map((preview, i, origin) => (
-                    <span key={i}>
-                      <a
-                        className="preview-link"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        href={preview.url}
-                      >
-                        {preview.platform}
-                      </a>
-                      {i !== origin.length - 1 && " · "}
-                    </span>
-                  ))
-                ) : (
-                  "N/A"
-                )}
+              <div className="col-12 col-sm-4 mb-3">
+                <span className="detail-label">
+                  <i className="fa fa-arrow-up-right-from-square pr-1"></i>{" "}Preview
+                </span>
+                <span className="ft-wt-600 d-block">
+                  {modalProject.preview?.length ? (
+                    modalProject.preview.map((preview, i, origin) => (
+                      <span key={i}>
+                        <a
+                          className="preview-link"
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          href={preview.url}
+                        >
+                          {preview.platform}
+                        </a>
+                        {i !== origin.length - 1 && " · "}
+                      </span>
+                    ))
+                  ) : (
+                    "N/A"
+                  )}
+                </span>
               </div>
             </div>
           </div>
