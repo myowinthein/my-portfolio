@@ -55,9 +55,10 @@ import fastforwardImg4 from "../../../public/assets/portfolio/fastforward/4.png"
 // AnyMart
 import anymartBan from "../../../public/assets/portfolio/anymart/banner.webp";
 import anymartImg1 from "../../../public/assets/portfolio/anymart/1.png";
-import anymartImg2 from "../../../public/assets/portfolio/anymart/2.webp";
-import anymartImg3 from "../../../public/assets/portfolio/anymart/3.webp";
+import anymartImg2 from "../../../public/assets/portfolio/anymart/2.png";
+import anymartImg3 from "../../../public/assets/portfolio/anymart/3.png";
 import anymartImg4 from "../../../public/assets/portfolio/anymart/4.webp";
+import anymartImg5 from "../../../public/assets/portfolio/anymart/5.webp";
 
 // Lukky
 import lukkyBan from "../../../public/assets/portfolio/lukky/banner.webp";
@@ -125,12 +126,12 @@ const PortfolioData = [
       // StudyMe
       {
         'company': 'StudyMe',
-        'industry': 'International Recruitment',
+        'industry': 'International Student Recruitment',
         'product': 'StudyMe Portal',
         'productType': 'Multi-sided Marketplace',
         'role': 'Technical Lead',
         'description': [
-          `StudyMe is an international student recruitment and enrollment platform connecting students, education agencies, and partner institutions. Students create academic profiles, discover eligible programs, and progress through a structured application pipeline. Universities search and engage prospective students, while agencies manage applications on behalf of clients. The platform also includes a school management module powered by the Wellspring International institution database, with companion iOS and Android apps. Institutional access is subscription-based via Stripe and Square.,`,
+          `StudyMe is an international student recruitment and enrollment platform connecting students, education agencies, and partner institutions. Students create academic profiles, discover eligible programs, and progress through a structured application pipeline. Universities search and engage prospective students, while agencies manage applications on behalf of clients. The platform also includes a school management module powered by the Wellspring International institution database, with companion iOS and Android apps. Institutional access is subscription-based via Stripe and Square.`,
           `As Technical Lead, I owned the backend API and platform architecture. The system is a headless Laravel 7 REST API with JWT authentication and seven role-based access levels. It uses PostgreSQL as the primary database and MySQL as a read-only source for the Wellspring catalogue. Integrations include HubSpot CRM, AWS S3, AWS SQS, Stripe, ELSA, and VTest. The platform was deployed on AWS Elastic Beanstalk with GitHub Actions powering staging and production releases.`
         ],
         // 'status': 1,
@@ -153,13 +154,13 @@ const PortfolioData = [
       // Wellspring Portal
       {
         'company': 'Wellspring International Education',
-        'industry': 'International Education',
+        'industry': 'International Student Recruitment',
         'product': 'Wellspring Portal',
-        'productType': 'Enterprise Workflow Platform',
+        'productType': 'Admissions Management Platform',
         'role': 'Technical Lead',
         'description': [
-          `Wellspring Portal is an internal platform used by staff and partner agencies to manage international student recruitment and application workflows. It supports structured processes across student data, applications, university matching, and multi-level agency coordination with role-based access and reporting.`,
-          `I owned the backend and infrastructure end-to-end, first stabilising a legacy Laravel system, then leading a full rebuild with modern API architecture. I designed AWS environments, CI/CD pipelines, and permission-driven workflows, ensuring reliable operation and scalability for a complex multi-role production system.`
+          `Wellspring Portal is Wellspring International Education's admissions management platform, connecting partner agencies, schools, and internal staff throughout the international student enrollment journey. Agents submit and track applications to thousands of partner institutions, while staff manage agency onboarding, school relationships, enrollment confirmations, and commission processes. The original platform supported more than 15,000 users and 13,000 applications before being rebuilt as Wellspring Portal 2.0 with a modern API-driven architecture.`,
+          `I served as Technical Lead for both the original platform and the Wellspring Portal 2.0 rewrite. I maintained and enhanced the Laravel-based production system while leading the design and delivery of the next-generation platform. The rewrite introduced a decoupled Laravel API and React SPA architecture, improving maintainability, scalability, deployment automation, and developer experience while supporting complex admissions workflows, role-based permissions, and application lifecycle management.`
         ],
         // 'status': 1,
         'banner': wellspringBan,
@@ -284,6 +285,7 @@ const PortfolioData = [
           {'type': 'image', 'url': anymartImg2},
           {'type': 'image', 'url': anymartImg3},
           {'type': 'image', 'url': anymartImg4},
+          {'type': 'image', 'url': anymartImg5},
         ],
         'preview': [
           // {'platform': 'Web', 'url': 'http://anymart.com.mm/'},
