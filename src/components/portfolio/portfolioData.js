@@ -57,8 +57,8 @@ import anymartBan from "../../../public/assets/portfolio/anymart/banner.webp";
 import anymartImg1 from "../../../public/assets/portfolio/anymart/1.png";
 import anymartImg2 from "../../../public/assets/portfolio/anymart/2.png";
 import anymartImg3 from "../../../public/assets/portfolio/anymart/3.png";
-import anymartImg4 from "../../../public/assets/portfolio/anymart/4.webp";
-import anymartImg5 from "../../../public/assets/portfolio/anymart/5.webp";
+import anymartImg4 from "../../../public/assets/portfolio/anymart/4.png";
+import anymartImg5 from "../../../public/assets/portfolio/anymart/5.png";
 
 // Lukky
 import lukkyBan from "../../../public/assets/portfolio/lukky/banner.webp";
@@ -106,7 +106,7 @@ import fniImg1 from "../../../public/assets/portfolio/fni/1.webp";
 import fniImg2 from "../../../public/assets/portfolio/fni/2.webp";
 import fniImg3 from "../../../public/assets/portfolio/fni/3.webp";
 import fniImg4 from "../../../public/assets/portfolio/fni/4.webp";
-import fniImg5 from "../../../public/assets/portfolio/fni/5.webp";
+import fniImg5 from "../../../public/assets/portfolio/fni/5.png";
 
 // Recycle Myanmar
 import recycleMyanmarBan from "../../../public/assets/portfolio/recycle_myanmar/banner.webp";
