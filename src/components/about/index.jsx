@@ -147,7 +147,7 @@ const index = () => {
         {'icon': markdownIcon, 'name': 'Markdown'},
         {'icon': cssIcon, 'name': 'CSS'},
         {'icon': bootstrapIcon, 'name': 'Bootstrap'},
-        {'icon': elementuiIcon, 'name': 'Element UI'},
+        {'icon': elementuiIcon, 'name': 'Element Plus'},
       ]
     },
     {
