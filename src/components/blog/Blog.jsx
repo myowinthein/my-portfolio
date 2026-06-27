@@ -9,12 +9,10 @@ import Image from "next/image";
 const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
   const excerptRef = useRef(null);
-  const handleModle = (id) => {
-    handleBlogsData(id);
-  };
+
   useEffect(() => {
     Modal.setAppElement("#__next");
-  },[])
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -59,14 +57,12 @@ const Blog = () => {
             >
               <article
                 className="post-container"
-                onClick={() => handleModle(item?.id)}
+                onClick={() => handleBlogsData(item?.id)}
               >
                 <div className="post-thumb">
                   <div className="d-block position-relative overflow-hidden">
                     <Image
-                      loader={({ src }) => {
-                        return `${src}`
-                      }}
+                      loader={({ src }) => src}
                       src={item?.img}
                       width={500}
                       height={500}
