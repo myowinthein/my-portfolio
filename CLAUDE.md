@@ -6,7 +6,7 @@ Read this before making any changes.
 
 ## What This Is
 
-Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer, Bangkok. Live at `myowin.dev`. Built on the commercial "Tunis" React template (ib-themes), heavily customised.
+Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, Bangkok. Live at `myowin.dev`. Built on the commercial "Tunis" React template (ib-themes), heavily customised.
 
 ---
 
