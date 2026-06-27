@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import Hero from "../components/hero/Hero";
 import AboutMain from "../components/about";
@@ -21,9 +21,6 @@ const menuItem = [
 ];
 
 const HomeDark = () => {
-  useEffect(() => {
-    document.querySelector("body").classList.remove("rtl");
-  }, []);
   return (
     <Wrapper>
       <SEO pageTitle={`${firstName} ${lastName}`} />
