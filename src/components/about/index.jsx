@@ -108,7 +108,7 @@ const index = () => {
       title: 'Cloud (AWS)',
       skills: [
         { icon: ec2Icon, name: 'EC2', core: true },
-        { icon: ebsIcon, name: 'EBS' },
+        { icon: ebsIcon, name: 'EBS', core: true },
         { icon: rdsIcon, name: 'RDS', core: true },
         { icon: s3Icon, name: 'S3', core: true },
         { icon: cloudfrontIcon, name: 'CloudFront', core: true },
