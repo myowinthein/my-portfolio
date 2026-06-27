@@ -1,26 +1,18 @@
 import React from "react";
-import { facebookURL, instagramURL, githubURL, mediumURL, linkedinURL } from "../config";
+import { githubURL, mediumURL, linkedinURL } from "../config";
 
 const SocialShare = [
-  // {
-  //   iconName: "fa-brands fa-facebook",
-  //   link: facebookURL,
-  // },
-  // { 
-  //   iconName: "fa-brands fa-instagram", 
-  //   link: instagramURL 
-  // },
-  { 
+  {
     iconName: "fa-brands fa-linkedin",
-    link: linkedinURL
+    link: linkedinURL,
   },
   {
     iconName: "fa-brands fa-github",
     link: githubURL,
   },
-  { 
+  {
     iconName: "fa-brands fa-medium",
-    link: mediumURL
+    link: mediumURL,
   },
 ];
 

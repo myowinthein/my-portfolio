@@ -2,27 +2,24 @@ import React, { useEffect, useState } from "react";
 import handleSwitchValue from "../../../utils/theme";
 
 const SwitchDark = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isLightTheme, setIsLightTheme] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("theme-color") === "light") {
+      // handleSwitchValue(true) = dark, handleSwitchValue(false) = light
       handleSwitchValue(false);
-      setIsDark(true);
+      setIsLightTheme(true);
     }
   }, []);
 
   const handleLabelClick = () => {
-    if (isDark) {
-      handleSwitchValue(true)
-      setIsDark(false);
-    } else {
-      handleSwitchValue(false)
-      setIsDark(true);
-    }
+    const nextIsLight = !isLightTheme;
+    handleSwitchValue(!nextIsLight);
+    setIsLightTheme(nextIsLight);
   };
 
   return (
-    <label className={`theme-switcher-label d-flex  ${isDark ? "active" : ""}`}>
+    <label className={`theme-switcher-label d-flex  ${isLightTheme ? "active" : ""}`}>
       <input
         type="checkbox"
         onClick={handleLabelClick}
