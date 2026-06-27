@@ -1,1 +1,16 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 100 100" height="100px" version="1.1" viewBox="0 0 100 100" width="100px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Amazon_CloudSearch"><g><polygon fill="#876929" points="33.736,25.48 19.131,48.73 33.736,72.127   "/><polygon fill="#D9A741" points="50.045,67.805 33.735,71.984 33.735,25.48 50.045,29.658   "/><polygon fill="#876929" points="61.926,43.451 69.486,54.268 80.864,31.332 73.002,32.632   "/><polygon fill="#876929" points="59.867,43.83 69.486,43.266 54.953,14 45.98,17.929   "/><polygon fill="#D9A741" points="54.953,14 78.992,26.019 69.486,43.267   "/><polygon fill="#D9A741" points="80.863,31.332 80.869,70.576 50.045,86 50.041,18.988 69.486,54.268   "/><polygon fill="#876929" points="50.041,18.988 50.045,86 40.813,81.381 40.813,22.675 50.037,18.988   "/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="-21.5 0 299 299" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+	<g>
+		<path d="M60.556,47.602 L0,144.01 L60.556,240.434 L61.612,239.681 L60.837,47.8 L60.556,47.602" fill="#876929">
+</path>
+		<path d="M128.187,223.105 L60.556,240.434 L60.556,47.602 L128.187,64.927 L128.187,223.105" fill="#D9A741">
+</path>
+		<path d="M255.979,71.868 L223.379,77.259 L148.538,0 L111.331,16.292 L116.239,25.445 L89.906,35.971 L89.906,279.399 L128.186,298.552 L128.823,298.053 L128.234,47.818 L209.376,170.786 L255.979,71.868" fill="#876929">
+</path>
+		<path d="M148.538,0 L248.217,49.837 L208.8,121.357 L148.538,0" fill="#D9A741">
+</path>
+		<path d="M255.975,71.868 L256,234.596 L128.187,298.552 L128.17,20.683 L208.8,166.974 L255.975,71.868" fill="#D9A741">
+</path>
+	</g>
+</svg>
