@@ -13,13 +13,15 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, 
 ## 2. Dev Commands
 
 ```sh
-npm run dev     # localhost:4000  (NOT default 3000)
-npm run build   # next build + next-sitemap (postbuild)
-npm run lint    # next/core-web-vitals
-npm run start   # serve production build (requires prior build)
+npm run dev         # localhost:4000  (NOT default 3000)
+npm run build       # next build + next-sitemap (postbuild)
+npm run lint        # next/core-web-vitals
+npm run start       # serve production build (requires prior build)
+npm test            # vitest run (utils/**/*.test.js only)
+npm run test:watch  # vitest watch mode
 ```
 
-No test runner exists. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + manual browser check at `localhost:4000` are the only verification options.
+Test scope is intentionally limited to `utils/` — pure helpers like `sentenceCase` and `handleSwitchValue`. There is no Testing Library, no JSDOM, no component tests. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
 
 ---
 
@@ -49,7 +51,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **No TypeScript.** Files stay `.js` / `.jsx`. Do not introduce a `tsconfig.json`.
 - **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (Next 13.0.2 doesn't support them), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
 - **No SSR data fetching.** No `getServerSideProps`, `getStaticProps`, `getStaticPaths`. All content is static imports or `fetch()` in `useEffect`.
-- **Always run `npm run lint` and `npm run build` before commit.** No CI catches errors otherwise.
+- **Always run `npm run lint`, `npm test`, and `npm run build` before commit.** No CI catches errors otherwise.
 - **Use conventional commit messages.** `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, `perf:`, `style:`. Keep commits small and focused.
 - **Stage files explicitly** by name; never `git add .` or `git add -A` (risk of pulling in large media binaries or `.env.production`).
 
