@@ -83,4 +83,4 @@ Full operational risk scan and instructions: `.claude/rules/safety.md`.
 - **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
 
-<!-- last-reviewed: bee09a8 -->
+<!-- last-reviewed: 69ae6e4 -->
