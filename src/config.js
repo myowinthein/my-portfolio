@@ -19,11 +19,11 @@ export const totalDeliveredProjects = 14;
 
 // links
 export const resumeURL = 'https://drive.google.com/file/d/1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG/view?usp=sharing';
-export const facebookURL = 'https://www.facebook.com/myowinthein91/';
-export const instagramURL = 'https://www.instagram.com/myowinthein91/';
+export const facebookURL = 'https://facebook.com/myowinthein91/';
+export const instagramURL = 'https://instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
-export const linkedinURL = 'https://www.linkedin.com/in/myowinthein/';
+export const linkedinURL = 'https://linkedin.com/in/myowinthein/';
 export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://myowin.dev'
 
 // navigation
