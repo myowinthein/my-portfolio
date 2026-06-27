@@ -1,18 +1,18 @@
 // Data 4 Change
-import data4ChangeBan from "../../../public/assets/portfolio/data_4_change/banner.JPG";
-import data4ChangeImg1 from "../../../public/assets/portfolio/data_4_change/1.png";
-import data4ChangeImg2 from "../../../public/assets/portfolio/data_4_change/2.png";
-import data4ChangeImg3 from "../../../public/assets/portfolio/data_4_change/3.png";
-import data4ChangeImg4 from "../../../public/assets/portfolio/data_4_change/4.png";
-import data4ChangeImg5 from "../../../public/assets/portfolio/data_4_change/5.png";
+import data4ChangeBan from "../../../public/assets/portfolio/data_4_change/banner.webp";
+import data4ChangeImg1 from "../../../public/assets/portfolio/data_4_change/1.webp";
+import data4ChangeImg2 from "../../../public/assets/portfolio/data_4_change/2.webp";
+import data4ChangeImg3 from "../../../public/assets/portfolio/data_4_change/3.webp";
+import data4ChangeImg4 from "../../../public/assets/portfolio/data_4_change/4.webp";
+import data4ChangeImg5 from "../../../public/assets/portfolio/data_4_change/5.webp";
 
 // Vote for Change
-import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/banner.jpg";
-import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.png";
-import voteForChangeImg2 from "../../../public/assets/portfolio/vote_for_change/2.png";
-import voteForChangeImg3 from "../../../public/assets/portfolio/vote_for_change/3.png";
-import voteForChangeImg4 from "../../../public/assets/portfolio/vote_for_change/4.png";
-import voteForChangeImg5 from "../../../public/assets/portfolio/vote_for_change/5.png";
+import voteForChangeBan from "../../../public/assets/portfolio/vote_for_change/banner.webp";
+import voteForChangeImg1 from "../../../public/assets/portfolio/vote_for_change/1.webp";
+import voteForChangeImg2 from "../../../public/assets/portfolio/vote_for_change/2.webp";
+import voteForChangeImg3 from "../../../public/assets/portfolio/vote_for_change/3.webp";
+import voteForChangeImg4 from "../../../public/assets/portfolio/vote_for_change/4.webp";
+import voteForChangeImg5 from "../../../public/assets/portfolio/vote_for_change/5.webp";
 
 // StudyMe
 import studymeBan from "../../../public/assets/portfolio/studyme/banner.webp";
