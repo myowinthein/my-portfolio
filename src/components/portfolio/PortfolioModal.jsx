@@ -9,6 +9,15 @@ const settings = {
   animation: "fallAnimation",
 };
 
+const DetailField = ({ iconClass, label, children }) => (
+  <div className="col-12 col-sm-4 mb-3">
+    <span className="detail-label">
+      <i className={`${iconClass} pr-1`}></i>{" "}{label}
+    </span>
+    <span className="ft-wt-600 d-block">{children}</span>
+  </div>
+);
+
 const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const videoRefs = useRef([]);
@@ -60,82 +69,40 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
 
           <div className="modal__details">
             <div className="row open-sans-font">
-
-              {/* Company */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa-solid fa-building pr-1"></i>{" "}Company
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalProject.company}
-                </span>
-              </div>
-
-              {/* Industry */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa-solid fa-briefcase pr-1"></i>{" "}Industry
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalProject.industry || "N/A"}
-                </span>
-              </div>
-
-              {/* Role */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa-solid fa-id-badge pr-1"></i>{" "}Role
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalProject.role}
-                </span>
-              </div>
-
-              {/* Product Type */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa-solid fa-layer-group pr-1"></i>{" "}Type
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalProject.productType || "N/A"}
-                </span>
-              </div>
-
-              {/* Category */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa-solid fa-sitemap pr-1"></i>{" "}Category
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalCategory}
-                </span>
-              </div>
-
-              {/* Preview */}
-              <div className="col-12 col-sm-4 mb-3">
-                <span className="detail-label">
-                  <i className="fa fa-arrow-up-right-from-square pr-1"></i>{" "}Preview
-                </span>
-                <span className="ft-wt-600 d-block">
-                  {modalProject.preview?.length ? (
-                    modalProject.preview.map((preview, i, origin) => (
-                      <span key={i}>
-                        <a
-                          className="preview-link"
-                          target="_blank"
-                          rel="noopener noreferrer nofollow"
-                          href={preview.url}
-                        >
-                          {preview.platform}
-                        </a>
-                        {i !== origin.length - 1 && " · "}
-                      </span>
-                    ))
-                  ) : (
-                    "N/A"
-                  )}
-                </span>
-              </div>
+              <DetailField iconClass="fa-solid fa-building" label="Company">
+                {modalProject.company}
+              </DetailField>
+              <DetailField iconClass="fa-solid fa-briefcase" label="Industry">
+                {modalProject.industry || "N/A"}
+              </DetailField>
+              <DetailField iconClass="fa-solid fa-id-badge" label="Role">
+                {modalProject.role}
+              </DetailField>
+              <DetailField iconClass="fa-solid fa-layer-group" label="Type">
+                {modalProject.productType || "N/A"}
+              </DetailField>
+              <DetailField iconClass="fa-solid fa-sitemap" label="Category">
+                {modalCategory}
+              </DetailField>
+              <DetailField iconClass="fa fa-arrow-up-right-from-square" label="Preview">
+                {modalProject.preview?.length ? (
+                  modalProject.preview.map((preview, i, origin) => (
+                    <span key={i}>
+                      <a
+                        className="preview-link"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        href={preview.url}
+                      >
+                        {preview.platform}
+                      </a>
+                      {i !== origin.length - 1 && " · "}
+                    </span>
+                  ))
+                ) : (
+                  "N/A"
+                )}
+              </DetailField>
             </div>
           </div>
 
