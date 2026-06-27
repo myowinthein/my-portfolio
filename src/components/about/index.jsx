@@ -85,7 +85,7 @@ const index = () => {
         { icon: nuxtIcon, name: 'Nuxt.js', core: true },
         { icon: reactIcon, name: 'React.js' },
         { icon: nextIcon, name: 'Next.js' },
-        { icon: javaScriptIcon, name: 'JavaScript' },
+        { icon: javaScriptIcon, name: 'JavaScript', core: true },
         { icon: typescriptIcon, name: 'TypeScript' },
         { icon: htmlIcon, name: 'HTML' },
         { icon: cssIcon, name: 'CSS' },
