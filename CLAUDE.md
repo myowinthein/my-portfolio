@@ -8,6 +8,8 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, 
 
 **Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no test suite, no preview branch, no approval step.
 
+**Workflow:** `git-solo: true` — commits go direct to `main`; no feature branches, no PRs required. Full git conventions in `.claude/rules/git.md`.
+
 ---
 
 ## 2. Dev Commands
@@ -52,7 +54,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (Next 13.0.2 doesn't support them), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
 - **No SSR data fetching.** No `getServerSideProps`, `getStaticProps`, `getStaticPaths`. All content is static imports or `fetch()` in `useEffect`.
 - **Always run `npm run lint`, `npm test`, and `npm run build` before commit.** No CI catches errors otherwise.
-- **Use conventional commit messages.** `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, `perf:`, `style:`. Keep commits small and focused.
+- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: `.claude/rules/git.md`.
 - **Stage files explicitly** by name; never `git add .` or `git add -A` (risk of pulling in large media binaries or `.env.production`).
 
 ---
@@ -83,4 +85,4 @@ Full operational risk scan and instructions: `.claude/rules/safety.md`.
 - **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
 
-<!-- last-reviewed: 69ae6e4 -->
+<!-- last-reviewed: 6804549 -->
