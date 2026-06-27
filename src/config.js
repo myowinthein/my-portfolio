@@ -1,16 +1,16 @@
 import { format } from "date-fns";
+import { sentenceCase } from "../utils/text";
 
 // personal information
-export const name = 'Martin';
 export const firstName = 'Myo Win';
 export const lastName = 'Thein';
-export const nationality = 'Myanmar';
 export const careerSince = 2013;
 export const workPreference = 'Remote / Hybrid';
 export const focus = 'Backend, DevOps & System Architecture';
 export const email = 'martin@myowin.dev';
 export const languages = 'English, Burmese';
 export const position = 'Senior Backend Engineer';
+export const roleTags = ['Product-Minded', 'Backend & Cloud'];
 export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
 export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
@@ -35,9 +35,16 @@ export const menuLabels = {
   contact: "Contact",
 };
 
+// summary — first paragraph is reused as the SEO meta description
+export const summary = [
+  `${sentenceCase(position)} with ${totalExperiences}+ years of experience building, modernizing, and operating business-critical software across SaaS, enterprise, and government domains.`,
+  `I enjoy taking products from idea to production, combining backend engineering, cloud infrastructure, and pragmatic technical decisions to deliver simple, reliable, and maintainable solutions.`,
+  `Deep experience in Laravel, AWS, distributed APIs, CI/CD, technical leadership, and AI-assisted engineering workflows.`,
+];
+
 // meta
 export const metaTitle = `${firstName} ${lastName} — ${position}`
-export const metaDescription = `${position} with ${totalExperiences}+ years of experience building scalable APIs, AWS-backed platforms, CI/CD pipelines, and reliable SaaS systems.`;
+export const metaDescription = summary[0];
 export const metaImage = `${siteURL}/assets/img/hero/meta.jpeg`
 
 // toast

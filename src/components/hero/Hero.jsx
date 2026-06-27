@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { name, firstName, lastName, position, totalExperiences, resumeURL } from "../../config";
+import { firstName, lastName, position, resumeURL, roleTags, summary } from "../../config";
 import heroImage from "../../../public/assets/img/hero/dark.jpg";
 import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
 import cancelImg from "../../../public/assets/img/cancel.svg";
@@ -12,11 +12,8 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: `${firstName} ${lastName}`,
   heroDesignation: position,
-  heroDescriptions: [
-    `Backend-focused engineer with ${totalExperiences}+ years of experience designing, modernizing, and operating scalable API and cloud-backed web platforms.`,
-    `Specialized in backend architecture, AWS infrastructure, CI/CD, production reliability, observability, security hardening, and maintainable system design across SaaS and enterprise systems.`,
-    `Experienced in technical leadership, legacy modernization, remote engineering collaboration, and AI-assisted workflows for technical research, debugging, and delivery acceleration.`
-  ],
+  heroDescriptions: summary,
+  heroRoleTags: roleTags,
   heroBtn: "View Resume",
 };
 
@@ -46,7 +43,9 @@ const Hero = () => {
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <div className="hero-credentials open-sans-font">
-              <span className="credential-item">Scalable APIs &amp; AWS Infrastructure</span>
+              {heroContent.heroRoleTags.map((tag) => (
+                <span className="credential-item" key={tag}>{tag}</span>
+              ))}
             </div>
             {heroContent.heroDescriptions.map((description, i) => (
               <p className="open-sans-font" key={i}>{description}</p>
