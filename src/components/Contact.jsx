@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { toastOptions } from "../config";
-
-const SERVICE_ID = "service_ymrfc1k";
-const TEMPLATE_ID = "template_vnchh1m";
-const PUBLIC_KEY = "qf-Hdel_0um8Wj7YK";
-
-// reCAPTCHA v2 *site key*
-const RECAPTCHA_SITE_KEY = "6LcUUFwsAAAAAKgz_JIK4HkIh-Z9SLy52-rd7gUw";
+import {
+  toastOptions,
+  emailjsServiceId,
+  emailjsTemplateId,
+  emailjsPublicKey,
+  recaptchaSiteKey,
+} from "../config";
 
 const Contact = () => {
   const form = useRef(null);
@@ -23,7 +22,7 @@ const Contact = () => {
       if (window.grecaptcha && widgetIdRef.current === null) {
         try {
           widgetIdRef.current = window.grecaptcha.render("recaptcha-container", {
-            sitekey: RECAPTCHA_SITE_KEY,
+            sitekey: recaptchaSiteKey,
             size: "invisible",
             callback: onRecaptchaSuccess,
             "error-callback": onRecaptchaError,
@@ -113,7 +112,7 @@ const Contact = () => {
       if (field) field.value = token;
 
       emailjs
-        .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+        .sendForm(emailjsServiceId, emailjsTemplateId, form.current, emailjsPublicKey)
         .then(
           () => {
             toast.success("Message Sent Successfully!", toastOptions);

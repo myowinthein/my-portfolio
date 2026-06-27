@@ -47,6 +47,12 @@ export const metaTitle = `${firstName} ${lastName} — ${position}`
 export const metaDescription = summary[0];
 export const metaImage = `${siteURL}/assets/img/hero/meta.jpeg`
 
+// contact — EmailJS service + reCAPTCHA v2 (public client-side keys; see CLAUDE.md)
+export const emailjsServiceId = 'service_ymrfc1k';
+export const emailjsTemplateId = 'template_vnchh1m';
+export const emailjsPublicKey = 'qf-Hdel_0um8Wj7YK';
+export const recaptchaSiteKey = '6LcUUFwsAAAAAKgz_JIK4HkIh-Z9SLy52-rd7gUw';
+
 // toast
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
 export const toastOptions = {
