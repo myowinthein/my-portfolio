@@ -82,6 +82,14 @@ const Contact = () => {
     if (el) el.reset();
   };
 
+  const safelyResetRecaptcha = () => {
+    try {
+      if (window.grecaptcha && widgetIdRef.current !== null) {
+        window.grecaptcha.reset(widgetIdRef.current);
+      }
+    } catch (_) {}
+  };
+
   // Form submit: execute reCAPTCHA first, then EmailJS in callback
   const sendEmail = (e) => {
     e.preventDefault();
@@ -125,39 +133,26 @@ const Contact = () => {
         )
         .finally(() => {
           setIsLoading(false);
-          // Reset captcha so next submit works
-          try {
-            window.grecaptcha.reset(widgetIdRef.current);
-          } catch (_) {}
+          safelyResetRecaptcha();
         });
     } catch (err) {
       console.error("Send flow error:", err);
       setIsLoading(false);
       toast.error("Failed to send message!", toastOptions);
-      try {
-        window.grecaptcha.reset(widgetIdRef.current);
-      } catch (_) {}
+      safelyResetRecaptcha();
     }
   };
 
   const onRecaptchaError = () => {
     setIsLoading(false);
     toast.error("reCAPTCHA failed. Please try again.", toastOptions);
-    try {
-      if (window.grecaptcha && widgetIdRef.current !== null) {
-        window.grecaptcha.reset(widgetIdRef.current);
-      }
-    } catch (_) {}
+    safelyResetRecaptcha();
   };
 
   const onRecaptchaExpired = () => {
     setIsLoading(false);
     toast.error("reCAPTCHA expired. Please try again.", toastOptions);
-    try {
-      if (window.grecaptcha && widgetIdRef.current !== null) {
-        window.grecaptcha.reset(widgetIdRef.current);
-      }
-    } catch (_) {}
+    safelyResetRecaptcha();
   };
 
   return (
