@@ -1,1 +1,26 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 100 100" height="100px" version="1.1" viewBox="0 0 100 100" width="100px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"><g><polygon fill="#B7CA9D" points="81.819,63.545 50.011,58.872 18.181,63.551 49.991,74.833   "/><polygon fill="#759C3E" points="65.901,61.951 40.476,67.916 40.476,14 65.901,23.91   "/><polygon fill="#759C3E" points="48.964,61.337 29.927,64.681 29.927,25.858 48.964,30.14   "/><polygon fill="#4B612C" points="43.181,68.666 49.997,70.711 49.991,54.937 43.181,54.201   "/><polygon fill="#4B612C" points="40.476,67.855 33.056,65.629 33.056,17.711 40.476,14.001   "/><polygon fill="#4B612C" points="49.991,74.833 18.181,63.551 18.181,70.095 49.991,86   "/><polygon fill="#759C3E" points="81.819,70.087 49.991,86 49.991,74.833 81.819,63.545   "/><polygon fill="#4B612C" points="24.55,63 29.927,64.613 29.927,25.857 24.55,27.914   "/><polygon fill="#759C3E" points="72.88,52.703 49.991,54.936 49.997,70.711 72.88,63.822   "/><polygon fill="#B7CA9D" points="72.88,52.703 65.167,52.703 43.181,54.201 49.991,54.936   "/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="-17 0 290 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+	<g>
+		<path d="M256,199.305 L128.043,180.508 L0,199.329 L128.01,246.768 L256,199.305" fill="#B7CA9D">
+</path>
+		<path d="M25.621,197.113 L47.251,203.874 L49.222,201.636 L49.222,50.284 L47.251,47.699 L25.621,55.973 L25.621,197.113" fill="#4B612C">
+</path>
+		<path d="M123.832,190.423 L47.251,203.874 L47.251,47.703 L123.832,64.925 L123.832,190.423" fill="#759C3E">
+</path>
+		<path d="M89.686,216.889 L59.838,207.688 L59.838,14.928 L89.686,0.004 L92.298,2.849 L92.298,213.707 L89.686,216.889" fill="#4B612C">
+</path>
+		<path d="M191.967,192.894 L89.686,216.889 L89.686,0 L191.967,39.866 L191.967,192.894" fill="#759C3E">
+</path>
+		<path d="M127.965,244.714 L0,199.329 L0,225.653 L127.965,289.636 L127.965,244.714" fill="#4B612C">
+</path>
+		<path d="M256,225.622 L127.965,289.636 L127.965,244.714 L256,199.305 L256,225.622" fill="#759C3E">
+</path>
+		<path d="M220.039,155.692 L189.013,155.692 L100.568,161.718 L128,166.775 L220.039,155.692" fill="#B7CA9D">
+</path>
+		<path d="M100.568,219.906 L127.988,228.132 L128.777,227.283 L128.754,165.434 L127.965,164.676 L100.568,161.718 L100.568,219.906" fill="#4B612C">
+</path>
+		<path d="M220.039,155.692 L127.965,164.672 L127.988,228.132 L220.039,200.421 L220.039,155.692" fill="#759C3E">
+</path>
+	</g>
+</svg>
