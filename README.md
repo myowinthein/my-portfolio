@@ -1,6 +1,6 @@
 # myowin.dev
 
-Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer.
+Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer.
 
 **Live:** [myowin.dev](https://myowin.dev)
 
