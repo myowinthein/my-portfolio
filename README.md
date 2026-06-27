@@ -27,10 +27,12 @@ For Vercel deployment, set both `NEXT_PUBLIC_SITE_URL` and `SITE_URL` in the pro
 ## Usage
 
 ```sh
-npm run dev      # http://localhost:4000 (not the default 3000)
-npm run lint     # next/core-web-vitals
-npm run build    # next build + next-sitemap (postbuild)
-npm run start    # serve the production build (requires prior build)
+npm run dev         # http://localhost:4000 (not the default 3000)
+npm run lint        # next/core-web-vitals
+npm test            # vitest run (utils/**/*.test.js only)
+npm run test:watch  # vitest watch mode
+npm run build       # next build + next-sitemap (postbuild)
+npm run start       # serve the production build (requires prior build)
 ```
 
 Editing content:
@@ -66,4 +68,4 @@ For bugs you spot, feel free to reach out via the contact form on the live site.
 
 All rights reserved © Myo Win Thein. The source is published for reference and transparency only; it is not licensed for reuse, redistribution, or derivative works. Brand assets, copy, portfolio screenshots, and embedded third-party logos retain their respective owners' rights.
 
-<!-- last-reviewed: 34788a7 -->
+<!-- last-reviewed: 69ae6e4 -->
