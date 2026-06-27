@@ -1,3 +1,11 @@
+// Job Buddy
+import jobBuddyBan from "../../../public/assets/portfolio/job_buddy/banner.webp";
+import jobBuddyImg1 from "../../../public/assets/portfolio/job_buddy/1.webp";
+import jobBuddyImg2 from "../../../public/assets/portfolio/job_buddy/2.webp";
+import jobBuddyImg3 from "../../../public/assets/portfolio/job_buddy/3.webp";
+import jobBuddyImg4 from "../../../public/assets/portfolio/job_buddy/4.webp";
+import jobBuddyImg5 from "../../../public/assets/portfolio/job_buddy/5.webp";
+
 // Data 4 Change
 import data4ChangeBan from "../../../public/assets/portfolio/data_4_change/banner.webp";
 import data4ChangeImg1 from "../../../public/assets/portfolio/data_4_change/1.webp";
@@ -527,6 +535,31 @@ const PortfolioData = [
     'title': 'Experiments & Hackathons',
     'description': 'Side projects, prototypes, and hackathon builds exploring new ideas.',
     'projects': [
+
+      // Job Buddy
+      {
+        'company': 'Independent',
+        'industry': 'Productivity Tools',
+        'product': 'Job Buddy',
+        'productType': 'Chrome Extension',
+        'role': 'Sole Developer',
+        'description': [
+          `Job Buddy is a Chrome extension that autofills job application forms from a single profile stored locally in the browser. Built for multi-country job seekers, it captures personal details, work history, education, salary expectations, and work authorization in a unified nine-section profile, then maps them to live forms with per-field confidence indicators. Optional Google Drive backup and Gemini-powered resume import and autofill assistance are available using a user-supplied API key.`,
+          `I built the extension end to end as the sole developer using WXT 0.20, React 19, TypeScript 5.9, and Tailwind CSS v4. Its four-layer autofill engine combines per-domain mappings, HTML autocomplete attributes, a curated field dictionary, and fuzzy matching to classify each field into green, yellow, red, or gray confidence levels. It also features a Manifest V3 service worker, a lightweight non-React overlay that avoids host page CSS conflicts, derived profile fields recomputed on every save, and CI that enforces TypeScript, ESLint, and tag-based automated releases.`
+        ],
+        'banner': jobBuddyBan,
+        'media': [
+          {'type': 'image', 'url': jobBuddyImg1},
+          {'type': 'image', 'url': jobBuddyImg2},
+          {'type': 'image', 'url': jobBuddyImg3},
+          {'type': 'image', 'url': jobBuddyImg4},
+          {'type': 'image', 'url': jobBuddyImg5},
+        ],
+        'preview': [
+          {"platform": "Chrome Web Store", "url": "https://chromewebstore.google.com/detail/job-buddy/oaadklbdofbaanfcijknaehfkbekdmbk"},
+          {"platform": "GitHub", "url": "https://github.com/myowinthein/job-buddy"},
+        ],
+      },
 
       // Vote for Change
       {
