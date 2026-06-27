@@ -78,8 +78,7 @@ const Contact = () => {
   };
 
   const resetForm = () => {
-    const el = document.getElementById("myForm");
-    if (el) el.reset();
+    form.current?.reset();
   };
 
   const safelyResetRecaptcha = () => {

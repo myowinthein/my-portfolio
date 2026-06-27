@@ -20,6 +20,13 @@ const menuItem = [
   { icon: "fa-envelope-open", menuName: menuLabels.contact },
 ];
 
+const TabTitle = ({ bg, children }) => (
+  <div className="title-section text-center" data-aos="fade-up" data-aos-duration="1200">
+    <h1>{children}</h1>
+    <span className="title-bg">{bg}</span>
+  </div>
+);
+
 const HomeDark = () => {
   return (
     <Wrapper>
@@ -57,48 +64,27 @@ const HomeDark = () => {
 
             {/* Portfolio Content Starts */}
             <TabPanel className="portfolio professional">
-              <div
-                className="title-section text-center"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                <h1>
-                  selected <span>projects</span>
-                </h1>
-                <span className="title-bg">{menuLabels.work}</span>
-              </div>
-              {/* End title */}
+              <TabTitle bg={menuLabels.work}>
+                selected <span>projects</span>
+              </TabTitle>
               <Portfolio />
             </TabPanel>
             {/* Portfolio Content Ends */}
 
             {/* About Content Starts */}
             <TabPanel className="about">
-              <div data-aos="fade-up" data-aos-duration="1200">
-                <div className="title-section text-center">
-                  <h1>
-                    About <span>Me</span>
-                  </h1>
-                  <span className="title-bg">{menuLabels.profile}</span>
-                </div>
-                {/* End title */}
-                <AboutMain />
-              </div>
+              <TabTitle bg={menuLabels.profile}>
+                About <span>Me</span>
+              </TabTitle>
+              <AboutMain />
             </TabPanel>
             {/* About Content Ends */}
 
             {/* Blog Content Starts */}
             <TabPanel className="blog">
-              <div
-                className="title-section text-center "
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                <h1>
-                  my <span>posts</span>
-                </h1>
-                <span className="title-bg">{menuLabels.writing}</span>
-              </div>
+              <TabTitle bg={menuLabels.writing}>
+                my <span>posts</span>
+              </TabTitle>
               <div
                 className="container"
                 data-aos="fade-up"
@@ -115,16 +101,9 @@ const HomeDark = () => {
 
             {/* Contact Content Starts */}
             <TabPanel className="contact">
-              <div
-                className="title-section text-center"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-              >
-                <h1>
-                  get in <span>touch</span>
-                </h1>
-                <span className="title-bg">contact</span>
-              </div>
+              <TabTitle bg="contact">
+                get in <span>touch</span>
+              </TabTitle>
               <div
                 className="container"
                 data-aos="fade-up"
