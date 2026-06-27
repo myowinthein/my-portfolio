@@ -111,13 +111,13 @@ const Blog = () => {
 
               <div className="meta open-sans-font">
                 <div>
-                  <i className="fa fa-user"></i> {singleData.commentor}
+                  <i className="fa fa-user"></i> {singleData?.commentor}
                 </div>
                 <div>
-                  <i className="fa fa-calendar"></i> {singleData.date}
+                  <i className="fa fa-calendar"></i> {singleData?.date}
                 </div>
                 <div>
-                  <i className="fa fa-tags"></i> {singleData.tag}
+                  <i className="fa fa-tags"></i> {singleData?.tag}
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ const Blog = () => {
                   className="preview-link"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  href={singleData.link}
+                  href={singleData?.link}
                 >
                   Medium
                 </a>
