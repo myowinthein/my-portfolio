@@ -1,17 +1,3 @@
-### Init
-```shell
-# Go to the project root
-cd "[project]"
-
-# Create .claude/commands if it doesn't exist
-mkdir -p .claude/commands
-
-# Create or open sync-memory.md
-code .claude/commands/ship.md
-```
-
-### Prompt
-```text
 # ship
 
 ## Step 1 — Branch check
@@ -44,15 +30,19 @@ Filter for known environment names (staging, production, or similar).
 If no environment branches exist:
   Skip this step. Tag and push main only.
 
-If environment branches exist, present selection:
+If environment branches exist, use AskUserQuestion:
+  AskUserQuestion:
+    question: "main/master will always be tagged and pushed. Which additional environments should be promoted?"
+    header:   "Deploy targets"
+    multiSelect: true
+    options: one entry per discovered environment branch, e.g.:
+      - label: "staging"
+        description: "Merge and push main to the staging branch"
+      - label: "production"
+        description: "Merge and push main to the production branch"
 
-  Select environments to deploy to:
-  [x] main/master (always selected, cannot deselect)
-  [ ] staging
-  [ ] production
-
-  Default: main/master only.
-  Wait for human selection before proceeding.
+  If user selects none → deploy to main/master only.
+  Wait for response before proceeding.
 
 ---
 
@@ -95,11 +85,18 @@ If Conventional Commits detected:
   Deployment targets:
   - {selected environments from Step 2}
 
-  Select an option:
-  1. Confirm v{proposed}  (recommended)
-  2. Other               → prompt human to enter custom version
+  AskUserQuestion:
+    question: "Confirm version for this release? Current: v{last_tag} → Proposed: v{proposed}"
+    header:   "Version"
+    multiSelect: false
+    options:
+      - label: "Confirm v{proposed} (Recommended)"
+        description: "Tag and release as v{proposed}"
+      - label: "Enter custom version"
+        description: "Specify a different version number"
 
-  Wait for selection before proceeding.
+  If "Enter custom version" selected → ask human to type the version before proceeding.
+  Wait for response before proceeding.
 
 If Conventional Commits not detected:
   Inform human:
@@ -181,4 +178,3 @@ If on environment branch:
   - Branch pushed:         {branch}
   - Promoted to:           {next environment}
   - Deployment triggered:  yes/no (based on CI/CD presence)
-```
