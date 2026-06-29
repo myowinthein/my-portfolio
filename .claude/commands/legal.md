@@ -71,19 +71,18 @@ Generate if Chrome extension, desktop app, or downloadable software:
 Generate if financial, health, legal advice or AI recommendations detected:
 - disclaimer.md
 
-Present to user before generating:
+Use AskUserQuestion to confirm before generating:
+  AskUserQuestion:
+    question: "Ready to generate the following legal pages?\n- privacy-policy.md (always required)\n- terms.md (always required)\n- {any conditional documents}\n\nJurisdiction: GDPR · Tone: plain English"
+    header:   "Confirm"
+    multiSelect: false
+    options:
+      - label: "Generate (Recommended)"
+        description: "Write the legal documents"
+      - label: "Cancel"
+        description: "Exit without generating anything"
 
-"Based on project scan I will generate:
-- privacy-policy.md (always required)
-- terms.md (always required)
-- {conditional documents and why}
-
-Jurisdiction: GDPR
-Tone: plain English
-
-Confirm? (yes / no)"
-
-Wait for confirmation before proceeding.
+Wait for response before proceeding.
 
 ---
 
@@ -91,6 +90,11 @@ Wait for confirmation before proceeding.
 
 Generate each document in plain English, GDPR compliant.
 Write to legal/ folder.
+
+**Writing style**
+- Use em-dashes sparingly. Only use one when no other punctuation
+  (comma, semicolon, colon, or a new sentence) works as well.
+  When in doubt, restructure the sentence instead.
 
 **privacy-policy.md must cover:**
 - What data is collected and why
