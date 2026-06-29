@@ -8,11 +8,17 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, 
 
 **Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no test suite, no preview branch, no approval step.
 
-**Workflow:** `git-solo: true` — commits go direct to `main`; no feature branches, no PRs required. Full git conventions in `.claude/rules/git.md`.
+**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in `.claude/rules/git.md`.
 
 ---
 
-## 2. Dev Commands
+## 2. Project Config
+
+- `git-solo: true` — commit directly to `main`, no feature branches, no PRs. See `.claude/rules/git.md`.
+
+---
+
+## 3. Dev Commands
 
 ```sh
 npm run dev         # localhost:4000  (NOT default 3000)
@@ -27,7 +33,7 @@ Test scope is intentionally limited to `utils/` — pure helpers like `sentenceC
 
 ---
 
-## 3. Architecture Pointers
+## 4. Architecture Pointers
 
 - `src/pages/home-dark.jsx` — entire single-page tab app; every section is a `<TabPanel>` here. New content goes INSIDE this file, not as new routes.
 - `src/pages/index.jsx` — re-exports `HomeDark`. `/404.jsx` is the only other page.
@@ -45,7 +51,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 
 ---
 
-## 4. Behavior Rules
+## 5. Behavior Rules
 
 - **No new Next.js pages.** All sections live as `<TabPanel>` entries inside `home-dark.jsx`. Adding routes breaks the single-page design.
 - **No new state libraries.** Local `useState` for component state; the Context pattern in `ContextProvider.js` is the only global state (blog feed). Never add Zustand, Redux, SWR, TanStack Query, axios, etc.
@@ -59,7 +65,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 
 ---
 
-## 5. Hard Safety Rules
+## 6. Hard Safety Rules
 
 - **Never push to `main` without explicit user confirmation.** Push = production deploy.
 - **Never force-push to `main`** under any circumstances.
@@ -72,7 +78,7 @@ Full operational risk scan and instructions: `.claude/rules/safety.md`.
 
 ---
 
-## 6. Known Traps
+## 7. Known Traps
 
 - **`PortfolioModal` mounts via `createPortal` to `document.body`** — z-index and stacking-context issues need to account for this.
 - **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
