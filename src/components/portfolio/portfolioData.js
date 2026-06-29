@@ -556,8 +556,7 @@ const PortfolioData = [
           {'type': 'image', 'url': jobBuddyImg5},
         ],
         'preview': [
-          {"platform": "Chrome Web Store", "url": "https://chromewebstore.google.com/detail/job-buddy/oaadklbdofbaanfcijknaehfkbekdmbk"},
-          {"platform": "GitHub", "url": "https://github.com/myowinthein/job-buddy"},
+          {"platform": "Web", "url": "https://myowinthein.github.io/job-buddy/"},
         ],
       },
 
