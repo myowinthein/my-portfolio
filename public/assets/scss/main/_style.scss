@@ -992,8 +992,10 @@ body.light .credential-item {
   }
 
   .edu-row__detail {
-    color: var(--main-primary-color);
-    opacity: 0.85;
+    font-size: 12px;
+    color: #888;
+    margin: 3px 0 0;
+    line-height: 1.5;
   }
 
   .edu-row__year {
