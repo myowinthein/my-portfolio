@@ -13,7 +13,7 @@ export const position = 'Senior Backend Engineer';
 export const roleTags = ['Laravel', 'AWS', 'API Platforms'];
 export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
-export const totalExperiences = format(new Date(), 'yyyy') - careerSince;
+export const totalExperiences = format(new Date(), 'yyyy') - careerSince - 1; // subtract 1 for gap year
 export const totalPlatformTypes = 5;
 export const totalDeliveredProjects = 14;
 
@@ -37,7 +37,7 @@ export const menuLabels = {
 
 // summary — first paragraph is reused as the SEO meta description
 export const summary = [
-  `Senior Backend Engineer / Technical Lead with 12+ years of hands-on backend and cloud engineering experience, specializing in Laravel/PHP systems, AWS infrastructure, and REST API platforms.`,
+  `Senior Backend Engineer / Technical Lead with ${totalExperiences}+ years of hands-on backend and cloud engineering experience, specializing in Laravel/PHP systems, AWS infrastructure, and REST API platforms.`,
   `Strong background in legacy codebase modernization, backend system design, API-first development, database design and performance, production reliability, and CI/CD security across SaaS, education, enterprise, and government domains.`,
   `Most recently led backend delivery for a student-university matching platform through its acquisition, staying close to architecture and code while coordinating engineers.`,
 ];
