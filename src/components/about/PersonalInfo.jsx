@@ -14,10 +14,7 @@ const PersonalInfo = () => {
       {personalInfoContent.map((val, i) => (
         <li key={i}>
           <span className="title">{val.meta}: </span>
-          <span
-            // className={`value d-block d-sm-inline-block d-lg-block d-xl-inline-block ${val.hasColor}`}
-            className={`value d-block ${val.hasColor}`}
-          >
+          <span className={`value ${val.hasColor}`}>
             {val.metaInfo}
           </span>
         </li>
