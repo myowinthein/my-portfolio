@@ -3,15 +3,19 @@ import React, { useState } from "react";
 const experienceContent = [
   // StudyMe
   {
-    companyName: "StudyMe · Melbourne, Australia (Remote)",
+    companyName: "StudyMe, Australia · Remote from Thailand",
     companyInfo: "Student–university matching platform, later acquired by Wellspring International Education.",
     positions: [
-      {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
+      {"position": "Technical Lead", "year": "Dec 2021 – Present"},
     ],
     details: [
-      `Took full ownership of a legacy Laravel monolith, refactoring the architecture to enforce service layers, validation structure, API resources, and domain separation`,
-      `Rebuilt and secured AWS infrastructure by auditing legacy resources, enforcing encryption, upgrading services, and implementing secure database access via VPN`,
-      `Modernized CI/CD and security practices by implementing OIDC, removing hardcoded credentials, and introducing role-based access in deployment workflows`
+      `Rebuilt a legacy Laravel monolith into a versioned REST API architecture, adding service-repository layers, request validation, and API resources for web and mobile clients`,
+      `Designed authentication, authorization, and payment workflows across the API platform, including JWT, social login, SSO, Stripe subscriptions, checkout, and failed-payment handling`,
+      `Improved backend performance with query optimization, Redis caching, SQS-backed queue workers, and 30+ scheduled jobs for engagement, sync, reporting, and background exports`,
+      `Strengthened production stability through Bugsnag error monitoring, alerting workflows, and structured incident handling across backend services`,
+      `Maintained and secured AWS infrastructure across Elastic Beanstalk, RDS, S3, SES, SNS, SQS, and Redis, including encryption, service upgrades, and VPN-secured database access`,
+      `Modernized CI/CD security by removing hardcoded credentials, introducing OIDC-based AWS authentication, and enforcing role-scoped GitHub Actions deployments`,
+      `Set technical direction through shared architecture conventions, custom Artisan code generators, technical specifications, and coordination of up to 3 engineers`
     ]
   },
 
