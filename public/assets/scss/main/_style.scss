@@ -773,16 +773,24 @@ body.light .credential-item {
 
 /* Personal Info List */
 
+.about .about-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
 .about .about-list li:not(:last-child) {
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 .about .about-list .title {
+  flex: 0 0 130px;
   opacity: 0.8;
   text-transform: capitalize;
 }
 
 .about .about-list .value {
+  flex: 1;
   font-weight: 600;
 }
 
@@ -2199,11 +2207,6 @@ body.light .tab-panel_list > div {
   li {
     flex: 0 0 100%;
     max-width: 100%;
-
-    @media (min-width: 576px) {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
   }
 }
 
