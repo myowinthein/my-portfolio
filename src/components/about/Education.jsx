@@ -3,9 +3,9 @@ import React from "react";
 const educationContent = [
   {
     year: "Jul 2023 – Jul 2024",
-    degree: "Bachelor of Science (Honours) in Computing",
-    institute: "University of Greenwich",
-    details: "First Class Honours",
+    degree: "BSc (Hons) Computing, First Class Honours",
+    institute: "University of Greenwich, UK",
+    details: "Remote study via KMD College, Myanmar, official University of Greenwich partner",
     link: ``,
   },
   {
@@ -18,12 +18,12 @@ const educationContent = [
   {
     year: "Sep 2012 – Oct 2013",
     degree: "Level 5 Diploma in Computing",
-    institute: "NCC Education (UK)",
-    details: "",
+    institute: "NCC Education, UK",
+    details: "Onsite study via KMD College, Myanmar, official NCC Education partner",
     link: ``,
   },
   {
-    year: "Dec 2007 – Aug 2011",
+    year: "Dec 2007 – Nov 2011",
     degree: "Bachelor of Technology in Electrical Power Engineering",
     institute: "Thanlyin Technological University",
     details: "",
@@ -38,12 +38,10 @@ const Education = () => {
         <div key={i} className="edu-row">
           <div className="edu-row__left">
             <h5 className="poppins-font edu-row__degree">{val.degree}</h5>
-            <p className="open-sans-font edu-row__meta">
-              {val.institute}
-              {val.details ? (
-                <span className="edu-row__detail"> · {val.details}</span>
-              ) : null}
-            </p>
+            <p className="open-sans-font edu-row__meta">{val.institute}</p>
+            {val.details ? (
+              <p className="open-sans-font edu-row__detail">{val.details}</p>
+            ) : null}
             {val.link ? (
               <a
                 className="cert-verify-link open-sans-font"
