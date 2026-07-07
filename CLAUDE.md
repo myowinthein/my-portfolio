@@ -15,6 +15,7 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, 
 ## 2. Project Config
 
 - `git-solo: true` — commit directly to `main`, no feature branches, no PRs. See `.claude/rules/git.md`.
+- `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
 
 ---
 
@@ -98,4 +99,4 @@ This project follows the rules shipped in claude-helm:
 - ~/.claude/plugins/marketplaces/claude-helm/rules/git.md
 - ~/.claude/plugins/marketplaces/claude-helm/rules/safety.md
 
-<!-- last-reviewed: c8cdde5 -->
+<!-- last-reviewed: c107b44 -->
