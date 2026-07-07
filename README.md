@@ -1,6 +1,6 @@
 # myowin.dev
 
-Personal portfolio for Myo Win Thein (Martin) — Senior Software Engineer based in Bangkok.
+Personal portfolio for Myo Win Thein (Martin) — Senior Backend Engineer based in Bangkok.
 
 **Live:** [myowin.dev](https://myowin.dev)
 
@@ -68,4 +68,4 @@ For bugs you spot, feel free to reach out via the contact form on the live site.
 
 All rights reserved © Myo Win Thein. The source is published for reference and transparency only; it is not licensed for reuse, redistribution, or derivative works. Brand assets, copy, portfolio screenshots, and embedded third-party logos retain their respective owners' rights.
 
-<!-- last-reviewed: 69ae6e4 -->
+<!-- last-reviewed: c8cdde5 -->
