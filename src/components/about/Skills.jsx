@@ -1,34 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import useExpandableList from "../../Hooks/useExpandableList";
 
 const CORE_COUNT = 4;
 
 const Skills = ({skillSets}) => {
-  const [showAll, setShowAll] = useState(false);
-  const visibleSets = showAll ? skillSets : skillSets.slice(0, CORE_COUNT);
+  const { visible: visibleSets, showAll, toggle: toggleSkills } = useExpandableList(skillSets, CORE_COUNT);
 
   return (
     <div className="col-12" data-aos="fade-up">
       <div className="skills-flat">
-        {visibleSets.map((skillSet, i) => (
-          <div className="skill-group" key={i}>
+        {visibleSets.map((skillSet) => (
+          <div className="skill-group" key={skillSet.title}>
             <p className="skill-group__label open-sans-font">{skillSet.title}</p>
             <div className="row justify-content-start">
-              {skillSet.skills.map((skill, j) => (
-                <div className="col-6 col-md-2 mb-2 mb-sm-3" key={j}>
+              {skillSet.skills.map((skill) => (
+                <div className="col-6 col-md-2 mb-2 mb-sm-3" key={skill.name}>
                   <div className="pLogo p25 position-relative">
                     {skill.core && (
-                      <i
-                        className="fa-solid fa-crown position-absolute"
-                        style={{
-                          top: '-4px',
-                          right: '-2px',
-                          fontSize: '10px',
-                          color: '#f5c451',
-                          opacity: 0.65,
-                          pointerEvents: 'none',
-                        }}
-                      />
+                      <i className="fa-solid fa-crown position-absolute skill-crown-badge" />
                     )}
                     <Image src={skill.icon} alt={skill.name} />
                   </div>
@@ -40,7 +30,7 @@ const Skills = ({skillSets}) => {
         ))}
       </div>
       <div className="exp-toggle-area">
-        <button className="exp-toggle-btn open-sans-font" onClick={() => setShowAll(!showAll)}>
+        <button className="exp-toggle-btn open-sans-font" onClick={toggleSkills}>
           {showAll ? (
             <><i className="fa fa-chevron-up"></i> Show less</>
           ) : (

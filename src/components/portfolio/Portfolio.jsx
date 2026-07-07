@@ -20,14 +20,14 @@ const Portfolio = () => {
       <div className="portfolio-main">
         <Tabs>
           <TabList className="portfolio-tab-list" data-aos="fade-up">
-            {PortfolioData.map((portfolio, i) => (
-              <Tab key={i}>{portfolio.title}</Tab>
+            {PortfolioData.map((portfolio) => (
+              <Tab key={portfolio.title}>{portfolio.title}</Tab>
             ))}
           </TabList>
 
           <div className="container">
-            {PortfolioData.map((portfolio, i) => (
-              <TabPanel key={i}>
+            {PortfolioData.map((portfolio) => (
+              <TabPanel key={portfolio.title}>
                 <div className="tab-container-wrapper">
 
                   {/* Category one-liner */}
@@ -38,8 +38,8 @@ const Portfolio = () => {
                   )}
 
                   <div className="tab-container">
-                    {portfolio.projects.map((project, j) => (
-                      <div key={j} className="project-item" data-aos="fade-right" onClick={() => handleModal(portfolio.title, project)}>
+                    {portfolio.projects.map((project) => (
+                      <div key={project.product} className="project-item" data-aos="fade-right" onClick={() => handleModal(portfolio.title, project)}>
                         <div className="tab-content">
                           <Image src={project.banner} alt={project.product} sizes="(max-width: 575px) 100vw, (max-width: 992px) 50vw, 33vw" />
                           <h3>
