@@ -33,7 +33,7 @@ const educationContent = [
 
 const Education = () => {
   return (
-    <>
+    <div className="edu-timeline">
       {educationContent.map((val, i) => (
         <div key={i} className="edu-row">
           <div className="edu-row__left">
@@ -57,7 +57,7 @@ const Education = () => {
           <small className="text-uppercase edu-row__year">{val.year}</small>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -957,18 +957,37 @@ body.light .credential-item {
 .edu-list {
   max-width: 900px;
   margin: 0 auto;
+  padding-left: 10px;
+}
+
+.edu-timeline {
+  position: relative;
+  padding-left: 22px;
+  border-left: 1px solid rgba(44, 177, 188, 0.22);
 }
 
 .edu-row {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 0 0 28px;
 
-  &:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+  &:last-child {
+    padding-bottom: 4px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--main-primary-color);
+    box-shadow: 0 0 0 3px rgba(44, 177, 188, 0.13);
   }
 
   .edu-row__left {
@@ -1018,9 +1037,11 @@ body.light .credential-item {
   }
 }
 
-body.light .edu-row {
-  border-color: rgba(0, 0, 0, 0.15);
+body.light .edu-timeline {
+  border-color: rgba(44, 177, 188, 0.35);
+}
 
+body.light .edu-row {
   .edu-row__degree {
     color: #222;
   }
