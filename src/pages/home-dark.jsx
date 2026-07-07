@@ -38,8 +38,8 @@ const HomeDark = () => {
         <Tabs>
           <div className="header">
             <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
-              {menuItem.map((item, i) => (
-                <Tab className="icon-box" key={i}>
+              {menuItem.map((item) => (
+                <Tab className="icon-box" key={item.menuName}>
                   <i className={`fa ${item.icon}`}></i>
                   <span>{item.menuName}</span>
                 </Tab>

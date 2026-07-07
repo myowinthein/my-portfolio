@@ -1,14 +1,13 @@
-
 function handleSwitchValue(value) {
+  const body = document.body;
   if (value) {
     localStorage.setItem("theme-color", "dark");
-    document.querySelector("body").classList.add("dark");
-    document.querySelector("body").classList.remove("light");
-  }
-  else {
+    body.classList.add("dark");
+    body.classList.remove("light");
+  } else {
     localStorage.setItem("theme-color", "light");
-    document.querySelector("body").classList.add("light");
-    document.querySelector("body").classList.remove("dark");
+    body.classList.add("light");
+    body.classList.remove("dark");
   }
 }
 

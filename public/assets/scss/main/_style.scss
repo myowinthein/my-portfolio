@@ -123,6 +123,14 @@ button {
 .exp-gutter+.exp-gutter {
   margin-top: 1.5em
 }
+.skill-crown-badge {
+  top: -4px;
+  right: -2px;
+  font-size: 10px;
+  color: #f5c451;
+  opacity: 0.65;
+  pointer-events: none;
+}
 /*** Light Body ***/
 
 body.light {
@@ -899,6 +907,9 @@ body.light .credential-item {
 
 .resume-box p.text-gray {
   color: #888;
+}
+.exp-company-info {
+  opacity: 0.75;
 }
 
 .about .resume-box .place {

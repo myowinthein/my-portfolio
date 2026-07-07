@@ -3,7 +3,7 @@ import { sentenceCase } from './text';
 
 describe('sentenceCase', () => {
   it('uppercases only the first character and lowercases the rest', () => {
-    expect(sentenceCase('Senior Software Engineer')).toBe('Senior software engineer');
+    expect(sentenceCase('Senior Backend Engineer')).toBe('Senior backend engineer');
   });
 
   it('handles already-lowercase input', () => {

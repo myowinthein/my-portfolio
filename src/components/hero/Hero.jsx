@@ -37,8 +37,8 @@ const Hero = () => {
               <span className="credential-item" key={tag}>{tag}</span>
             ))}
           </div>
-          {heroContent.heroDescriptions.map((description, i) => (
-            <p className="open-sans-font" key={i}>{description}</p>
+          {heroContent.heroDescriptions.map((description) => (
+            <p className="open-sans-font" key={description}>{description}</p>
           ))}
           <a className="button" href={resumeURL} target="_blank" rel="noreferrer">
             <span className="button-text">{heroContent.heroBtn}</span>
