@@ -18,17 +18,7 @@ const Skills = ({skillSets}) => {
                 <div className="col-6 col-md-2 mb-2 mb-sm-3" key={j}>
                   <div className="pLogo p25 position-relative">
                     {skill.core && (
-                      <i
-                        className="fa-solid fa-crown position-absolute"
-                        style={{
-                          top: '-4px',
-                          right: '-2px',
-                          fontSize: '10px',
-                          color: '#f5c451',
-                          opacity: 0.65,
-                          pointerEvents: 'none',
-                        }}
-                      />
+                      <i className="fa-solid fa-crown position-absolute skill-crown-badge" />
                     )}
                     <Image src={skill.icon} alt={skill.name} />
                   </div>

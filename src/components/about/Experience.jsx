@@ -99,7 +99,7 @@ const Experience = () => {
             </p>
 
             {val.companyInfo && (
-              <p className="open-sans-font text-gray mb-3" style={{ opacity: 0.75 }}>
+              <p className="open-sans-font text-gray mb-3 exp-company-info">
                 {val.companyInfo}
               </p>
             )}

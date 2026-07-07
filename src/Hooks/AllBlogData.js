@@ -15,15 +15,14 @@ const AllBlogData = () => {
       .then(
         (data) => {
           const items = [];
-          for (let key in data.items) {
-            const item = data.items[key];
+          data.items.forEach((item, index) => {
             const desc = item.description.replace(
               /<img[^>]*\bsrc="[^"]*medium\.com\/_\/stat[^"]*"[^>]*>/gi,
               ''
             );
             const plainText = desc.replace(/<[^>]*>/g, '');
             items.push({
-              id: parseInt(key),
+              id: index,
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
               title: item.title,
               commentor: item.author,
@@ -33,7 +32,7 @@ const AllBlogData = () => {
               description: desc,
               preview: plainText.slice(0, 200),
             });
-          }
+          });
           setBlogsData(items);
           setIsLoading(false);
         },
