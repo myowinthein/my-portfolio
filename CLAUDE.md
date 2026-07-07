@@ -84,11 +84,18 @@ Full operational risk scan and instructions: `.claude/rules/safety.md`.
 - **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
 - **reCAPTCHA is loaded dynamically** in `wrapper.jsx` and Contact polls `window.grecaptcha` every 150ms until ready. Do not switch to declarative `<div class="g-recaptcha">` — it conflicts.
 - **Font Awesome is a static CSS file** at `public/assets/fonts/font-awesome/css/font-awesome.min.css`, not an npm package. Both `fa fa-*` and `fa-solid` / `fa-brands fa-*` syntaxes coexist intentionally.
-- **`totalExperiences` is build-time computed** in `config.js` as `currentYear - 2013`. Displayed value bumps on every yearly redeploy.
+- **`totalExperiences` is build-time computed** in `config.js` as `currentYear - careerSince - 1` (the `-1` is a deliberate gap-year deduction). Displayed value bumps on every yearly redeploy.
 - **`next/image` cannot render raw SVGs.** `next.config.js` is intentionally minimal (`reactStrictMode` only) — do NOT add `dangerouslyAllowSVG`. For brand SVGs that need to feed `<Image>`, rasterize to WebP first (see `public/assets/portfolio/job_buddy/banner.webp`).
 - **Bootstrap JS is not loaded.** Only the CSS grid is imported. No dropdowns, modals, tooltips from Bootstrap.
 - **Sitemap excludes `/home-dark`** in `next-sitemap.config.js` deliberately — canonical URL is `/`, not `/home-dark`.
 - **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
+- **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks — they were removed deliberately.
 
-<!-- last-reviewed: 6804549 -->
+## 8. Rules
+
+This project follows the rules shipped in claude-helm:
+- ~/.claude/plugins/marketplaces/claude-helm/rules/git.md
+- ~/.claude/plugins/marketplaces/claude-helm/rules/safety.md
+
+<!-- last-reviewed: c8cdde5 -->
