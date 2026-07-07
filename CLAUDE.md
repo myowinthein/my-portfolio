@@ -2,7 +2,7 @@
 
 ## 1. Project Identity
 
-Personal portfolio for **Myo Win Thein (Martin)** — Senior Software Engineer, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
+Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / Technical Lead, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
 
 **Stack:** Next.js 13.0.2 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
 
