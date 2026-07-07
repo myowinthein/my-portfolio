@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
 import UseData from "../../Hooks/UseData";
+import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
 import Image from "next/image";
 
 
@@ -10,15 +11,11 @@ const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
   const excerptRef = useRef(null);
 
+  useBodyScrollLock(isOpen);
+
   useEffect(() => {
     Modal.setAppElement("#__next");
   }, []);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen || !excerptRef.current) return;

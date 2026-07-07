@@ -6,7 +6,7 @@ let bodyClassList;
 beforeEach(() => {
   bodyClassList = { add: vi.fn(), remove: vi.fn() };
   global.localStorage = { setItem: vi.fn() };
-  global.document = { querySelector: vi.fn(() => ({ classList: bodyClassList })) };
+  global.document = { body: { classList: bodyClassList } };
 });
 
 describe('handleSwitchValue', () => {

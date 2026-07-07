@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import AwesomeSlider from 'react-awesome-slider';
 
 import CloseImg from "../../../public/assets/img/cancel.svg";
+import useBodyScrollLock from '../../Hooks/useBodyScrollLock';
 
 const settings = {
   animation: "fallAnimation",
@@ -23,10 +24,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const videoRefs = useRef([]);
   const isFirstRender = useRef(true);
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, []);
+  useBodyScrollLock();
 
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
