@@ -11,8 +11,8 @@ const personalInfoContent = [
 const PersonalInfo = () => {
   return (
     <ul className="about-list list-unstyled open-sans-font">
-      {personalInfoContent.map((val, i) => (
-        <li key={i}>
+      {personalInfoContent.map((val) => (
+        <li key={val.meta}>
           <span className="title">{val.meta}: </span>
           <span className="value">{val.metaInfo}</span>
         </li>
