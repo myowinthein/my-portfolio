@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import useExpandableList from "../../Hooks/useExpandableList";
 
 const experienceContent = [
   // StudyMe
@@ -71,8 +72,7 @@ const experienceContent = [
 ];
 
 const Experience = () => {
-  const [showAll, setShowAll] = useState(false);
-  const visibleContent = showAll ? experienceContent : experienceContent.slice(0, 3);
+  const { visible: visibleContent, showAll, toggle: toggleExperience } = useExpandableList(experienceContent, 3);
 
   return (
     <>
@@ -118,7 +118,7 @@ const Experience = () => {
       <div className="exp-toggle-area">
         <button
           className="exp-toggle-btn open-sans-font"
-          onClick={() => setShowAll(!showAll)}
+          onClick={toggleExperience}
         >
           {showAll ? (
             <><i className="fa fa-chevron-up"></i> Show less</>
