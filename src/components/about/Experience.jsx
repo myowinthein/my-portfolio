@@ -77,14 +77,14 @@ const Experience = () => {
   return (
     <>
       <ul>
-        {visibleContent.map((val, i) => (
-          <li key={i}>
+        {visibleContent.map((val) => (
+          <li key={val.companyName}>
             <div className="icon">
               <i className="fa fa-briefcase"></i>
             </div>
 
-            {val.positions.map((item, j) => (
-              <div key={j} className="exp-gutter">
+            {val.positions.map((item) => (
+              <div key={item.year} className="exp-gutter">
                 <small className="d-block text-uppercase">
                   {item.year}
                 </small>
@@ -104,9 +104,9 @@ const Experience = () => {
               </p>
             )}
 
-            {val.details.map((text, index) => (
+            {val.details.map((text) => (
               <p
-                key={index}
+                key={text}
                 className="open-sans-font text-gray mb-3"
               >
                 •&nbsp;&nbsp;{text}

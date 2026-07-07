@@ -10,6 +10,7 @@ import Image from "next/image";
 const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
   const excerptRef = useRef(null);
+  const handleClose = () => setIsOpen(false);
 
   useBodyScrollLock(isOpen);
 
@@ -83,7 +84,7 @@ const Blog = () => {
 
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
+        onRequestClose={handleClose}
         contentLabel="My dialog"
         className="custom-modal dark"
         overlayClassName="custom-overlay dark"
@@ -92,7 +93,7 @@ const Blog = () => {
         <div>
           <button
             className="close-modal"
-            onClick={() => setIsOpen(false)}
+            onClick={handleClose}
           >
             <Image src={cancelImg} alt="close icon" />
           </button>

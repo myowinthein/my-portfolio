@@ -34,8 +34,8 @@ const educationContent = [
 const Education = () => {
   return (
     <div className="edu-timeline">
-      {educationContent.map((val, i) => (
-        <div key={i} className="edu-row">
+      {educationContent.map((val) => (
+        <div key={val.degree} className="edu-row">
           <div className="edu-row__left">
             <h5 className="poppins-font edu-row__degree">{val.degree}</h5>
             <p className="open-sans-font edu-row__meta">{val.institute}</p>

@@ -25,6 +25,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const isFirstRender = useRef(true);
 
   useBodyScrollLock();
+  const handleClose = () => setGetModal(false);
 
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
@@ -54,11 +55,11 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
     <div className="modal_portfolio">
       <div
         className="modal__outside"
-        onClick={() => setGetModal(false)}
+        onClick={handleClose}
       ></div>
 
       <div className="modal__content">
-        <button className="close-modal" onClick={() => setGetModal(false)}>
+        <button className="close-modal" onClick={handleClose}>
           <Image src={CloseImg} alt="close icon" />
         </button>
         <div className="modal__body">
@@ -85,7 +86,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
               <DetailField iconClass="fa fa-arrow-up-right-from-square" label="Preview">
                 {modalProject.preview?.length ? (
                   modalProject.preview.map((preview, i, origin) => (
-                    <span key={i}>
+                    <span key={preview.url}>
                       <a
                         className="preview-link"
                         target="_blank"
@@ -112,8 +113,8 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
                 setActiveIndex(currentIndex);
               }}
             >
-              {modalProject.media.map((media, i) => (
-                <div key={i}>
+              {modalProject.media.map((media) => (
+                <div key={media.url}>
                   {media.type === "image" ? (
                     <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" />
                   ) : (
@@ -134,8 +135,8 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
 
           {/* Description */}
           <div className="modal__description">
-            {modalProject.description.map((text, i) => (
-              <p key={i}>{text}</p>
+            {modalProject.description.map((text) => (
+              <p key={text}>{text}</p>
             ))}
           </div>
         </div>
