@@ -7,7 +7,7 @@ const experienceContent = [
     companyName: "StudyMe, Australia · Remote from Thailand",
     companyInfo: "Student–university matching platform, later acquired by Wellspring International Education.",
     positions: [
-      {"position": "Technical Lead", "year": "Dec 2021 – Present"},
+      {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ],
     details: [
       `Rebuilt a legacy Laravel monolith into a versioned REST API architecture, adding service-repository layers, request validation, and API resources for web and mobile clients`,
