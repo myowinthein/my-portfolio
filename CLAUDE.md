@@ -4,17 +4,17 @@
 
 Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / Technical Lead, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
 
-**Stack:** Next.js 13.0.2 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
+**Stack:** Next.js 13.5 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
 
 **Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no test suite, no preview branch, no approval step.
 
-**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in `.claude/rules/git.md`.
+**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the claude-helm rules (§8).
 
 ---
 
 ## 2. Project Config
 
-- `git-solo: true` — commit directly to `main`, no feature branches, no PRs. See `.claude/rules/git.md`.
+- `git-solo: true` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§8).
 - `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
 
 ---
@@ -30,7 +30,7 @@ npm test            # vitest run (utils/**/*.test.js only)
 npm run test:watch  # vitest watch mode
 ```
 
-Test scope is intentionally limited to `utils/` — pure helpers like `sentenceCase` and `handleSwitchValue`. There is no Testing Library, no JSDOM, no component tests. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
+Test scope is intentionally limited to `utils/` — pure helpers like `sentenceCase`, `handleSwitchValue`, and `experienceYears`. There is no Testing Library, no JSDOM, no component tests. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
 
 ---
 
@@ -39,7 +39,8 @@ Test scope is intentionally limited to `utils/` — pure helpers like `sentenceC
 - `src/pages/home-dark.jsx` — entire single-page tab app; every section is a `<TabPanel>` here. New content goes INSIDE this file, not as new routes.
 - `src/pages/index.jsx` — re-exports `HomeDark`. `/404.jsx` is the only other page.
 - `src/config.js` — single source of truth for personal info, URLs, meta, API keys, and `summary[]` (first paragraph reused as SEO meta description).
-- `utils/text.js` — `sentenceCase` helper used by `config.js` to format `${position}` inside the summary.
+- `utils/text.js` — `sentenceCase` helper (has tests; not currently referenced in `src/`).
+- `utils/experience.js` — `experienceYears(startYear, gap)` helper; `config.js` uses it for build-time `totalExperiences`. Extracted so the year math is unit-testable.
 - `src/components/portfolio/portfolioData.js` — static projects grouped by category. Each entry: `{ company, industry, product, productType, role, description[], banner, media[], preview[] }`.
 - `src/components/portfolio/PortfolioModal.jsx` — uses `createPortal` to mount on `document.body`; locks/restores body scroll on open/close.
 - `src/components/about/index.jsx` — skill categories defined inline; passed to `Skills.jsx`. Skills with `core: true` render a crown badge.
@@ -58,10 +59,10 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **No new state libraries.** Local `useState` for component state; the Context pattern in `ContextProvider.js` is the only global state (blog feed). Never add Zustand, Redux, SWR, TanStack Query, axios, etc.
 - **No new animation libraries.** AOS only. No Framer Motion, GSAP.
 - **No TypeScript.** Files stay `.js` / `.jsx`. Do not introduce a `tsconfig.json`.
-- **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (Next 13.0.2 doesn't support them), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
+- **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (not supported on the Pages Router), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
 - **No SSR data fetching.** No `getServerSideProps`, `getStaticProps`, `getStaticPaths`. All content is static imports or `fetch()` in `useEffect`.
 - **Always run `npm run lint`, `npm test`, and `npm run build` before commit.** No CI catches errors otherwise.
-- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: `.claude/rules/git.md`.
+- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: the claude-helm rules (§8).
 - **Stage files explicitly** by name; never `git add .` or `git add -A` (risk of pulling in large media binaries or `.env.production`).
 
 ---
@@ -75,7 +76,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **Never manually edit `public/robots.txt`, `public/sitemap.xml`, `public/sitemap-0.xml`** — build artefacts; `next-sitemap` overwrites on every build.
 - **Never run destructive git** (`reset --hard`, `checkout .`, `clean -f`) without explicit confirmation.
 
-Full operational risk scan and instructions: `.claude/rules/safety.md`.
+Full operational risk scan and instructions: the claude-helm rules (§8).
 
 ---
 
@@ -85,7 +86,7 @@ Full operational risk scan and instructions: `.claude/rules/safety.md`.
 - **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
 - **reCAPTCHA is loaded dynamically** in `wrapper.jsx` and Contact polls `window.grecaptcha` every 150ms until ready. Do not switch to declarative `<div class="g-recaptcha">` — it conflicts.
 - **Font Awesome is a static CSS file** at `public/assets/fonts/font-awesome/css/font-awesome.min.css`, not an npm package. Both `fa fa-*` and `fa-solid` / `fa-brands fa-*` syntaxes coexist intentionally.
-- **`totalExperiences` is build-time computed** in `config.js` as `currentYear - careerSince - 1` (the `-1` is a deliberate gap-year deduction). Displayed value bumps on every yearly redeploy.
+- **`totalExperiences` is build-time computed** in `config.js` via `experienceYears(careerSince, 1)` (from `utils/experience.js`); the `1` is a deliberate gap-year deduction. Displayed value bumps on every yearly redeploy.
 - **`next/image` cannot render raw SVGs.** `next.config.js` is intentionally minimal (`reactStrictMode` only) — do NOT add `dangerouslyAllowSVG`. For brand SVGs that need to feed `<Image>`, rasterize to WebP first (see `public/assets/portfolio/job_buddy/banner.webp`).
 - **Bootstrap JS is not loaded.** Only the CSS grid is imported. No dropdowns, modals, tooltips from Bootstrap.
 - **Sitemap excludes `/home-dark`** in `next-sitemap.config.js` deliberately — canonical URL is `/`, not `/home-dark`.
@@ -103,4 +104,4 @@ At the start of every session, check whether the paths above exist on this machi
 If either is missing, inform the user: "helm rules are referenced in CLAUDE.md but the
 plugin is not installed on this machine. Install it with: /plugin install claude-helm"
 
-<!-- last-reviewed: c107b44 -->
+<!-- last-reviewed: 8f99464 -->
