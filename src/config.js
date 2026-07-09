@@ -25,6 +25,13 @@ export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://linkedin.com/in/myowinthein/';
 export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://myowin.dev'
 
+// social links rendered by the Social component
+export const socialLinks = [
+  { iconName: "fa-brands fa-linkedin", link: linkedinURL },
+  { iconName: "fa-brands fa-github", link: githubURL },
+  { iconName: "fa-brands fa-medium", link: mediumURL },
+];
+
 // navigation
 export const menuLabels = {
   home: "Home",
