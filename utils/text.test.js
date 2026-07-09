@@ -27,4 +27,12 @@ describe('sentenceCase', () => {
     expect(sentenceCase('a')).toBe('A');
     expect(sentenceCase('A')).toBe('A');
   });
+
+  it('leaves a leading-digit string unchanged', () => {
+    expect(sentenceCase('123abc')).toBe('123abc');
+  });
+
+  it('returns already-sentence-case input unchanged', () => {
+    expect(sentenceCase('Hello world')).toBe('Hello world');
+  });
 });

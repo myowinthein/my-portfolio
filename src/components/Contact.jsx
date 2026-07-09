@@ -86,7 +86,9 @@ const Contact = () => {
       if (window.grecaptcha && widgetIdRef.current !== null) {
         window.grecaptcha.reset(widgetIdRef.current);
       }
-    } catch (_) {}
+    } catch (err) {
+      console.warn("reCAPTCHA reset failed:", err);
+    }
   };
 
   // Form submit: execute reCAPTCHA first, then EmailJS in callback
@@ -155,8 +157,7 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <form id="myForm" className="contactform" ref={form} onSubmit={sendEmail}>
+    <form id="myForm" className="contactform" ref={form} onSubmit={sendEmail}>
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
@@ -170,7 +171,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="col-12 col-md-12">
+          <div className="col-12">
             <div className="form-group">
               <input type="text" name="subject" placeholder="YOUR SUBJECT" required />
             </div>
@@ -201,7 +202,6 @@ const Contact = () => {
           <div id="recaptcha-container" />
         </div>
       </form>
-    </>
   );
 };
 

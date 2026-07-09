@@ -66,8 +66,7 @@ import kmsIcon from "../../../public/assets/img/programming/kms.svg";
 
 import linuxIcon from "../../../public/assets/img/programming/linux.svg";
 
-const index = () => {
-  const skillSets = [
+const skillSets = [
     {
       title: 'Backend',
       skills: [
@@ -154,8 +153,9 @@ const index = () => {
         { icon: bagistoIcon, name: 'Bagisto' },
       ]
     },
-  ]
+];
 
+const About = () => {
   return (
     <section className="main-content" data-aos="fade-up">
       <div className="container">
@@ -245,4 +245,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default About;

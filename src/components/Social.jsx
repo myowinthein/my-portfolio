@@ -1,27 +1,12 @@
 import React from "react";
-import { githubURL, mediumURL, linkedinURL } from "../config";
-
-const SocialShare = [
-  {
-    iconName: "fa-brands fa-linkedin",
-    link: linkedinURL,
-  },
-  {
-    iconName: "fa-brands fa-github",
-    link: githubURL,
-  },
-  {
-    iconName: "fa-brands fa-medium",
-    link: mediumURL,
-  },
-];
+import { socialLinks } from "../config";
 
 const Social = () => {
   return (
     <ul className="social list-unstyled pt-1 mb-5">
-      {SocialShare.map((val) => (
+      {socialLinks.map((val) => (
         <li key={val.link}>
-          <a href={val.link} target="_blank" rel="noreferrer">
+          <a href={val.link} target="_blank" rel="noopener noreferrer">
             <i className={val.iconName}></i>
           </a>
         </li>

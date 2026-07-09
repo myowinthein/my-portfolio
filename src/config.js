@@ -1,5 +1,4 @@
-import { format } from "date-fns";
-import { sentenceCase } from "../utils/text";
+import { experienceYears } from "../utils/experience";
 
 // personal information
 export const firstName = 'Myo Win';
@@ -13,7 +12,7 @@ export const position = 'Senior Backend Engineer';
 export const roleTags = ['Laravel', 'AWS', 'API Platforms'];
 export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
-export const totalExperiences = format(new Date(), 'yyyy') - careerSince - 1; // subtract 1 for gap year
+export const totalExperiences = experienceYears(careerSince, 1); // subtract 1 for gap year
 export const totalPlatformTypes = 5;
 export const totalDeliveredProjects = 14;
 
@@ -24,7 +23,14 @@ export const instagramURL = 'https://instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://linkedin.com/in/myowinthein/';
-export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://myowin.dev'
+export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://myowin.dev'
+
+// social links rendered by the Social component
+export const socialLinks = [
+  { iconName: "fa-brands fa-linkedin", link: linkedinURL },
+  { iconName: "fa-brands fa-github", link: githubURL },
+  { iconName: "fa-brands fa-medium", link: mediumURL },
+];
 
 // navigation
 export const menuLabels = {
@@ -53,8 +59,11 @@ export const emailjsTemplateId = 'template_vnchh1m';
 export const emailjsPublicKey = 'qf-Hdel_0um8Wj7YK';
 export const recaptchaSiteKey = '6LcUUFwsAAAAAKgz_JIK4HkIh-Z9SLy52-rd7gUw';
 
-// toast
+// blog
 export const rssAPIKey = 'wsbd0emvqw0uvzb3hthc07qrovqki0jmdmxqs2z6'
+export const mediumFeedURL = 'https://medium.com/feed/@myowinthein/'
+
+// toast
 export const toastOptions = {
     position: "top-right",
     autoClose: 2000,

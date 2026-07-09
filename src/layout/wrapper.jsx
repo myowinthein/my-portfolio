@@ -3,14 +3,17 @@ import { ToastContainer } from 'react-toastify';
 
 const Wrapper = ({ children }) => {
   useEffect(() => {
+    const src = 'https://www.google.com/recaptcha/api.js';
+    if (document.querySelector(`script[src="${src}"]`)) return;
+
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.src = src;
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      script.remove();
     };
   }, []);
 
