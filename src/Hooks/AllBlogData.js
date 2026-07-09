@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { parseISO, format } from "date-fns";
 import { toast } from "react-toastify";
-import { rssAPIKey, toastOptions } from "../config";
+import { rssAPIKey, mediumFeedURL, toastOptions } from "../config";
 
 const useAllBlogData = () => {
   const [blogsData, setBlogsData] = useState([]);
@@ -10,10 +10,16 @@ const useAllBlogData = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@myowinthein/&api_key=${rssAPIKey}&count=9`)
+    const controller = new AbortController();
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${mediumFeedURL}&api_key=${rssAPIKey}&count=9`, { signal: controller.signal })
       .then(res => res.json())
       .then(
         (data) => {
+          if (!data?.items) {
+            toast.error("Failed to fetch blogs!", toastOptions);
+            setIsLoading(false);
+            return;
+          }
           const items = data.items.map((item) => {
             const desc = item.description.replace(
               /<img[^>]*\bsrc="[^"]*medium\.com\/_\/stat[^"]*"[^>]*>/gi,
@@ -36,11 +42,13 @@ const useAllBlogData = () => {
           setIsLoading(false);
         },
         (err) => {
+          if (err.name === 'AbortError') return;
           console.error('Blog fetch failed:', err);
           toast.error("Failed to fetch blogs!", toastOptions);
           setIsLoading(false);
         }
       );
+    return () => controller.abort();
   }, []);
 
   const handleBlogsData = (id) => {

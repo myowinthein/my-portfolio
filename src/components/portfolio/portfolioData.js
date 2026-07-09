@@ -142,7 +142,6 @@ const PortfolioData = [
           `StudyMe is an international student recruitment and enrollment platform connecting students, education agencies, and partner institutions. Students create academic profiles, discover eligible programs, and progress through a structured application pipeline. Universities search and engage prospective students, while agencies manage applications on behalf of clients. The platform also includes a school management module powered by the Wellspring International institution database, with companion iOS and Android apps. Institutional access is subscription-based via Stripe and Square.`,
           `As Technical Lead, I owned the backend API and platform architecture. The system is a headless Laravel 7 REST API with JWT authentication and seven role-based access levels. It uses PostgreSQL as the primary database and MySQL as a read-only source for the Wellspring catalogue. Integrations include HubSpot CRM, AWS S3, AWS SQS, Stripe, ELSA, and VTest. The platform was deployed on AWS Elastic Beanstalk with GitHub Actions powering staging and production releases.`
         ],
-        // 'status': 1,
         'banner': studymeBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/studyme/v1.mp4'},
@@ -170,7 +169,6 @@ const PortfolioData = [
           `Wellspring Portal is Wellspring International Education's admissions management platform, connecting partner agencies, schools, and internal staff throughout the international student enrollment journey. Agents submit and track applications to thousands of partner institutions, while staff manage agency onboarding, school relationships, enrollment confirmations, and commission processes. The original platform supported more than 15,000 users and 13,000 applications before being rebuilt as Wellspring Portal 2.0 with a modern API-driven architecture.`,
           `I served as Technical Lead for both the original platform and the Wellspring Portal 2.0 rewrite. I maintained and enhanced the Laravel-based production system while leading the design and delivery of the next-generation platform. The rewrite introduced a decoupled Laravel API and React SPA architecture, improving maintainability, scalability, deployment automation, and developer experience while supporting complex admissions workflows, role-based permissions, and application lifecycle management.`
         ],
-        // 'status': 1,
         'banner': wellspringBan,
         'media': [
           {'type': 'image', 'url': wellspringImg1},
@@ -195,7 +193,6 @@ const PortfolioData = [
           `Tavis is an online tuition platform in Malaysia focused on secondary school students, combining live classes, learning materials, and progress tracking into a single system. It integrates real-time classroom features with a learning management system to support structured online education at scale.`,
           `I contributed as part of a backend team during the initial build phase, working on a customised Moodle-based system. My work included integrating iPay88 payments and implementing third-party authentication flows, while supporting core backend development to ensure stable service behaviour across multiple client platforms.`
         ],
-        // 'status': 1,
         'banner': tavisBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/tavis/v1.mp4'},
@@ -223,7 +220,6 @@ const PortfolioData = [
           `Chance Myanmar is a bilingual English and Myanmar online learning platform serving students through a companion Android app and instructors through a web admin panel. Students enroll in scheduled course batches, complete video lessons, submit homework, and earn rewards, while admins manage the full course catalog, batch scheduling, and student records. All user-facing content is stored as bilingual JSON with separate English and Myanmar values, resolved per student by their language preference.`,
           `I built the backend end to end as the sole backend engineer, designing a JWT authenticated REST API for the Android app alongside a server rendered admin panel. The core technical challenge was the bilingual data layer: all content fields store a JSON object with separate English and Myanmar values, with Rabbit Zawgyi to Unicode conversion handling Myanmar font encoding. Video uploads triggered queue jobs that submitted to AWS Elastic Transcoder, produced 720p MP4 outputs and thumbnails, and deleted the raw source files on completion.`
         ],
-        // 'status': 1,
         'banner': chancemyanmarBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/chance_myanmar/v1.mp4'},
@@ -259,7 +255,6 @@ const PortfolioData = [
           `FastForward is a multi tenant SaaS eCommerce platform built by Nexlabs for small businesses in Myanmar. Merchants register a subdomain or connect a custom domain and manage their store through a dedicated admin panel covering products, orders, inventory, pricing rules, and reports. A central Super Admin panel manages all tenants across the platform, and end customers shop through a storefront with cart, checkout, order tracking, and social login via five OAuth providers.`,
           `As Head of Engineering, I led the implementation on top of Bagisto, a modular Laravel eCommerce framework where business logic is split across dozens of standalone packages wired via Konekt Concord. The core engineering challenge was multi tenancy: all tenant data shares a single database, isolated by a company_id column injected across models through the SAASCustomizer layer, with per request tenant resolution handled by domain scoped middleware reading the Host header. The platform reached production at fastforwardmyanmar.com and was later discontinued in 2021.`
         ],
-        // 'status': 2,
         'banner': fastforwardBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/fastforward/v1.mp4'},
@@ -285,7 +280,6 @@ const PortfolioData = [
           `AnyMart was a B2C online shopping platform for the Myanmar market, built on OpenCart 2.3. It supported a product catalog with categories, search, and filtering, a multi step checkout, customer accounts with wishlists and order history, and a blog. Payment options included Wave Money mobile payment and KBZ Bank card processing for Visa, Mastercard, and MPU. The storefront ran in both English and Myanmar with Zawgyi encoding support.`,
           `I worked as the sole developer, customising OpenCart through its ocmod XML overlay system and extending it with custom payment controllers. The core integrations were Wave Money via the PaysbuyPayAPI service and KBZ Bank via the 2C2P gateway, each requiring a dedicated PHP controller and configuration module in both the storefront and admin panel. I also added social login for Facebook, Google, Twitter, and LinkedIn, implemented the Myanmar language locale with Zawgyi encoding, and built a standalone abandoned cart cron script for email reminders.`
         ],
-        // 'status': 2,
         'banner': anymartBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/anymart/v1.mp4'},
@@ -312,7 +306,6 @@ const PortfolioData = [
           `LUKKY is a gamified shopping platform combining commerce, gameplay, and rewards into a single mobile experience for Thai consumers. Users engage through mini-games, wishlist-driven challenges, and reward systems to unlock products, blending entertainment with transactional flows across a marketplace of real goods and services.`,
           `I built and owned the backend API and core logic as the sole backend engineer, implementing game-driven reward systems, point-based mechanics, and wishlist-linked progression flows. I designed APIs supporting real-time interactions and complex state transitions, ensuring consistent behaviour across gameplay, rewards, and commerce within a unified system.`
         ],
-        // 'status': 2,
         'banner': lukkyBan,
         'media': [
           {'type': 'image', 'url': lukkyImg1},
@@ -345,7 +338,6 @@ const PortfolioData = [
           `YCDC Business License System is an eGovernment platform that digitises business licensing processes for Yangon, replacing manual workflows with structured online applications, document submission, and lifecycle management. It supports citizens and businesses in applying, tracking, and managing licenses across multiple business categories.`,
           `I contributed to backend development and feature implementation within a team, working on a workflow-driven system handling multi-stage approvals across departments such as fire, health, and township authorities. I supported production operations while implementing complex state transitions, validation logic, and audit tracking within a compliance-driven environment.`
         ],
-        // 'status': 1,
         'banner': businessLicenseBan,
         'media': [
           {'type': 'image', 'url': businessLicenseImg1},
@@ -369,7 +361,6 @@ const PortfolioData = [
           `YCDC Building Permit System is an eGovernment platform that digitises construction permit workflows in Yangon, replacing manual processes with structured online applications, document submission, and technical validation. It supports applicants, engineers, and authorities across risk-classified projects and multiple permit types.`,
           `I contributed to backend development and production support within a team, working on a workflow-driven system with non-linear approval stages, correction loops, and multi-actor coordination. I implemented validation logic and state transitions for complex domain data, ensuring consistent behaviour across risk-based workflows and regulatory requirements.`
         ],
-        // 'status': 1,
         'banner': buildingPermitBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/building_permit/v1.mp4'},
@@ -394,7 +385,6 @@ const PortfolioData = [
           `YCDC Revenue Station System is an eGovernment platform digitising municipal market operations and revenue collection for Yangon City Development Committee. It supports stall leasing, vendor management, service applications, and compliance workflows, replacing manual processes with a structured system used by public vendors and internal administrative teams.`,
           `I contributed as a developer within a team, supporting development and production operations. The system’s complexity lies in its rule-driven billing engine, handling rent calculations based on size, location, and market level, alongside premium multipliers, penalties, and recurring fee categories, requiring precise logic and consistent data integrity across workflows.`
         ],
-        // 'status': 1,
         'banner': revenueStationBan,
         'media': [
           {'type': 'image', 'url': revenueStationImg1},
@@ -418,7 +408,6 @@ const PortfolioData = [
           `YCDC Smart Card System is a desktop application used to issue and verify digital licenses for construction professionals approved through the building permit system. It encodes identity and license data onto MIFARE smart cards, enabling on-site verification by field officers and replacing paper-based certification processes.`,
           `I developed this C# application as part of the Smart City initiative, integrating directly with ACR1252U hardware to read and write smart card data. The core complexity involved low-level SDK integration, ensuring reliable encoding and real-time validation, bridging government systems with physical identity verification beyond typical web-based development.`
         ],
-        // 'status': 1,
         'banner': smartCardSystemBan,
         'media': [
           {'type': 'image', 'url': smartCardSystemImg1},
@@ -442,7 +431,6 @@ const PortfolioData = [
           `This system supports locating physical land documents stored in YCDC warehouses by linking eGovernment barcode identities with RFID-tagged files. Field staff retrieve a document’s barcode from the central system, scan it on a handheld device, and use real-time RFID proximity signals to navigate storage areas and locate the exact physical file efficiently.`,
           `I developed the Windows Mobile 6.5 C# application integrated with the Motorola MC3190-Z RFID and barcode SDK. I implemented barcode scanning, RFID encoding, and continuous proximity detection with audio and visual feedback, enabling accurate real-time document location. My work focused specifically on hardware-level mobile SDK integration for field operations.`
         ],
-        // 'status': 1,
         'banner': documentLocaterSystemBan,
         'media': [
           {'type': 'image', 'url': documentLocaterSystemImg1},
@@ -476,7 +464,6 @@ const PortfolioData = [
           // `Recycle Myanmar is a two-sided digital platform promoting environmental sustainability by connecting households with waste collectors through an on-demand pickup model, enabling efficient recycling via real-time matching and logistics.`,
           // `The system supports administrators, sellers, and collectors, with live notifications, location tracking, and distance-based matching. Built with mobile apps, a central backend, and AWS infrastructure, it supported real operations and gained regional recognition, including a Merit Award at the 2020 Asia Smart App Awards and selection as a national winner in the Generation Impact Fellowship Program.`
         ],
-        // 'status': 2,
         'banner': recycleMyanmarBan,
         'media': [
           {'type': 'video', 'url': '/assets/portfolio/recycle_myanmar/v1.mp4'},
@@ -515,7 +502,6 @@ const PortfolioData = [
           `FNI Internal Portal is an agency management platform built for First National Insurance to manage a three tier field sales force distributing 14 life insurance products across Myanmar. Staff and field agents access the platform through two surfaces: an admin web panel for managers to track leads, proposals, KPI, commissions, and meetings, and a JWT REST API serving a companion Android app through which field agents submit proposals, monitor their pipeline, and receive real time notifications.`,
           `I contributed to backend development across the proposal pipeline, ACE Core integration, and commission calculation. Key areas included the ACE daily sync job, which submits pending proposals to ACE, retrieves approval decisions and installment payment schedules, and cascades commission amounts across CDO, AD, and agent levels through versioned ratio records. Another notable contribution was the FormBuilder, which allows admins to define JSON schemas for each of the 14 insurance product forms and drives dynamic form rendering in the mobile app without requiring app updates.`
         ],
-        // 'status': 2,
         'banner': fniBan,
         'media': [
           {'type': 'image', 'url': fniImg1},
