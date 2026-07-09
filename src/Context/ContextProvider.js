@@ -1,14 +1,14 @@
 import React, { createContext } from "react";
-import AllBlogData from "../Hooks/AllBlogData";
+import useAllBlogData from "../Hooks/AllBlogData";
 
-export const MyContext = createContext();
+export const BlogContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const value = AllBlogData();
+  const value = useAllBlogData();
   return (
-    <MyContext.Provider value={value}>
+    <BlogContext.Provider value={value}>
       {children}
-    </MyContext.Provider>
+    </BlogContext.Provider>
   );
 };
 
