@@ -150,7 +150,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
               {modalProject.media.map((media, i) => (
                 <div key={media.url}>
                   {media.type === "image" ? (
-                    <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" />
+                    <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" loading={i === 0 ? undefined : "lazy"} />
                   ) : (
                     <video
                       ref={(el) => (videoRefs.current[i] = el)}

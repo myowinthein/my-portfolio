@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-
 // personal information
 export const firstName = 'Myo Win';
 export const lastName = 'Thein';
@@ -12,7 +10,7 @@ export const position = 'Senior Backend Engineer';
 export const roleTags = ['Laravel', 'AWS', 'API Platforms'];
 export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
-export const totalExperiences = format(new Date(), 'yyyy') - careerSince - 1; // subtract 1 for gap year
+export const totalExperiences = new Date().getFullYear() - careerSince - 1; // subtract 1 for gap year
 export const totalPlatformTypes = 5;
 export const totalDeliveredProjects = 14;
 
