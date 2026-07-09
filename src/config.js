@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-import { sentenceCase } from "../utils/text";
 
 // personal information
 export const firstName = 'Myo Win';
@@ -24,7 +23,7 @@ export const instagramURL = 'https://instagram.com/myowinthein91/';
 export const githubURL = 'https://github.com/myowinthein/';
 export const mediumURL = 'https://myowinthein.medium.com/';
 export const linkedinURL = 'https://linkedin.com/in/myowinthein/';
-export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://myowin.dev'
+export const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'https://myowin.dev'
 
 // navigation
 export const menuLabels = {
