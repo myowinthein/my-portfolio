@@ -5,15 +5,13 @@ import Image from "next/image";
 import PortfolioModal from "./PortfolioModal";
 
 const Portfolio = () => {
-  const [getModal, setGetModal] = useState(false);
-  const [modalCategory, setModalCategory] = useState(null);
-  const [modalProject, setModalProject] = useState(null);
+  const [modal, setModal] = useState(null);
 
   const handleModal = (category, project) => {
-    setGetModal(true);
-    setModalCategory(category);
-    setModalProject(project);
+    setModal({ category, project });
   };
+
+  const closeModal = () => setModal(null);
 
   return (
     <>
@@ -38,10 +36,18 @@ const Portfolio = () => {
                   )}
 
                   <div className="tab-container">
-                    {portfolio.projects.map((project) => (
-                      <div key={project.product} className="project-item" data-aos="fade-right" onClick={() => handleModal(portfolio.title, project)}>
+                    {portfolio.projects.map((project, i) => (
+                      <div
+                        key={project.product}
+                        className="project-item"
+                        data-aos="fade-right"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => handleModal(portfolio.title, project)}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleModal(portfolio.title, project); } }}
+                      >
                         <div className="tab-content">
-                          <Image src={project.banner} alt={project.product} sizes="(max-width: 575px) 100vw, (max-width: 992px) 50vw, 33vw" />
+                          <Image src={project.banner} alt={project.product} sizes="(max-width: 575px) 100vw, (max-width: 992px) 50vw, 33vw" priority={i < 3} />
                           <h3>
                             <span className="content-title">View Case Study</span>
                           </h3>
@@ -61,7 +67,7 @@ const Portfolio = () => {
           </div>
         </Tabs>
       </div>
-      {getModal && <PortfolioModal modalCategory={modalCategory} modalProject={modalProject} setGetModal={setGetModal} />}{" "}
+      {modal && <PortfolioModal modalCategory={modal.category} modalProject={modal.project} setGetModal={closeModal} />}
     </>
   );
 };
