@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import image404 from "../../public/assets/img/404.jpg";
+import { firstName, lastName } from "../config";
 
 const NotFound = () => {
   return (
     <>
-    <Head><title>Page Not Found | Myo Win Thein</title></Head>
+    <Head><title>{`Page Not Found | ${firstName} ${lastName}`}</title></Head>
     <div className="error_page">
       <div
         className="hero bg-image"
