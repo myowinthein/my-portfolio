@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
-import UseData from "../../Hooks/UseData";
+import useData from "../../Hooks/useData";
 import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
 import Image from "next/image";
 
 
 const Blog = () => {
-  const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = UseData();
+  const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = useData();
   const excerptRef = useRef(null);
   const handleClose = () => setIsOpen(false);
 
@@ -95,7 +95,8 @@ const Blog = () => {
             className="close-modal"
             onClick={handleClose}
           >
-            <Image src={cancelImg} alt="close icon" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={cancelImg.src} alt="close icon" />
           </button>
           {/* End close icon */}
 
@@ -104,12 +105,12 @@ const Blog = () => {
             <article>
               <h1>{singleData?.title}</h1>
               <div className="blog-excerpt open-sans-font" ref={excerptRef}>
-                <p dangerouslySetInnerHTML={{ __html: singleData?.description }} />
+                <p dangerouslySetInnerHTML={{ __html: singleData?.description || '' }} />
               </div>
 
               <div className="meta open-sans-font">
                 <div>
-                  <i className="fa fa-user"></i> {singleData?.commentor}
+                  <i className="fa fa-user"></i> {singleData?.author}
                 </div>
                 <div>
                   <i className="fa fa-calendar"></i> {singleData?.date}

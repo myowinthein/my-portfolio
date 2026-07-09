@@ -101,7 +101,7 @@ const HomeDark = () => {
 
             {/* Contact Content Starts */}
             <TabPanel className="contact">
-              <TabTitle bg="contact">
+              <TabTitle bg={menuLabels.contact}>
                 get in <span>touch</span>
               </TabTitle>
               <div
@@ -113,10 +113,10 @@ const HomeDark = () => {
                   {/*  Left Side Starts */}
                   <div className="col-12 col-lg-4">
                     <h3 className="text-uppercase custom-title mb-0 ft-wt-600 pb-3">
-                      {"LET'S"} CONNECT
+                      LET&rsquo;S CONNECT
                     </h3>
                     <p className="open-sans-font mb-4">
-                      If {"you'd"} like to discuss an opportunity, a project, or have a question, feel free to reach out. I’m always open to thoughtful conversations and new ideas.
+                      If you&rsquo;d like to discuss an opportunity, a project, or have a question, feel free to reach out. I&rsquo;m always open to thoughtful conversations and new ideas.
                     </p>
                     <Address />
                     {/* End Address */}

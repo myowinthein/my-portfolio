@@ -11,8 +11,8 @@ const achievementsContent = [
 const Achievements = () => {
   return (
     <div className="row">
-      {achievementsContent.map((val) => (
-        <div className="col-6" key={val.subTitle2}>
+      {achievementsContent.map((val, i) => (
+        <div className="col-6" key={i}>
           <div className="box-stats with-margin">
             <h3 className="poppins-font position-relative">
               {val.title}
