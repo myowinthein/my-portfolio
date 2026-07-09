@@ -6,6 +6,8 @@ import AwesomeSlider from 'react-awesome-slider';
 import CloseImg from "../../../public/assets/img/cancel.svg";
 import useBodyScrollLock from '../../Hooks/useBodyScrollLock';
 
+const FOCUSABLE = 'button, [href], input, [tabindex]:not([tabindex="-1"])';
+
 const settings = {
   animation: "fallAnimation",
 };
@@ -23,9 +25,31 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const videoRefs = useRef([]);
   const isFirstRender = useRef(true);
+  const modalContentRef = useRef(null);
 
   useBodyScrollLock();
   const handleClose = () => setGetModal(false);
+
+  // Escape key + focus trap
+  useEffect(() => {
+    const modal = modalContentRef.current;
+    if (!modal) return;
+    const focusables = [...modal.querySelectorAll(FOCUSABLE)];
+    if (focusables.length) focusables[0].focus();
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') { setGetModal(false); return; }
+      if (e.key !== 'Tab') return;
+      const els = [...modal.querySelectorAll(FOCUSABLE)];
+      const first = els[0];
+      const last = els[els.length - 1];
+      if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [setGetModal]);
 
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
@@ -52,19 +76,29 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
   }, [activeIndex]);
 
   return createPortal(
-    <div className="modal_portfolio">
+    <div
+      className="modal_portfolio"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="portfolio-modal-title"
+    >
       <div
         className="modal__outside"
+        role="button"
+        tabIndex={0}
+        aria-label="Close modal"
         onClick={handleClose}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleClose(); }}
       ></div>
 
-      <div className="modal__content">
+      <div className="modal__content" ref={modalContentRef}>
         <button className="close-modal" onClick={handleClose}>
-          <Image src={CloseImg} alt="close icon" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={CloseImg.src} alt="close icon" />
         </button>
         <div className="modal__body">
         <div>
-          <h2 className="heading mb-2">{modalProject.product}</h2>
+          <h2 id="portfolio-modal-title" className="heading mb-2">{modalProject.product}</h2>
 
           <div className="modal__details">
             <div className="row open-sans-font">
@@ -113,7 +147,7 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
                 setActiveIndex(currentIndex);
               }}
             >
-              {modalProject.media.map((media) => (
+              {modalProject.media.map((media, i) => (
                 <div key={media.url}>
                   {media.type === "image" ? (
                     <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" />
@@ -135,8 +169,8 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
 
           {/* Description */}
           <div className="modal__description">
-            {modalProject.description.map((text) => (
-              <p key={text}>{text}</p>
+            {modalProject.description.map((text, i) => (
+              <p key={i}>{text}</p>
             ))}
           </div>
         </div>
