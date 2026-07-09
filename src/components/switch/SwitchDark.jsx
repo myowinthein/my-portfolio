@@ -5,6 +5,7 @@ const SwitchDark = () => {
   const [isLightTheme, setIsLightTheme] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (localStorage.getItem("theme-color") === "light") {
       // handleSwitchValue(true) = dark, handleSwitchValue(false) = light
       handleSwitchValue(false);
@@ -12,8 +13,9 @@ const SwitchDark = () => {
     }
   }, []);
 
-  const handleLabelClick = () => {
+  const handleToggle = () => {
     const nextIsLight = !isLightTheme;
+    // handleSwitchValue expects `isDark`, which is the inverse of the next light state
     handleSwitchValue(!nextIsLight);
     setIsLightTheme(nextIsLight);
   };
@@ -22,7 +24,8 @@ const SwitchDark = () => {
     <label className={`theme-switcher-label d-flex  ${isLightTheme ? "active" : ""}`}>
       <input
         type="checkbox"
-        onClick={handleLabelClick}
+        checked={isLightTheme}
+        onChange={handleToggle}
         className="theme-switcher"
       />
       <div className="switch-handle">
