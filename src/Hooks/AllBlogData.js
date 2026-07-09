@@ -3,7 +3,7 @@ import { parseISO, format } from "date-fns";
 import { toast } from "react-toastify";
 import { rssAPIKey, toastOptions } from "../config";
 
-const AllBlogData = () => {
+const useAllBlogData = () => {
   const [blogsData, setBlogsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [singleData, setSingleData] = useState({});
@@ -14,29 +14,29 @@ const AllBlogData = () => {
       .then(res => res.json())
       .then(
         (data) => {
-          const items = [];
-          data.items.forEach((item, index) => {
+          const items = data.items.map((item) => {
             const desc = item.description.replace(
               /<img[^>]*\bsrc="[^"]*medium\.com\/_\/stat[^"]*"[^>]*>/gi,
               ''
             );
             const plainText = desc.replace(/<[^>]*>/g, '');
-            items.push({
-              id: index,
+            return {
+              id: item.guid,
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
               title: item.title,
-              commentor: item.author,
+              author: item.author,
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
               link: item.guid,
               description: desc,
               preview: plainText.slice(0, 200),
-            });
+            };
           });
           setBlogsData(items);
           setIsLoading(false);
         },
-        () => {
+        (err) => {
+          console.error('Blog fetch failed:', err);
           toast.error("Failed to fetch blogs!", toastOptions);
           setIsLoading(false);
         }
@@ -44,7 +44,7 @@ const AllBlogData = () => {
   }, []);
 
   const handleBlogsData = (id) => {
-    const find = blogsData.find((item) => item?.id === id);
+    const find = blogsData.find((item) => item.id === id);
     setSingleData(find);
     setIsOpen(true);
   };
@@ -59,4 +59,4 @@ const AllBlogData = () => {
   };
 };
 
-export default AllBlogData;
+export default useAllBlogData;
