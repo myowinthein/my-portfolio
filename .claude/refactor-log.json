@@ -13,12 +13,12 @@
       "depends_on": [],
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 116,
-      "description": "Video ref callback uses undefined variable `i` — map callback is `(media)` with no index param, so `videoRefs.current[i]` always writes to `videoRefs.current[undefined]`. No video element is ever stored; entire play/pause/reset logic is a silent no-op. Fix: change `(media)` to `(media, i)`.",
-      "status": "open",
+      "description": "Video ref callback uses undefined variable `i` \u2014 map callback is `(media)` with no index param, so `videoRefs.current[i]` always writes to `videoRefs.current[undefined]`. No video element is ever stored; entire play/pause/reset logic is a silent no-op. Fix: change `(media)` to `(media, i)`.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0002",
@@ -30,11 +30,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 12,
       "description": "Fetch has no AbortController cleanup. On fast unmount the .then() callbacks still fire and call setBlogsData/setIsLoading on an unmounted component. Fix: create AbortController, pass signal to fetch, abort in useEffect cleanup return.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "91e17b9",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0003",
@@ -46,11 +46,11 @@
       "file": "src/config.js",
       "line": 2,
       "description": "Dead import: `sentenceCase` is imported from `../utils/text` but never called in config.js. The `position` field is a plain string literal and summary[] templates it directly without invoking sentenceCase. Remove the import.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "3c18a5d",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0004",
@@ -62,11 +62,11 @@
       "file": "vitest.config.js",
       "line": 1,
       "description": "No `environment: 'jsdom'` in vitest config. Tests run in Node with manual global stubs for `document` and `localStorage`. Adding jsdom lets tests use real DOM APIs and eliminates fragile manual stub objects.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0005",
@@ -78,11 +78,11 @@
       "file": "src/config.js",
       "line": 16,
       "description": "`totalExperiences` arithmetic (`format(new Date(),'yyyy') - careerSince - 1`) has zero test coverage. A wrong year would silently display the wrong experience count with no build or lint error to catch it.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "6ac4427",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0006",
@@ -94,11 +94,11 @@
       "file": "package.json",
       "line": 1,
       "description": "`next` pinned at 13.0.2 (Oct 2022) has multiple disclosed CVEs from 2024-2025 (CVE-2024-34351, CVE-2024-46982, CVE-2025-29927 among others). Upgrading to 13.5.x preserves the same Pages Router API surface with minimal risk.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8586a37",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0007",
@@ -110,11 +110,11 @@
       "file": "package.json",
       "line": 1,
       "description": "`eslint` (8.27.0) and `eslint-config-next` (13.0.2) are listed in `dependencies` instead of `devDependencies`. These are build/lint tools with no runtime use. Move both to devDependencies.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8586a37",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0008",
@@ -174,11 +174,11 @@
       "file": "src/components/blog/Blog.jsx",
       "line": 62,
       "description": "Blog thumbnail `<Image>` uses hardcoded `width={500} height={500}` for all cards regardless of actual image dimensions. This can distort non-square thumbnails and prevents accurate Next.js image optimisation. Consider `fill` layout with a sized container.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0012",
@@ -190,11 +190,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 18,
       "description": "No guard on `data.items` before calling `.forEach()`. If rss2json returns an error-shaped response, `data.items` is undefined and throws an uncaught TypeError, leaving isLoading stuck at true. Add a guard before the loop.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "91e17b9",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0013",
@@ -206,11 +206,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 28,
       "description": "Field name typo: `commentor` (misspelling) propagates into Blog.jsx at `singleData?.commentor`. Rename to `author` in both AllBlogData.js and Blog.jsx as a coordinated change.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0014",
@@ -222,11 +222,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 6,
       "description": "`AllBlogData` is a custom React hook (calls useState/useEffect) but does not follow the `use*` naming convention. ESLint hooks rules cannot identify it as a hook. Rename to `useAllBlogData` and update the caller in ContextProvider.js.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0015",
@@ -238,11 +238,11 @@
       "file": "src/Hooks/UseData.js",
       "line": 4,
       "description": "File named `UseData.js` with function `UseData` (Pascal-case). All other hooks use lowercase `use*`. Rename file to `useData.js` and export to `useData`. Update import in Blog.jsx.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0016",
@@ -254,11 +254,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 18,
       "description": "`forEach` + mutable `items` accumulator pattern should be replaced with `data.items.map(...)`. More idiomatic, avoids intermediate mutation, signals intent clearly.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0017",
@@ -270,11 +270,11 @@
       "file": "src/components/hero/Hero.jsx",
       "line": 7,
       "description": "`heroContent` is a module-level object that only re-names imported values under different keys (heroImage, heroTitleName, etc.). Pure indirection with zero benefit. Remove the object and reference imported values directly in JSX.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0018",
@@ -286,11 +286,11 @@
       "file": "src/components/hero/Hero.jsx",
       "line": 40,
       "description": "Summary paragraphs use the sentence text as React key (`key={description}`). Long strings are fragile keys; duplicated sentences would silently break reconciliation. Use the array index instead (list is static and never reordered).",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0019",
@@ -302,11 +302,11 @@
       "file": "src/components/Seo.jsx",
       "line": 34,
       "description": "Twitter card meta tags use `property=` (Open Graph convention) instead of the correct `name=` attribute. Per Twitter/X docs, Twitter tags must use `<meta name=\"twitter:*\">`. Scrapers may miss the card with wrong attribute.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0020",
@@ -318,11 +318,11 @@
       "file": "src/components/switch/SwitchDark.jsx",
       "line": 25,
       "description": "Theme toggle uses `onClick` on a checkbox `<input>` instead of `onChange`. The checkbox has no `checked` prop (uncontrolled), so browser checked state and React `isLightTheme` state diverge. Make it controlled (`checked={isLightTheme} onChange={...}`) or switch to a `<button>`.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8af6ce5",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0021",
@@ -334,11 +334,11 @@
       "file": "src/components/switch/SwitchDark.jsx",
       "line": 7,
       "description": "`localStorage` accessed inside `useEffect` without `typeof window !== 'undefined'` guard. Currently safe since useEffect is client-only, but fragile if this code is ever moved outside useEffect. Add the guard for explicitness.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8af6ce5",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0022",
@@ -350,11 +350,11 @@
       "file": "src/components/Contact.jsx",
       "line": 89,
       "description": "`safelyResetRecaptcha` catch block is empty (`catch (_) {}`), silently swallowing all errors. Add a `console.warn` to preserve silent-recovery intent while making debugging reCAPTCHA edge cases possible.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5011081",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0023",
@@ -366,11 +366,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 62,
       "description": "Modal backdrop `<div>` has an onClick handler but no `role=\"button\"` or `aria-label`. Keyboard users and screen readers cannot dismiss the modal via the backdrop. Add `role=\"button\" aria-label=\"Close modal\"` or convert to `<button>`.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0024",
@@ -382,11 +382,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 54,
       "description": "Modal has no focus trap. When the portal opens, focus stays on the trigger; Tab cycles through the underlying page behind the overlay. Use native `inert` attribute, a `<dialog>` element, or a manual keydown trap.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0025",
@@ -398,11 +398,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 54,
       "description": "No Escape key handler on the modal. Add a `useEffect` that registers a `keydown` listener for `event.key === 'Escape'` calling `handleClose`, cleaned up on unmount.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0026",
@@ -414,11 +414,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 55,
       "description": "Portal root `<div className=\"modal_portfolio\">` is missing `role=\"dialog\"`, `aria-modal=\"true\"`, and `aria-labelledby` pointing at the `<h2>`. Without these, assistive technologies do not announce it as a dialog.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0027",
@@ -430,11 +430,11 @@
       "file": "src/components/Seo.jsx",
       "line": 3,
       "description": "`personSchema` is built at module load time (top-level, outside component). For a static site this is harmless, but if `siteURL` resolves from an env var differing between server/client, the schema could embed the wrong URL. Consider memoizing inside the component.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0028",
@@ -446,11 +446,11 @@
       "file": "src/components/hero/Hero.jsx",
       "line": 26,
       "description": "Mobile hero `<Image>` is missing the `priority` prop. This image is the largest-contentful-paint candidate on mobile viewports. Add `priority` to eliminate the lazy-load penalty on first paint.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0029",
@@ -462,11 +462,11 @@
       "file": "src/pages/_app.jsx",
       "line": 13,
       "description": "`Aos.init({ duration: 1200 })` sets a default, but individual elements across the codebase also hardcode `data-aos-duration=\"1200\"`. The per-element overrides are redundant. Remove them and let the init default govern all elements.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0030",
@@ -478,11 +478,11 @@
       "file": "src/components/portfolio/Portfolio.jsx",
       "line": 44,
       "description": "Portfolio card `<Image>` elements in the first tab are loaded lazily (default). The first few cards above the fold could benefit from `priority` to improve LCP. Add `priority` to the first 2-3 images of the active tab.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0031",
@@ -494,11 +494,11 @@
       "file": "src/components/about/index.jsx",
       "line": 70,
       "description": "The `skillSets` array with all skill icon imports is defined inside the component body and reallocated on every render. It is entirely static data. Move it to module scope, consistent with how `experienceContent` and `educationContent` are handled in sibling files.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "2cfb594",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0032",
@@ -506,15 +506,17 @@
       "priority": "medium",
       "risk": "safe",
       "cluster_id": "c-010",
-      "depends_on": ["f-0004"],
+      "depends_on": [
+        "f-0004"
+      ],
       "file": "utils/theme.test.js",
       "line": 1,
       "description": "Tests stub `global.document` and `global.localStorage` with plain objects. Once jsdom is configured (f-0004), these manual stubs can be replaced with `vi.spyOn` on real DOM methods, which is more resilient and realistic.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0033",
@@ -522,15 +524,17 @@
       "priority": "medium",
       "risk": "safe",
       "cluster_id": "c-010",
-      "depends_on": ["f-0004"],
+      "depends_on": [
+        "f-0004"
+      ],
       "file": "utils/theme.test.js",
       "line": 12,
       "description": "Missing edge-case tests for `handleSwitchValue`: null/undefined/0/'' inputs (all falsy, should apply light theme), verifying localStorage key is always 'theme-color', and verifying add is called before remove.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "6ac4427",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0034",
@@ -542,11 +546,11 @@
       "file": "utils/",
       "line": 1,
       "description": "Zero test coverage for hooks: `useBodyScrollLock`, `useExpandableList`, and `useData`. `useExpandableList` and `useBodyScrollLock` are pure enough to test without a full component harness.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0035",
@@ -558,11 +562,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 122,
       "description": "The video ref bug (f-0001) has no test coverage. The play/pause logic is the only non-trivial stateful behaviour in the modal. A test checking ref population and the play/pause effect would have caught the silent breakage.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0036",
@@ -573,7 +577,7 @@
       "depends_on": [],
       "file": "package.json",
       "line": 1,
-      "description": "`date-fns` at ^2.30.0; latest is v4.4.0. v4 is ESM-only and dropped CJS — Next 13.0.2 may need `transpilePackages` in next.config.js. Usage: `format` in config.js and `format`+`parseISO` in AllBlogData.js. Likely safe but needs verification.",
+      "description": "`date-fns` at ^2.30.0; latest is v4.4.0. v4 is ESM-only and dropped CJS \u2014 Next 13.0.2 may need `transpilePackages` in next.config.js. Usage: `format` in config.js and `format`+`parseISO` in AllBlogData.js. Likely safe but needs verification.",
       "status": "open",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
@@ -605,7 +609,7 @@
       "depends_on": [],
       "file": "package.json",
       "line": 1,
-      "description": "`react-animated-cursor` installed at 2.6.0 but latest within ^2.5.2 range is 2.11.2 — 5 minor versions behind. Visual/behavioural regressions are possible; manual cursor test needed before shipping.",
+      "description": "`react-animated-cursor` installed at 2.6.0 but latest within ^2.5.2 range is 2.11.2 \u2014 5 minor versions behind. Visual/behavioural regressions are possible; manual cursor test needed before shipping.",
       "status": "open",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
@@ -622,11 +626,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 13,
       "description": "Medium RSS feed URL hardcoded inside the hook. The `mediumURL` already lives in config.js; the feed URL should be derived there too. A username change currently requires updating two separate files.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "91e17b9",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0040",
@@ -638,11 +642,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 18,
       "description": "Blog items use array index as `id`. If the RSS feed returns fewer items (post unpublished), indices shift and stale `singleData` can point to the wrong post. Use `item.guid` (already stored as `link`) as a stable identifier.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0041",
@@ -654,11 +658,11 @@
       "file": "src/Hooks/useBodyScrollLock.js",
       "line": 6,
       "description": "Restores `document.body.style.overflow` to `''` (empty string) on cleanup. If another element set overflow before the modal opened, closing it clears that value. Capture the existing value on mount and restore it exactly on cleanup.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "91e17b9",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0042",
@@ -666,15 +670,17 @@
       "priority": "low",
       "risk": "needs-review",
       "cluster_id": "c-011",
-      "depends_on": ["f-0014"],
+      "depends_on": [
+        "f-0014"
+      ],
       "file": "src/Context/ContextProvider.js",
       "line": 4,
       "description": "`MyContext` is a generic name. With one context it is fine, but adding a second would immediately collide. Rename to `BlogContext` to reflect what it actually holds. Depends on renaming AllBlogData (f-0014) first.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0043",
@@ -686,11 +692,11 @@
       "file": "src/pages/home-dark.jsx",
       "line": 103,
       "description": "Contact `TabTitle` hard-codes the string `\"contact\"` as the `bg` prop instead of using `menuLabels.contact`. Every other TabTitle uses menuLabels. A label rename would silently leave the contact background watermark out of sync.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5011081",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0044",
@@ -702,11 +708,11 @@
       "file": "src/components/Social.jsx",
       "line": 4,
       "description": "`SocialShare` array is module-level config data defined inside a presentational component file. It belongs in config.js alongside other personal data (github, linkedin, etc.) for a single source of truth.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0045",
@@ -717,12 +723,12 @@
       "depends_on": [],
       "file": "src/components/portfolio/portfolioData.js",
       "line": 145,
-      "description": "Multiple commented-out `// 'status': 1` fields across entries — dead scaffolding from an unimplemented feature. If not planned, remove. If planned, add a JSDoc comment explaining the intended values (1=live, 2=discontinued?).",
-      "status": "open",
+      "description": "Multiple commented-out `// 'status': 1` fields across entries \u2014 dead scaffolding from an unimplemented feature. If not planned, remove. If planned, add a JSDoc comment explaining the intended values (1=live, 2=discontinued?).",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "91e17b9",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0046",
@@ -749,12 +755,12 @@
       "depends_on": [],
       "file": "src/components/blog/Blog.jsx",
       "line": 107,
-      "description": "`dangerouslySetInnerHTML={{ __html: singleData?.description }}` — when `singleData.description` is absent, optional chaining returns undefined and `__html: undefined` renders the string \"undefined\" in some browsers. Guard with `|| ''`.",
-      "status": "open",
+      "description": "`dangerouslySetInnerHTML={{ __html: singleData?.description }}` \u2014 when `singleData.description` is absent, optional chaining returns undefined and `__html: undefined` renders the string \"undefined\" in some browsers. Guard with `|| ''`.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0048",
@@ -766,11 +772,11 @@
       "file": "src/components/blog/Blog.jsx",
       "line": 98,
       "description": "`<Image src={cancelImg} alt=\"close icon\" />` uses next/image for a local SVG. Per CLAUDE.md, next/image cannot render raw SVGs without dangerouslyAllowSVG (blocked). Replace with a plain `<img>` tag.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0049",
@@ -781,12 +787,12 @@
       "depends_on": [],
       "file": "src/components/about/index.jsx",
       "line": 69,
-      "description": "Component function is named `index` (lowercase default export). React DevTools displays it as `index` instead of a meaningful name. Rename the function to `About` — the file name does not need to change.",
-      "status": "open",
+      "description": "Component function is named `index` (lowercase default export). React DevTools displays it as `index` instead of a meaningful name. Rename the function to `About` \u2014 the file name does not need to change.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "2cfb594",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0050",
@@ -798,11 +804,11 @@
       "file": "src/components/about/Education.jsx",
       "line": 9,
       "description": "Empty template literals (`link: ```) used as falsy guards. Plain `link: ''` is cleaner and avoids visual noise of unnecessary template literals with no interpolation.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "2cfb594",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0051",
@@ -814,11 +820,11 @@
       "file": "src/components/about/Education.jsx",
       "line": 42,
       "description": "`val.details ? ... : null` and `val.link ? ... : null` use ternary instead of the `&&` short-circuit pattern used everywhere else in the codebase for conditional renders. Use `&&` for consistency.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "2cfb594",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0052",
@@ -830,11 +836,11 @@
       "file": "src/components/portfolio/Portfolio.jsx",
       "line": 8,
       "description": "Three separate `useState` calls (`getModal`, `modalCategory`, `modalProject`) are always set together in `handleModal`. Collapse into a single `useState(null)` holding `{ category, project }` or `null` when closed.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0053",
@@ -846,11 +852,11 @@
       "file": "src/components/portfolio/Portfolio.jsx",
       "line": 64,
       "description": "Trailing `{\" \"}` after the PortfolioModal conditional render is unnecessary whitespace noise. Remove it.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0054",
@@ -862,11 +868,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 39,
       "description": "The rejection handler (`() => {}`) in the `.then(onFulfilled, onRejected)` pattern silently swallows the error object. At minimum log it with `console.error` to make debugging failed fetches possible.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8716d78",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0055",
@@ -877,12 +883,12 @@
       "depends_on": [],
       "file": "src/config.js",
       "line": 27,
-      "description": "`siteURL` fallback chain includes `process.env.SITE_URL`, a server-only env var not available in the browser bundle. Since config.js is imported by Seo.jsx (client-rendered), this branch is always undefined on the client — it is dead code on the client side. Remove the `|| process.env.SITE_URL` fallback from config.js (keep it only in next-sitemap.config.js where it is server-only).",
-      "status": "open",
+      "description": "`siteURL` fallback chain includes `process.env.SITE_URL`, a server-only env var not available in the browser bundle. Since config.js is imported by Seo.jsx (client-rendered), this branch is always undefined on the client \u2014 it is dead code on the client side. Remove the `|| process.env.SITE_URL` fallback from config.js (keep it only in next-sitemap.config.js where it is server-only).",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "3c18a5d",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0056",
@@ -894,11 +900,11 @@
       "file": "src/components/hero/Hero.jsx",
       "line": 36,
       "description": "Role tags use the tag string as React key (`key={tag}`). Same fragility as summary keys (f-0018). Use the array index for this static, never-reordered list.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0057",
@@ -910,11 +916,11 @@
       "file": "src/components/Seo.jsx",
       "line": 13,
       "description": "The component return wraps `<Head>` in an unnecessary `<> </>` fragment. `<Head>` is the only child; remove the outer fragment.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0058",
@@ -926,11 +932,11 @@
       "file": "src/components/Seo.jsx",
       "line": 39,
       "description": "`<meta httpEquiv=\"x-ua-compatible\" content=\"ie=edge\">` targets Internet Explorer (end-of-life). All supported browsers ignore this tag. Remove it.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0059",
@@ -941,12 +947,12 @@
       "depends_on": [],
       "file": "src/components/Seo.jsx",
       "line": 17,
-      "description": "The `pageTitle` fallback (`pageTitle ? ... : metaTitle`) is unreachable dead code — the only caller (`home-dark.jsx`) always passes a truthy value. Either remove the prop and hardcode `metaTitle` or document the fallback is intentional for future callers.",
-      "status": "open",
+      "description": "The `pageTitle` fallback (`pageTitle ? ... : metaTitle`) is unreachable dead code \u2014 the only caller (`home-dark.jsx`) always passes a truthy value. Either remove the prop and hardcode `metaTitle` or document the fallback is intentional for future callers.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c1da945",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0060",
@@ -958,11 +964,11 @@
       "file": "src/pages/home-dark.jsx",
       "line": 116,
       "description": "Contact panel copy escapes apostrophes using JSX string literals (`{\"LET'S\"}`, `{\"you'd\"}`). Inconsistent with the rest of the file. Use curly-quotes or Unicode characters directly.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5011081",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0061",
@@ -973,12 +979,12 @@
       "depends_on": [],
       "file": "src/components/Contact.jsx",
       "line": 157,
-      "description": "The `return` wraps everything in an unnecessary `<> </>` fragment — `<form>` is the only child. Remove the outer fragment.",
-      "status": "open",
+      "description": "The `return` wraps everything in an unnecessary `<> </>` fragment \u2014 `<form>` is the only child. Remove the outer fragment.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5011081",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0062",
@@ -989,12 +995,12 @@
       "depends_on": [],
       "file": "src/components/Contact.jsx",
       "line": 172,
-      "description": "Subject field uses `col-12 col-md-12` — `col-md-12` is redundant because `col-12` already makes the element full width at all breakpoints. Use just `col-12`.",
-      "status": "open",
+      "description": "Subject field uses `col-12 col-md-12` \u2014 `col-md-12` is redundant because `col-12` already makes the element full width at all breakpoints. Use just `col-12`.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5011081",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0063",
@@ -1006,11 +1012,11 @@
       "file": "src/components/switch/SwitchDark.jsx",
       "line": 7,
       "description": "`handleSwitchValue(!nextIsLight)` double negation is confusing: `nextIsLight=true` means switching to light, passes `false`. The logic is correct but the inverted argument makes intent opaque. Add a clarifying comment or rename the variable.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8af6ce5",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0064",
@@ -1022,11 +1028,11 @@
       "file": "src/components/Social.jsx",
       "line": 24,
       "description": "Social links use `rel=\"noreferrer\"` which implicitly includes `noopener` in modern browsers, but `rel=\"noopener noreferrer\"` is more explicit and consistent for external links.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0065",
@@ -1038,11 +1044,11 @@
       "file": "src/pages/404.jsx",
       "line": 9,
       "description": "404 page hard-codes `\"Page Not Found | Myo Win Thein\"` in the title instead of using `firstName`/`lastName` from config.js. A name change would require updating the 404 title separately.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "0c9fd4f",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0066",
@@ -1054,11 +1060,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 138,
       "description": "Description paragraphs use text content as React key. If two paragraphs ever share the same text, this causes a key collision. Use array index instead (list is static and never reordered).",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d3b4734d7ed7cda6fe7055002a6279cab962aadc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0067",
@@ -1070,11 +1076,11 @@
       "file": "src/components/portfolio/Portfolio.jsx",
       "line": 42,
       "description": "Project card `<div>` has `onClick` but no `role=\"button\"`, `tabIndex={0}`, or `onKeyDown` handler. Keyboard users cannot activate cards via Enter/Space. Convert to `<button>` or add the missing ARIA attributes and key handler.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4c956dc",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0068",
@@ -1085,7 +1091,7 @@
       "depends_on": [],
       "file": "src/components/about/Experience.jsx",
       "line": 107,
-      "description": "Bullet points rendered as `• &nbsp;&nbsp;{text}` inside `<p>` tags mix content and formatting. Using `<ul>`/`<li>` (already used for the outer list) with CSS-driven bullets would be more semantic.",
+      "description": "Bullet points rendered as `\u2022 &nbsp;&nbsp;{text}` inside `<p>` tags mix content and formatting. Using `<ul>`/`<li>` (already used for the outer list) with CSS-driven bullets would be more semantic.",
       "status": "open",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
@@ -1102,11 +1108,11 @@
       "file": "src/components/about/Achievements.jsx",
       "line": 15,
       "description": "Achievement items use `val.subTitle2` (e.g. 'experience', 'start') as React key. These are presentation labels, not identifiers. Silent collision if a second entry ever shares the same subtitle. Use index or add a dedicated `id`.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "2cfb594",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0070",
@@ -1118,11 +1124,11 @@
       "file": "utils/theme.js",
       "line": 1,
       "description": "`handleSwitchValue` is a default export only. `utils/text.js` uses named exports. Convert to a named export (`export function handleSwitchValue`) for consistency and more explicit tree-shaking.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "6ac4427",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0071",
@@ -1134,11 +1140,11 @@
       "file": "src/config.js",
       "line": 16,
       "description": "`date-fns` `format()` is imported just to call `format(new Date(), 'yyyy')`. Replace with the built-in `new Date().getFullYear()` and remove the only reason config.js depends on date-fns.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "f8d0fd6",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0072",
@@ -1166,11 +1172,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 116,
       "description": "All media items in AwesomeSlider render on modal open. Images use `<Image>` without `loading=\"lazy\"`. For modals with 5-7 media items, all images are eagerly decoded. Add `loading=\"lazy\"` to non-first-slide images.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "f8d0fd6",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0074",
@@ -1182,11 +1188,11 @@
       "file": "src/layout/wrapper.jsx",
       "line": 6,
       "description": "reCAPTCHA script is appended in useEffect without checking for an existing script tag. During HMR the component can remount and add a duplicate script. Guard with a `document.querySelector('[src*=recaptcha]')` check before appending.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "f8d0fd6",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0075",
@@ -1198,11 +1204,11 @@
       "file": "utils/text.test.js",
       "line": 1,
       "description": "`sentenceCase` is missing tests for numeric string input (`'123abc'`) and already-sentence-case input (`'Hello world'` should return unchanged). Edge coverage is thin for a function used in SEO meta generation.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "6ac4427",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0076",
@@ -1214,11 +1220,11 @@
       "file": "src/Hooks/useExpandableList.js",
       "line": 1,
       "description": "`useExpandableList` is a pure hook with clear input/output (initialCount, toggle, showAll state) and no DOM side effects. It is a natural candidate to add to the test suite alongside existing utils tests.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
       "resolved_commit": null,
-      "resolved_date": null
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0077",
@@ -1245,7 +1251,7 @@
       "depends_on": [],
       "file": "package.json",
       "line": 1,
-      "description": "`react-awesome-slider` at ^4.1.0 has not had a release since 2021 and is effectively unmaintained. Works with React 18 but has no React 19 support — long-term risk if the project upgrades React.",
+      "description": "`react-awesome-slider` at ^4.1.0 has not had a release since 2021 and is effectively unmaintained. Works with React 18 but has no React 19 support \u2014 long-term risk if the project upgrades React.",
       "status": "open",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
@@ -1261,12 +1267,12 @@
       "depends_on": [],
       "file": "package.json",
       "line": 1,
-      "description": "`next-sitemap` at ^4.1.3 (installed 4.1.3); latest is 4.2.3. Safe patch-level bump within the same major — low risk to update.",
-      "status": "open",
+      "description": "`next-sitemap` at ^4.1.3 (installed 4.1.3); latest is 4.2.3. Safe patch-level bump within the same major \u2014 low risk to update.",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8586a37",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0080",
@@ -1278,11 +1284,11 @@
       "file": "package.json",
       "line": 1,
       "description": "`react-modal` at ^3.16.1 (installed 3.16.1); latest is 3.16.3. Two patch releases behind; safe to bump. Used in Blog.jsx.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8586a37",
+      "resolved_date": "2026-07-10"
     },
     {
       "id": "f-0081",
@@ -1294,11 +1300,11 @@
       "file": "package.json",
       "line": 1,
       "description": "`vitest` at ^4.1.9; minor patch update available. Safe to update.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8586a37",
+      "resolved_date": "2026-07-10"
     }
   ]
 }
