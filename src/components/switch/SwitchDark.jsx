@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import handleSwitchValue from "../../../utils/theme";
+import { handleSwitchValue } from "../../../utils/theme";
 
 const SwitchDark = () => {
   const [isLightTheme, setIsLightTheme] = useState(false);

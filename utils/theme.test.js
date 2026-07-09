@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import handleSwitchValue from './theme';
+import { handleSwitchValue } from './theme';
 
 let bodyClassList;
 
@@ -22,5 +22,16 @@ describe('handleSwitchValue', () => {
     expect(localStorage.setItem).toHaveBeenCalledWith('theme-color', 'light');
     expect(bodyClassList.add).toHaveBeenCalledWith('light');
     expect(bodyClassList.remove).toHaveBeenCalledWith('dark');
+  });
+
+  it.each([null, undefined, 0, ''])('treats %p as light', (value) => {
+    handleSwitchValue(value);
+    expect(localStorage.setItem).toHaveBeenCalledWith('theme-color', 'light');
+    expect(bodyClassList.add).toHaveBeenCalledWith('light');
+  });
+
+  it('always writes to the theme-color storage key', () => {
+    handleSwitchValue(true);
+    expect(localStorage.setItem.mock.calls[0][0]).toBe('theme-color');
   });
 });
