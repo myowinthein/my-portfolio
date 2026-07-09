@@ -1,4 +1,4 @@
-function handleSwitchValue(value) {
+export function handleSwitchValue(value) {
   const body = document.body;
   if (value) {
     localStorage.setItem("theme-color", "dark");
@@ -10,6 +10,4 @@ function handleSwitchValue(value) {
     body.classList.remove("dark");
   }
 }
-
-export default handleSwitchValue;
 
