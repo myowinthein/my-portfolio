@@ -14,7 +14,7 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / 
 
 ## 2. Project Config
 
-- `git-solo: true` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§8).
+- `git-strategy: solo` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§8).
 - `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
 
 ---
