@@ -1,7 +1,7 @@
 import React from "react";
 import { firstName, lastName, position, resumeURL, roleTags, summary } from "../../config";
-import heroImage from "../../../public/assets/img/hero/dark.jpg";
-import heroImgMobile from "../../../public/assets/img/hero/img-mobile.jpeg";
+import heroImage from "../../../public/assets/img/hero/hero-bg.jpg";
+import heroImgMobile from "../../../public/assets/img/hero/hero-photo.jpeg";
 import Image from "next/image";
 
 const fullName = `${firstName} ${lastName}`;
