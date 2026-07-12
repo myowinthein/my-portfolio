@@ -20,6 +20,7 @@ const Hero = () => {
             className="img-fluid main-img-mobile d-sm-block d-lg-none"
             alt={fullName}
             priority
+            sizes="(max-width: 991px) 100vw, 0px"
           />
           <h1 className="poppins-font">
             <span className="d-block text-uppercase">{fullName}</span>
