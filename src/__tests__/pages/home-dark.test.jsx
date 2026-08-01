@@ -41,4 +41,23 @@ describe('HomeDark', () => {
     expect(screen.getByText(/LET.S CONNECT/)).toBeInTheDocument();
     expect(screen.getByPlaceholderText('YOUR NAME')).toBeInTheDocument();
   });
+
+  it('shows the About tab content after clicking it', async () => {
+    const user = userEvent.setup();
+    render(<HomeDark />);
+
+    await user.click(screen.getByRole('tab', { name: menuLabels.profile }));
+
+    expect(screen.getByText('personal info')).toBeInTheDocument();
+    expect(screen.getByText('Technical Skills')).toBeInTheDocument();
+  });
+
+  it('shows the Blog tab content after clicking it', async () => {
+    const user = userEvent.setup();
+    render(<HomeDark />);
+
+    await user.click(screen.getByRole('tab', { name: menuLabels.writing }));
+
+    expect(screen.getByText('Explore more posts on', { exact: false })).toBeInTheDocument();
+  });
 });
