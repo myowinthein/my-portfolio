@@ -1,4 +1,5 @@
 import { experienceYears } from "../utils/experience";
+import PortfolioData from "./components/portfolio/portfolioData";
 
 // personal information
 export const firstName = 'Myo Win';
@@ -14,7 +15,7 @@ export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
 export const totalExperiences = experienceYears(careerSince, 1); // subtract 1 for gap year
 export const totalPlatformTypes = 5;
-export const totalDeliveredProjects = 14;
+export const totalDeliveredProjects = PortfolioData.reduce((count, category) => count + category.projects.length, 0);
 
 // links
 export const resumeURL = 'https://drive.google.com/file/d/1GXGGF_SNVm6FMNBKqhZ-I51G5SRFCfGG/view?usp=sharing';
