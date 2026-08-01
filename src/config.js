@@ -50,7 +50,7 @@ export const summary = [
 ];
 
 // meta
-export const metaTitle = `${firstName} ${lastName} — ${position}`
+export const metaTitle = `${firstName} ${lastName}, ${position}`
 export const metaDescription = summary[0];
 export const metaImage = `${siteURL}/assets/img/hero/meta.jpeg`
 
