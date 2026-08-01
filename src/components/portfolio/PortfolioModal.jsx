@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import AwesomeSlider from 'react-awesome-slider';
 
 import CloseImg from "../../../public/assets/img/cancel.svg";
-import useBodyScrollLock from '../../Hooks/useBodyScrollLock';
+import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
 const FOCUSABLE = 'button, [href], input, [tabindex]:not([tabindex="-1"])';
 

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { useContext } from 'react';
 import ContextProvider, { BlogContext } from './ContextProvider';
 
-vi.mock('../Hooks/AllBlogData', () => ({
+vi.mock('../hooks/AllBlogData', () => ({
   default: () => ({ blogsData: ['stub-post'], isLoading: false }),
 }));
 

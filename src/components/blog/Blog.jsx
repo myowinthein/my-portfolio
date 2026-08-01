@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
-import useData from "../../Hooks/useData";
-import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
+import useData from "../../hooks/useData";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import Image from "next/image";
 import { sanitizeHtml } from "../../../utils/sanitizeHtml";
 
