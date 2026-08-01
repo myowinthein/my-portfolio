@@ -1157,11 +1157,11 @@
       "file": "src/components/about/index.jsx",
       "line": 9,
       "description": "All 60+ skill SVG imports are at module level, adding their StaticImageData metadata to the module graph regardless of whether the user opens the About tab. Low risk at current scale but worth noting if bundle size becomes a concern.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "3a4728a",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0073",
@@ -1351,11 +1351,11 @@
       "file": "src/Hooks/AllBlogData.test.jsx",
       "line": 108,
       "description": "No test exercises a malformed individual feed item (missing categories/description, invalid pubDate). Add a case asserting the hook still resolves isLoading to false / surfaces an error toast once f-0082's catch handler lands.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "3cc4bfc",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0085",
@@ -1415,11 +1415,11 @@
       "file": "src/Context/ContextProvider.jsx",
       "line": 7,
       "description": "value = useAllBlogData() returns a freshly-constructed object every render, so BlogContext.Provider always gets a new reference. Wrapping the returned object in useMemo would avoid unnecessary reference churn for consumers doing reference-equality checks.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "bb0e4a7",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0089",
@@ -1527,11 +1527,11 @@
       "file": "src/components/about/Skills.jsx",
       "line": 8,
       "description": "No test exercises skillSets.length <= CORE_COUNT (e.g. exactly 4 groups) to confirm the toggle button renders sensibly with nothing extra to reveal, nor an empty skillSets array. Low-value given static data, but an uncovered branch.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "0ac2c82",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0096",
@@ -1655,11 +1655,11 @@
       "file": "src/components/Contact.jsx",
       "line": 52,
       "description": "ensureSingleRecaptchaField (dedupe of duplicate g-recaptcha-response fields, fallback create-if-none-exists path) has no direct test coverage, even though its comment describes it as fixing a real prior bug (duplicate field breaking verification).",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "13c84b7",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0104",
@@ -1671,11 +1671,11 @@
       "file": "src/components/switch/SwitchDark.jsx",
       "line": 9,
       "description": "No test (or try/catch in source) covers localStorage.getItem/setItem throwing, which happens in Safari private browsing or when third-party storage is blocked; the effect and handleToggle would throw unhandled.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "0ac2c82",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0105",
@@ -1735,11 +1735,11 @@
       "file": "src/__tests__/pages/home-dark.test.jsx",
       "line": 66,
       "description": "Only asserts tab-switch content for the Work and Contact tabs; the About and Blog TabPanels have no equivalent assertion that their content renders after the corresponding tab is clicked.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "0ac2c82",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0109",
@@ -1783,11 +1783,11 @@
       "file": "src/styles/fonts.js",
       "line": 3,
       "description": "Both Poppins (6 weights) and Open Sans (4 weights) are configured with style: ['normal', 'italic'], generating/preloading 12 + 8 self-hosted font files. Poppins is only applied to headings which never use italic, and italic appears in only one CSS rule elsewhere \u2014 most italic variants are downloaded but never rendered.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "3a4728a",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0112",
