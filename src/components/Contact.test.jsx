@@ -85,6 +85,58 @@ describe('Contact', () => {
     expect(window.grecaptcha.reset).toHaveBeenCalledWith('widget-1');
   });
 
+  it('creates a g-recaptcha-response field with the token when none exists', async () => {
+    installGrecaptcha();
+    // Capture field state at the moment sendForm is invoked, since the
+    // success handler calls form.reset() right after, which would clear
+    // the field's value before a post-hoc assertion could see it.
+    let snapshot;
+    emailjs.sendForm.mockImplementation((_service, _template, form) => {
+      const fields = form.querySelectorAll('[name="g-recaptcha-response"]');
+      snapshot = { count: fields.length, value: fields[0]?.value };
+      return Promise.resolve();
+    });
+    const user = userEvent.setup();
+    const { container } = render(<Contact />);
+
+    await waitFor(() => expect(window.grecaptcha.render).toHaveBeenCalled());
+    expect(container.querySelector('[name="g-recaptcha-response"]')).toBeNull();
+
+    await fillForm(user);
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+
+    await waitFor(() => expect(emailjs.sendForm).toHaveBeenCalled());
+    expect(snapshot).toEqual({ count: 1, value: 'fake-token' });
+  });
+
+  it('dedupes pre-existing g-recaptcha-response fields down to one, keeping the token', async () => {
+    installGrecaptcha();
+    let snapshot;
+    emailjs.sendForm.mockImplementation((_service, _template, form) => {
+      const fields = form.querySelectorAll('[name="g-recaptcha-response"]');
+      snapshot = { count: fields.length, value: fields[0]?.value };
+      return Promise.resolve();
+    });
+    const user = userEvent.setup();
+    const { container } = render(<Contact />);
+
+    await waitFor(() => expect(window.grecaptcha.render).toHaveBeenCalled());
+    const form = container.querySelector('#myForm');
+    const dup1 = document.createElement('textarea');
+    dup1.name = 'g-recaptcha-response';
+    const dup2 = document.createElement('textarea');
+    dup2.name = 'g-recaptcha-response';
+    form.appendChild(dup1);
+    form.appendChild(dup2);
+    expect(container.querySelectorAll('[name="g-recaptcha-response"]')).toHaveLength(2);
+
+    await fillForm(user);
+    await user.click(screen.getByRole('button', { name: /send message/i }));
+
+    await waitFor(() => expect(emailjs.sendForm).toHaveBeenCalled());
+    expect(snapshot).toEqual({ count: 1, value: 'fake-token' });
+  });
+
   it('shows an error toast and resets reCAPTCHA when EmailJS fails', async () => {
     installGrecaptcha();
     emailjs.sendForm.mockRejectedValueOnce(new Error('network error'));
