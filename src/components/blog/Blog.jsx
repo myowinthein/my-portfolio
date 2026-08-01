@@ -7,6 +7,16 @@ import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
 import Image from "next/image";
 
 
+const stripTrackingImages = (node) => {
+  if (!node) return;
+  node.querySelectorAll('img').forEach(img => {
+    const remove = () => (img.closest('figure') || img).remove();
+    if (img.src.includes('medium.com/_/stat')) { remove(); return; }
+    if (img.complete && img.naturalWidth === 0) { remove(); return; }
+    img.addEventListener('error', remove, { once: true });
+  });
+};
+
 const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, isLoading, handleBlogsData } = useData();
   const excerptRef = useRef(null);
@@ -18,14 +28,19 @@ const Blog = () => {
     Modal.setAppElement("#__next");
   }, []);
 
+  // react-modal mounts its portal content one render after Blog's own
+  // effects run (ModalPortal opens via componentDidMount -> setState), so
+  // excerptRef.current can still be null the first time this effect fires.
+  // The callback ref below covers that first-mount case; this effect
+  // covers later content changes (switching posts) on an already-mounted node.
+  const setExcerptRef = (node) => {
+    excerptRef.current = node;
+    if (isOpen) stripTrackingImages(node);
+  };
+
   useEffect(() => {
     if (!isOpen || !excerptRef.current) return;
-    excerptRef.current.querySelectorAll('img').forEach(img => {
-      const remove = () => (img.closest('figure') || img).remove();
-      if (img.src.includes('medium.com/_/stat')) { remove(); return; }
-      if (img.complete && img.naturalWidth === 0) { remove(); return; }
-      img.addEventListener('error', remove, { once: true });
-    });
+    stripTrackingImages(excerptRef.current);
   }, [isOpen, singleData]);
   return (
     <>
@@ -104,7 +119,7 @@ const Blog = () => {
             {/* Article Starts */}
             <article>
               <h1>{singleData?.title}</h1>
-              <div className="blog-excerpt open-sans-font" ref={excerptRef}>
+              <div className="blog-excerpt open-sans-font" ref={setExcerptRef}>
                 <p dangerouslySetInnerHTML={{ __html: singleData?.description || '' }} />
               </div>
 
