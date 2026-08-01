@@ -611,11 +611,11 @@
       "file": "package.json",
       "line": 1,
       "description": "`react-animated-cursor` installed at 2.6.0 but latest within ^2.5.2 range is 2.11.2 \u2014 5 minor versions behind. Visual/behavioural regressions are possible; manual cursor test needed before shipping.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "ecf63a7",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0039",
@@ -1799,11 +1799,11 @@
       "file": "package.json",
       "line": 29,
       "description": "sass and next-sitemap are build-time-only CLI tools with no runtime import anywhere in src/, but are listed under dependencies rather than devDependencies. Not currently breaking anything since Vercel installs devDependencies too, but the categorization is misleading.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "15bf535",
+      "resolved_date": "2026-08-01"
     }
   ]
 }
