@@ -68,4 +68,4 @@ For bugs you spot, feel free to reach out via the contact form on the live site.
 
 All rights reserved © Myo Win Thein. The source is published for reference and transparency only; it is not licensed for reuse, redistribution, or derivative works. Brand assets, copy, portfolio screenshots, and embedded third-party logos retain their respective owners' rights.
 
-<!-- last-reviewed: b6f2015 -->
+<!-- last-reviewed: 90f1837 -->
