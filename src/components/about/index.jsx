@@ -5,7 +5,7 @@ import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 import skillSets from "./skillsData";
-import { resumeURL, menuLabels } from "../../config";
+import { resumeURL } from "../../config";
 
 const About = () => {
   return (
