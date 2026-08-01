@@ -5,6 +5,7 @@ import { mediumURL } from "../../config";
 import useData from "../../Hooks/useData";
 import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
 import Image from "next/image";
+import { sanitizeHtml } from "../../../utils/sanitizeHtml";
 
 
 const stripTrackingImages = (node) => {
@@ -120,7 +121,7 @@ const Blog = () => {
             <article>
               <h1>{singleData?.title}</h1>
               <div className="blog-excerpt open-sans-font" ref={setExcerptRef}>
-                <p dangerouslySetInnerHTML={{ __html: singleData?.description || '' }} />
+                <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(singleData?.description) || '' }} />
               </div>
 
               <div className="meta open-sans-font">
