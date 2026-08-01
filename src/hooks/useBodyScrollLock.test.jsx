@@ -24,4 +24,18 @@ describe('useBodyScrollLock', () => {
     renderHook(() => useBodyScrollLock(false));
     expect(document.body.style.overflow).toBe('');
   });
+
+  it('keeps scroll locked while a second concurrent lock is still active', () => {
+    document.body.style.overflow = 'auto';
+    const first = renderHook(() => useBodyScrollLock(true));
+    const second = renderHook(() => useBodyScrollLock(true));
+
+    expect(document.body.style.overflow).toBe('hidden');
+
+    first.unmount();
+    expect(document.body.style.overflow).toBe('hidden');
+
+    second.unmount();
+    expect(document.body.style.overflow).toBe('auto');
+  });
 });

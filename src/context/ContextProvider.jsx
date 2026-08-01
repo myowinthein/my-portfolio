@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import useAllBlogData from "../Hooks/AllBlogData";
+import useAllBlogData from "../hooks/AllBlogData";
 
 export const BlogContext = createContext();
 

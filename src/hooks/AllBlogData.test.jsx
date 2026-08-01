@@ -28,7 +28,7 @@ describe('useAllBlogData', () => {
         pubDate: '2026-03-05 12:00:00',
         categories: ['Backend', 'AWS'],
         thumbnail: '',
-        description: '<p>Hello world</p><img src="https://medium.com/_/stat?x=1">',
+        description: '<p>Hello world</p>',
       }],
     }));
 
@@ -45,6 +45,29 @@ describe('useAllBlogData', () => {
     expect(post.tag).toBe('Backend, AWS');
     expect(post.description).toBe('<p>Hello world</p>');
     expect(post.preview).toBe('Hello world');
+  });
+
+  it('passes description through raw, including any tracking pixel', async () => {
+    // Stripping happens downstream in Blog.jsx's DOM-based effect, not here —
+    // keeping a single place responsible for it instead of duplicating the check.
+    fetch.mockResolvedValueOnce(jsonResponse({
+      items: [{
+        guid: 'post-raw',
+        title: 'Raw Description',
+        author: 'Martin',
+        pubDate: '2026-03-05 12:00:00',
+        categories: [],
+        thumbnail: '',
+        description: '<p>Hello</p><img src="https://medium.com/_/stat?x=1">',
+      }],
+    }));
+
+    const { result } = renderHook(() => useAllBlogData());
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+    expect(result.current.blogsData[0].description).toBe(
+      '<p>Hello</p><img src="https://medium.com/_/stat?x=1">'
+    );
   });
 
   it('falls back to extracting an <img> src from the description when there is no thumbnail', async () => {
@@ -112,6 +135,28 @@ describe('useAllBlogData', () => {
     await waitFor(() => expect(result.current.isLoading).toBe(false));
 
     expect(result.current.blogsData).toEqual([]);
+    expect(toast.error).toHaveBeenCalledWith('Failed to fetch blogs!', expect.anything());
+  });
+
+  it('shows an error toast and stops loading when an individual item is malformed', async () => {
+    // Regression test for the missing .catch(): a malformed item (no
+    // description here) throws inside the map callback, which used to
+    // become an unhandled rejection that left isLoading stuck true forever.
+    fetch.mockResolvedValueOnce(jsonResponse({
+      items: [{
+        guid: 'post-broken',
+        title: 'Broken Post',
+        author: 'Martin',
+        pubDate: '2026-03-05 12:00:00',
+        categories: [],
+        thumbnail: '',
+        description: undefined,
+      }],
+    }));
+
+    const { result } = renderHook(() => useAllBlogData());
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+
     expect(toast.error).toHaveBeenCalledWith('Failed to fetch blogs!', expect.anything());
   });
 

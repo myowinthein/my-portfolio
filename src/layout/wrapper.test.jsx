@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Wrapper from './wrapper';
 
@@ -35,5 +35,16 @@ describe('Wrapper', () => {
 
     unmount();
     expect(document.querySelector(`script[src="${RECAPTCHA_SRC}"]`)).toBeNull();
+  });
+
+  it('logs an error if the reCAPTCHA script fails to load', () => {
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    render(<Wrapper><div /></Wrapper>);
+
+    const script = document.querySelector(`script[src="${RECAPTCHA_SRC}"]`);
+    script.onerror();
+
+    expect(errorSpy).toHaveBeenCalledWith('Failed to load reCAPTCHA script:', RECAPTCHA_SRC);
+    errorSpy.mockRestore();
   });
 });

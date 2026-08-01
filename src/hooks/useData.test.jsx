@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderHook } from '@testing-library/react';
 import useData from './useData';
-import { BlogContext } from '../Context/ContextProvider';
+import { BlogContext } from '../context/ContextProvider';
 
 describe('useData', () => {
   it('returns the value provided by BlogContext', () => {

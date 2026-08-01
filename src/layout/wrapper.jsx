@@ -9,7 +9,7 @@ const Wrapper = ({ children }) => {
     const script = document.createElement('script');
     script.src = src;
     script.async = true;
-    script.defer = true;
+    script.onerror = () => console.error('Failed to load reCAPTCHA script:', src);
     document.body.appendChild(script);
 
     return () => {

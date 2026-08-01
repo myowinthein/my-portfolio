@@ -80,4 +80,27 @@ describe('PortfolioModal', () => {
     render(<PortfolioModal modalCategory="SaaS" modalProject={baseProject} setGetModal={vi.fn()} />);
     expect(document.body.querySelector('.modal_portfolio')).not.toBeNull();
   });
+
+  it('omits the media slider when media is empty, without crashing', () => {
+    render(
+      <PortfolioModal
+        modalCategory="SaaS"
+        modalProject={{ ...baseProject, media: [] }}
+        setGetModal={vi.fn()}
+      />
+    );
+    expect(document.querySelector('.modal__img')).toBeNull();
+  });
+
+  it('omits the media slider when media is undefined, without crashing', () => {
+    const { media, ...projectWithoutMedia } = baseProject;
+    render(
+      <PortfolioModal
+        modalCategory="SaaS"
+        modalProject={projectWithoutMedia}
+        setGetModal={vi.fn()}
+      />
+    );
+    expect(document.querySelector('.modal__img')).toBeNull();
+  });
 });
