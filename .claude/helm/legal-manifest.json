@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "documents": [
+    { "file": "public/legal/privacy-policy/index.html", "generated_at": "2026-08-01", "generated_at_commit": "06e3fea" },
+    { "file": "public/legal/terms/index.html", "generated_at": "2026-08-01", "generated_at_commit": "06e3fea" },
+    { "file": "public/legal/cookie-policy/index.html", "generated_at": "2026-08-01", "generated_at_commit": "06e3fea" }
+  ]
+}
