@@ -1093,11 +1093,11 @@
       "file": "src/components/about/Experience.jsx",
       "line": 107,
       "description": "Bullet points rendered as `\u2022 &nbsp;&nbsp;{text}` inside `<p>` tags mix content and formatting. Using `<ul>`/`<li>` (already used for the outer list) with CSS-driven bullets would be more semantic.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "96d0ec1",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0069",
@@ -1317,11 +1317,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 15,
       "description": "Fetch chain uses .then(onFulfilled, onRejected) with no trailing .catch(). A synchronous exception thrown inside the success handler (item parsing) becomes an unhandled rejection instead of being caught by onRejected, leaving isLoading stuck true with no error toast. Add a final .catch(err => { toast.error(...); setIsLoading(false); }).",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "b6f23b3",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0083",
@@ -1333,11 +1333,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 35,
       "description": "item.categories.join(', ') and format(parseISO(item.pubDate), ...) assume every feed item has well-formed categories/pubDate. A malformed item throws inside the map callback. Guard with (item.categories || []).join(', ') and validate pubDate before formatting.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "b6f23b3",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0084",
@@ -1383,11 +1383,11 @@
       "file": "src/components/blog/Blog.jsx",
       "line": 123,
       "description": "singleData?.description (raw HTML from the Medium RSS feed via rss2json) is rendered via dangerouslySetInnerHTML with no sanitization. It's your own feed today, but unexpected markup from rss2json would render unsanitized in visitors' browsers.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "e261f1f",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0087",
@@ -1431,11 +1431,11 @@
       "file": "src/Hooks",
       "line": 1,
       "description": "Directory names src/Hooks and src/Context are capitalized while every sibling directory (components, layout, pages, styles) is lowercase. A rename to hooks/, context/ would align the convention, but touches ~8 import paths across the codebase \u2014 worth confirming it's wanted before a mechanical but wide-reaching rename.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8b2cc26",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0090",
@@ -1447,11 +1447,11 @@
       "file": "src/components/about/index.jsx",
       "line": 7,
       "description": "menuLabels is imported from ../../config but never referenced in the file \u2014 dead code left over from a prior version. next/core-web-vitals doesn't flag unused imports, so it silently ships. Remove the unused import.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "7e03ce8",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0091",
@@ -1479,11 +1479,11 @@
       "file": "src/components/about/Experience.jsx",
       "line": 75,
       "description": "useExpandableList(experienceContent, 3) uses an inline magic number for the initial visible count, while Skills.jsx extracts the equivalent into a named CORE_COUNT constant. Extracting a similarly named constant would make the two sibling components consistent.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "96d0ec1",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0093",
@@ -1495,11 +1495,11 @@
       "file": "src/components/about/Education.jsx",
       "line": 16,
       "description": "The Laravel certificate link uses a template literal with no interpolation while every other entry in educationContent uses plain double-quoted strings. Convert to a plain string for consistency.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "d478682",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0094",
@@ -1511,11 +1511,11 @@
       "file": "src/components/about/Achievements.jsx",
       "line": 15,
       "description": "achievementsContent.map((val, i) => ... key={i}) uses the array index as key even though a stable unique value is already available (val.subTitle2). Harmless today since the list is static, but an easy mechanical fix.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "b5b0340",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0095",
@@ -1543,11 +1543,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 150,
       "description": "modalProject.media.map assumes media is always a non-empty array with no guard (unlike preview, which is defensively checked with ?.length). All 17 current portfolioData entries supply media, but a future entry without it would throw or render an empty slider.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "e26f952",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0097",
@@ -1559,11 +1559,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 153,
       "description": "Every image in the AwesomeSlider gets identical alt text (modalProject.product), so a screen reader announces the same description for all 5+ screenshots. Would need a per-media alt/caption field in portfolioData.js to fix properly.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8b2cc26",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0098",
@@ -1591,11 +1591,11 @@
       "file": "src/components/portfolio/portfolioData.js",
       "line": 226,
       "description": "Chance Myanmar's media array orders images as Img1, Img3, Img4, Img2, Img5 instead of sequential 1-5, unlike every other project entry. Likely an accidental reorder rather than intentional curation \u2014 worth confirming.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8b2cc26",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0100",
@@ -1623,11 +1623,11 @@
       "file": "src/components/portfolio/portfolioData.js",
       "line": 61,
       "description": "fastforwardImg4 is a .png while every other portfolio image (including the other 4 FastForward images) is .webp, breaking the otherwise consistent format convention. May be intentional if the source only exists as PNG.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "8b2cc26",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0102",
@@ -1639,11 +1639,11 @@
       "file": "src/components/Contact.jsx",
       "line": 20,
       "description": "The setInterval polling window.grecaptcha has no attempt ceiling or timeout. If the reCAPTCHA script never loads (blocked by an ad/privacy blocker), the interval runs every 150ms indefinitely with no feedback until the visitor tries to submit.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "5a3f476",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0103",
@@ -1687,11 +1687,11 @@
       "file": "src/pages/404.jsx",
       "line": 10,
       "description": "404 page builds its own bare <Head><title> instead of reusing the shared <SEO> component. It ships without the viewport meta tag, favicon link, canonical URL, and OG/Twitter tags every other page gets \u2014 the 404 page can render at desktop width on mobile and show no favicon.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "98de6e8",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0106",
@@ -1703,11 +1703,11 @@
       "file": "src/layout/wrapper.jsx",
       "line": 9,
       "description": "The dynamically injected reCAPTCHA script has no onerror handler. If the script fails to load, Contact.jsx's grecaptcha polling loop has nothing to catch and the contact form silently never becomes submittable, with no user-facing error.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "516a9f6",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0107",
@@ -1719,11 +1719,11 @@
       "file": "src/layout/wrapper.jsx",
       "line": 11,
       "description": "script.async = true and script.defer = true are both set; per spec async takes precedence when both are present, so defer is a no-op. Pick one attribute to avoid the confusing combination.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "516a9f6",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0108",
@@ -1767,11 +1767,11 @@
       "file": "src/config.js",
       "line": 52,
       "description": "metaTitle embeds a literal em dash (\u2014) between name and position. This is user-facing copy (rendered as the SEO/browser-tab title) and conflicts with this project's own no-em-dash content convention; replace with a comma.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "85b1e84",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0111",
