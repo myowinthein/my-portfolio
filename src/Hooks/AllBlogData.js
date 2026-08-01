@@ -27,8 +27,8 @@ const useAllBlogData = () => {
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
               title: item.title,
               author: item.author,
-              date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
-              tag: item.categories.join(', '),
+              date: item.pubDate ? format(parseISO(item.pubDate), 'd MMMM yyyy, pp') : '',
+              tag: (item.categories || []).join(', '),
               link: item.guid,
               description: item.description,
               preview: plainText.slice(0, 200),
@@ -43,7 +43,13 @@ const useAllBlogData = () => {
           toast.error("Failed to fetch blogs!", toastOptions);
           setIsLoading(false);
         }
-      );
+      )
+      .catch((err) => {
+        if (err.name === 'AbortError') return;
+        console.error('Blog fetch failed:', err);
+        toast.error("Failed to fetch blogs!", toastOptions);
+        setIsLoading(false);
+      });
     return () => controller.abort();
   }, []);
 
