@@ -8,13 +8,13 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / 
 
 **Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no test suite, no preview branch, no approval step.
 
-**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the claude-helm rules (§8).
+**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the claude-helm rules (§9).
 
 ---
 
 ## 2. Project Config
 
-- `git-strategy: solo` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§8).
+- `git-strategy: solo` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§9).
 - `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
 
 ---
@@ -48,12 +48,21 @@ Test scope is intentionally limited to `utils/` — pure helpers like `sentenceC
 - `src/components/hero/Hero.jsx` — imports `summary` and `roleTags` from config; do not duplicate strings here.
 - `src/Hooks/AllBlogData.js` — the only runtime HTTP call in the app (Medium RSS → rss2json). State shared via `ContextProvider.js`.
 - `src/components/Contact.jsx` — contact form; reCAPTCHA v2 invisible + EmailJS, polled init via `window.grecaptcha`.
+- `src/styles/fonts.js` — Poppins/Open Sans loaded via `next/font/google` (self-hosted, `display: swap`), exposed as CSS variables applied on `<html>` in `_document.jsx`. Not a Google Fonts CSS `@import` anymore.
 
 SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → partials. Accent colour `--main-primary-color: #2CB1BC`. Dark bg `#021B1D`, light bg `#F5F5F4` (`.light` body class).
 
 ---
 
-## 5. Behavior Rules
+## 5. Domain Rules
+
+- Source is published for reference only, all rights reserved (see README License) — this is not an open-source project; do not add contribution scaffolding, issue templates, or OSS licensing.
+- `totalPlatformTypes` and `totalDeliveredProjects` in `config.js` are manually maintained counts, not derived from `portfolioData.js` — update them by hand when portfolio entries are added or removed.
+- `summary[0]` in `config.js` doubles as both hero copy and the SEO `metaDescription` — edits to it change search-result snippets, not just on-page text.
+
+---
+
+## 6. Behavior Rules
 
 - **No new Next.js pages.** All sections live as `<TabPanel>` entries inside `home-dark.jsx`. Adding routes breaks the single-page design.
 - **No new state libraries.** Local `useState` for component state; the Context pattern in `ContextProvider.js` is the only global state (blog feed). Never add Zustand, Redux, SWR, TanStack Query, axios, etc.
@@ -62,12 +71,12 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (not supported on the Pages Router), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
 - **No SSR data fetching.** No `getServerSideProps`, `getStaticProps`, `getStaticPaths`. All content is static imports or `fetch()` in `useEffect`.
 - **Always run `npm run lint`, `npm test`, and `npm run build` before commit.** No CI catches errors otherwise.
-- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: the claude-helm rules (§8).
+- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: the claude-helm rules (§9).
 - **Stage files explicitly** by name; never `git add .` or `git add -A` (risk of pulling in large media binaries or `.env.production`).
 
 ---
 
-## 6. Hard Safety Rules
+## 7. Hard Safety Rules
 
 - **Never push to `main` without explicit user confirmation.** Push = production deploy.
 - **Never force-push to `main`** under any circumstances.
@@ -76,11 +85,11 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **Never manually edit `public/robots.txt`, `public/sitemap.xml`, `public/sitemap-0.xml`** — build artefacts; `next-sitemap` overwrites on every build.
 - **Never run destructive git** (`reset --hard`, `checkout .`, `clean -f`) without explicit confirmation.
 
-Full operational risk scan and instructions: the claude-helm rules (§8).
+Full operational risk scan and instructions: the claude-helm rules (§9).
 
 ---
 
-## 7. Known Traps
+## 8. Known Traps
 
 - **`PortfolioModal` mounts via `createPortal` to `document.body`** — z-index and stacking-context issues need to account for this.
 - **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
@@ -94,7 +103,7 @@ Full operational risk scan and instructions: the claude-helm rules (§8).
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
 - **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks — they were removed deliberately.
 
-## 8. Rules
+## 9. Rules
 
 This project follows the rules shipped in claude-helm:
 - ~/.claude/plugins/marketplaces/claude-helm/rules/git.md
@@ -104,4 +113,4 @@ At the start of every session, check whether the paths above exist on this machi
 If either is missing, inform the user: "helm rules are referenced in CLAUDE.md but the
 plugin is not installed on this machine. Install it with: /plugin install claude-helm"
 
-<!-- last-reviewed: 8f99464 -->
+<!-- last-reviewed: 7bda49d -->
