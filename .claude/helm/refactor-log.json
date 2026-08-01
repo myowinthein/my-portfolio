@@ -741,11 +741,11 @@
       "file": "src/components/portfolio/portfolioData.js",
       "line": 237,
       "description": "Several `preview` arrays have commented-out entries (discontinued live site URLs). Fine as a historical record but adds noise to a large data file. Remove or move to a `legacyUrls` field if preservation matters.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "8a060b9c957328c7d2ac52d90b8efa7",
       "first_found_date": "2026-07-10",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4612dee",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0047",
@@ -1367,11 +1367,11 @@
       "file": "src/Hooks/AllBlogData.js",
       "line": 24,
       "description": "Tracking-pixel stripping is duplicated: a regex strip on 'medium.com/_/stat' at fetch time here, and a separate DOM-based strip in Blog.jsx's stripTrackingImages checking the same substring. If the pattern changes, both need updating. The DOM layer also catches generically-broken images so isn't purely redundant \u2014 consolidate or document why both exist.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "acf34f5",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0086",
@@ -1399,11 +1399,11 @@
       "file": "src/Hooks/useBodyScrollLock.js",
       "line": 6,
       "description": "Captures document.body.style.overflow as previousOverflow at mount and restores that exact value on unmount, with no shared lock counter. If two consumers ever lock concurrently, closing the first-opened one would unlock scroll while the second is still open. Currently safe only because the app enforces mutual exclusion elsewhere.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "c099db2",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0088",
@@ -1463,11 +1463,11 @@
       "file": "src/components/about/index.jsx",
       "line": 9,
       "description": "45+ SVG icon imports and the 90-line skillSets data array live inside the About presentational component rather than a dedicated data module. The codebase already has a convention for this (portfolioData.js); extracting skillSets to a sibling aboutData.js would match that pattern.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "4be8e3e",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0092",
@@ -1575,11 +1575,11 @@
       "file": "src/components/portfolio/PortfolioModal.jsx",
       "line": 24,
       "description": "PortfolioModal is rendered without a React key in Portfolio.jsx; its internal state (activeIndex, videoRefs) only resets correctly because the parent always passes modal=null (unmount) between opening different projects. A future 'next/prev project' UX that skips that null gap would leak stale state.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "f3125c4",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0099",
@@ -1607,11 +1607,11 @@
       "file": "src/components/portfolio/portfolioData.js",
       "line": 1,
       "description": "126 lines of hand-written static image imports (5-6 per project x 17 projects) with no shared helper or naming convention enforcement. next/image's requirement for literal static import paths limits how far this can be automated, but worth a lightweight convention check.",
-      "status": "open",
+      "status": "skipped-by-user",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "1773961",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0101",
@@ -1751,11 +1751,11 @@
       "file": "src/config.js",
       "line": 16,
       "description": "totalPlatformTypes (5) and totalDeliveredProjects (14) are hand-maintained magic numbers instead of being derived from portfolioData.js. The current count of 14 entries happens to match today, but nothing enforces they stay in sync as portfolio entries are added or removed.",
-      "status": "open",
+      "status": "fixed",
       "first_found_commit": "6222399",
       "first_found_date": "2026-08-01",
-      "resolved_commit": null,
-      "resolved_date": null
+      "resolved_commit": "1773961",
+      "resolved_date": "2026-08-01"
     },
     {
       "id": "f-0110",
