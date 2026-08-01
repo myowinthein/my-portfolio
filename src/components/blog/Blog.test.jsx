@@ -132,4 +132,19 @@ describe('Blog', () => {
 
     expect(document.querySelector('img[src*="medium.com/_/stat"]')).toBeNull();
   });
+
+  it('sanitizes the open post description before rendering it', () => {
+    useData.mockReturnValue({
+      ...baseState,
+      isOpen: true,
+      singleData: {
+        title: 'My Post',
+        description: '<p>Hello</p><script>alert(1)</script><img src="x.png" onerror="alert(2)">',
+      },
+    });
+    render(<Blog />);
+
+    expect(document.querySelector('script')).toBeNull();
+    expect(document.querySelector('img[src="x.png"]')).not.toHaveAttribute('onerror');
+  });
 });
