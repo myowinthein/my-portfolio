@@ -230,8 +230,6 @@ const PortfolioData = [
           {'type': 'image', 'url': chancemyanmarImg5},
         ],
         'preview': [
-          // {"platform": "Web", "url": "https://chancemyanmar.app/"},
-          // {"platform": "Android", "url": "https://play.google.com/store/apps/details?id=com.chance.myanmar&hl=en&gl=US"},
           {"platform": "Official Page", "url": " https://www.facebook.com/ChanceSchool"},
         ],
       }
@@ -264,7 +262,6 @@ const PortfolioData = [
           {'type': 'image', 'url': fastforwardImg4},
         ],
         'preview': [
-          // {'platform': 'Web', 'url': 'https://fastforwardmyanmar.com/'},
           {'platform': 'Official Page', 'url': 'https://www.facebook.com/fastforwardmyanmar'},
         ],
       },
@@ -290,7 +287,6 @@ const PortfolioData = [
           {'type': 'image', 'url': anymartImg5},
         ],
         'preview': [
-          // {'platform': 'Web', 'url': 'http://anymart.com.mm/'},
           {'platform': 'Official Page', 'url': 'https://www.facebook.com/anymart.com.mm'},
         ],
       },
@@ -312,9 +308,6 @@ const PortfolioData = [
           {'type': 'image', 'url': lukkyImg2},
         ],
         'preview': [
-          // {'platform': 'Web', 'url': 'http://lukkyme.com/'},
-          // {'platform': 'Android', 'url': 'https://play.google.com/store/apps/details?id=com.lukkyme.lukky'},
-          // {'platform': 'iOS', 'url': 'https://apps.apple.com/th/app/lukky/id1507624371'},
           {'platform': 'Official Page', 'url': 'https://www.facebook.com/lukkylsn/'},
         ],
       }
@@ -416,7 +409,6 @@ const PortfolioData = [
           {'type': 'image', 'url': smartCardSystemImg4},
         ],
         'preview': [
-          // {'platform': 'Device Info', 'url': 'https://www.acs.com.hk/en/products/342/acr1252u-usb-nfc-reader-iii-nfc-forum-certified-reader/'},
         ],
       },
 
@@ -439,7 +431,6 @@ const PortfolioData = [
           {'type': 'image', 'url': documentLocaterSystemImg4},
         ],
         'preview': [
-          // {'platform': 'Device Info', 'url': 'https://www.zebra.com/us/en/support-downloads/rfid/rfid-handhelds/mc3190-z.html'},
         ],
       },
     ]
@@ -475,10 +466,6 @@ const PortfolioData = [
           {'type': 'image', 'url': recycleMyanmarImg5},
         ],
         'preview': [
-          // {'platform': 'Web', 'url': 'https://www.recyclemm.com/'},
-          // {'platform': 'Android (User)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.user'},
-          // {'platform': 'Android (Picker)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.picker'},
-          // {'platform': 'Android (Business)', 'url': 'https://play.google.com/store/apps/details?id=com.recyclemm.business'},
           {'platform': 'Official Page', 'url': 'https://www.facebook.com/p/Recycle-Myanmar-100057362593821/'},
         ],
       },

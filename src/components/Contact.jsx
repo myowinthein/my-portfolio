@@ -18,6 +18,10 @@ const Contact = () => {
 
   // Render invisible reCAPTCHA when grecaptcha is available
   useEffect(() => {
+    const POLL_INTERVAL_MS = 150;
+    const MAX_WAIT_MS = 15000;
+    let elapsed = 0;
+
     const interval = setInterval(() => {
       if (window.grecaptcha && widgetIdRef.current === null) {
         try {
@@ -34,8 +38,16 @@ const Contact = () => {
         } catch (err) {
           console.error("reCAPTCHA render error:", err);
         }
+        return;
       }
-    }, 150);
+
+      elapsed += POLL_INTERVAL_MS;
+      if (elapsed >= MAX_WAIT_MS) {
+        clearInterval(interval);
+        console.error("reCAPTCHA did not become available within", MAX_WAIT_MS, "ms");
+        toast.error("reCAPTCHA failed to load. Please refresh the page and try again.", toastOptions);
+      }
+    }, POLL_INTERVAL_MS);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps

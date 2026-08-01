@@ -67,7 +67,7 @@ const Portfolio = () => {
           </div>
         </Tabs>
       </div>
-      {modal && <PortfolioModal modalCategory={modal.category} modalProject={modal.project} setGetModal={closeModal} />}
+      {modal && <PortfolioModal key={modal.project.product} modalCategory={modal.category} modalProject={modal.project} setGetModal={closeModal} />}
     </>
   );
 };

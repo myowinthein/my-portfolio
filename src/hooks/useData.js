@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BlogContext } from "../Context/ContextProvider";
+import { BlogContext } from "../context/ContextProvider";
 
 const useData = () => {
   return useContext(BlogContext);

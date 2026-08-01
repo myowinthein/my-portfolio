@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import useData from '../../Hooks/useData';
+import useData from '../../hooks/useData';
 import Blog from './Blog';
 
-vi.mock('../../Hooks/useData');
+vi.mock('../../hooks/useData');
 
 const baseState = {
   blogsData: [],
@@ -131,5 +131,20 @@ describe('Blog', () => {
     rerender(<Blog />);
 
     expect(document.querySelector('img[src*="medium.com/_/stat"]')).toBeNull();
+  });
+
+  it('sanitizes the open post description before rendering it', () => {
+    useData.mockReturnValue({
+      ...baseState,
+      isOpen: true,
+      singleData: {
+        title: 'My Post',
+        description: '<p>Hello</p><script>alert(1)</script><img src="x.png" onerror="alert(2)">',
+      },
+    });
+    render(<Blog />);
+
+    expect(document.querySelector('script')).toBeNull();
+    expect(document.querySelector('img[src="x.png"]')).not.toHaveAttribute('onerror');
   });
 });

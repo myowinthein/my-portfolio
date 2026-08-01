@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../../public/assets/img/cancel.svg";
 import { mediumURL } from "../../config";
-import useData from "../../Hooks/useData";
-import useBodyScrollLock from "../../Hooks/useBodyScrollLock";
+import useData from "../../hooks/useData";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import Image from "next/image";
+import { sanitizeHtml } from "../../../utils/sanitizeHtml";
 
 
 const stripTrackingImages = (node) => {
@@ -120,7 +121,7 @@ const Blog = () => {
             <article>
               <h1>{singleData?.title}</h1>
               <div className="blog-excerpt open-sans-font" ref={setExcerptRef}>
-                <p dangerouslySetInnerHTML={{ __html: singleData?.description || '' }} />
+                <p dangerouslySetInnerHTML={{ __html: sanitizeHtml(singleData?.description) || '' }} />
               </div>
 
               <div className="meta open-sans-font">

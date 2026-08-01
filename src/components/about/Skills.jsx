@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import useExpandableList from "../../Hooks/useExpandableList";
+import useExpandableList from "../../hooks/useExpandableList";
 
 const CORE_COUNT = 4;
 

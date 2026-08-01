@@ -13,7 +13,7 @@ const educationContent = [
     degree: "Certified Laravel Developer",
     institute: "Laravel",
     details: "",
-    link: `https://verifier.certificationforlaravel.org/bbc220bc-7159-4ff9-baf7-6289f3dcf4d3`,
+    link: "https://verifier.certificationforlaravel.org/bbc220bc-7159-4ff9-baf7-6289f3dcf4d3",
   },
   {
     year: "Sep 2012 – Oct 2013",
