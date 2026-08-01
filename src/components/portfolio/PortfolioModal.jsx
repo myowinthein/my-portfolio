@@ -140,32 +140,34 @@ const PortfolioModal = ({ modalCategory, modalProject, setGetModal }) => {
           </div>
 
           {/* Screenshots */}
-          <figure className="modal__img">
-            <AwesomeSlider
-              {...settings}
-              onTransitionEnd={({ currentIndex }) => {
-                setActiveIndex(currentIndex);
-              }}
-            >
-              {modalProject.media.map((media, i) => (
-                <div key={media.url}>
-                  {media.type === "image" ? (
-                    <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" loading={i === 0 ? undefined : "lazy"} />
-                  ) : (
-                    <video
-                      ref={(el) => (videoRefs.current[i] = el)}
-                      playsInline
-                      muted
-                      loop
-                      preload="metadata"
-                    >
-                      <source src={media.url} type="video/mp4" />
-                    </video>
-                  )}
-                </div>
-              ))}
-            </AwesomeSlider>
-          </figure>
+          {modalProject.media?.length > 0 && (
+            <figure className="modal__img">
+              <AwesomeSlider
+                {...settings}
+                onTransitionEnd={({ currentIndex }) => {
+                  setActiveIndex(currentIndex);
+                }}
+              >
+                {modalProject.media.map((media, i) => (
+                  <div key={media.url}>
+                    {media.type === "image" ? (
+                      <Image src={media.url} alt={modalProject.product} sizes="(max-width: 576px) 100vw, 700px" loading={i === 0 ? undefined : "lazy"} />
+                    ) : (
+                      <video
+                        ref={(el) => (videoRefs.current[i] = el)}
+                        playsInline
+                        muted
+                        loop
+                        preload="metadata"
+                      >
+                        <source src={media.url} type="video/mp4" />
+                      </video>
+                    )}
+                  </div>
+                ))}
+              </AwesomeSlider>
+            </figure>
+          )}
 
           {/* Description */}
           <div className="modal__description">
