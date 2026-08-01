@@ -71,8 +71,10 @@ const experienceContent = [
   },
 ];
 
+const VISIBLE_COUNT = 3;
+
 const Experience = () => {
-  const { visible: visibleContent, showAll, toggle: toggleExperience } = useExpandableList(experienceContent, 3);
+  const { visible: visibleContent, showAll, toggle: toggleExperience } = useExpandableList(experienceContent, VISIBLE_COUNT);
 
   return (
     <>
