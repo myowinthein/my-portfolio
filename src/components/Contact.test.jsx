@@ -122,4 +122,17 @@ describe('Contact', () => {
 
     expect(toast.error).toHaveBeenCalledWith('reCAPTCHA expired. Please try again.', expect.anything());
   });
+
+  it('stops polling and shows an error toast if reCAPTCHA never becomes available', () => {
+    vi.useFakeTimers();
+    render(<Contact />);
+
+    vi.advanceTimersByTime(15000);
+
+    expect(toast.error).toHaveBeenCalledWith(
+      'reCAPTCHA failed to load. Please refresh the page and try again.',
+      expect.anything()
+    );
+    vi.useRealTimers();
+  });
 });
