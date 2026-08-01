@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import HomeDark from '../../pages/home-dark';
 import { menuLabels } from '../../config';
 
-vi.mock('../../Hooks/useData', () => ({
+vi.mock('../../hooks/useData', () => ({
   default: () => ({
     blogsData: [],
     isLoading: false,

@@ -1,5 +1,5 @@
 import React from "react";
-import useExpandableList from "../../Hooks/useExpandableList";
+import useExpandableList from "../../hooks/useExpandableList";
 
 const experienceContent = [
   // StudyMe

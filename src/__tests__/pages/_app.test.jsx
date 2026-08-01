@@ -6,7 +6,7 @@ import MyApp from '../../pages/_app';
 vi.mock('aos', () => ({ default: { init: vi.fn() } }));
 vi.mock('react-animated-cursor', () => ({ default: () => <div data-testid="cursor" /> }));
 vi.mock('@vercel/analytics/react', () => ({ Analytics: () => <div data-testid="analytics" /> }));
-vi.mock('../../Hooks/AllBlogData', () => ({
+vi.mock('../../hooks/AllBlogData', () => ({
   default: () => ({ blogsData: [], isLoading: false, singleData: {}, isOpen: false, setIsOpen: vi.fn(), handleBlogsData: vi.fn() }),
 }));
 

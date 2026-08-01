@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import useData from '../../Hooks/useData';
+import useData from '../../hooks/useData';
 import Blog from './Blog';
 
-vi.mock('../../Hooks/useData');
+vi.mock('../../hooks/useData');
 
 const baseState = {
   blogsData: [],
