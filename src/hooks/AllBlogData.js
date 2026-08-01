@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { parseISO, format } from "date-fns";
 import { toast } from "react-toastify";
 import { rssAPIKey, mediumFeedURL, toastOptions } from "../config";
@@ -53,20 +53,20 @@ const useAllBlogData = () => {
     return () => controller.abort();
   }, []);
 
-  const handleBlogsData = (id) => {
+  const handleBlogsData = useCallback((id) => {
     const find = blogsData.find((item) => item.id === id);
     setSingleData(find);
     setIsOpen(true);
-  };
+  }, [blogsData]);
 
-  return {
+  return useMemo(() => ({
     singleData,
     isOpen,
     setIsOpen,
     blogsData,
     isLoading,
     handleBlogsData,
-  };
+  }), [singleData, isOpen, blogsData, isLoading, handleBlogsData]);
 };
 
 export default useAllBlogData;
