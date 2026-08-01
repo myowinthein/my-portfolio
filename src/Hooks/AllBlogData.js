@@ -21,11 +21,7 @@ const useAllBlogData = () => {
             return;
           }
           const items = data.items.map((item) => {
-            const desc = item.description.replace(
-              /<img[^>]*\bsrc="[^"]*medium\.com\/_\/stat[^"]*"[^>]*>/gi,
-              ''
-            );
-            const plainText = desc.replace(/<[^>]*>/g, '');
+            const plainText = item.description.replace(/<[^>]*>/g, '');
             return {
               id: item.guid,
               img: item.thumbnail ? item.thumbnail : item.description.match(/<img[^>]+src="([^">]+)"/)?.[1],
@@ -34,7 +30,7 @@ const useAllBlogData = () => {
               date: format(parseISO(item.pubDate), 'd MMMM yyyy, pp'),
               tag: item.categories.join(', '),
               link: item.guid,
-              description: desc,
+              description: item.description,
               preview: plainText.slice(0, 200),
             };
           });
