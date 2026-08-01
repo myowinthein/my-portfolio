@@ -16,6 +16,7 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / 
 
 - `git-strategy: solo` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§9).
 - `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
+- `readme-style: standard` — README.md follows the Standard Readme spec structure.
 
 ---
 
