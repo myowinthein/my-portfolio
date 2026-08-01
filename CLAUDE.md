@@ -6,7 +6,7 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / 
 
 **Stack:** Next.js 13.5 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
 
-**Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no test suite, no preview branch, no approval step.
+**Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no preview branch, no approval step — `npm test` exists but nothing runs it automatically on push.
 
 **Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the claude-helm rules (§9).
 
@@ -27,11 +27,11 @@ npm run dev         # localhost:4000  (NOT default 3000)
 npm run build       # next build + next-sitemap (postbuild)
 npm run lint        # next/core-web-vitals
 npm run start       # serve production build (requires prior build)
-npm test            # vitest run (utils/**/*.test.js only)
+npm test            # vitest run (utils/**/*.test.js + src/**/*.test.jsx)
 npm run test:watch  # vitest watch mode
 ```
 
-Test scope is intentionally limited to `utils/` — pure helpers like `sentenceCase`, `handleSwitchValue`, and `experienceYears`. There is no Testing Library, no JSDOM, no component tests. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
+Tests cover `utils/` pure helpers and, via jsdom + React Testing Library, most of `src/components`, `src/Hooks`, `src/Context`, `src/layout`, and `src/pages` (excluding `_document.jsx`, see Known Traps). Page-level tests live in `src/__tests__/pages/`, never inside `src/pages/` itself. `next/image` and `next/head` are mocked globally in `vitest.setup.jsx` since they only behave correctly inside Next's own render pipeline. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
 
 ---
 
@@ -103,6 +103,8 @@ Full operational risk scan and instructions: the claude-helm rules (§9).
 - **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
 - **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks — they were removed deliberately.
+- **Never put test files inside `src/pages/`.** The Pages Router treats every file there as a route; a colocated `*.test.jsx` breaks `next build` (it gets collected as a page). Page-level tests live in `src/__tests__/pages/` instead.
+- **`next/font/google` exports (`src/styles/fonts.js`) only work inside Next's own SWC build.** Under vitest/Vite they're non-callable, so `_document.jsx` (which imports them) cannot be rendered in tests — it's also server-only markup never mounted client-side in production, so it's intentionally untested.
 
 ## 9. Rules
 
