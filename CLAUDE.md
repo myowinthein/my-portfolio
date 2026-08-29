@@ -2,11 +2,11 @@
 
 ## 1. Project Identity
 
-Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / Technical Lead, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
+Personal portfolio for **Myo Win Thein (Martin)**, Senior Full-Stack Engineer, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
 
 **Stack:** Next.js 13.5 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
 
-**Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no preview branch, no approval step — `npm test` exists but nothing runs it automatically on push.
+**Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no preview branch, no approval step; `npm test` exists but nothing runs it automatically on push.
 
 **Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the claude-helm rules (§9).
 
@@ -14,9 +14,9 @@ Personal portfolio for **Myo Win Thein (Martin)** — Senior Backend Engineer / 
 
 ## 2. Project Config
 
-- `git-strategy: solo` — commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§9).
-- `git-auto-commit: true` — commit after each task without prompting; push still requires confirmation.
-- `readme-style: standard` — README.md follows the Standard Readme spec structure.
+- `git-strategy: solo`: commit directly to `main`, no feature branches, no PRs. See claude-helm rules (§9).
+- `git-auto-commit: true`: commit after each task without prompting; push still requires confirmation.
+- `readme-style: standard`: README.md follows the Standard Readme spec structure.
 
 ---
 
@@ -37,19 +37,19 @@ Tests cover `utils/` pure helpers and, via jsdom + React Testing Library, most o
 
 ## 4. Architecture Pointers
 
-- `src/pages/home-dark.jsx` — entire single-page tab app; every section is a `<TabPanel>` here. New content goes INSIDE this file, not as new routes.
-- `src/pages/index.jsx` — re-exports `HomeDark`. `/404.jsx` is the only other page.
-- `src/config.js` — single source of truth for personal info, URLs, meta, API keys, and `summary[]` (first paragraph reused as SEO meta description).
-- `utils/text.js` — `sentenceCase` helper (has tests; not currently referenced in `src/`).
-- `utils/experience.js` — `experienceYears(startYear, gap)` helper; `config.js` uses it for build-time `totalExperiences`. Extracted so the year math is unit-testable.
-- `src/components/portfolio/portfolioData.js` — static projects grouped by category. Each entry: `{ company, industry, product, productType, role, description[], banner, media[], preview[] }`.
-- `src/components/portfolio/PortfolioModal.jsx` — uses `createPortal` to mount on `document.body`; locks/restores body scroll on open/close.
-- `src/components/about/index.jsx` — skill categories defined inline; passed to `Skills.jsx`. Skills with `core: true` render a crown badge.
-- `src/components/about/Skills.jsx` — `CORE_COUNT = 4` defaults to showing first 4 categories; "Show more" reveals the rest.
-- `src/components/hero/Hero.jsx` — imports `summary` and `roleTags` from config; do not duplicate strings here.
-- `src/Hooks/AllBlogData.js` — the only runtime HTTP call in the app (Medium RSS → rss2json). State shared via `ContextProvider.js`.
-- `src/components/Contact.jsx` — contact form; reCAPTCHA v2 invisible + EmailJS, polled init via `window.grecaptcha`.
-- `src/styles/fonts.js` — Poppins/Open Sans loaded via `next/font/google` (self-hosted, `display: swap`), exposed as CSS variables applied on `<html>` in `_document.jsx`. Not a Google Fonts CSS `@import` anymore.
+- `src/pages/home-dark.jsx`: entire single-page tab app; every section is a `<TabPanel>` here. New content goes INSIDE this file, not as new routes.
+- `src/pages/index.jsx`: re-exports `HomeDark`. `/404.jsx` is the only other page.
+- `src/config.js`: single source of truth for personal info, URLs, meta, API keys, and `summary[]` (first paragraph reused as SEO meta description).
+- `utils/text.js`: `sentenceCase` helper (has tests; not currently referenced in `src/`).
+- `utils/experience.js`: `experienceYears(startYear, gap)` helper; `config.js` uses it for build-time `totalExperiences`. Extracted so the year math is unit-testable.
+- `src/components/portfolio/portfolioData.js`: static projects grouped by category. Each entry: `{ company, industry, product, productType, role, description[], banner, media[], preview[] }`.
+- `src/components/portfolio/PortfolioModal.jsx`: uses `createPortal` to mount on `document.body`; locks/restores body scroll on open/close.
+- `src/components/about/index.jsx`: skill categories defined inline; passed to `Skills.jsx`. Skills with `core: true` render a crown badge.
+- `src/components/about/Skills.jsx`: `CORE_COUNT = 4` defaults to showing first 4 categories; "Show more" reveals the rest.
+- `src/components/hero/Hero.jsx`: imports `summary` and `roleTags` from config; do not duplicate strings here.
+- `src/Hooks/AllBlogData.js`: the only runtime HTTP call in the app (Medium RSS → rss2json). State shared via `ContextProvider.js`.
+- `src/components/Contact.jsx`: contact form; reCAPTCHA v2 invisible + EmailJS, polled init via `window.grecaptcha`.
+- `src/styles/fonts.js`: Poppins/Open Sans loaded via `next/font/google` (self-hosted, `display: swap`), exposed as CSS variables applied on `<html>` in `_document.jsx`. Not a Google Fonts CSS `@import` anymore.
 
 SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → partials. Accent colour `--main-primary-color: #2CB1BC`. Dark bg `#021B1D`, light bg `#F5F5F4` (`.light` body class).
 
@@ -57,9 +57,9 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 
 ## 5. Domain Rules
 
-- Source is published for reference only, all rights reserved (see README License) — this is not an open-source project; do not add contribution scaffolding, issue templates, or OSS licensing.
-- `totalPlatformTypes` and `totalDeliveredProjects` in `config.js` are manually maintained counts, not derived from `portfolioData.js` — update them by hand when portfolio entries are added or removed.
-- `summary[0]` in `config.js` doubles as both hero copy and the SEO `metaDescription` — edits to it change search-result snippets, not just on-page text.
+- Source is published for reference only, all rights reserved (see README License). This is not an open-source project; do not add contribution scaffolding, issue templates, or OSS licensing.
+- `totalPlatformTypes` and `totalDeliveredProjects` in `config.js` are manually maintained counts, not derived from `portfolioData.js`; update them by hand when portfolio entries are added or removed.
+- `summary[0]` in `config.js` doubles as both hero copy and the SEO `metaDescription`; edits to it change search-result snippets, not just on-page text.
 
 ---
 
@@ -83,7 +83,7 @@ SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → parti
 - **Never force-push to `main`** under any circumstances.
 - **Never commit `.env.production`** (gitignored; contains `SITE_URL`).
 - **Never reproduce credential values in chat output** even when intentionally public (rss2json key, EmailJS IDs, reCAPTCHA site key live in `src/config.js` / `Contact.jsx`).
-- **Never manually edit `public/robots.txt`, `public/sitemap.xml`, `public/sitemap-0.xml`** — build artefacts; `next-sitemap` overwrites on every build.
+- **Never manually edit `public/robots.txt`, `public/sitemap.xml`, `public/sitemap-0.xml`**: build artefacts; `next-sitemap` overwrites on every build.
 - **Never run destructive git** (`reset --hard`, `checkout .`, `clean -f`) without explicit confirmation.
 
 Full operational risk scan and instructions: the claude-helm rules (§9).
@@ -92,19 +92,19 @@ Full operational risk scan and instructions: the claude-helm rules (§9).
 
 ## 8. Known Traps
 
-- **`PortfolioModal` mounts via `createPortal` to `document.body`** — z-index and stacking-context issues need to account for this.
+- **`PortfolioModal` mounts via `createPortal` to `document.body`**: z-index and stacking-context issues need to account for this.
 - **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
-- **reCAPTCHA is loaded dynamically** in `wrapper.jsx` and Contact polls `window.grecaptcha` every 150ms until ready. Do not switch to declarative `<div class="g-recaptcha">` — it conflicts.
+- **reCAPTCHA is loaded dynamically** in `wrapper.jsx` and Contact polls `window.grecaptcha` every 150ms until ready. Do not switch to declarative `<div class="g-recaptcha">`; it conflicts.
 - **Font Awesome is a static CSS file** at `public/assets/fonts/font-awesome/css/font-awesome.min.css`, not an npm package. Both `fa fa-*` and `fa-solid` / `fa-brands fa-*` syntaxes coexist intentionally.
 - **`totalExperiences` is build-time computed** in `config.js` via `experienceYears(careerSince, 1)` (from `utils/experience.js`); the `1` is a deliberate gap-year deduction. Displayed value bumps on every yearly redeploy.
-- **`next/image` cannot render raw SVGs.** `next.config.js` is intentionally minimal (`reactStrictMode` only) — do NOT add `dangerouslyAllowSVG`. For brand SVGs that need to feed `<Image>`, rasterize to WebP first (see `public/assets/portfolio/job_buddy/banner.webp`).
+- **`next/image` cannot render raw SVGs.** `next.config.js` is intentionally minimal (`reactStrictMode` only). Do NOT add `dangerouslyAllowSVG`. For brand SVGs that need to feed `<Image>`, rasterize to WebP first (see `public/assets/portfolio/job_buddy/banner.webp`).
 - **Bootstrap JS is not loaded.** Only the CSS grid is imported. No dropdowns, modals, tooltips from Bootstrap.
-- **Sitemap excludes `/home-dark`** in `next-sitemap.config.js` deliberately — canonical URL is `/`, not `/home-dark`.
+- **Sitemap excludes `/home-dark`** in `next-sitemap.config.js` deliberately: canonical URL is `/`, not `/home-dark`.
 - **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
 - **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
-- **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks — they were removed deliberately.
+- **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks; they were removed deliberately.
 - **Never put test files inside `src/pages/`.** The Pages Router treats every file there as a route; a colocated `*.test.jsx` breaks `next build` (it gets collected as a page). Page-level tests live in `src/__tests__/pages/` instead.
-- **`next/font/google` exports (`src/styles/fonts.js`) only work inside Next's own SWC build.** Under vitest/Vite they're non-callable, so `_document.jsx` (which imports them) cannot be rendered in tests — it's also server-only markup never mounted client-side in production, so it's intentionally untested.
+- **`next/font/google` exports (`src/styles/fonts.js`) only work inside Next's own SWC build.** Under vitest/Vite they're non-callable, so `_document.jsx` (which imports them) cannot be rendered in tests. It's also server-only markup never mounted client-side in production, so it's intentionally untested.
 
 ## 9. Rules
 

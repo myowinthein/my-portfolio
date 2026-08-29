@@ -1,12 +1,12 @@
 # myowin.dev
 
-Personal portfolio for Myo Win Thein (Martin) — Senior Backend Engineer / Technical Lead based in Bangkok.
+Personal portfolio for Myo Win Thein (Martin), Senior Full-Stack Engineer based in Bangkok.
 
 **Live:** [myowin.dev](https://myowin.dev)
 
 ## Background
 
-A heavily customised build on the commercial "Tunis" React template. Five sections (Home, Work, Profile, Writing, Contact) live as `react-tabs` panels inside a single Next.js page — no route changes between sections. All content is static except the Writing tab, which pulls from Medium via the rss2json API.
+A heavily customised build on the commercial "Tunis" React template. Five sections (Home, Work, Profile, Writing, Contact) live as `react-tabs` panels inside a single Next.js page; no route changes between sections. All content is static except the Writing tab, which pulls from Medium via the rss2json API.
 
 ## Install
 
