@@ -9,7 +9,7 @@ export const workPreference = 'Remote / Hybrid';
 export const focus = 'Backend, Cloud & System Architecture';
 export const email = 'martin@myowin.dev';
 export const languages = 'English (C1, Advanced), Burmese (Native)';
-export const position = 'Senior Backend Engineer';
+export const position = 'Senior Full-Stack Engineer';
 export const roleTags = ['Laravel', 'AWS', 'API Platforms'];
 export const address = 'Bangkok, Thailand';
 export const timezone = 'GMT+7';
@@ -44,7 +44,7 @@ export const menuLabels = {
 
 // summary — first paragraph is reused as the SEO meta description
 export const summary = [
-  `Senior Backend Engineer / Technical Lead with ${totalExperiences}+ years of hands-on backend and cloud engineering experience, specializing in Laravel/PHP systems, AWS infrastructure, and REST API platforms.`,
+  `Senior Full-Stack Engineer with ${totalExperiences}+ years of hands-on backend and cloud engineering experience, specializing in Laravel/PHP systems, AWS infrastructure, and REST API platforms.`,
   `Strong background in legacy codebase modernization, backend system design, API-first development, database design and performance, production reliability, and CI/CD security across SaaS, education, enterprise, and government domains.`,
   `Most recently led backend delivery for a student-university matching platform through its acquisition, staying close to architecture and code while coordinating engineers.`,
 ];
