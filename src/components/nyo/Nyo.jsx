@@ -6,8 +6,11 @@ import { petReaction, requestInterest } from "../../../utils/nyo-behavior";
 import { CONTROL, safePetHitbox, selectedRange, selectionSurface } from "./interactions";
 
 const ASSET = "/assets/nyo/spritesheet.webp";
-const SLEEP_ASSETS = Array.from({ length: 6 }, (_, frame) => `/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png`);
-const CLIMB_ASSETS = Array.from({ length: 6 }, (_, frame) => `/assets/nyo/climb/${String(frame).padStart(2, "0")}.png?v=2`);
+// Bump when climb/sleep frame art changes, to bust any cached copies.
+const ASSET_VERSION = 2;
+const versioned = (path) => `${path}?v=${ASSET_VERSION}`;
+const SLEEP_ASSETS = Array.from({ length: 6 }, (_, frame) => versioned(`/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png`));
+const CLIMB_ASSETS = Array.from({ length: 6 }, (_, frame) => versioned(`/assets/nyo/climb/${String(frame).padStart(2, "0")}.png`));
 const CUSTOM_ASSETS = [...SLEEP_ASSETS, ...CLIMB_ASSETS];
 const SLEEP_FOOT_OFFSET = 72;
 const SIDE_ART_SCALE = 1.05;
