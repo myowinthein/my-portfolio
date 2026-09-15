@@ -12,7 +12,6 @@ import { CONTROL, safePetHitbox, selectedRange, selectionSurface } from "./inter
 const CORE_ASSET = "/assets/nyo/spritesheet-core.webp";
 const EXTRA_ASSET = "/assets/nyo/spritesheet-extra.webp";
 const SLEEP_FOOT_OFFSET = 72;
-const SIDE_ART_SCALE = 1.05;
 const CLIMB_ART_SCALE = 1.06;
 export default function Nyo({ sceneKey, lost = false }) {
   const [loaded, setLoaded] = useState(null);
@@ -188,11 +187,11 @@ export default function Nyo({ sceneKey, lost = false }) {
         y = Math.max(16, window.innerHeight - (desktop.matches ? NYO_HEIGHT + 70 : 180));
       }
       const scale = desktop.matches ? 1 : 0.65;
-      // Side poses contain less painted area than front-facing poses. A small,
-      // uniform correction preserves proportions, and easing avoids a scale pop
-      // when the animation changes between front and side views.
-      const targetArtScale = cell.sheet === "extra" && cell.row === 6 ? CLIMB_ART_SCALE :
-        cell.sheet === "core" && (cell.row === 1 || cell.row === 2) ? SIDE_ART_SCALE : 1;
+      // Climbing art is drawn at a slightly different internal scale than the
+      // rest of the atlas; walk/idle/wave/etc. all already agree at 1 without
+      // a correction, so only climb needs one. Easing avoids a scale pop when
+      // the pose changes.
+      const targetArtScale = cell.sheet === "extra" && cell.row === 6 ? CLIMB_ART_SCALE : 1;
       const scaleBlend = dt === 0 ? 1 : 1 - Math.exp(-dt * 16);
       displayArtScale += (targetArtScale - displayArtScale) * scaleBlend;
       if (Math.abs(targetArtScale - displayArtScale) < 0.0005) displayArtScale = targetArtScale;
