@@ -183,6 +183,12 @@ describe("Nyo physical movement", () => {
     expect(petCell(pet({ mode: "proud" }))).toMatchObject({ sheet: "extra", row: 2 });
     expect(footOffset("core", 1, 0)).toBeLessThan(footOffset("core", 0, 0));
   });
+  it("curls up partway through the sleepy wait instead of snapping straight to sleep", () => {
+    const early = petCell(pet({ mode: "sleepy", wait: 1.5, time: 0.5 }));
+    const late = petCell(pet({ mode: "sleepy", wait: 1.5, time: 1.0 }));
+    expect(early).toMatchObject({ sheet: "core", row: 4 }); // still the ordinary sitting pose
+    expect(late).toEqual({ sheet: "extra", row: 1, frame: 3 }); // curled up, about to sleep
+  });
   it("plays climbing frames forward from upward distance and freezes during wall rests", () => {
     const frames = [0, 7.5, 15, 22.5, 30, 37.5, 45].map((climbDistance) =>
       petCell(pet({ mode: "climb", climbDistance })).frame

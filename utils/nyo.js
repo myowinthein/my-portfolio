@@ -32,6 +32,10 @@ export const NYO_ANIMATIONS = {
   // walk-style cycle - only specific frames are used, briefly, as pose overrides.
   confused: { sheet: "extra", row: 3, frame: 2 },
   startled: { sheet: "extra", row: 3, frame: 3 },
+  // Borrowed from two frames in the sad loop that read as "curled up" on
+  // their own, not distressed - used as a settling-down pose late in
+  // "sleepy", so falling asleep isn't a hard cut from sitting upright.
+  curl: { sheet: "extra", row: 1, frame: 3 },
   // Two forward-only paw cycles per 90px climbing burst. Tying frames to
   // distance freezes the pose during wall rests instead of cycling in place.
   climb: { sheet: "extra", row: 6, frames: 6, cycleDistance: 45 },
@@ -384,6 +388,10 @@ export function petCell(pet) {
   if (action === "sleep") {
     const animation = NYO_ANIMATIONS[action];
     return { sheet: animation.sheet, row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames };
+  }
+  if (action === "sleepy" && pet.time > pet.wait * 0.5) {
+    const curl = NYO_ANIMATIONS.curl;
+    return { sheet: curl.sheet, row: curl.row, frame: curl.frame };
   }
   if (["sit", "sleepy"].includes(action)) action = "wait";
   if (action === "stretch") action = "wave";
