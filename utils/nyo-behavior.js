@@ -103,11 +103,15 @@ export function routeTo(pet, world, destination, jump) {
 
 export function chooseDestination(pet, world, random = Math.random) {
   const floor = world.platforms.find((p) => p.id === "floor");
+  // Don't immediately double back to the platform he just left - without
+  // this, a tall/nearby platform can keep outscoring everything else even
+  // right after leaving it, producing a climb-down/climb-back-up loop.
+  const justLeft = pet.clock < pet.previousUntil ? pet.previous : null;
   const candidates = world.platforms.filter((p) => p.id !== "floor" && p.id !== "selection" && p.id !== pet.ground &&
-    p.top <= (floor?.top ?? Infinity) && !pet.failed.some((f) => f.id === p.id && f.until > pet.clock));
+    p.id !== justLeft && p.top <= (floor?.top ?? Infinity) && !pet.failed.some((f) => f.id === p.id && f.until > pet.clock));
   const ranked = candidates.map((p) => ({ platform: p, score:
     (p.top < pet.y ? 3 * pet.curiosity : 0.4) +
-    (pet.visited.includes(p.id) ? 0 : 2) + random() * 2 - Math.abs((p.left + p.right) / 2 - pet.x) / 500,
+    (pet.visited.includes(p.id) ? -2 : 2) + random() * 2 - Math.abs((p.left + p.right) / 2 - pet.x) / 500,
   })).sort((a, b) => b.score - a.score);
   return ranked.slice(0, 5).map((item) => item.platform);
 }

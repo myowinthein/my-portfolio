@@ -57,6 +57,27 @@ describe("Nyo intentions and personality", () => {
     expect(chooseDestination(pet({ visited: ["old"] }), scene, () => 0)[0].id).toBe("fresh");
     expect(chooseDestination(pet({ failed: [{ id: "fresh", until: 10 }] }), scene, () => 0).map(p => p.id)).not.toContain("fresh");
   });
+  it("avoids immediately doubling back to the platform it just left", () => {
+    const old = { id: "old", left: 100, right: 300, top: 640 };
+    const fresh = { ...old, id: "fresh", top: 620 };
+    const scene = { ...world, platforms: [old, fresh, floor] };
+    const justLeft = pet({ previous: "fresh", previousUntil: 20 });
+    expect(chooseDestination(justLeft, scene, () => 0).map(p => p.id)).not.toContain("fresh");
+  });
+  it("allows revisiting a platform once the just-left cooldown expires", () => {
+    const old = { id: "old", left: 100, right: 300, top: 640 };
+    const fresh = { ...old, id: "fresh", top: 620 };
+    const scene = { ...world, platforms: [old, fresh, floor] };
+    const cooledDown = pet({ previous: "fresh", previousUntil: 5, clock: 20 });
+    expect(chooseDestination(cooledDown, scene, () => 0).map(p => p.id)).toContain("fresh");
+  });
+  it("penalizes recently visited destinations enough to prefer a fresh one at equal appeal", () => {
+    const visitedHigh = { id: "visitedHigh", left: 100, right: 300, top: 690 };
+    const freshLow = { id: "freshLow", left: 100, right: 300, top: 700 };
+    const scene = { ...world, platforms: [visitedHigh, freshLow, floor] };
+    const p = pet({ visited: ["visitedHigh"] });
+    expect(chooseDestination(p, scene, () => 0)[0].id).toBe("freshLow");
+  });
   it("rests, sleeps, regains energy, and stretches before resuming", () => {
     const p = pet({ energy: 15 });
     run(p, world, 0.1);
