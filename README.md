@@ -27,7 +27,7 @@ For Vercel deployment, set both `NEXT_PUBLIC_SITE_URL` and `SITE_URL` in the pro
 ## Usage
 
 ```sh
-npm run dev         # http://localhost:4000 (not the default 3000)
+npm run dev         # http://localhost:3000 by default; falls back if it is busy
 npm run lint        # next/core-web-vitals
 npm test            # vitest run (utils/**/*.test.js only)
 npm run test:watch  # vitest watch mode
