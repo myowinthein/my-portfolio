@@ -80,6 +80,7 @@ export default function Nyo({ sceneKey, lost = false }) {
     const desktop = window.matchMedia("(min-width: 768px) and (pointer: fine)");
     const readWorld = createWorldReader();
     let world = null;
+    let controls = [];
     let pet = null;
     let frameId = null;
     let lastTime = null;
@@ -126,6 +127,9 @@ export default function Nyo({ sceneKey, lost = false }) {
         const view = viewport();
         world.platforms = world.platforms.filter((p) => p.id === "floor" || (p.top >= view.top + 95 && p.top < view.bottom - 12));
         world.walls = world.walls.filter((w) => world.platforms.some((p) => p.id === w.id));
+        // Re-querying the control list is the expensive part of safePetHitbox;
+        // only do it when the world itself is re-measured, not on every frame.
+        controls = [...document.querySelectorAll(CONTROL)];
         lastMeasure = now;
         dirty = false;
       }
@@ -234,7 +238,7 @@ export default function Nyo({ sceneKey, lost = false }) {
       const hitHeight = bounds.height * 0.75;
       hitbox.style.transform = `translate3d(${hitLeft}px, ${hitTop}px, 0)`;
       hitbox.style.width = `${hitWidth}px`; hitbox.style.height = `${hitHeight}px`;
-      const safe = !dragging && !dialog && safePetHitbox(hitbox, hitLeft, hitTop, hitWidth, hitHeight);
+      const safe = !dragging && !dialog && safePetHitbox(hitbox, hitLeft, hitTop, hitWidth, hitHeight, controls);
       hitbox.style.pointerEvents = safe ? "auto" : "none";
       hitbox.tabIndex = safe ? 0 : -1;
       frameId = requestAnimationFrame(tick);
@@ -292,7 +296,14 @@ export default function Nyo({ sceneKey, lost = false }) {
     const resizeObserver = new ResizeObserver(measure);
     if (content) resizeObserver.observe(content);
     window.addEventListener("resize", measure);
-    window.addEventListener("scroll", measure, { passive: true, capture: true });
+    // Scroll fires far more often than animation frames during a fling; rate-limit
+    // it so it can't defeat readWorld()'s own ~500ms throttle in tick().
+    let scrollDirtyAt = 0;
+    const onScroll = () => {
+      const now = performance.now();
+      if (now - scrollDirtyAt > 150) { scrollDirtyAt = now; measure(); }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
     window.addEventListener("pointermove", onPointer, { passive: true });
     window.addEventListener("pointerdown", onDown, { passive: true });
     window.addEventListener("pointerup", onUp, { passive: true });
@@ -308,7 +319,7 @@ export default function Nyo({ sceneKey, lost = false }) {
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener("resize", measure);
-      window.removeEventListener("scroll", measure, true);
+      window.removeEventListener("scroll", onScroll, true);
       window.removeEventListener("pointermove", onPointer);
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
