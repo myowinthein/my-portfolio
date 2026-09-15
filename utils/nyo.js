@@ -11,39 +11,55 @@ const MIN_CROSS_JUMP = 28;
 const BODY_RADIUS = 19;
 const FOOT_RADIUS = 10;
 
+// Two atlases, loaded in priority order (see Nyo.jsx): "core" covers the poses
+// needed the instant Nyo can appear at all, "extra" covers everything that only
+// shows up after some interaction has already happened, and warms up lazily.
+export const CORE_COLS = 8;
+export const CORE_ROWS = 5;
+export const EXTRA_COLS = 8;
+export const EXTRA_ROWS = 8;
+
 export const NYO_ANIMATIONS = {
-  idle: { row: 0, frames: 6, fps: 6 },
-  right: { row: 1, frames: 8, fps: 9 },
-  left: { row: 2, frames: 8, fps: 9 },
-  wave: { row: 3, frames: 4, fps: 6 },
-  jump: { row: 4, frames: 5, fps: 6 },
-  sad: { row: 5, frames: 8, fps: 8 },
-  wait: { row: 6, frames: 6, fps: 6 },
-  // Row 7 is a set of held single-frame expressions in the source atlas, not a
+  idle: { sheet: "core", row: 0, frames: 6, fps: 6 },
+  right: { sheet: "core", row: 1, frames: 8, fps: 9 },
+  left: { sheet: "core", row: 2, frames: 8, fps: 9 },
+  jump: { sheet: "core", row: 3, frames: 5, fps: 6 },
+  wait: { sheet: "core", row: 4, frames: 6, fps: 6 },
+  wave: { sheet: "extra", row: 0, frames: 4, fps: 6 },
+  sad: { sheet: "extra", row: 1, frames: 8, fps: 8 },
+  proud: { sheet: "extra", row: 2, frames: 6, fps: 6 },
+  // Row 3 is a set of held single-frame expressions in the source art, not a
   // walk-style cycle - only specific frames are used, briefly, as pose overrides.
-  confused: { row: 7, frame: 2 },
-  startled: { row: 7, frame: 3 },
+  confused: { sheet: "extra", row: 3, frame: 2 },
+  startled: { sheet: "extra", row: 3, frame: 3 },
   // Two forward-only paw cycles per 90px climbing burst. Tying frames to
   // distance freezes the pose during wall rests instead of cycling in place.
-  climb: { row: 0, frames: 6, cycleDistance: 45, asset: "climb" },
-  proud: { row: 8, frames: 6, fps: 6 },
-  sleep: { row: 0, frames: 6, fps: 3, asset: "sleep" },
+  climb: { sheet: "extra", row: 6, frames: 6, cycleDistance: 45 },
+  sleep: { sheet: "extra", row: 7, frames: 6, fps: 3 },
 };
 
 // Source silhouette bottoms: each pose meets the same physical foot position.
-const SOLES = [
-  [203, 203, 203, 203, 203, 203],
-  [184, 186, 184, 183, 186, 185, 184, 185],
-  [184, 186, 184, 183, 186, 185, 184, 185],
-  [203, 203, 202, 203], [200, 203, 203, 203, 198],
-  [203, 202, 197, 150, 165, 203, 202, 203],
+// Rows without an explicit entry (proud, confused/startled, climb, sleep) fall
+// back to the default below - sleep gets its own hardcoded offset in Nyo.jsx.
+const SOLES_CORE = [
+  [203, 203, 203, 203, 203, 203],           // idle
+  [184, 186, 184, 183, 186, 185, 184, 185], // right
+  [184, 186, 184, 183, 186, 185, 184, 185], // left
+  [200, 203, 203, 203, 198],                 // jump
 ];
-export const footOffset = (row, frame) => (SOLES[row]?.[frame] ?? 203) * NYO_HEIGHT / 208;
+const SOLES_EXTRA = [
+  [203, 203, 202, 203],                     // wave
+  [203, 202, 197, 150, 165, 203, 202, 203], // sad
+];
+export const footOffset = (sheet, row, frame) => {
+  const table = sheet === "extra" ? SOLES_EXTRA : SOLES_CORE;
+  return (table[row]?.[frame] ?? 203) * NYO_HEIGHT / 208;
+};
 
 export function gazeCell(dx, dy) {
   const angle = (Math.atan2(dx, -dy) * 180 / Math.PI + 360) % 360;
   const index = Math.round(angle / 22.5) % 16;
-  return { row: 9 + Math.floor(index / 8), frame: index % 8 };
+  return { sheet: "extra", row: 4 + Math.floor(index / 8), frame: index % 8 };
 }
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -348,32 +364,32 @@ export function petCell(pet) {
   // Never mask a mode where the pose itself is load-bearing (mid-climb, asleep).
   if (pet.poseOverride && pet.poseUntil > pet.clock && !["hang", "climb", "sleep"].includes(pet.mode)) {
     const override = NYO_ANIMATIONS[pet.poseOverride];
-    return { row: override.row, frame: override.frame };
+    return { sheet: override.sheet, row: override.row, frame: override.frame };
   }
   let action = pet.mode;
-  if (action === "hang") return { row: 0, frame: 0, asset: "climb" };
+  if (action === "hang") return { sheet: NYO_ANIMATIONS.climb.sheet, row: NYO_ANIMATIONS.climb.row, frame: 0 };
   if (action === "climb") {
     const animation = NYO_ANIMATIONS.climb;
     const distance = Math.max(0, pet.climbDistance ?? 0);
     const frame = Math.floor(distance * animation.frames / animation.cycleDistance) % animation.frames;
-    return { row: animation.row, frame, asset: animation.asset };
+    return { sheet: animation.sheet, row: animation.row, frame };
   }
   if (action === "sleep") {
     const animation = NYO_ANIMATIONS[action];
-    return { row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames, asset: animation.asset };
+    return { sheet: animation.sheet, row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames };
   }
   if (["sit", "sleepy"].includes(action)) action = "wait";
   if (action === "stretch") action = "wave";
   if (action === "prepare") action = "wait";
-  if (action === "fall") return { row: 4, frame: 3 };
-  if (action === "land") return { row: 4, frame: 4 };
-  if (action === "jump") return { row: 4, frame: pet.vy < -200 ? 1 : 2 };
+  if (action === "fall") return { sheet: "core", row: 3, frame: 3 };
+  if (action === "land") return { sheet: "core", row: 3, frame: 4 };
+  if (action === "jump") return { sheet: "core", row: 3, frame: pet.vy < -200 ? 1 : 2 };
   if (action === "walk") {
     const animation = NYO_ANIMATIONS[pet.direction > 0 ? "right" : "left"];
     // No new art for "alert" - chasing something fun just runs a bit faster.
     const fps = pet.intent?.kind === "chase" ? animation.fps * 1.4 : animation.fps;
-    return { row: animation.row, frame: Math.floor(pet.time * fps) % animation.frames };
+    return { sheet: animation.sheet, row: animation.row, frame: Math.floor(pet.time * fps) % animation.frames };
   }
   const animation = NYO_ANIMATIONS[action] ?? NYO_ANIMATIONS.idle;
-  return { row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames };
+  return { sheet: animation.sheet, row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames };
 }
