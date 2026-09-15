@@ -1,0 +1,54 @@
+.nyo-sprite {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 91px;
+  z-index: 2000;
+  background: url('/assets/nyo/spritesheet.webp') no-repeat;
+  background-size: 672px 1001px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  will-change: transform;
+  transform-origin: top left;
+  contain: strict;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nyo-sprite { transition: none; }
+}
+
+.nyo-reaction {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2002;
+  min-width: 36px;
+  padding: 3px 6px;
+  border-radius: 12px;
+  color: #f1dca6;
+  background: #123337;
+  font: 18px/1.3 sans-serif;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+}
+
+.nyo-hitbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2001;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  // The site already renders a yellow animated cursor for buttons. Override
+  // the global button pointer so hovering Nyo never shows both cursors.
+  cursor: none !important;
+  pointer-events: none;
+  &:focus-visible { outline: 2px dashed #ffc06b; outline-offset: 5px; }
+}

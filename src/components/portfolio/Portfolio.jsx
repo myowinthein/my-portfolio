@@ -19,7 +19,7 @@ const Portfolio = () => {
         <Tabs>
           <TabList className="portfolio-tab-list" data-aos="fade-up">
             {PortfolioData.map((portfolio) => (
-              <Tab key={portfolio.title}>{portfolio.title}</Tab>
+              <Tab key={portfolio.title} data-nyo-platform="">{portfolio.title}</Tab>
             ))}
           </TabList>
 
