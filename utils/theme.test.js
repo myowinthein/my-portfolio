@@ -34,4 +34,12 @@ describe('handleSwitchValue', () => {
     handleSwitchValue(true);
     expect(localStorage.setItem.mock.calls[0][0]).toBe('theme-color');
   });
+
+  it('dispatches a theme-change event for unrelated listeners to react to', () => {
+    const listener = vi.fn();
+    window.addEventListener('theme-change', listener);
+    handleSwitchValue(true);
+    expect(listener).toHaveBeenCalledTimes(1);
+    window.removeEventListener('theme-change', listener);
+  });
 });

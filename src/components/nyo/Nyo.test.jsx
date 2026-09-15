@@ -62,6 +62,13 @@ describe("Nyo always-on visibility", () => {
     expect(document.querySelector(".nyo-reaction").textContent).toMatch(/♥|✨|👋/);
     expect(document.querySelector(".nyo-sprite")).toHaveStyle({ opacity: "1" });
   });
+  it("shows a startled reaction when the light/dark theme switches", () => {
+    render(<Nyo sceneKey={0} />);
+    loadSprite();
+    act(() => { pendingFrame(performance.now()); });
+    act(() => { window.dispatchEvent(new Event("theme-change")); pendingFrame(performance.now() + 16); });
+    expect(document.querySelector(".nyo-reaction").textContent).toBe("😮");
+  });
   it.each([0, 900, 2232])("lands on the window floor instead of respawning at scroll position %s", (scrollY) => {
     vi.spyOn(document.documentElement, "clientWidth", "get").mockReturnValue(1000);
     vi.spyOn(document.documentElement, "scrollHeight", "get").mockReturnValue(3000);

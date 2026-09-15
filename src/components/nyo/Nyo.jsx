@@ -289,6 +289,13 @@ export default function Nyo({ sceneKey, lost = false }) {
       if (!document.hidden) { measure(); frameId = requestAnimationFrame(tick); }
     };
     const onBlur = () => { dragging = false; };
+    // A sudden light/dark flip is startling, same as a ceiling bump or a
+    // missed jump - reuse that reaction rather than invent a new one.
+    const onThemeChange = () => {
+      if (!pet) return;
+      pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.2;
+      pet.poseOverride = "startled"; pet.poseUntil = pet.clock + 1.2;
+    };
     const observer = new MutationObserver(measure);
     const content = document.querySelector(".tab-panel_list, .error_page");
     if (content) observer.observe(content, { childList: true, subtree: true });
@@ -308,6 +315,7 @@ export default function Nyo({ sceneKey, lost = false }) {
     window.addEventListener("pointerup", onUp, { passive: true });
     window.addEventListener("pointercancel", onUp, { passive: true });
     window.addEventListener("blur", onBlur);
+    window.addEventListener("theme-change", onThemeChange);
     document.addEventListener("selectionchange", onSelection);
     document.addEventListener("visibilitychange", onVisibility);
     reducedMotion.addEventListener("change", reset);
@@ -324,6 +332,7 @@ export default function Nyo({ sceneKey, lost = false }) {
       window.removeEventListener("pointerup", onUp);
       window.removeEventListener("pointercancel", onUp);
       window.removeEventListener("blur", onBlur);
+      window.removeEventListener("theme-change", onThemeChange);
       document.removeEventListener("selectionchange", onSelection);
       window.clearTimeout(selectionTimer);
       reactRef.current = () => {};

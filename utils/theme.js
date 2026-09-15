@@ -9,5 +9,8 @@ export function handleSwitchValue(value) {
     body.classList.add("light");
     body.classList.remove("dark");
   }
+  // No React context/props thread here - a plain event lets unrelated
+  // listeners (e.g. Nyo reacting to the sudden light change) opt in.
+  window.dispatchEvent(new Event("theme-change"));
 }
 
