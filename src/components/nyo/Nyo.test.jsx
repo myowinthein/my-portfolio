@@ -93,7 +93,7 @@ describe("Nyo always-on visibility", () => {
     expect(images).toHaveLength(1);
     loadSprite();
     expect(images.slice(1).map((image) => image.src)).toEqual([
-      ...Array.from({ length: 6 }, (_, frame) => `/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png`),
+      ...Array.from({ length: 6 }, (_, frame) => `/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png?v=2`),
       ...Array.from({ length: 6 }, (_, frame) => `/assets/nyo/climb/${String(frame).padStart(2, "0")}.png?v=2`),
     ]);
   });
