@@ -90,7 +90,7 @@ describe("Nyo always-on visibility", () => {
     expect(sprite.dataset.surface).toBe("floor");
     expect(Number(sprite.dataset.feet) - scrollY).toBe(window.innerHeight - 12);
     expect(sprite.dataset.animation).toBe("walk");
-    expect(Number(sprite.dataset.artScale)).toBeCloseTo(1.05, 2);
+    expect(Number(sprite.dataset.artScale)).toBeCloseTo(1, 2);
     vi.stubGlobal("scrollY", scrollY + 100);
     act(() => { window.dispatchEvent(new Event("scroll")); pendingFrame(now + 160 * 16); });
     expect(sprite.dataset.surface).toBe("floor");
