@@ -19,6 +19,10 @@ export const NYO_ANIMATIONS = {
   jump: { row: 4, frames: 5, fps: 6 },
   sad: { row: 5, frames: 8, fps: 8 },
   wait: { row: 6, frames: 6, fps: 6 },
+  // Row 7 is a set of held single-frame expressions in the source atlas, not a
+  // walk-style cycle - only specific frames are used, briefly, as pose overrides.
+  confused: { row: 7, frame: 2 },
+  startled: { row: 7, frame: 3 },
   // Two forward-only paw cycles per 90px climbing burst. Tying frames to
   // distance freezes the pose during wall rests instead of cycling in place.
   climb: { row: 0, frames: 6, cycleDistance: 45, asset: "climb" },
@@ -60,6 +64,9 @@ export function createPet(world, viewport, random = Math.random) {
     visited: [], failed: [], intent: null, jumpGoal: null,
     selectionAfter: 0, chaseAfter: 0, reactionAfter: 0,
     emote: "", emoteUntil: 0, restAfter: 8, climbDistance: 0,
+    // Brief single-frame face override, same pattern as emote/emoteUntil, but
+    // for body pose. Doesn't touch pet.mode, so it never disturbs physics.
+    poseOverride: null, poseUntil: 0,
   };
 }
 
@@ -131,6 +138,7 @@ function planWalk(pet, world, random) {
     if (pet.intent && !pet.target) {
       pet.failed.push({ id: pet.intent.id, until: pet.clock + 15 });
       pet.intent = null; pet.emote = "?"; pet.emoteUntil = pet.clock + 1.2;
+      pet.poseOverride = "confused"; pet.poseUntil = pet.clock + 1.2;
     }
   }
   if (pet.target) {
@@ -168,6 +176,7 @@ function landOn(pet, platform) {
   if (pet.jumpGoal && pet.jumpGoal !== platform.id && !reachedPoint) {
     pet.failed.push({ id: pet.jumpGoal, until: pet.clock + 18 });
     pet.intent = null; pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.5;
+    pet.poseOverride = "startled"; pet.poseUntil = pet.clock + 1.5;
   }
   pet.jumpGoal = null;
   if (platform.id !== "floor") pet.visited = [...pet.visited.filter((id) => id !== platform.id), platform.id].slice(-5);
@@ -315,7 +324,10 @@ function enforceCeiling(pet, world) {
   pet.wall = null;
   pet.target = null;
   pet.intent = null;
-  if (bumped) { pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.2; }
+  if (bumped) {
+    pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.2;
+    pet.poseOverride = "startled"; pet.poseUntil = pet.clock + 1.2;
+  }
   enter(pet, "fall");
 }
 
@@ -333,6 +345,11 @@ export function stepPet(pet, world, seconds, random = Math.random) {
 }
 
 export function petCell(pet) {
+  // Never mask a mode where the pose itself is load-bearing (mid-climb, asleep).
+  if (pet.poseOverride && pet.poseUntil > pet.clock && !["hang", "climb", "sleep"].includes(pet.mode)) {
+    const override = NYO_ANIMATIONS[pet.poseOverride];
+    return { row: override.row, frame: override.frame };
+  }
   let action = pet.mode;
   if (action === "hang") return { row: 0, frame: 0, asset: "climb" };
   if (action === "climb") {
@@ -347,11 +364,16 @@ export function petCell(pet) {
   }
   if (["sit", "sleepy"].includes(action)) action = "wait";
   if (action === "stretch") action = "wave";
-  if (action === "walk") action = pet.direction > 0 ? "right" : "left";
   if (action === "prepare") action = "wait";
   if (action === "fall") return { row: 4, frame: 3 };
   if (action === "land") return { row: 4, frame: 4 };
   if (action === "jump") return { row: 4, frame: pet.vy < -200 ? 1 : 2 };
+  if (action === "walk") {
+    const animation = NYO_ANIMATIONS[pet.direction > 0 ? "right" : "left"];
+    // No new art for "alert" - chasing something fun just runs a bit faster.
+    const fps = pet.intent?.kind === "chase" ? animation.fps * 1.4 : animation.fps;
+    return { row: animation.row, frame: Math.floor(pet.time * fps) % animation.frames };
+  }
   const animation = NYO_ANIMATIONS[action] ?? NYO_ANIMATIONS.idle;
   return { row: animation.row, frame: Math.floor(pet.time * animation.fps) % animation.frames };
 }

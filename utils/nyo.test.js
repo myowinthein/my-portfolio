@@ -25,6 +25,8 @@ describe("Nyo physical movement", () => {
     expect(character.x).toBeCloseTo(252.25);
     expect(character.ground).toBeNull();
     expect(character.emote).toBe("😮");
+    expect(character.poseOverride).toBe("startled");
+    expect(petCell(character)).toEqual({ row: 7, frame: 3 });
     const impactHeight = character.y;
     stepPet(character, scene, 0.05);
     expect(character.y).toBeGreaterThan(impactHeight);
@@ -198,6 +200,29 @@ describe("Nyo physical movement", () => {
     expect(petCell(pet({ mode: "sleep", time: 0 }))).toEqual({ row: 0, frame: 0, asset: "sleep" });
     expect(petCell(pet({ mode: "sleep", time: 1 }))).toEqual({ row: 0, frame: 3, asset: "sleep" });
     expect(petCell(pet({ mode: "sleep", time: 2 }))).toEqual({ row: 0, frame: 0, asset: "sleep" });
+  });
+  it("shows a puzzled pose when a route to an unreachable target fails", () => {
+    const faraway = { id: "faraway", left: 5000, right: 5100, top: 0 };
+    const scene = { ...world, platforms: [...world.platforms, faraway] };
+    const character = pet({ mode: "wait", time: 10, wait: 0.5,
+      intent: { id: "faraway", x: 5050, y: 0, kind: "explore", until: Infinity } });
+    stepPet(character, scene, 0.02);
+    expect(character.intent).toBeNull();
+    expect(character.failed.map((f) => f.id)).toContain("faraway");
+    expect(character.poseOverride).toBe("confused");
+    expect(petCell(character)).toEqual({ row: 7, frame: 2 });
+  });
+  it("never lets a brief pose override mask a load-bearing pose", () => {
+    const climbing = pet({ mode: "climb", climbDistance: 0, poseOverride: "startled", poseUntil: Infinity });
+    expect(petCell(climbing)).toEqual({ row: 0, frame: 0, asset: "climb" });
+    const sleeping = pet({ mode: "sleep", time: 0, poseOverride: "confused", poseUntil: Infinity });
+    expect(petCell(sleeping)).toEqual({ row: 0, frame: 0, asset: "sleep" });
+  });
+  it("runs a faster stride while chasing than while idly wandering", () => {
+    const wandering = petCell(pet({ mode: "walk", direction: 1, time: 0.3 }));
+    const chasing = petCell(pet({ mode: "walk", direction: 1, time: 0.3, intent: { kind: "chase" } }));
+    expect(wandering).toEqual({ row: 1, frame: 2 });
+    expect(chasing).toEqual({ row: 1, frame: 3 });
   });
 });
 describe("Nyo gaze", () => {
