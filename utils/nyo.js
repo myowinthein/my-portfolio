@@ -248,7 +248,11 @@ function advance(pet, world, dt, random) {
     return;
   }
   if (pet.mode === "sleep") {
-    if (pet.time >= pet.wait) { pet.wait = 1.4; enter(pet, "stretch"); }
+    if (pet.time >= pet.wait) {
+      pet.wait = 1.4;
+      pet.emote = "😃"; pet.emoteUntil = pet.clock + 2;
+      enter(pet, "stretch");
+    }
     return;
   }
   if (["idle", "proud", "sad", "wait", "wave", "sit", "stretch"].includes(pet.mode)) {
