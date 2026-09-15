@@ -141,3 +141,15 @@ export function petReaction(pet, random = Math.random) {
   }
   return true;
 }
+
+// A sudden light/dark flip is startling, but reacting to every single toggle
+// would read as robotic rather than alive - same cooldown-plus-chance shape
+// as requestInterest, tuned for a rarer, more dramatic stimulus.
+export function startleFromTheme(pet, random = Math.random) {
+  if (pet.clock < pet.themeAfter) return false;
+  pet.themeAfter = pet.clock + 25;
+  if (random() >= 0.4) return false;
+  pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.2;
+  pet.poseOverride = "startled"; pet.poseUntil = pet.clock + 1.2;
+  return true;
+}

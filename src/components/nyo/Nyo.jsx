@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CORE_COLS, CORE_ROWS, createPet, EXTRA_COLS, EXTRA_ROWS, footOffset, gazeCell, NYO_HEIGHT, NYO_WIDTH, petCell, stepPet } from "../../../utils/nyo";
 import { createWorldReader } from "./world";
-import { petReaction, requestInterest } from "../../../utils/nyo-behavior";
+import { petReaction, requestInterest, startleFromTheme } from "../../../utils/nyo-behavior";
 import { CONTROL, safePetHitbox, selectedRange, selectionSurface } from "./interactions";
 
 // Two atlases: "core" (idle/walk/jump/fall/land/wait) is needed the instant
@@ -291,11 +291,7 @@ export default function Nyo({ sceneKey, lost = false }) {
     const onBlur = () => { dragging = false; };
     // A sudden light/dark flip is startling, same as a ceiling bump or a
     // missed jump - reuse that reaction rather than invent a new one.
-    const onThemeChange = () => {
-      if (!pet) return;
-      pet.emote = "😮"; pet.emoteUntil = pet.clock + 1.2;
-      pet.poseOverride = "startled"; pet.poseUntil = pet.clock + 1.2;
-    };
+    const onThemeChange = () => { if (pet) startleFromTheme(pet); };
     const observer = new MutationObserver(measure);
     const content = document.querySelector(".tab-panel_list, .error_page");
     if (content) observer.observe(content, { childList: true, subtree: true });
