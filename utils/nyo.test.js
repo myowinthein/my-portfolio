@@ -218,6 +218,18 @@ describe("Nyo physical movement", () => {
     const sleeping = pet({ mode: "sleep", time: 0, poseOverride: "confused", poseUntil: Infinity });
     expect(petCell(sleeping)).toEqual({ sheet: "extra", row: 7, frame: 0 });
   });
+  it("stops in place to react instead of continuing to walk under a frozen face", () => {
+    const character = pet({ mode: "walk", direction: 1, poseOverride: "startled", poseUntil: Infinity });
+    stepPet(character, world, 0.5);
+    expect(character.x).toBe(250);
+    expect(character.mode).toBe("walk");
+    expect(character.poseOverride).toBe("startled");
+  });
+  it("resumes walking once the pose override expires", () => {
+    const character = pet({ mode: "walk", direction: 1, poseOverride: "startled", poseUntil: 0.1 });
+    simulate(character, world, 0.5);
+    expect(character.x).toBeGreaterThan(250);
+  });
   it("runs a faster stride while chasing than while idly wandering", () => {
     const wandering = petCell(pet({ mode: "walk", direction: 1, time: 0.3 }));
     const chasing = petCell(pet({ mode: "walk", direction: 1, time: 0.3, intent: { kind: "chase" } }));
