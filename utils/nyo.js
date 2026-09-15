@@ -125,7 +125,9 @@ function planWalk(pet, world, random) {
   if (!support) { enter(pet, "fall"); pet.ground = null; return; }
   pet.target = null;
   if (pet.energy < 24 && support.right - support.left > 90) {
-    pet.intent = null; pet.wait = 1.5; enter(pet, "sleepy"); return;
+    pet.intent = null; pet.wait = 1.5;
+    pet.emote = "🥱"; pet.emoteUntil = pet.clock + 2;
+    enter(pet, "sleepy"); return;
   }
   if (!pet.intent && pet.clock > pet.restAfter && random() < 0.2) {
     pet.restAfter = pet.clock + 12;

@@ -61,6 +61,7 @@ describe("Nyo intentions and personality", () => {
     const p = pet({ energy: 15 });
     run(p, world, 0.1);
     expect(p.mode).toBe("sleepy");
+    expect(p.emote).toBe("🥱");
     run(p, world, 2);
     expect(p.mode).toBe("sleep");
     run(p, world, 19);
