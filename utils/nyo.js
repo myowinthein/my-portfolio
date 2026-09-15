@@ -78,7 +78,7 @@ export function createPet(world, viewport, random = Math.random) {
     previous: null, hops: 0, wait: 1.2,
     clock: 0, energy: 90, curiosity: 0.8, playfulness: 0.65,
     visited: [], failed: [], intent: null, jumpGoal: null,
-    selectionAfter: 0, chaseAfter: 0, reactionAfter: 0,
+    selectionAfter: 0, chaseAfter: 0, reactionAfter: 0, themeAfter: 0,
     emote: "", emoteUntil: 0, restAfter: 8, climbDistance: 0,
     // Brief single-frame face override, same pattern as emote/emoteUntil, but
     // for body pose. Doesn't touch pet.mode, so it never disturbs physics.

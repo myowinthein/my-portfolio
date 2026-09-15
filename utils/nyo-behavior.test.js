@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createPet, jumpVelocity, stepPet } from "./nyo";
-import { chooseDestination, petReaction, requestInterest, routeTo } from "./nyo-behavior";
+import { chooseDestination, petReaction, requestInterest, routeTo, startleFromTheme } from "./nyo-behavior";
 
 const floor = { id: "floor", top: 700, left: 24, right: 976 };
 const world = { width: 1000, height: 720, platforms: [floor], walls: [] };
@@ -91,6 +91,18 @@ describe("Nyo intentions and personality", () => {
     expect(p.target.launchX).toBeLessThan(floor.right);
     run(p, world, 3);
     expect(p.intent).toBeNull();
+  });
+  it("startles from a theme switch sometimes, not every time, and rate limits attempts", () => {
+    const p = pet();
+    expect(startleFromTheme(p, () => 0.5)).toBe(false); // above the 0.4 chance
+    expect(p.emote).toBe("");
+    p.clock = 26; // past the cooldown the failed attempt above still set
+    expect(startleFromTheme(p, () => 0.1)).toBe(true);
+    expect(p.emote).toBe("😮");
+    expect(p.poseOverride).toBe("startled");
+    expect(startleFromTheme(p, () => 0.1)).toBe(false); // cooldown, even though the roll would pass
+    p.clock = 52;
+    expect(startleFromTheme(p, () => 0.1)).toBe(true);
   });
   it("petting wakes a sleeping pet and rate limits emoji", () => {
     const p = pet({ mode: "sleep", energy: 20 });

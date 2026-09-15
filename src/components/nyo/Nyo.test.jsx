@@ -62,12 +62,21 @@ describe("Nyo always-on visibility", () => {
     expect(document.querySelector(".nyo-reaction").textContent).toMatch(/♥|✨|👋/);
     expect(document.querySelector(".nyo-sprite")).toHaveStyle({ opacity: "1" });
   });
-  it("shows a startled reaction when the light/dark theme switches", () => {
+  it("sometimes shows a startled reaction when the light/dark theme switches", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0.1); // within the 40% reaction chance
     render(<Nyo sceneKey={0} />);
     loadSprite();
     act(() => { pendingFrame(performance.now()); });
     act(() => { window.dispatchEvent(new Event("theme-change")); pendingFrame(performance.now() + 16); });
     expect(document.querySelector(".nyo-reaction").textContent).toBe("😮");
+  });
+  it("skips the theme-switch reaction when the cooldown/chance roll doesn't land", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0.9); // outside the 40% reaction chance
+    render(<Nyo sceneKey={0} />);
+    loadSprite();
+    act(() => { pendingFrame(performance.now()); });
+    act(() => { window.dispatchEvent(new Event("theme-change")); pendingFrame(performance.now() + 16); });
+    expect(document.querySelector(".nyo-reaction").textContent).toBe("");
   });
   it.each([0, 900, 2232])("lands on the window floor instead of respawning at scroll position %s", (scrollY) => {
     vi.spyOn(document.documentElement, "clientWidth", "get").mockReturnValue(1000);
