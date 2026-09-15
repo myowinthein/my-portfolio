@@ -80,22 +80,19 @@ describe("Nyo always-on visibility", () => {
     expect(sprite.dataset.surface).toBe("floor");
     expect(Number(sprite.dataset.feet) - window.scrollY).toBe(window.innerHeight - 12);
   });
-  it("requests the artwork immediately and appears on the first animation frame", () => {
+  it("requests the core artwork immediately and appears on the first animation frame", () => {
     render(<Nyo sceneKey={0} />);
-    expect(images[0].src).toBe("/assets/nyo/spritesheet.webp");
+    expect(images[0].src).toBe("/assets/nyo/spritesheet-core.webp");
     loadSprite();
     act(() => { pendingFrame(performance.now()); });
     expect(document.querySelector(".nyo-sprite")).toHaveStyle({ opacity: "1" });
   });
 
-  it("preloads every sleep and climb frame after the main atlas is ready", () => {
+  it("requests the extra artwork only after the core atlas is ready", () => {
     render(<Nyo sceneKey={0} />);
     expect(images).toHaveLength(1);
     loadSprite();
-    expect(images.slice(1).map((image) => image.src)).toEqual([
-      ...Array.from({ length: 6 }, (_, frame) => `/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png?v=2`),
-      ...Array.from({ length: 6 }, (_, frame) => `/assets/nyo/climb/${String(frame).padStart(2, "0")}.png?v=2`),
-    ]);
+    expect(images.slice(1).map((image) => image.src)).toEqual(["/assets/nyo/spritesheet-extra.webp"]);
   });
 
   it("retries failed artwork with backoff and renders the successful retry URL", () => {

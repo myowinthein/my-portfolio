@@ -1,78 +1,78 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { createPet, footOffset, gazeCell, NYO_HEIGHT, NYO_WIDTH, petCell, stepPet } from "../../../utils/nyo";
+import { CORE_COLS, CORE_ROWS, createPet, EXTRA_COLS, EXTRA_ROWS, footOffset, gazeCell, NYO_HEIGHT, NYO_WIDTH, petCell, stepPet } from "../../../utils/nyo";
 import { createWorldReader } from "./world";
 import { petReaction, requestInterest } from "../../../utils/nyo-behavior";
 import { CONTROL, safePetHitbox, selectedRange, selectionSurface } from "./interactions";
 
-const ASSET = "/assets/nyo/spritesheet.webp";
-// Bump when climb/sleep frame art changes, to bust any cached copies.
-const ASSET_VERSION = 2;
-const versioned = (path) => `${path}?v=${ASSET_VERSION}`;
-const SLEEP_ASSETS = Array.from({ length: 6 }, (_, frame) => versioned(`/assets/nyo/sleep/${String(frame).padStart(2, "0")}.png`));
-const CLIMB_ASSETS = Array.from({ length: 6 }, (_, frame) => versioned(`/assets/nyo/climb/${String(frame).padStart(2, "0")}.png`));
-const CUSTOM_ASSETS = [...SLEEP_ASSETS, ...CLIMB_ASSETS];
+// Two atlases: "core" (idle/walk/jump/fall/land/wait) is needed the instant
+// Nyo can appear at all; "extra" (wave/sad/proud/confused/startled/gaze/climb/
+// sleep) only ever shows up after some interaction, so it warms up lazily
+// after core, rather than blocking first paint.
+const CORE_ASSET = "/assets/nyo/spritesheet-core.webp";
+const EXTRA_ASSET = "/assets/nyo/spritesheet-extra.webp";
 const SLEEP_FOOT_OFFSET = 72;
 const SIDE_ART_SCALE = 1.05;
 const CLIMB_ART_SCALE = 1.06;
-const customSource = (cell) => cell.asset === "sleep" ? SLEEP_ASSETS[cell.frame] : cell.asset === "climb" ? CLIMB_ASSETS[cell.frame] : null;
 export default function Nyo({ sceneKey, lost = false }) {
   const [loaded, setLoaded] = useState(null);
   const spriteRef = useRef(null);
   const reactionRef = useRef(null);
   const hitboxRef = useRef(null);
   const reactRef = useRef(() => {});
-  const readyAssetsRef = useRef(new Set());
-  const preloadImagesRef = useRef([]);
+  const extraReadyRef = useRef(false);
   const sceneRef = useRef(sceneKey);
   useEffect(() => { sceneRef.current = sceneKey; }, [sceneKey]);
 
   useEffect(() => {
-    let image;
-    let timer;
-    let attempts = 0;
-    let complete = false;
     let disposed = false;
-    const readyAssets = readyAssetsRef.current;
-    const load = () => {
-      if (complete) return;
-      window.clearTimeout(timer);
-      if (image) { image.onload = null; image.onerror = null; }
-      image = new window.Image();
-      const url = attempts ? `${ASSET}?retry=${attempts}` : ASSET;
-      image.onload = () => {
+    let stopExtra = () => {};
+    // Retry a single image URL with exponential backoff, capped at 30s, and
+    // resuming immediately when connectivity returns. `decode` waits for the
+    // image to finish decoding before calling onReady - core skips this and
+    // reports ready the instant it loads, since it must appear fast; extra
+    // uses it, since it swaps in later and can afford to avoid a decode flash.
+    const loadWithRetry = (url, onReady, { decode = false } = {}) => {
+      let image;
+      let timer;
+      let attempts = 0;
+      let complete = false;
+      const load = () => {
+        if (complete) return;
+        window.clearTimeout(timer);
+        if (image) { image.onload = null; image.onerror = null; }
+        image = new window.Image();
+        image.onload = () => {
+          complete = true;
+          if (!decode) { onReady(image.src); return; }
+          const decoded = typeof image.decode === "function" ? image.decode() : Promise.resolve();
+          Promise.resolve(decoded).catch(() => {}).finally(() => onReady(image.src));
+        };
+        image.onerror = () => {
+          attempts += 1;
+          timer = window.setTimeout(load, Math.min(1000 * 2 ** Math.min(attempts - 1, 5), 30000));
+        };
+        image.src = attempts ? `${url}?retry=${attempts}` : url;
+      };
+      load();
+      window.addEventListener("online", load);
+      return () => {
         complete = true;
-        setLoaded(url);
-        // Retain and decode custom frames before the renderer switches to them.
-        // This avoids blank first-cycle flashes while keeping initial display fast.
-        preloadImagesRef.current = CUSTOM_ASSETS.map((source) => {
-          const frame = new window.Image();
-          frame.onload = () => {
-            const decoded = typeof frame.decode === "function" ? frame.decode() : Promise.resolve();
-            Promise.resolve(decoded).catch(() => {}).finally(() => { if (!disposed) readyAssets.add(source); });
-          };
-          frame.src = source;
-          return frame;
-        });
+        window.clearTimeout(timer);
+        if (image) { image.onload = null; image.onerror = null; }
+        window.removeEventListener("online", load);
       };
-      image.onerror = () => {
-        attempts += 1;
-        timer = window.setTimeout(load, Math.min(1000 * 2 ** Math.min(attempts - 1, 5), 30000));
-      };
-      image.src = url;
     };
-    load();
-    window.addEventListener("online", load);
+    const stopCore = loadWithRetry(CORE_ASSET, (url) => {
+      if (disposed) return;
+      setLoaded(url);
+      stopExtra = loadWithRetry(EXTRA_ASSET, () => { if (!disposed) extraReadyRef.current = true; }, { decode: true });
+    });
     return () => {
       disposed = true;
-      complete = true;
-      window.clearTimeout(timer);
-      image.onload = null;
-      image.onerror = null;
-      preloadImagesRef.current.forEach((frame) => { frame.onload = null; frame.onerror = null; });
-      preloadImagesRef.current = [];
-      readyAssets.clear();
-      window.removeEventListener("online", load);
+      stopCore();
+      stopExtra();
+      extraReadyRef.current = false;
     };
   }, []);
 
@@ -178,12 +178,12 @@ export default function Nyo({ sceneKey, lost = false }) {
         if (pet.mode === "climb" || pet.mode === "hang") scaleX = pet.direction;
         if (["sit", "sleepy"].includes(pet.mode)) scaleY = 0.9;
         x = pet.x - window.scrollX - NYO_WIDTH / 2;
-        y = pet.y - window.scrollY - (cell.asset === "sleep" ? SLEEP_FOOT_OFFSET : footOffset(cell.row, cell.frame));
+        y = pet.y - window.scrollY - (cell.sheet === "extra" && cell.row === 7 ? SLEEP_FOOT_OFFSET : footOffset(cell.sheet, cell.row, cell.frame));
       } else {
         pet.mode = "idle";
         pet.time += dt;
         pet.clock += dt;
-        cell = reducedMotion.matches ? { row: 0, frame: 0 } : petCell(pet);
+        cell = reducedMotion.matches ? { sheet: "core", row: 0, frame: 0 } : petCell(pet);
         x = desktop.matches ? 16 : 128;
         y = Math.max(16, window.innerHeight - (desktop.matches ? NYO_HEIGHT + 70 : 180));
       }
@@ -191,30 +191,26 @@ export default function Nyo({ sceneKey, lost = false }) {
       // Side poses contain less painted area than front-facing poses. A small,
       // uniform correction preserves proportions, and easing avoids a scale pop
       // when the animation changes between front and side views.
-      const targetArtScale = cell.asset === "climb" ? CLIMB_ART_SCALE :
-        cell.row === 1 || cell.row === 2 ? SIDE_ART_SCALE : 1;
+      const targetArtScale = cell.sheet === "extra" && cell.row === 6 ? CLIMB_ART_SCALE :
+        cell.sheet === "core" && (cell.row === 1 || cell.row === 2) ? SIDE_ART_SCALE : 1;
       const scaleBlend = dt === 0 ? 1 : 1 - Math.exp(-dt * 16);
       displayArtScale += (targetArtScale - displayArtScale) * scaleBlend;
       if (Math.abs(targetArtScale - displayArtScale) < 0.0005) displayArtScale = targetArtScale;
-      const sole = cell.asset === "sleep" ? SLEEP_FOOT_OFFSET : footOffset(cell.row, cell.frame);
+      const sole = cell.sheet === "extra" && cell.row === 7 ? SLEEP_FOOT_OFFSET : footOffset(cell.sheet, cell.row, cell.frame);
       sprite.style.transformOrigin = `42px ${sole}px`;
       sprite.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) scale(${scale * displayArtScale * scaleX}, ${scale * displayArtScale * scaleY})`;
-      const source = customSource(cell);
-      const customReady = !source || readyAssetsRef.current.has(source);
-      const key = `${cell.asset ?? "atlas"}:${cell.row}:${cell.frame}`;
+      const useExtra = cell.sheet === "extra";
+      const customReady = !useExtra || extraReadyRef.current;
+      const key = `${cell.sheet}:${cell.row}:${cell.frame}`;
       if (customReady && key !== lastCell) {
-        if (source) {
-          sprite.style.backgroundImage = `url("${source}")`;
-          sprite.style.backgroundSize = `${NYO_WIDTH}px ${NYO_HEIGHT}px`;
-          sprite.style.backgroundPosition = "0px 0px";
-        } else {
-          sprite.style.backgroundImage = `url("${loaded}")`;
-          sprite.style.backgroundSize = `${NYO_WIDTH * 8}px ${NYO_HEIGHT * 11}px`;
-          sprite.style.backgroundPosition = `${-cell.frame * NYO_WIDTH}px ${-cell.row * NYO_HEIGHT}px`;
-        }
+        const cols = useExtra ? EXTRA_COLS : CORE_COLS;
+        const rows = useExtra ? EXTRA_ROWS : CORE_ROWS;
+        sprite.style.backgroundImage = `url("${useExtra ? EXTRA_ASSET : loaded}")`;
+        sprite.style.backgroundSize = `${NYO_WIDTH * cols}px ${NYO_HEIGHT * rows}px`;
+        sprite.style.backgroundPosition = `${-cell.frame * NYO_WIDTH}px ${-cell.row * NYO_HEIGHT}px`;
         lastCell = key;
       }
-      sprite.dataset.art = customReady ? cell.asset ?? "atlas" : "atlas";
+      sprite.dataset.art = customReady ? cell.sheet : "core";
       sprite.dataset.animation = pet.mode;
       sprite.dataset.behindDialog = String(Boolean(dialog));
       sprite.dataset.grounded = String(Boolean(pet.ground));

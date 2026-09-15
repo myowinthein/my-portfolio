@@ -26,7 +26,7 @@ describe("Nyo physical movement", () => {
     expect(character.ground).toBeNull();
     expect(character.emote).toBe("😮");
     expect(character.poseOverride).toBe("startled");
-    expect(petCell(character)).toEqual({ row: 7, frame: 3 });
+    expect(petCell(character)).toEqual({ sheet: "extra", row: 3, frame: 3 });
     const impactHeight = character.y;
     stepPet(character, scene, 0.05);
     expect(character.y).toBeGreaterThan(impactHeight);
@@ -176,12 +176,12 @@ describe("Nyo physical movement", () => {
     expect(character.y).toBe(300);
   });
   it("shows different reactions for preparation, falling, and effort", () => {
-    expect(petCell(pet({ mode: "prepare" })).row).toBe(6);
-    expect(petCell(pet({ mode: "fall" })).row).toBe(4);
-    expect(petCell(pet({ mode: "climb" }))).toEqual({ row: 0, frame: 0, asset: "climb" });
-    expect(petCell(pet({ mode: "hang", time: 2 }))).toEqual({ row: 0, frame: 0, asset: "climb" });
-    expect(petCell(pet({ mode: "proud" })).row).toBe(8);
-    expect(footOffset(1, 0)).toBeLessThan(footOffset(0, 0));
+    expect(petCell(pet({ mode: "prepare" }))).toMatchObject({ sheet: "core", row: 4 });
+    expect(petCell(pet({ mode: "fall" }))).toMatchObject({ sheet: "core", row: 3 });
+    expect(petCell(pet({ mode: "climb" }))).toEqual({ sheet: "extra", row: 6, frame: 0 });
+    expect(petCell(pet({ mode: "hang", time: 2 }))).toEqual({ sheet: "extra", row: 6, frame: 0 });
+    expect(petCell(pet({ mode: "proud" }))).toMatchObject({ sheet: "extra", row: 2 });
+    expect(footOffset("core", 1, 0)).toBeLessThan(footOffset("core", 0, 0));
   });
   it("plays climbing frames forward from upward distance and freezes during wall rests", () => {
     const frames = [0, 7.5, 15, 22.5, 30, 37.5, 45].map((climbDistance) =>
@@ -197,9 +197,9 @@ describe("Nyo physical movement", () => {
     expect(character.y).toBe(400);
   });
   it("uses the dedicated closed-eye artwork as a six-frame sleep loop", () => {
-    expect(petCell(pet({ mode: "sleep", time: 0 }))).toEqual({ row: 0, frame: 0, asset: "sleep" });
-    expect(petCell(pet({ mode: "sleep", time: 1 }))).toEqual({ row: 0, frame: 3, asset: "sleep" });
-    expect(petCell(pet({ mode: "sleep", time: 2 }))).toEqual({ row: 0, frame: 0, asset: "sleep" });
+    expect(petCell(pet({ mode: "sleep", time: 0 }))).toEqual({ sheet: "extra", row: 7, frame: 0 });
+    expect(petCell(pet({ mode: "sleep", time: 1 }))).toEqual({ sheet: "extra", row: 7, frame: 3 });
+    expect(petCell(pet({ mode: "sleep", time: 2 }))).toEqual({ sheet: "extra", row: 7, frame: 0 });
   });
   it("shows a puzzled pose when a route to an unreachable target fails", () => {
     const faraway = { id: "faraway", left: 5000, right: 5100, top: 0 };
@@ -210,25 +210,25 @@ describe("Nyo physical movement", () => {
     expect(character.intent).toBeNull();
     expect(character.failed.map((f) => f.id)).toContain("faraway");
     expect(character.poseOverride).toBe("confused");
-    expect(petCell(character)).toEqual({ row: 7, frame: 2 });
+    expect(petCell(character)).toEqual({ sheet: "extra", row: 3, frame: 2 });
   });
   it("never lets a brief pose override mask a load-bearing pose", () => {
     const climbing = pet({ mode: "climb", climbDistance: 0, poseOverride: "startled", poseUntil: Infinity });
-    expect(petCell(climbing)).toEqual({ row: 0, frame: 0, asset: "climb" });
+    expect(petCell(climbing)).toEqual({ sheet: "extra", row: 6, frame: 0 });
     const sleeping = pet({ mode: "sleep", time: 0, poseOverride: "confused", poseUntil: Infinity });
-    expect(petCell(sleeping)).toEqual({ row: 0, frame: 0, asset: "sleep" });
+    expect(petCell(sleeping)).toEqual({ sheet: "extra", row: 7, frame: 0 });
   });
   it("runs a faster stride while chasing than while idly wandering", () => {
     const wandering = petCell(pet({ mode: "walk", direction: 1, time: 0.3 }));
     const chasing = petCell(pet({ mode: "walk", direction: 1, time: 0.3, intent: { kind: "chase" } }));
-    expect(wandering).toEqual({ row: 1, frame: 2 });
-    expect(chasing).toEqual({ row: 1, frame: 3 });
+    expect(wandering).toEqual({ sheet: "core", row: 1, frame: 2 });
+    expect(chasing).toEqual({ sheet: "core", row: 1, frame: 3 });
   });
 });
 describe("Nyo gaze", () => {
-  it.each([[0, -100, 9, 0], [100, 0, 9, 4], [0, 100, 10, 0], [-100, 0, 10, 4]])(
+  it.each([[0, -100, 4, 0], [100, 0, 4, 4], [0, 100, 5, 0], [-100, 0, 5, 4]])(
     "maps screen direction (%s, %s) to its atlas cell", (dx, dy, row, frame) => {
-      expect(gazeCell(dx, dy)).toEqual({ row, frame });
+      expect(gazeCell(dx, dy)).toEqual({ sheet: "extra", row, frame });
     }
   );
 });
