@@ -55,10 +55,10 @@ describe("Nyo visitor interaction boundaries", () => {
     const hitTest = vi.fn(() => link);
     vi.stubGlobal("document", document);
     Object.defineProperty(document, "elementFromPoint", { configurable: true, value: hitTest });
-    expect(safePetHitbox(button, 10, 20, 40, 60)).toBe(false);
+    expect(safePetHitbox(button, 10, 20, 40, 60, [])).toBe(false);
     expect(button.style.pointerEvents).toBe("none");
     hitTest.mockReturnValue(document.createElement("p"));
-    expect(safePetHitbox(button, 10, 20, 40, 60)).toBe(true);
+    expect(safePetHitbox(button, 10, 20, 40, 60, [])).toBe(true);
     delete document.elementFromPoint;
   });
   it("does not intercept a thin link crossing between the hit-test samples", () => {
@@ -66,6 +66,6 @@ describe("Nyo visitor interaction boundaries", () => {
     const link = document.createElement("a"); link.href = "/";
     link.getClientRects = () => [{ left: 10, right: 50, top: 28, bottom: 32, width: 40, height: 4 }];
     document.body.appendChild(link);
-    expect(safePetHitbox(button, 10, 20, 40, 60)).toBe(false);
+    expect(safePetHitbox(button, 10, 20, 40, 60, [link])).toBe(false);
   });
 });

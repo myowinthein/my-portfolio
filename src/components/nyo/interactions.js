@@ -21,10 +21,13 @@ export function selectionSurface(range, pet) {
 }
 
 // Never let the small pet hitbox steal a link, field, or navigation click.
-export function safePetHitbox(button, left, top, width, height) {
+// `controls` is a caller-cached snapshot (see Nyo.jsx) refreshed alongside world
+// measurement, not re-queried here every frame — querySelectorAll(CONTROL) over
+// the whole page is the expensive part, and rects still update every call.
+export function safePetHitbox(button, left, top, width, height, controls) {
   button.style.pointerEvents = "none";
   // Catch thin links crossing between the sampled points as well.
-  for (const control of document.querySelectorAll(CONTROL)) {
+  for (const control of controls) {
     if (control === button) continue;
     for (const rect of control.getClientRects()) {
       if (rect.width > 0 && rect.height > 0 && rect.left < left + width && rect.right > left &&
