@@ -1,12 +1,16 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import image404 from "../../public/assets/img/404.jpg";
 import SEO from "../components/Seo";
+
+const Nyo = dynamic(() => import("../components/nyo/Nyo"), { ssr: false });
 
 const NotFound = () => {
   return (
     <>
     <SEO pageTitle="Page Not Found" />
+    <Nyo lost />
     <div className="error_page">
       <div
         className="hero bg-image"

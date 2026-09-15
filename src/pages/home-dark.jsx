@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import Hero from "../components/hero/Hero";
 import AboutMain from "../components/about";
@@ -11,6 +12,8 @@ import Contact from "../components/Contact";
 import Blog from "../components/blog/Blog";
 import SwitchDark from "../components/switch/SwitchDark";
 import { firstName, lastName, menuLabels } from "../config";
+
+const Nyo = dynamic(() => import("../components/nyo/Nyo"), { ssr: false });
 
 const menuItem = [
   { icon: "fa-home", menuName: menuLabels.home },
@@ -28,6 +31,7 @@ const TabTitle = ({ bg, children }) => (
 );
 
 const HomeDark = () => {
+  const [nyoScene, setNyoScene] = useState(0);
   return (
     <Wrapper>
       <SEO pageTitle={`${firstName} ${lastName}`} />
@@ -35,7 +39,7 @@ const HomeDark = () => {
       <div className="yellow">
         <SwitchDark />
         {/* End Switcher */}
-        <Tabs>
+        <Tabs onSelect={setNyoScene}>
           <div className="header">
             <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
               {menuItem.map((item) => (
@@ -139,6 +143,7 @@ const HomeDark = () => {
           </div>
         </Tabs>
       </div>
+      <Nyo sceneKey={nyoScene} />
     </Wrapper>
   );
 };

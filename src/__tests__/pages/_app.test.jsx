@@ -4,7 +4,10 @@ import Aos from 'aos';
 import MyApp from '../../pages/_app';
 
 vi.mock('aos', () => ({ default: { init: vi.fn() } }));
-vi.mock('react-animated-cursor', () => ({ default: () => <div data-testid="cursor" /> }));
+vi.mock('react-animated-cursor', () => ({
+  default: ({ innerStyle, outerStyle }) => <div data-testid="cursor"
+    data-inner-z={innerStyle?.zIndex} data-outer-z={outerStyle?.zIndex} />,
+}));
 vi.mock('@vercel/analytics/react', () => ({ Analytics: () => <div data-testid="analytics" /> }));
 vi.mock('../../hooks/AllBlogData', () => ({
   default: () => ({ blogsData: [], isLoading: false, singleData: {}, isOpen: false, setIsOpen: vi.fn(), handleBlogsData: vi.fn() }),
@@ -25,7 +28,8 @@ describe('MyApp', () => {
 
   it('renders the animated cursor and analytics', () => {
     render(<MyApp Component={StubComponent} pageProps={{}} />);
-    expect(screen.getByTestId('cursor')).toBeInTheDocument();
+    expect(screen.getByTestId('cursor')).toHaveAttribute('data-inner-z', '3000');
+    expect(screen.getByTestId('cursor')).toHaveAttribute('data-outer-z', '3000');
     expect(screen.getByTestId('analytics')).toBeInTheDocument();
   });
 });

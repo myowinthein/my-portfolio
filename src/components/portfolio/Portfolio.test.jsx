@@ -6,7 +6,7 @@ import Portfolio from './Portfolio';
 describe('Portfolio', () => {
   it('renders a tab for every portfolio category', () => {
     render(<Portfolio />);
-    expect(screen.getByRole('tab', { name: 'Education' })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: 'Education' })).toHaveAttribute('data-nyo-platform');
     expect(screen.getByRole('tab', { name: 'Commerce Platforms' })).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'eGovernment Systems' })).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'Civic Platforms' })).toBeInTheDocument();

@@ -8,6 +8,7 @@ import { Analytics } from '@vercel/analytics/react';
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false,
 });
+const cursorLayerStyle = { zIndex: 3000 };
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -25,6 +26,8 @@ function MyApp({ Component, pageProps }) {
         outerAlpha={0.3}
         innerScale={0.7}
         outerScale={1.3}
+        innerStyle={cursorLayerStyle}
+        outerStyle={cursorLayerStyle}
       />
 
       <ContextProvider>
