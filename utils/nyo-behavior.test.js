@@ -67,6 +67,7 @@ describe("Nyo intentions and personality", () => {
     run(p, world, 19);
     expect(p.energy).toBeGreaterThan(70);
     expect(p.mode).toBe("stretch");
+    expect(p.emote).toBe("😃");
     run(p, world, 2);
     expect(p.mode).toBe("walk");
   });
