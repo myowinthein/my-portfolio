@@ -278,6 +278,11 @@ function advance(pet, world, dt, random) {
     return;
   }
   if (pet.mode === "walk") {
+    // A brief pose override (confused/startled) means Nyo has frozen to react -
+    // hold still instead of gliding forward under a face that isn't animating.
+    // Falling/jumping keeps its momentum on purpose (see enforceCeiling); only
+    // ground locomotion has a leg-cycle to visually clash with a frozen face.
+    if (pet.poseOverride && pet.poseUntil > pet.clock) { pet.vx = 0; return; }
     if (pet.target && Math.abs(pet.x - pet.target.launchX) < 4) {
       if (pet.target.kind === "walk") {
         pet.target = null; pet.wait = 0.6; pet.vx = 0; enter(pet, "idle"); return;
