@@ -79,7 +79,7 @@ export function createPet(world, viewport, random = Math.random) {
     x, y: clamp(platform ? platform.top - 110 : viewport.top + 100, viewport.top + 90, viewport.bottom - 16),
     vx: 0, vy: 0, direction: random() > 0.5 ? 1 : -1,
     mode: "fall", time: 0, ground: null, target: null, wall: null,
-    previous: null, hops: 0, wait: 1.2,
+    previous: null, previousUntil: 0, hops: 0, wait: 1.2,
     clock: 0, energy: 90, curiosity: 0.8, playfulness: 0.65,
     visited: [], failed: [], intent: null, jumpGoal: null,
     selectionAfter: 0, chaseAfter: 0, reactionAfter: 0, themeAfter: 0,
@@ -116,7 +116,7 @@ function startJump(pet, point, random = Math.random) {
   pet.jumpPoint = { x: point.x, y: point.y };
   pet.energy = Math.max(0, pet.energy - 3);
   pet.direction = velocity.vx >= 0 ? 1 : -1;
-  pet.previous = pet.ground;
+  pet.previous = pet.ground; pet.previousUntil = pet.clock + 15;
   pet.ground = null;
   pet.target = null;
   pet.hops += 1;
@@ -226,7 +226,7 @@ function advance(pet, world, dt, random) {
   const support = world.platforms.find((p) => p.id === pet.ground);
   if (pet.ground) {
     if (!support || !hasFooting(pet, support)) {
-      pet.previous = pet.ground;
+      pet.previous = pet.ground; pet.previousUntil = pet.clock + 15;
       pet.ground = null;
       pet.vy = 0;
       enter(pet, "fall");
@@ -305,7 +305,7 @@ function advance(pet, world, dt, random) {
     pet.x += pet.target ? Math.sign(distance) * Math.min(Math.abs(distance), Math.abs(pet.target.launchX - pet.x)) : distance;
     if (catchWall(pet, world, oldX)) return;
     if (!support || !hasFooting(pet, support)) {
-      pet.previous = pet.ground;
+      pet.previous = pet.ground; pet.previousUntil = pet.clock + 15;
       pet.ground = null;
       pet.target = null;
       pet.vy = 0;
