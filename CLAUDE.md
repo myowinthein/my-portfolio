@@ -23,7 +23,7 @@ Personal portfolio for **Myo Win Thein (Martin)**, Senior Full-Stack Engineer, B
 ## 3. Dev Commands
 
 ```sh
-npm run dev         # localhost:4000  (NOT default 3000)
+npm run dev         # localhost:3000 by default; falls back if it is busy
 npm run build       # next build + next-sitemap (postbuild)
 npm run lint        # next/core-web-vitals
 npm run start       # serve production build (requires prior build)
@@ -31,7 +31,7 @@ npm test            # vitest run (utils/**/*.test.js + src/**/*.test.jsx)
 npm run test:watch  # vitest watch mode
 ```
 
-Tests cover `utils/` pure helpers and, via jsdom + React Testing Library, most of `src/components`, `src/Hooks`, `src/Context`, `src/layout`, and `src/pages` (excluding `_document.jsx`, see Known Traps). Page-level tests live in `src/__tests__/pages/`, never inside `src/pages/` itself. `next/image` and `next/head` are mocked globally in `vitest.setup.jsx` since they only behave correctly inside Next's own render pipeline. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + manual browser check at `localhost:4000` are the only verification options.
+Tests cover `utils/` pure helpers and, via jsdom + React Testing Library, most of `src/components`, `src/Hooks`, `src/Context`, `src/layout`, and `src/pages` (excluding `_document.jsx`, see Known Traps). Page-level tests live in `src/__tests__/pages/`, never inside `src/pages/` itself. `next/image` and `next/head` are mocked globally in `vitest.setup.jsx` since they only behave correctly inside Next's own render pipeline. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + a manual browser check at the URL printed by `npm run dev` are the only verification options.
 
 ---
 
