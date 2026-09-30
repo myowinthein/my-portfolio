@@ -42,7 +42,7 @@ const experienceContent = [
     companyName: "Nexlabs · Yangon, Myanmar",
     companyInfo: `Digital consultancy delivering measurable web solutions through strategy, engineering and UX.`,
     positions: [
-      {"position": "Head of Engineering (FastForward Product Initiative)", "year": "Dec 2020 – Sep 2021"},
+      {"position": "Head of Engineering (FastForward, an e-commerce initiative)", "year": "Dec 2020 – Sep 2021"},
       {"position": "Frontend & CMS Team Lead", "year": "Feb 2019 – Dec 2020"},
       {"position": "Senior Full Stack Developer", "year": "Aug 2018 – Feb 2019"},
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},

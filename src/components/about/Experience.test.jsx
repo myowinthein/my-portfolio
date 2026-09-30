@@ -25,7 +25,7 @@ describe('Experience', () => {
 
   it('renders every position held at a multi-position company', () => {
     render(<Experience />);
-    expect(screen.getByText('Head of Engineering (FastForward Product Initiative)')).toBeInTheDocument();
+    expect(screen.getByText('Head of Engineering (FastForward, an e-commerce initiative)')).toBeInTheDocument();
     expect(screen.getByText('Frontend & CMS Team Lead')).toBeInTheDocument();
     expect(screen.getByText('Senior Full Stack Developer')).toBeInTheDocument();
     expect(screen.getByText('Senior PHP Developer')).toBeInTheDocument();
