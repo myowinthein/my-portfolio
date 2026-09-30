@@ -66,6 +66,9 @@ import iamIdentityCenterIcon from "../../../public/assets/img/programming/iam-id
 import stripeIcon from "../../../public/assets/img/programming/stripe.svg";
 import hubspotIcon from "../../../public/assets/img/programming/hubspot.svg";
 import firebaseIcon from "../../../public/assets/img/programming/firebase.svg";
+import intercomIcon from "../../../public/assets/img/programming/intercom.svg";
+import pusherIcon from "../../../public/assets/img/programming/pusher.svg";
+import socketioIcon from "../../../public/assets/img/programming/socket-io.svg";
 
 const skillSets = [
     {
@@ -131,9 +134,9 @@ const skillSets = [
         { icon: stripeIcon, name: 'Stripe' },
         { icon: null, name: 'iPay88' },
         { icon: hubspotIcon, name: 'HubSpot' },
-        { icon: null, name: 'Intercom' },
-        { icon: null, name: 'Socket.io' },
-        { icon: null, name: 'Pusher' },
+        { icon: intercomIcon, name: 'Intercom' },
+        { icon: socketioIcon, name: 'Socket.io' },
+        { icon: pusherIcon, name: 'Pusher' },
         { icon: firebaseIcon, name: 'Firebase' },
       ]
     },
