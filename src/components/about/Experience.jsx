@@ -40,7 +40,7 @@ const experienceContent = [
   // Nexlabs
   {
     companyName: "Nexlabs · Yangon, Myanmar · Hybrid",
-    companyInfo: `Digital consultancy delivering measurable web solutions through strategy, engineering and UX.`,
+    companyInfo: `Yangon-based digital consultancy delivering measurable solutions through strategy, engineering and UX.`,
     positions: [
       {"position": "Head of Engineering (FastForward, an e-commerce initiative)", "year": "Dec 2020 – Sep 2021"},
       {"position": "Frontend & CMS Team Lead", "year": "Feb 2019 – Dec 2020"},
@@ -48,12 +48,12 @@ const experienceContent = [
       {"position": "Senior PHP Developer", "year": "Jun 2016 – Aug 2018"},
     ],
     details: [
-      `Designed backend systems and API contracts across e-commerce, education, insurance, and civic platforms, translating domain needs into maintainable architecture`,
-      `Delivered backend features for an insurance agency platform, including repository-service architecture, commission logic, KPI tracking, scheduled jobs, and external system integration`,
-      `Integrated Myanmar-specific payment methods, including Wave Money and KBZ/2C2P card processing, extending checkout and transaction workflows for local e-commerce`,
-      `Led 5–7 engineers across concurrent client projects, setting technical direction, unblocking delivery, reviewing code, and mentoring junior developers`,
-      `Partnered with the CTO and cross-functional teams to define requirements, estimate effort, explain trade-offs, and coordinate backend delivery across client engagements`,
-      `Promoted to lead FastForward, an internal e-commerce initiative, researching Bagisto and shared-database multi-tenancy while contributing a per-tenant analytics module`
+      `Solo-architected the backend for FNI, an insurance agency platform for First National Insurance, with a 37-endpoint mobile API, ACE Core sync, and 3-tier commission calculations`,
+      `Replaced repetitive, inconsistent scaffolding with a 10+ command Artisan toolkit generating full CRUD admin pages and API controllers, adopted team-wide`,
+      `Implemented the backend for AnyMart, a heavily customized OpenCart e-commerce platform for Myanmar, integrating Wave Money and KBZ Bank's Visa, Mastercard, and MPU gateways`,
+      `Delivered the backend and Nuxt.js frontend for Recycle Myanmar (GrabRecycle), a 59-endpoint, three-sided marketplace with a live, reverse-geocoded pickup-location picker`,
+      `Led a team of 5-6 developers with an autonomous structure, providing technical and personal support as needed while running goal-setting and performance reviews`,
+      `Served as the founding engineer for FastForward, owning the technical vision, framework selection, and product roadmap until external disruption halted operations in 2021`
     ]
   },
 
