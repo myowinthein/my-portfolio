@@ -272,7 +272,7 @@ const PortfolioData = [
         'industry': 'E-commerce',
         'product': 'AnyMart',
         'productType': 'Marketplace Platform',
-        'role': 'Senior Full Stack Developer',
+        'role': 'Senior PHP Developer',
         'description': [
           `AnyMart was a B2C online shopping platform for the Myanmar market, built on OpenCart 2.3. It supported a product catalog with categories, search, and filtering, a multi step checkout, customer accounts with wishlists and order history, and a blog. Payment options included Wave Money mobile payment and KBZ Bank card processing for Visa, Mastercard, and MPU. The storefront ran in both English and Myanmar with Zawgyi encoding support.`,
           `I worked as the sole developer, customising OpenCart through its ocmod XML overlay system and extending it with custom payment controllers. The core integrations were Wave Money via the PaysbuyPayAPI service and KBZ Bank via the 2C2P gateway, each requiring a dedicated PHP controller and configuration module in both the storefront and admin panel. I also added social login for Facebook, Google, Twitter, and LinkedIn, implemented the Myanmar language locale with Zawgyi encoding, and built a standalone abandoned cart cron script for email reminders.`
@@ -446,7 +446,7 @@ const PortfolioData = [
       {
         'company': 'Nexlabs',
         'industry': 'Recycling & Waste Management',
-        'role': 'Frontend & CMS Team Lead',
+        'role': 'Senior Full Stack Developer',
         'product': 'Recycle Myanmar',
         'productType': 'On-demand Collection Platform',
         'description': [
