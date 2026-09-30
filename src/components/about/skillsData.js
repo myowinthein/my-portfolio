@@ -57,6 +57,15 @@ import snsIcon from "../../../public/assets/img/programming/sns.svg";
 import kmsIcon from "../../../public/assets/img/programming/kms.svg";
 
 import linuxIcon from "../../../public/assets/img/programming/linux.svg";
+import bugsnagIcon from "../../../public/assets/img/programming/bugsnag.svg";
+
+import certificateManagerIcon from "../../../public/assets/img/programming/certificate-manager.svg";
+import elasticTranscoderIcon from "../../../public/assets/img/programming/elastic-transcoder.svg";
+import iamIdentityCenterIcon from "../../../public/assets/img/programming/iam-identity-center.svg";
+
+import stripeIcon from "../../../public/assets/img/programming/stripe.svg";
+import hubspotIcon from "../../../public/assets/img/programming/hubspot.svg";
+import firebaseIcon from "../../../public/assets/img/programming/firebase.svg";
 
 const skillSets = [
     {
@@ -111,10 +120,25 @@ const skillSets = [
         { icon: elasticcacheIcon, name: 'ElastiCache' },
         { icon: cloudwatchIcon, name: 'CloudWatch' },
         { icon: kmsIcon, name: 'KMS' },
+        { icon: iamIdentityCenterIcon, name: 'IAM Identity Center' },
+        { icon: elasticTranscoderIcon, name: 'Elastic Transcoder' },
+        { icon: certificateManagerIcon, name: 'Certificate Manager' },
       ]
     },
     {
-      title: 'DevOps & CI/CD',
+      title: 'Integrations & Platforms',
+      skills: [
+        { icon: stripeIcon, name: 'Stripe' },
+        { icon: null, name: 'iPay88' },
+        { icon: hubspotIcon, name: 'HubSpot' },
+        { icon: null, name: 'Intercom' },
+        { icon: null, name: 'Socket.io' },
+        { icon: null, name: 'Pusher' },
+        { icon: firebaseIcon, name: 'Firebase' },
+      ]
+    },
+    {
+      title: 'DevOps & Reliability',
       skills: [
         { icon: dockerIcon, name: 'Docker' },
         { icon: githubIcon, name: 'GitHub Actions' },
@@ -126,6 +150,7 @@ const skillSets = [
         { icon: vercelIcon, name: 'Vercel' },
         { icon: netlifyIcon, name: 'Netlify' },
         { icon: herokuIcon, name: 'Heroku' },
+        { icon: bugsnagIcon, name: 'Bugsnag' },
       ]
     },
     {
