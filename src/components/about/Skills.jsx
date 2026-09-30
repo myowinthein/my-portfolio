@@ -20,7 +20,7 @@ const Skills = ({skillSets}) => {
                     {skill.core && (
                       <i className="fa-solid fa-crown position-absolute skill-crown-badge" />
                     )}
-                    <Image src={skill.icon} alt={skill.name} />
+                    {skill.icon && <Image src={skill.icon} alt={skill.name} />}
                   </div>
                   <small className="open-sans-font d-block text-center mt-2">{skill.name}</small>
                 </div>
