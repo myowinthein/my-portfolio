@@ -44,9 +44,9 @@ export const menuLabels = {
 
 // summary — first paragraph is reused as the SEO meta description
 export const summary = [
-  `Senior Full-Stack Engineer with ${totalExperiences}+ years of hands-on backend and cloud engineering experience, specializing in Laravel/PHP systems, AWS infrastructure, and REST API platforms.`,
-  `Strong background in legacy codebase modernization, backend system design, API-first development, database design and performance, production reliability, and CI/CD security across SaaS, education, enterprise, and government domains.`,
-  `Most recently led backend delivery for a student-university matching platform through its acquisition, staying close to architecture and code while coordinating engineers.`,
+  `Senior Full-Stack Engineer with ${totalExperiences}+ years building and owning backend-heavy SaaS products, from database and API design through cloud deployment and production reliability.`,
+  `Owns projects and platforms end to end, alone or with a small team, driving technical decisions independently with strong product judgment.`,
+  `Most recently led backend delivery for StudyMe, a student-university matching platform, through its acquisition by Wellspring International Education.`,
 ];
 
 // meta
