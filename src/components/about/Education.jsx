@@ -6,7 +6,7 @@ const educationContent = [
     year: "Jul 2023 – Jul 2024",
     degree: "BSc (Hons) Computing, First Class Honours",
     institute: "University of Greenwich, London, UK",
-    details: "Remote study via KMD College, Myanmar, official University of Greenwich partner",
+    details: "",
     link: "",
   },
   {
@@ -22,7 +22,7 @@ const educationContent = [
     year: "Sep 2012 – Oct 2013",
     degree: "Level 5 Diploma in Computing",
     institute: "NCC Education, Manchester, UK",
-    details: "Onsite study via KMD College, Myanmar, official NCC Education partner",
+    details: "",
     link: "",
   },
   {
