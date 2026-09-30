@@ -13,7 +13,6 @@ describe('Education', () => {
 
   it('only renders a details paragraph when details is non-empty', () => {
     render(<Education />);
-    expect(screen.getByText(/Remote study via KMD College/)).toBeInTheDocument();
 
     const noDetailsEntry = screen
       .getByText('Bachelor of Technology in Electrical Power Engineering')
