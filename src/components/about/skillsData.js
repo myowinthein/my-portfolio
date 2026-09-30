@@ -96,15 +96,15 @@ const skillSets = [
       ]
     },
     {
-      title: 'Cloud (AWS)',
+      title: 'AWS',
       skills: [
-        { icon: ec2Icon, name: 'EC2', core: true },
-        { icon: ebsIcon, name: 'EBS', core: true },
-        { icon: rdsIcon, name: 'RDS', core: true },
-        { icon: s3Icon, name: 'S3', core: true },
-        { icon: cloudfrontIcon, name: 'CloudFront', core: true },
-        { icon: route53Icon, name: 'Route53', core: true },
-        { icon: iamIcon, name: 'IAM', core: true },
+        { icon: ec2Icon, name: 'EC2' },
+        { icon: ebsIcon, name: 'EBS' },
+        { icon: rdsIcon, name: 'RDS' },
+        { icon: s3Icon, name: 'S3' },
+        { icon: cloudfrontIcon, name: 'CloudFront' },
+        { icon: route53Icon, name: 'Route53' },
+        { icon: iamIcon, name: 'IAM' },
         { icon: sqsIcon, name: 'SQS' },
         { icon: snsIcon, name: 'SNS' },
         { icon: sesIcon, name: 'SES' },
