@@ -60,7 +60,7 @@ const experienceContent = [
   // Global Wave Technology
   {
     companyName: "Global Wave Technology · Yangon, Myanmar",
-    companyInfo: `Software company delivering retail and HR systems with web and multi-platform integration.`,
+    companyInfo: `Yangon-based software company delivering retail and HR systems with web and multi-platform integration.`,
     positions: [
       {"position": "Senior Developer", "year": "Mar 2015 – Oct 2015"},
       {"position": "Developer", "year": "Apr 2014 – Mar 2015"},
@@ -69,7 +69,6 @@ const experienceContent = [
     ],
     details: [
       `Built eGovernment web applications for business licensing, building permits, and revenue services, enabling citizens to complete regulatory workflows online`,
-      `Designed backend workflows with role-based access control, multi-stage approvals, and notification systems to support government operational processes`,
       `Developed C# systems for YCDC field operations, integrating ACR1252U smart card readers and Motorola MC3190-Z RFID/barcode handhelds for license and document tracking`
     ]
   },
