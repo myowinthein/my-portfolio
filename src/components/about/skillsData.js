@@ -81,11 +81,11 @@ const skillSets = [
     {
       title: 'Frontend',
       skills: [
+        { icon: javaScriptIcon, name: 'JavaScript', core: true },
         { icon: vueIcon, name: 'Vue.js', core: true },
         { icon: nuxtIcon, name: 'Nuxt.js', core: true },
         { icon: reactIcon, name: 'React.js' },
         { icon: nextIcon, name: 'Next.js' },
-        { icon: javaScriptIcon, name: 'JavaScript', core: true },
         { icon: typescriptIcon, name: 'TypeScript' },
         { icon: htmlIcon, name: 'HTML' },
         { icon: cssIcon, name: 'CSS' },
@@ -98,8 +98,8 @@ const skillSets = [
       title: 'Databases',
       skills: [
         { icon: mysqlIcon, name: 'MySQL', core: true },
-        { icon: mariadbIcon, name: 'MariaDB' },
         { icon: postgresqlIcon, name: 'PostgreSQL', core: true },
+        { icon: mariadbIcon, name: 'MariaDB' },
         { icon: microsoftSQLServerIcon, name: 'Microsoft SQL Server' },
         { icon: redisIcon, name: 'Redis' },
       ]
@@ -111,16 +111,16 @@ const skillSets = [
         { icon: ebsIcon, name: 'EBS' },
         { icon: rdsIcon, name: 'RDS' },
         { icon: s3Icon, name: 'S3' },
-        { icon: cloudfrontIcon, name: 'CloudFront' },
-        { icon: route53Icon, name: 'Route53' },
-        { icon: iamIcon, name: 'IAM' },
         { icon: sqsIcon, name: 'SQS' },
         { icon: snsIcon, name: 'SNS' },
         { icon: sesIcon, name: 'SES' },
+        { icon: cloudfrontIcon, name: 'CloudFront' },
+        { icon: route53Icon, name: 'Route53' },
+        { icon: iamIcon, name: 'IAM' },
+        { icon: iamIdentityCenterIcon, name: 'IAM Identity Center' },
         { icon: elasticcacheIcon, name: 'ElastiCache' },
         { icon: cloudwatchIcon, name: 'CloudWatch' },
         { icon: kmsIcon, name: 'KMS' },
-        { icon: iamIdentityCenterIcon, name: 'IAM Identity Center' },
         { icon: elasticTranscoderIcon, name: 'Elastic Transcoder' },
         { icon: certificateManagerIcon, name: 'Certificate Manager' },
       ]
@@ -143,6 +143,7 @@ const skillSets = [
         { icon: dockerIcon, name: 'Docker' },
         { icon: githubIcon, name: 'GitHub Actions' },
         { icon: gitlabIcon, name: 'GitLab CI/CD' },
+        { icon: bugsnagIcon, name: 'Bugsnag' },
         { icon: linuxIcon, name: 'Linux' },
         { icon: nginxIcon, name: 'Nginx' },
         { icon: apacheIcon, name: 'Apache' },
@@ -150,7 +151,6 @@ const skillSets = [
         { icon: vercelIcon, name: 'Vercel' },
         { icon: netlifyIcon, name: 'Netlify' },
         { icon: herokuIcon, name: 'Heroku' },
-        { icon: bugsnagIcon, name: 'Bugsnag' },
       ]
     },
     {
