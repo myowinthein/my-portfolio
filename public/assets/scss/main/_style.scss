@@ -1001,9 +1001,30 @@ body.light .credential-item {
     box-shadow: 0 0 0 3px rgba(44, 177, 188, 0.13);
   }
 
+  &.edu-row--certification::before {
+    background: #f5c451;
+    box-shadow: 0 0 0 3px rgba(245, 196, 81, 0.16);
+  }
+
   .edu-row__left {
     flex: 1;
     min-width: 0;
+  }
+
+  .edu-row__type {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--main-primary-color);
+    margin-bottom: 6px;
+  }
+
+  &.edu-row--certification .edu-row__type {
+    color: #f5c451;
   }
 
   .edu-row__degree {
