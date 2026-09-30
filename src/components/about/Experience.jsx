@@ -4,19 +4,23 @@ import useExpandableList from "../../hooks/useExpandableList";
 const experienceContent = [
   // StudyMe
   {
-    companyName: "StudyMe, Australia · Remote from Thailand",
-    companyInfo: "Student–university matching platform, later acquired by Wellspring International Education.",
+    companyName: "StudyMe, Australia · Remote from Bangkok, Thailand",
+    companyInfo: "Melbourne-based AI-driven platform matching students with universities, acquired by Wellspring International.",
     positions: [
       {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
     ],
     details: [
-      `Rebuilt a legacy Laravel monolith into a versioned REST API architecture, adding service-repository layers, request validation, and API resources for web and mobile clients`,
-      `Designed authentication, authorization, and payment workflows across the API platform, including JWT, social login, SSO, Stripe subscriptions, checkout, and failed-payment handling`,
-      `Improved backend performance with query optimization, Redis caching, SQS-backed queue workers, and 30+ scheduled jobs for engagement, sync, reporting, and background exports`,
-      `Strengthened production stability through Bugsnag error monitoring, alerting workflows, and structured incident handling across backend services`,
-      `Maintained and secured AWS infrastructure across Elastic Beanstalk, RDS, S3, SES, SNS, SQS, and Redis, including encryption, service upgrades, and VPN-secured database access`,
-      `Modernized CI/CD security by removing hardcoded credentials, introducing OIDC-based AWS authentication, and enforcing role-scoped GitHub Actions deployments`,
-      `Set technical direction through shared architecture conventions, custom Artisan code generators, technical specifications, and coordination of up to 3 engineers`
+      `Refactored a non-standard Laravel codebase into a versioned REST API architecture, adding service-repository layers, API resources, and a 330+ request Postman collection from scratch`,
+      `Designed authentication, authorization, and payment workflows across the API platform, including JWT, social login, SSO, Stripe web checkout, and RevenueCat mobile subscriptions`,
+      `Improved backend performance with query optimization, Redis caching, and SQS-backed workers, including 30+ custom commands, 20+ running on schedule`,
+      `Built observability across the codebase and servers for StudyMe and Wellspring 2.0, pairing Bugsnag error tracking with CloudWatch infrastructure alarms`,
+      `Secured RDS against brute-force login attempts spotted in logs with a self-hosted OpenVPN gateway, plus encryption across Elastic Beanstalk, S3, and SQS`,
+      `Eliminated hardcoded AWS credentials via OIDC-based GitHub Actions deploys for frontend and IAM instance roles for backend application access to AWS`,
+      `Defended against SMS toll fraud on OTP verification with Twilio carrier filtering, rate limiting, session tokens, and reCAPTCHA`,
+      `Stopped fake-email signups from driving up SES bounce rates, gating login behind NeverBounce validation and signature-verified SNS webhooks`,
+      `Founded and architected Wellspring 2.0, replacing an unsupportable legacy Blade stack with a decoupled Laravel API and React frontend, then provisioned AWS infrastructure and CI/CD`,
+      `Guided implementation and QA for 7 developers through the Wellspring 2.0 rewrite, adding an RDS read replica and cutting the backend codebase roughly 23%`,
+      `Linked StudyMe and Wellspring databases across separate AWS accounts and regions (US, AU) for read-only cross-platform school data, peering VPCs to cut latency`
     ]
   },
 
