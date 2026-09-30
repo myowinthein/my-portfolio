@@ -64,6 +64,7 @@ import elasticTranscoderIcon from "../../../public/assets/img/programming/elasti
 import iamIdentityCenterIcon from "../../../public/assets/img/programming/iam-identity-center.svg";
 
 import stripeIcon from "../../../public/assets/img/programming/stripe.svg";
+import ipay88Icon from "../../../public/assets/img/programming/ipay88.svg";
 import hubspotIcon from "../../../public/assets/img/programming/hubspot.svg";
 import firebaseIcon from "../../../public/assets/img/programming/firebase.svg";
 import intercomIcon from "../../../public/assets/img/programming/intercom.svg";
@@ -132,7 +133,7 @@ const skillSets = [
       title: 'Integrations & Platforms',
       skills: [
         { icon: stripeIcon, name: 'Stripe' },
-        { icon: null, name: 'iPay88' },
+        { icon: ipay88Icon, name: 'iPay88' },
         { icon: hubspotIcon, name: 'HubSpot' },
         { icon: intercomIcon, name: 'Intercom' },
         { icon: socketioIcon, name: 'Socket.io' },
