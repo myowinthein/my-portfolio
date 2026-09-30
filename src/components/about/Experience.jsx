@@ -39,7 +39,7 @@ const experienceContent = [
 
   // Nexlabs
   {
-    companyName: "Nexlabs · Yangon, Myanmar",
+    companyName: "Nexlabs · Yangon, Myanmar · Hybrid",
     companyInfo: `Digital consultancy delivering measurable web solutions through strategy, engineering and UX.`,
     positions: [
       {"position": "Head of Engineering (FastForward, an e-commerce initiative)", "year": "Dec 2020 – Sep 2021"},
