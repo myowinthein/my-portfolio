@@ -6,8 +6,8 @@ import Experience from './Experience';
 describe('Experience', () => {
   it('shows only the first 3 companies by default', () => {
     render(<Experience />);
-    expect(screen.getByText(/StudyMe, Australia/)).toBeInTheDocument();
-    expect(screen.getByText(/Snappymob, Malaysia/)).toBeInTheDocument();
+    expect(screen.getByText(/StudyMe \(Australia\)/)).toBeInTheDocument();
+    expect(screen.getByText(/Snappymob \(Malaysia\)/)).toBeInTheDocument();
     expect(screen.getByText(/Nexlabs · Yangon/)).toBeInTheDocument();
     expect(screen.queryByText(/Global Wave Technology/)).not.toBeInTheDocument();
     expect(screen.getByText('Show earlier experience')).toBeInTheDocument();

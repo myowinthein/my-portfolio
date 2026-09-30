@@ -4,7 +4,7 @@ import useExpandableList from "../../hooks/useExpandableList";
 const experienceContent = [
   // StudyMe
   {
-    companyName: "StudyMe, Australia · Remote from Bangkok, Thailand",
+    companyName: "StudyMe (Australia) · Bangkok, Thailand (Remote)",
     companyInfo: "Melbourne-based AI-driven platform matching students with universities, acquired by Wellspring International.",
     positions: [
       {"position": "Technical Lead", "year": "Dec 2021 – Aug 2025"},
@@ -26,7 +26,7 @@ const experienceContent = [
 
   // Snappymob
   {
-    companyName: "Snappymob, Malaysia · Remote from Yangon, Myanmar",
+    companyName: "Snappymob (Malaysia) · Yangon, Myanmar (Remote)",
     companyInfo: `Kuala Lumpur-based technology consultancy building web and mobile software for enterprise clients.`,
     positions: [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
@@ -39,7 +39,7 @@ const experienceContent = [
 
   // Nexlabs
   {
-    companyName: "Nexlabs · Yangon, Myanmar · Hybrid",
+    companyName: "Nexlabs · Yangon, Myanmar (Hybrid)",
     companyInfo: `Yangon-based digital consultancy delivering measurable solutions through strategy, engineering and UX.`,
     positions: [
       {"position": "Head of Engineering (FastForward, an e-commerce initiative)", "year": "Dec 2020 – Sep 2021"},
