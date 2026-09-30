@@ -26,14 +26,14 @@ const experienceContent = [
 
   // Snappymob
   {
-    companyName: "Snappymob, Malaysia · Remote from Myanmar",
-    companyInfo: `Technology consultancy helping enterprises build and scale complex software systems.`,
+    companyName: "Snappymob, Malaysia · Remote from Yangon, Myanmar",
+    companyInfo: `Kuala Lumpur-based technology consultancy building web and mobile software for enterprise clients.`,
     positions: [
       {"position": "Full Stack Developer", "year": "Sep 2021 – Dec 2021"},
     ],
     details: [
-      `Built backend integrations for a large-scale online tuition platform on a customized Moodle CMS, implementing iPay88 payments, multi-provider social authentication, callback handling, and transaction workflows for web, mobile, and desktop clients`,
-      `Identified limitations in the CMS-based backend and proposed a custom backend structure, presenting technical trade-offs to the PM and CTO to support implementation decisions`
+      `Shipped backend integrations for Tavis, an online tuition platform on a customized Moodle CMS, implementing iPay88 payments and multi-provider social auth for web, mobile, and desktop`,
+      `Identified limitations in the CMS-based system and proposed a custom backend structure, presenting technical trade-offs to the PM and CTO to support implementation decisions`
     ]
   },
 
