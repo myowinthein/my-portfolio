@@ -1,0 +1,128 @@
+# AGENTS.md
+
+## 1. Project Identity
+
+Personal portfolio for **Myo Win Thein (Martin)**, Senior Full-Stack Engineer, Bangkok. Built on the commercial "Tunis" React template (ib-themes), heavily customised. Live at `https://myowin.dev`.
+
+**Stack:** Next.js 13.5 (Pages Router) · React 18 · JavaScript/JSX only (no TypeScript) · SCSS (Bootstrap 5 grid, no Tailwind, no CSS Modules) · AOS · EmailJS + invisible reCAPTCHA v2 · Medium RSS via rss2json · next-sitemap · Vercel Analytics
+
+**Blast radius:** Every push to `main` deploys immediately to production on Vercel. There is no CI gate, no preview branch, no approval step; `npm test` exists but nothing runs it automatically on push.
+
+**Workflow:** Solo mode. Commits go direct to `main`; no feature branches, no PRs required. Full git conventions in the agent-helm rules (§9).
+
+---
+
+## 2. Project Config
+
+
+ship-method: direct
+git-auto-commit: true
+readme-style: standard
+
+- `ship-method: direct`: commit directly to `main`, no feature branches, no PRs. See agent-helm rules (§9).
+- `git-auto-commit: true`: commit after each task without prompting; push still requires confirmation.
+- `readme-style: standard`: README.md follows the Standard Readme spec structure.
+
+---
+
+## 3. Dev Commands
+
+```sh
+npm run dev         # localhost:3000 by default; falls back if it is busy
+npm run build       # next build + next-sitemap (postbuild)
+npm run lint        # next/core-web-vitals
+npm run start       # serve production build (requires prior build)
+npm test            # vitest run (utils/**/*.test.js + src/**/*.test.jsx)
+npm run test:watch  # vitest watch mode
+```
+
+Tests cover `utils/` pure helpers and, via jsdom + React Testing Library, most of `src/components`, `src/hooks`, `src/context`, `src/layout`, and `src/pages` (excluding `_document.jsx`, see Known Traps). Page-level tests live in `src/__tests__/pages/`, never inside `src/pages/` itself. `next/image` and `next/head` are mocked globally in `vitest.setup.jsx` since they only behave correctly inside Next's own render pipeline. No type-check (no TypeScript). No Prettier, Husky, lint-staged, or pre-commit hooks. Lint + build + tests + a manual browser check at the URL printed by `npm run dev` are the only verification options.
+
+---
+
+## 4. Architecture Pointers
+
+- `src/pages/home-dark.jsx`: entire single-page tab app; every section is a `<TabPanel>` here. New content goes INSIDE this file, not as new routes.
+- `src/pages/index.jsx`: re-exports `HomeDark`. `/404.jsx` is the only other page.
+- `src/config.js`: single source of truth for personal info, URLs, meta, API keys, and `summary[]` (first paragraph reused as SEO meta description).
+- `utils/text.js`: `sentenceCase` helper (has tests; not currently referenced in `src/`).
+- `utils/experience.js`: `experienceYears(startYear, gap)` helper; `config.js` uses it for build-time `totalExperiences`. Extracted so the year math is unit-testable.
+- `src/hooks/useExpandableList.js`: shared "show N, then show all" hook. Used by `about/Skills.jsx` (`CORE_COUNT = 4`) and `about/Experience.jsx` (`VISIBLE_COUNT = 3`).
+- `src/hooks/useBodyScrollLock.js`: module-level lock counter so nested/overlapping lock consumers (e.g. multiple modals) don't fight over `document.body.style.overflow`.
+- `src/components/about/skillsData.js`: skill categories live here, not inline in `about/index.jsx`. Passed into `Skills.jsx`; entries with `core: true` render a crown badge.
+- `src/components/portfolio/portfolioData.js`: static projects grouped by category. Each entry: `{ company, industry, product, productType, role, description[], banner, media[], preview[] }`.
+- `src/components/portfolio/PortfolioModal.jsx`: uses `createPortal` to mount on `document.body`; keyed by `project.product` so switching projects remounts cleanly.
+- `src/components/hero/Hero.jsx`: imports `summary` and `roleTags` from config; do not duplicate strings here.
+- `src/hooks/AllBlogData.js`: the only runtime HTTP call in the app (Medium RSS → rss2json). State shared via `context/ContextProvider.jsx`.
+- `src/components/Contact.jsx`: contact form; reCAPTCHA v2 invisible + EmailJS, polled init via `window.grecaptcha`.
+- `src/styles/fonts.js`: Poppins/Open Sans loaded via `next/font/google` (self-hosted, normal weight only, `display: swap`), exposed as CSS variables applied on `<html>` in `_document.jsx`. Not a Google Fonts CSS `@import`.
+- `src/components/nyo/`: Nyo, the portfolio's animated companion pet, mounted in `home-dark.jsx` and `404.jsx`. `Nyo.jsx` is the sprite controller; `world.js` measures walkable surfaces from the DOM; `interactions.js` handles petting/selection/cursor-proximity reactions. Physics, routing, and sprite metadata live in `utils/nyo.js`; the local energy/curiosity/mood state machine lives in `utils/nyo-behavior.js`; styling in `src/styles/nyo.scss`. No animation or physics package, no AI API.
+- `public/legal/{privacy-policy,terms,cookie-policy}/`: static generated legal pages.
+
+SCSS entry: `src/styles/index.scss` → `public/assets/scss/main.scss` → partials, plus `./nyo.scss`. Accent colour `--main-primary-color: #2CB1BC`. Dark bg `#021B1D`, light bg `#F5F5F4` (`.light` body class).
+
+---
+
+## 5. Domain Rules
+
+- Source is published for reference only, all rights reserved (see README License). This is not an open-source project; do not add contribution scaffolding, issue templates, or OSS licensing.
+- `totalPlatformTypes` in `config.js` is a manually maintained count, not derived from `portfolioData.js`; update it by hand when a new platform type is introduced. `totalDeliveredProjects`, by contrast, IS derived (`PortfolioData.reduce(...)`) — do not hand-edit it.
+- `summary[0]` in `config.js` doubles as both hero copy and the SEO `metaDescription`; edits to it change search-result snippets, not just on-page text.
+
+---
+
+## 6. Behavior Rules
+
+- **No new Next.js pages.** All sections live as `<TabPanel>` entries inside `home-dark.jsx`. Adding routes breaks the single-page design.
+- **No new state libraries.** Local `useState` for component state; the Context pattern in `ContextProvider.jsx` is the only global state (blog feed). Never add Zustand, Redux, SWR, TanStack Query, axios, etc.
+- **No new animation or physics libraries.** AOS for scroll-reveal; Nyo's platformer movement is hand-rolled. No Framer Motion, GSAP, Matter.js, etc.
+- **No TypeScript.** Files stay `.js` / `.jsx`. Do not introduce a `tsconfig.json`.
+- **No App Router constructs.** No `"use client"` / `"use server"`, no `app/` directory, no Server Actions (not supported on the Pages Router), no Route Handlers, no `pages/api/`. Metadata via `next/head` in `Seo.jsx`.
+- **No SSR data fetching.** No `getServerSideProps`, `getStaticProps`, `getStaticPaths`. All content is static imports or `fetch()` in `useEffect`.
+- **Always run `npm run lint`, `npm test`, and `npm run build` before commit.** No CI catches errors otherwise.
+- **Use conventional commit messages and keep commits small.** Full type list and branch/squash conventions: the agent-helm rules (§9).
+- **Stage files explicitly** by name; never `git add .` or `git add -A` (risk of pulling in large media binaries or `.env.production`).
+
+---
+
+## 7. Hard Safety Rules
+
+- **Never push to `main` without explicit user confirmation.** Push = production deploy.
+- **Never force-push to `main`** under any circumstances.
+- **Never commit `.env.production`** (gitignored; contains `SITE_URL`).
+- **Never reproduce credential values in chat output** even when intentionally public (rss2json key, EmailJS IDs, reCAPTCHA site key live in `src/config.js` / `Contact.jsx`).
+- **Never manually edit `public/robots.txt`, `public/sitemap.xml`, `public/sitemap-0.xml`, or `public/legal/**`**: generated build artefacts; `next-sitemap` (sitemap/robots) and the legal-doc generator overwrite these on every run.
+- **Never run destructive git** (`reset --hard`, `checkout .`, `clean -f`) without explicit confirmation.
+
+Full operational risk scan and instructions: the agent-helm rules (§9).
+
+---
+
+## 8. Known Traps
+
+- **`PortfolioModal` mounts via `createPortal` to `document.body`**: z-index and stacking-context issues need to account for this. Its scroll lock goes through `useBodyScrollLock`'s module-level counter, not a raw overflow toggle — don't bypass it, or overlapping lock consumers will unlock each other prematurely.
+- **iOS Safari video autoplay quirk:** the first video in `PortfolioModal` retries `play()` after 600ms because AwesomeSlider's entrance animation blocks autoplay during the transition. The timer is intentional.
+- **reCAPTCHA is loaded dynamically** in `wrapper.jsx` and `Contact.jsx` polls `window.grecaptcha` every 150ms until ready, capped at a 15s timeout (`MAX_WAIT_MS`) before giving up. Do not switch to declarative `<div class="g-recaptcha">`; it conflicts.
+- **Font Awesome is a static CSS file** at `public/assets/fonts/font-awesome/css/font-awesome.min.css`, not an npm package. Both `fa fa-*` and `fa-solid` / `fa-brands fa-*` syntaxes coexist intentionally.
+- **`totalExperiences` is build-time computed** in `config.js` via `experienceYears(careerSince, 1)` (from `utils/experience.js`); the `1` is a deliberate gap-year deduction. Displayed value bumps on every yearly redeploy.
+- **`next/image` cannot render raw SVGs.** `next.config.js` is intentionally minimal (`reactStrictMode` only). Do NOT add `dangerouslyAllowSVG`. For brand SVGs that need to feed `<Image>`, rasterize to WebP first (see `public/assets/portfolio/job_buddy/banner.webp`).
+- **Bootstrap JS is not loaded.** Only the CSS grid is imported. No dropdowns, modals, tooltips from Bootstrap.
+- **Sitemap excludes `/home-dark`** in `next-sitemap.config.js` deliberately: canonical URL is `/`, not `/home-dark`.
+- **External blog images** require a custom Next `<Image>` `loader` prop that returns the URL unchanged (see `Blog.jsx`). Do not configure `remotePatterns` instead.
+- **`SITE_URL` needs both `NEXT_PUBLIC_SITE_URL` and `SITE_URL`** in Vercel project settings (used by `config.js` and `next-sitemap.config.js` respectively).
+- **Favicon is intentionally a single SVG** at `public/favicon.svg`. Do not add PNG, ICO, or Apple Touch Icon fallbacks; they were removed deliberately.
+- **Never put test files inside `src/pages/`.** The Pages Router treats every file there as a route; a colocated `*.test.jsx` breaks `next build` (it gets collected as a page). Page-level tests live in `src/__tests__/pages/` instead.
+- **`next/font/google` exports (`src/styles/fonts.js`) only work inside Next's own SWC build.** Under vitest/Vite they're non-callable, so `_document.jsx` (which imports them) cannot be rendered in tests. It's also server-only markup never mounted client-side in production, so it's intentionally untested.
+- **Nyo's walkable surfaces are opt-in via DOM attributes** (`data-nyo-platform`, `data-nyo-solid`), applied in `world.js`. Mark the actual visible surface (e.g. a `<Tab>`), never an invisible layout wrapper, or his physics will read the wrong geometry.
+
+## 9. Rules
+
+This project follows the rules shipped in agent-helm:
+- .claude/rules/git.md
+- .claude/rules/safety.md
+
+At the start of every session, check whether the paths above exist on this machine.
+If either is missing, inform the user: "helm rules are referenced in CLAUDE.md but the
+plugin is not installed on this machine. Install it with: /plugin install agent-helm"
+
+<!-- last-reviewed: e798763 -->
