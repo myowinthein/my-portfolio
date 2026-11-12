@@ -62,12 +62,10 @@ Editing content:
 
 ## Contributing
 
-This is a personal portfolio. Issues and pull requests are not accepted.
-
-For bugs you spot, feel free to reach out via the contact form on the live site.
+This is my personal portfolio of full-stack engineering work. If something doesn’t work or you have a suggestion, [open an issue](https://github.com/myowinthein/my-portfolio/issues/new/choose). Pull requests aren’t expected.
 
 ## License
 
-All rights reserved © Myo Win Thein. The source is published for reference and transparency only; it is not licensed for reuse, redistribution, or derivative works. Brand assets, copy, portfolio screenshots, and embedded third-party logos retain their respective owners' rights.
+All rights reserved. No project-wide reuse license is provided. © Myo Win Thein.
 
 <!-- last-reviewed: 4ae4ba8 -->
