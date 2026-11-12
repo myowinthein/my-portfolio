@@ -1,0 +1,51 @@
+name: Report a problem
+description: Report a broken link, display problem or unexpected behaviour on the site.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reports are public. Remove private information from text, links and attachments.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe what you expected and what happened instead. Include any error message.
+      placeholder: |
+        Expected: closing a project viewer would return me to the Work section.
+        Actual: the viewer stayed open after I selected its close button.
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Where did it happen?
+      description: Link to the affected page and name the section, project or control.
+      placeholder: https://myowin.dev, project viewer in the Work section
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Share the steps or a small example we can follow. If it happens intermittently, describe what led up to it and how often it occurs.
+      placeholder: |
+        1. Open the Work section and select a project.
+        2. Select the close button in the project viewer.
+        3. The viewer stays open.
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      description: Include browser and operating system versions if known. For display problems, add your device or screen size.
+      placeholder: Safari on iPhone, portrait orientation
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or extra details
+      description: Share a screenshot or relevant error text. For a link problem, include the link that failed.
+    validations:
+      required: false
